@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Forever Compendiums: Choose Your Class</title>
+<meta name="description" content="Nine illustrated class guides for World of Warcraft: Forever.">
+<style>
+:root{color-scheme:dark;--bg:#08090c;--text:#ece7dd;--muted:#bdb6aa;--line:#ffffff24;--gold:#e5c88b}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1d2a24 0%,transparent 40%),radial-gradient(ellipse at 90% 10%,#241c33 0%,transparent 42%),var(--bg);color:var(--text);font:16px/1.55 'Segoe UI',system-ui,Arial,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+header{padding:72px 0 40px}
+.kicker{margin:0 0 14px;color:var(--gold);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+h1{margin:0;font:400 clamp(36px,7vw,68px)/1.05 Georgia,'Times New Roman',serif;letter-spacing:.01em}
+.rule{width:110px;height:2px;margin:22px 0;background:linear-gradient(90deg,var(--gold),transparent)}
+.deck{max-width:640px;margin:0;color:var(--muted);font-size:18px}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:22px;margin:0;padding:0;list-style:none}
+.card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:330px;height:100%;padding:24px 24px 22px;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:14px;overflow:hidden;background:#111;color:inherit;text-decoration:none;box-shadow:0 14px 40px #0008;transition:border-color .25s,box-shadow .25s}
+.card>:not(img){position:relative;z-index:1}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+/* the Shaman art is three square panels side by side: widen the image so the card shows only the middle panel */
+.card .triptych{left:-104%;width:308%}
+.card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,#08090cf5 0%,#08090ce6 45%,#08090c73 75%,#08090c00 100%)}
+.card:hover,.card:focus-visible{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 18px 50px #000a}
+.card:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.card:hover img,.card:focus-visible img{transform:scale(1.05)}
+/* the class name comes first in the markup, so screen readers announce it first; the volume label still shows above it */
+.vol{order:-1;margin:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 1px 6px #000}
+.card h2{margin:4px 0 0;font:400 36px/1.1 Georgia,'Times New Roman',serif;text-shadow:0 2px 12px #000}
+.card h2::after{content:'';display:block;width:44px;height:2px;margin:10px 0 9px;background:var(--accent)}
+.sub{margin:0;font:italic 17px/1.35 Georgia,'Times New Roman',serif;text-shadow:0 1px 8px #000}
+.specs{margin:8px 0 0;color:var(--muted);font-size:13px;letter-spacing:.03em}
+footer{padding:40px 0 48px;color:var(--muted);font-size:13px}
+footer p{margin:0;border-top:1px solid var(--line);padding-top:20px}
+@media (max-width:600px){.wrap{padding:0 16px}header{padding:44px 0 28px}.deck{font-size:16px}.card{min-height:280px;padding:20px 18px 18px}.card h2{font-size:32px}}
+@media (prefers-reduced-motion:reduce){.card,.card img{transition:none}.card:hover img,.card:focus-visible img{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<p class="kicker">World of Warcraft: Forever</p>
+<h1>The Forever Compendiums</h1>
+<div class="rule"></div>
+<p class="deck">Nine illustrated class guides. Each covers three specializations and nine 51-point builds. Choose your class.</p>
+</header>
+<main>
+<ul class="shelf">
+<li><a class="card" href="druid.html" style="--accent:#8cc9a1"><img src="images/druid-hero.webp" alt="" width="1536" height="1024" style="object-position:54% center"><h2>Druid</h2><p class="vol">The Living Archive</p><p class="sub">A field guide to nine paths of the wild</p><p class="specs">Balance · Feral Combat · Restoration</p></a></li>
+<li><a class="card" href="hunter.html" style="--accent:#ce8b60"><img src="images/hunter-hero.webp" alt="" width="1672" height="941" style="object-position:58% 31%"><h2>Hunter</h2><p class="vol">The Verdant Folio</p><p class="sub">A field guide to nine paths of the hunt</p><p class="specs">Beast Mastery · Marksmanship · Survival</p></a></li>
+<li><a class="card" href="mage.html" style="--accent:#bf86fa"><img src="images/mage-hero.jpg" alt="" width="1536" height="1024" style="object-position:58% 37%"><h2>Mage</h2><p class="vol">The Astral Athenaeum</p><p class="sub">An illuminated codex of nine Arcane paths</p><p class="specs">Arcane · Fire · Frost</p></a></li>
+<li><a class="card" href="paladin.html" style="--accent:#f3d49a"><img src="images/paladin-hero.webp" alt="" width="1450" height="967" loading="lazy" style="object-position:49% 32%"><h2>Paladin</h2><p class="vol">The Golden Codex</p><p class="sub">Nine sacred paths</p><p class="specs">Holy · Protection · Retribution</p></a></li>
+<li><a class="card" href="priest.html" style="--accent:#f7ead1"><img src="images/priest-hero.webp" alt="" width="1500" height="1000" loading="lazy" style="object-position:58% 26%"><h2>Priest</h2><p class="vol">The Illuminated Codex</p><p class="sub">Nine paths of Light and Shadow</p><p class="specs">Discipline · Holy · Shadow</p></a></li>
+<li><a class="card" href="rogue.html" style="--accent:#b5525a"><img src="images/rogue-hero.jpg" alt="" width="1536" height="1024" loading="lazy" style="object-position:63% 36%"><h2>Rogue</h2><p class="vol">The Shadowblade Manual</p><p class="sub">Nine paths of the assassin</p><p class="specs">Assassination · Combat · Subtlety</p></a></li>
+<li><a class="card" href="shaman.html" style="--accent:#70c7ff"><img class="triptych" src="images/shaman-hero.webp" alt="" width="2000" height="667" loading="lazy"><h2>Shaman</h2><p class="vol">The Shaman Codex</p><p class="sub">The definitive field manual</p><p class="specs">Elemental · Enhancement · Restoration</p></a></li>
+<li><a class="card" href="warlock.html" style="--accent:#91e9a7"><img src="images/warlock-hero.jpg" alt="" width="1599" height="900" loading="lazy" style="object-position:49% 32%"><h2>Warlock</h2><p class="vol">The Obsidian Library</p><p class="sub">A field guide to nine dark paths</p><p class="specs">Affliction · Demonology · Destruction</p></a></li>
+<li><a class="card" href="warrior.html" style="--accent:#b58a58"><img src="images/warrior-hero.jpg" alt="" width="1536" height="1024" loading="lazy" style="object-position:57% 36%"><h2>Warrior</h2><p class="vol">The Iron Vanguard</p><p class="sub">A field guide to nine paths of war</p><p class="specs">Arms · Fury · Protection</p></a></li>
+</ul>
+</main>
+<footer>
+<p>Research snapshot: 13 November 2026. Cover art: original generated illustrations, not game screenshots.</p>
+</footer>
+</div>
+</body>
+</html>
