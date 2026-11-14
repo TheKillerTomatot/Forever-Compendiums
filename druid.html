@@ -322,12 +322,12 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
   function renderEncounter(){
     if(!form||!scene||!out)return;
     const chosen=DATA.find(b=>b.id===form.value)||DATA[0],steps=chosen.scenarios[scene.value];
-    out.innerHTML='<div class="eyebrow">'+esc(chosen.spec)+' / '+esc(chosen.code)+'</div><h3>'+esc(names[scene.value])+'</h3><p class="build-mini-summary"><b>'+esc(chosen.name)+'</b> · '+esc(chosen.form)+' · '+esc(chosen.motto)+'</p><p class="scenario-meta">Five conditional priorities, not literal combat timings or a fixed macro.</p><div class="step-grid">'+steps.map((s,i)=>'<div><span>'+String(i+1).padStart(2,'0')+'</span>'+esc(s)+'</div>').join('')+'</div><div class="combat-lens"><p><b>Equipment</b> '+esc(chosen.equipment)+'</p><p><b>Resource</b> '+esc(chosen.resource)+'</p><p><b>Position</b> '+esc(chosen.position)+'</p></div><p class="scenario-meta" style="margin:16px 0 0"><a href="#dossier-'+chosen.id+'">Read full talent and gear dossier ↓</a> · Cost of the path: '+esc(chosen.sacrifice)+'</p>';
+    out.innerHTML='<div class="eyebrow">'+esc(chosen.spec)+' / '+esc(chosen.code)+'</div><h3>'+esc(names[scene.value])+'</h3><p class="build-mini-summary"><b>'+esc(chosen.name)+'</b> · '+esc(chosen.form)+' · '+esc(chosen.motto)+'</p><p class="scenario-meta">Five conditional priorities, not literal combat timings or a fixed macro.</p><div class="step-grid">'+steps.map((s,i)=>'<div><span>'+String(i+1).padStart(2,'0')+'</span>'+esc(s)+'</div>').join('')+'</div><div class="combat-lens"><p><b>Equipment</b> '+esc(chosen.equipment)+'</p><p><b>Resource</b> '+esc(chosen.resource)+'</p><p><b>Position</b> '+esc(chosen.position)+'</p></div><p class="scenario-meta" style="margin:16px 0 0"><a href="#dossier-'+esc(chosen.id)+'">Read full talent and gear dossier ↓</a> · Cost of the path: '+esc(chosen.sacrifice)+'</p>';
   }
   function buildOptions(){
     if(!form||!spec)return;
     const old=form.value;const permitted=DATA.filter(b=>spec.value==='All'||b.spec===spec.value);
-    form.innerHTML=permitted.map(b=>'<option value="'+b.id+'">'+esc(b.name)+' · '+esc(b.spec)+'</option>').join('');
+    form.innerHTML=permitted.map(b=>'<option value="'+esc(b.id)+'">'+esc(b.name)+' · '+esc(b.spec)+'</option>').join('');
     if(permitted.some(b=>b.id===old))form.value=old;
     renderEncounter();
   }
@@ -373,7 +373,7 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
     for(const row of scored)row.points=goals.reduce((sum,k,index)=>sum+((preference[k]||[]).includes(row.b.id)?[6,3,2][index]:0),0);
     scored.sort((a,b)=>b.points-a.points||a.i-b.i);
     const best=scored[0].b,runner=scored[1].b;
-    qrout.innerHTML='<strong>Your likely path: '+esc(best.name)+'</strong> <span class="badge-code">'+esc(best.code)+'</span><p>'+esc(best.motto)+'. '+esc(best.sacrifice)+'</p><p style="margin:0;font-size:12px">Another plausible choice: <a href="#dossier-'+runner.id+'">'+esc(runner.name)+'</a> · <a href="#dossier-'+best.id+'">Explore your path ↓</a></p>';
+    qrout.innerHTML='<strong>Your likely path: '+esc(best.name)+'</strong> <span class="badge-code">'+esc(best.code)+'</span><p>'+esc(best.motto)+'. '+esc(best.sacrifice)+'</p><p style="margin:0;font-size:12px">Another plausible choice: <a href="#dossier-'+esc(runner.id)+'">'+esc(runner.name)+'</a> · <a href="#dossier-'+esc(best.id)+'">Explore your path ↓</a></p>';
   }
   [qr,qh,qs].forEach(el=>el?.addEventListener('change',renderQuiz));renderQuiz();
 

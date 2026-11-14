@@ -18,7 +18,7 @@ const BEATS={"executioner": {"elite": ["Charge to earn starting Rage|Avoid a col
 const SCENARIOS={"elite": ["Dangerous solo elite", "A durable enemy forces a sustained health, Rage and control decision."], "pack": ["Four simultaneous melee enemies", "The pack approaches together; one mistake can turn resource gain into lethal damage."], "boss": ["Stationary dungeon boss", "One long target, predictable positioning and no free external Rage assumptions."], "mobile": ["Movement and target-switching boss", "Uptime vanishes, priority targets rotate and stored Rage may decay or be lost in stance switches."], "pvp": ["PvP opponent trying to kite", "The enemy denies melee contact, uses control, and tests every stance change."]};
 const CATS=["Burst", "Sustained damage", "Cleave", "Threat generation", "Mitigation", "Mobility", "Crowd control", "Rage efficiency", "Equipment dependence", "Solo performance", "Group contribution", "Difficulty"];
 const $=id=>document.getElementById(id);
-const safe=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const safe=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 const stanceData={
  Battle:'<b>Battle Stance</b>: balanced pressure and the home of Charge (before combat), Overpower, Sweeping Strikes, and talented Spearing Strike. The stance works for Mortal Strike and general weapon attacks; it does not give Defensive threat.',
  Berserker:'<b>Berserker Stance</b>: +3% critical chance with +10% damage taken. Enter for Whirlwind, Intercept, Pummel and Berserker Rage. The increased incoming damage is a real safety cost.',

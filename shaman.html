@@ -656,6 +656,7 @@ function setTotem(key){const t=totemChoices[key];document.querySelectorAll('[dat
 function renderDashboard(){let spec=$('spec-filter').value,role=$('purpose-filter').value, selected=$('build-choice').value;
  let list=Object.entries(BDATA).filter(([id,b])=>(spec==='all'||b.spec===spec)&&(role==='all'||b.roles.includes(role)));
  $('dash-cards').innerHTML=list.map(([id,b])=>`<button type="button" class="dash-card ${id===selected?'active':''}" data-bid="${id}" style="text-align:left;display:flex;flex-direction:column;gap:6px"><span style="font-family:Georgia,serif;font-size:1.15rem">${esc(b.name)}</span><span style="font-size:.76rem;opacity:.85">${b.dist.join('/')}&nbsp; · &nbsp; ${esc(b.spec)}</span></button>`).join('');
+ if(!list.length)$('dash-cards').innerHTML='<p class="muted" style="grid-column:1/-1">No build matches both filters. Change the specialization or the priority.</p>';
  document.querySelectorAll('[data-bid]').forEach(el=>el.onclick=()=>{$('build-choice').value=el.dataset.bid;renderDashboard()});
  if(!list.some(x=>x[0]===selected)){selected=list[0]?.[0]||selected;$('build-choice').value=selected}
  let b=BDATA[selected]; if(!b)return;
