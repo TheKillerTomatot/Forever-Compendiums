@@ -104,7 +104,7 @@ Result:
 
 ## Phase 2: Volumes (done 15 November 2026)
 
-- Runs in parallel with the user's text work (see below). Change tags (for example `<section>`) and add CSS and JS. Avoid changing text lines. Where phase 2 must change one, list it, because it can conflict with the user's text work.
+- Runs before the user's text work (see below). Change tags (for example `<section>`) and add CSS and JS. Avoid changing text lines. Where phase 2 must change one, list it, because it can conflict with the user's text work.
 - One page per class. Primer, Advanced and Complete are views of the same page. No copied text.
 - Primer: chapters 1 to 4. Advanced: chapters 5 to 8. Complete: all chapters.
 - "Chapters 1 to 4" here means steps 1 to 4 of the phase 1 chapter order, not the chapter numbers printed on the pages.
@@ -129,7 +129,7 @@ Result:
 - Tests: the Complete view is identical to the page before phase 2 (element positions, text, print, no JavaScript, and a run over every control and link). The views, the switch, the links into hidden chapters and the menu highlight work at 375 and 1280px. The test scripts are not in the repo.
 - Known limits: in the Complete view, the Shaman chapter bar overflows at 1440px and wider; the hidden links are still reachable by scrolling the bar (phase 4 redesigns it). On Mage phones, the switch sits in the chapter strip at the top of the page.
 
-## Text work by the user (after phase 2)
+## Text work by the user (done 15 November 2026)
 
 The user did the text work outside the project with an external editor and sent it back on 15 November 2026 as a zip: `%USERPROFILE%\Downloads\Forever_Class_Compendiums_COMPLETE_All_Editorial_Revisions.zip`. Keep the zip until this work is merged.
 
@@ -165,6 +165,17 @@ Decisions on 15 November 2026:
 - Front page: update the shelf titles and subtitles to match the new books.
 - Tests: the cover text is visible at 320, 375, 768 and 1280px; no sideways scroll; in-page links; the console; the interactive parts; the phase 2 views. Then the `reviewer`, then a merge after approval.
 - Review tools from the planning session (scratchpad, may be cleared): `semdiff.py` (formatting-blind HTML diff) and `zipreview/REVIEW.md` in `%USERPROFILE%\AppData\Local\Temp\claude\c7df57030140bfb9\1f4627ae-15fa-496f-aa00-361b9f27051d\scratchpad\`. If they are gone, rebuild the diff from the zip and `bcff272`.
+
+Result:
+
+- Two commits on the branch `claude/editorial-port-97c643`, fast-forwarded onto `main`: dd055c4 (the edits as delivered, ported) and 4fe34a7 (the fixes). Not pushed.
+- Proof for the port: a formatting-blind diff of each ported page against its zip page shows only phase 2's additions. In headless Edge, each ported page matches its zip page: element boxes and text at every media-query width, print, no JavaScript, and every control and in-page link.
+- Fact check: the user confirmed all 12 items. On the user's answers, the wording changed for Druid Wrath, Paladin Judgement of Command (the older lines too), Mage Frost Nova and Blizzard (the dossier lines too) and Shaman Windfury. The Lifebloom card no longer presents Lifebloom as usable. The class deep dives are paired articles (Hunter and Druid, Mage and Shaman, Priest and Warrior, Rogue and Warlock), so all nine links are right.
+- Covers: the Druid, Hunter, Paladin, Warlock and Rogue covers grow when their text needs room (`min-height` with the old heights). Paladin and Warlock phone padding clears the menu button. The Rogue badge sits below its menu button (this overlap was older than the text work). Shaman: below 760px the top-bar title gets its own row, so the chapter bar and the volume switch keep their room.
+- Polish as listed above, plus the old book names on the Hunter, Mage, Paladin and Priest pages and the Priest chapter 08 label (found in review). The Hunter pet-health date needed no change: the book's table gives the fix date, the source list the posting date. Druid's old `.hero-kicker` rule lost its `!important` too, so the unflagged cover CSS still wins.
+- Front page: each book shows the short name and the second phrase of its new cover line.
+- Tests: static checks; cover text visible from 320 to 1920px on all 9 pages with no sideways scroll; the fixes change the layout only on the faulty covers and the Shaman top bar; the phase 2 view tests and the interaction run pass on all 9 pages; front page ribbons, focus and console. The test scripts are not in the repo.
+- Left as it was: the volume numbers on the pages still differ from the shelf (open since phase 2). The front page still says "nine 51-point builds" and "Research snapshot: 13 November 2026".
 
 ## Phase 3: Librarian quiz
 
