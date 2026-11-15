@@ -143,14 +143,15 @@ footer p{max-width:620px;margin:0 auto;font-style:italic}
 (()=>{
   // Per book: the class name, the title on its cover, its answer to "Which power calls to you?" and its specs in book order.
   // Per spec: id = its chapter id on the class page; roles; styles = the style answers that pick it; dossier = the id of its
-  // first dossier (the Advanced link); quote = a sentence from the class page.
+  // first dossier (the Advanced link); tankDossier = the Advanced link for tanks, where the first dossier is not a tank
+  // (Feral Combat: the Bear, not the Cat); quote = a sentence from the class page.
   // fallback = the spec to pick when no style answer matches. In each class, at most one role has more than one spec; there,
   // the fallback is the spec whose three builds have the lowest average Complexity (or Difficulty) on the class page's own
   // atlas, and on a tie the first in the book.
   const BOOKS={
     druid:{name:'Druid',title:'The Verdant Testament',power:'Nature, in many forms',specs:[
       {id:'balance',name:'Balance',roles:['ranged'],styles:[],dossier:'dossier-lunar',quote:'Damage is a question of distance, time and the space between Wrath and Starfire.'},
-      {id:'feral',name:'Feral Combat',roles:['tank','melee'],styles:[],dossier:'dossier-claw',quote:'The Cat spends Energy and combo points to end a hunt; the Bear spends Rage and attention to keep other lives safe.'},
+      {id:'feral',name:'Feral Combat',roles:['tank','melee'],styles:[],dossier:'dossier-claw',tankDossier:'dossier-bear',quote:'The Cat spends Energy and combo points to end a hunt; the Bear spends Rage and attention to keep other lives safe.'},
       {id:'restoration',name:'Restoration',roles:['heal'],styles:[],dossier:'dossier-keeper',quote:'Restoration is the art of tending what has not yet broken.'}]},
     hunter:{name:'Hunter',title:'The Far Horizon Chronicle',power:'The hunt: weapon, pet and trap',specs:[
       {id:'beastmastery',name:'Beast Mastery',roles:['ranged'],styles:['companion'],dossier:'d-commander',fallback:true,quote:'Beast Mastery is a study in shared responsibility.'},
@@ -238,11 +239,12 @@ footer p{max-width:620px;margin:0 auto;font-style:italic}
     document.querySelectorAll('.chosen-tag').forEach(el=>el.remove());
   }
   // The result in the panel, and the mark on the book and its ribbon.
-  function show(cls,spec,volume){
+  function show(cls,spec,role,volume){
     const book=BOOKS[cls];
+    const dossier=role==='tank'&&spec.tankDossier||spec.dossier;
     const read={primer:`the Primer at ${spec.name}`,advanced:`Advanced at the ${spec.name} dossiers`,complete:`the complete book at ${spec.name}`}[volume];
     const open={primer:`Open the ${book.name} Primer at ${spec.name}`,advanced:`Open the ${book.name} Advanced at the ${spec.name} dossiers`,complete:`Open the complete ${book.name} book at ${spec.name}`}[volume];
-    const href={primer:`${cls}.html?volume=primer#${spec.id}`,advanced:`${cls}.html?volume=advanced#${spec.dossier}`,complete:`${cls}.html#${spec.id}`}[volume];
+    const href={primer:`${cls}.html?volume=primer#${spec.id}`,advanced:`${cls}.html?volume=advanced#${dossier}`,complete:`${cls}.html#${spec.id}`}[volume];
     const result=document.createElement('div');
     result.className='result';
     result.innerHTML=`<h3 tabindex="-1">The librarian’s choice</h3>
@@ -268,7 +270,7 @@ footer p{max-width:620px;margin:0 auto;font-style:italic}
       const classes=Object.keys(BOOKS).filter(cls=>BOOKS[cls].specs.some(s=>s.roles.includes(role)));
       ask('Which power calls to you?',classes.map(cls=>[cls,BOOKS[cls].power,BOOKS[cls].name]),cls=>{
         ask('How do you like to win?',STYLES,style=>{
-          ask('Last question: how well do you know the game?',VOLUMES,volume=>show(cls,pick(cls,role,style),volume));
+          ask('Last question: how well do you know the game?',VOLUMES,volume=>show(cls,pick(cls,role,style),role,volume));
         });
       });
     });
