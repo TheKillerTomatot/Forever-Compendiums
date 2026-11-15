@@ -137,9 +137,8 @@ Result:
 - The user checks the game facts. Claude can check language, HTML and the tests, but not game facts.
 - In the script data, a text sits between quote marks. Inside it, write a quote mark of the same kind with a backslash: `\"` or `\'`.
 - When the work comes back: merge it, resolve conflicts with phase 2, and run the tests.
-- Expected conflicts with phase 2: on `index.html`, the 9 book lines and 3 CSS lines (keep both: the new text and the one-element-per-line layout with the ribbons); on Druid, Rogue and Warrior, the menu highlight code line (keep the phase 2 version).
 
-## Phase 3: Librarian quiz (next)
+## Phase 3: Librarian quiz
 
 - On the front page: a short conversation with the librarian, 4 to 6 questions.
 - Phase 2 gives each book three ribbon links: `<class>.html?volume=primer`, `?volume=advanced` and the plain page. A spec can be added as a hash, for example `druid.html?volume=primer#balance`.
