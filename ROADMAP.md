@@ -177,14 +177,30 @@ Result:
 - Tests: static checks; cover text visible from 320 to 1920px on all 9 pages with no sideways scroll; the fixes change the layout only on the faulty covers and the Shaman top bar; the phase 2 view tests and the interaction run pass on all 9 pages; front page ribbons, focus and console. The test scripts are not in the repo.
 - Left as it was: the volume numbers on the pages still differ from the shelf (open since phase 2). The front page still says "nine 51-point builds" and "Research snapshot: 13 November 2026".
 
-## Phase 3: Librarian quiz
+## Phase 3: Librarian quiz (done 16 November 2026)
 
 - On the front page: a short conversation with the librarian, 4 to 6 questions.
 - Phase 2 gives each book three ribbon links: `<class>.html?volume=primer`, `?volume=advanced` and the plain page. A spec can be added as a hash, for example `druid.html?volume=primer#balance`.
 - Result: a class, a spec and a volume, and the matching book on the shelf.
 - The shelf stays usable without JavaScript. The quiz works with keyboard and screen readers.
 - Base the scoring on what the class pages say, and show it for review.
-- Open: the questions, the look of the librarian, and where the quiz sits on the page.
+
+Decided on 15 November 2026:
+
+- Four questions: role, then class (only the classes that have that role), then style (picks the spec), then experience (picks the volume). In 13 of the 19 role and class paths only one spec is left, so there the style answer does not change the result.
+- Each answer shows a phrase and the name in brackets, for example "Nature, in many forms (Druid)".
+- Experience picks the volume: new to the game, Primer; knows the basics, Advanced; wants everything, Complete.
+- Links: Primer `<class>.html?volume=primer#<spec>`, Advanced `<class>.html?volume=advanced#<first dossier of the spec>`, Complete `<class>.html#<spec>`. Added on 16 November 2026: for Feral tanks the Advanced link goes to the Bear dossier (`#dossier-bear`), because the first Feral dossier is the Cat.
+- Scoring: each spec has style tags from its own chapter text (for Rogue, also the page's own chooser). When no tag matches, the spec whose three builds have the lowest average Complexity or Difficulty in its page's atlas wins; on a tie, the first in the book. The atlases rate builds only within one page, so no rating compares classes.
+- Place and look: a leather panel with a gilt frame between the header and the shelf, closed at the start, with a portrait of the librarian that the user supplied. Earlier questions and answers stay as a transcript. "Start again", no "Back". The result quotes one sentence from the spec's chapter.
+- Shelf mark: the gold ring, a longer ribbon for the chosen volume, and a slip "The librarian's choice" that screen readers read as part of the book link. The panel and the slip do not print.
+
+Result:
+
+- Commits on the branch `claude/librarian-quiz-7fb4a7`: d23dd6d (`index.html` and `images/librarian.webp`), 134aba7 (Feral tanks link to the Bear dossier) and 4be9691 (a rule in the project `CLAUDE.md`: no `sed -i` on CRLF files in Git Bash, because it writes LF). Fast-forwarded onto `main`.
+- The panel has the `hidden` attribute and its script shows it. Changed lines: the hover and ribbon selectors also cover the chosen book, each book `<li>` has an id (`book-<class>`), and the colophon says "Art" instead of "Cover art", because the portrait is not a cover.
+- Tests: all 285 answer paths with real mouse clicks, checked against a separate model; all 81 result links open the right view at their target; keyboard at 375 and 1280px; the screen reader tree; without JavaScript the page is pixel-identical to the page before phase 3 at 320, 375, 768 and 1280px (apart from the colophon word); no sideways scroll; print; the console. The test scripts are not in the repo.
+- Test pitfalls: the class pages scroll smoothly to a hash (about 1.5 s), and two links into the same page that differ only in the hash fire no load event.
 
 ## Phase 4: Book redesign of the class pages
 
@@ -199,6 +215,7 @@ Result:
 - Print style for the front page: today it prints light text on white paper when background graphics are off.
 - Title images cut off at the top (reported 15 November 2026). Find out where: on the front page only the Shaman cover crops its top; the class page heroes crop by screen width.
 - Delete the merged branches `audit-fixes`, `claude/magical-swanson-f5774b` and `fantasy-landing` (needs approval).
+- The front page still says "nine 51-point builds" and "Research snapshot: 13 November 2026". Decide whether they need new words; the phase 3 check found nothing wrong with them.
 
 ## Testing notes
 
