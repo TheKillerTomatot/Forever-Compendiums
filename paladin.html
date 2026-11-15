@@ -19,7 +19,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
 .fine{font-size:12px;color:#b2a8b4}.right{text-align:right}.spacer-lg{height:28px}.notprint{display:block}.key{color:var(--gold)}
 #navToggle{display:none;position:fixed;z-index:60;right:16px;top:16px;padding:9px 13px;border:1px solid var(--gold);border-radius:9px;background:var(--pan);color:var(--gold);font:inherit;font-size:13px;box-shadow:0 7px 24px #0006;cursor:pointer}
 @media(max-width:1100px){#toc{display:none}#toc.open{display:block}#navToggle{display:block}main{margin-left:0}.grid3,.card-grid{grid-template-columns:1fr 1fr}.hero{height:650px}.decision{grid-template-columns:1fr 1fr}}
-@media(max-width:680px){.grid2,.grid3,.card-grid,.dossier .cols,.dossier .ribbons,.source-list{grid-template-columns:1fr}.hero{height:720px;padding:20px 25px 70px;background-position:49% center}.timeline{grid-template-columns:repeat(2,1fr)}.timeline .tick:after{display:none}.decision{grid-template-columns:1fr}.dossier-head{display:block}}
+@media(max-width:680px){.grid2,.grid3,.card-grid,.dossier .cols,.dossier .ribbons,.source-list{grid-template-columns:1fr}.hero{height:auto;min-height:720px;padding:70px 25px 70px;background-position:49% center}.timeline{grid-template-columns:repeat(2,1fr)}.timeline .tick:after{display:none}.decision{grid-template-columns:1fr}.dossier-head{display:block}}
 @media print{@page{size:A4;margin:14mm 12mm;}html,body{background:#0b0912!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}#toc,.notprint{display:none!important}main{margin:0}section{padding:24px 8px;break-before:auto}h2,h3,h4{break-after:avoid}h2{font-size:27px}.hero{height:260mm;padding:70mm 28px 25px;page-break-after:always}.hero h1{font-size:52px}.hero .deck{font-size:17px}.dossier,.panel,.spec-tile,.archetype,.table-wrap{break-inside:avoid}.grid3,.card-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.dossier{break-before:page;break-inside:auto}.dossier .cols{grid-template-columns:1fr 1fr}.dossier p,.dossier li{font-size:12px}table{font-size:11px}th,td{padding:7px 6px}.source-list{grid-template-columns:repeat(2,1fr)}.interactive-output{display:none}.timeline .tick{min-height:102px}.small{font-size:10px}  .dashboard{overflow:visible}.matrix{min-width:0}.matrix th:not(:first-child){height:105px;font-size:10px;min-width:30px}.matrix td:first-child{min-width:140px}.matrix .heat{width:21px;height:15px}}
 
 body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),radial-gradient(ellipse at 3% 42%,#123047 0%,transparent 36%),#080d17}section:nth-child(even){background:linear-gradient(90deg,#0a1525,#0b111e)}section{border-color:#34495e}#toc{background:#081421ed;border-color:#564b39}#toc a{border-color:#23374a;color:#d6cfc1}#toc .mini,#toc .sig{color:#f3d49a}.panel,.spec-tile{background:linear-gradient(135deg,#1a2839,#101926);border-color:#4b5a69}.hero:before{background:linear-gradient(180deg,#080b1050 0%,#03050a12 30%,#04080bc2 79%,#080d17)}.hero{background-position:center 32%}.hero h1 .gild{color:#f4d89c}.spec-tile{padding-top:215px;min-height:458px;overflow:hidden}.spec-tile:before{content:'';position:absolute;inset:0 0 auto 0;height:249px;background:var(--portrait) center 25%/cover no-repeat;mask-image:linear-gradient(#000 65%,transparent);-webkit-mask-image:linear-gradient(#000 65%,transparent)}.spec-tile.holy{--local:#f8d9a0;--local-dark:#30291b}.spec-tile.prot{--local:#96d7e9;--local-dark:#122a38}.spec-tile.ret{--local:#f7a280;--local-dark:#3b211b}.spec-tile h3{font-size:27px}.spec-tile .roman{font-size:11px}.spec-tile p{font-size:13px}.verdict{background:#292518}.dossier{background:radial-gradient(ellipse at 100% 0,#283c4c,transparent 53%),#101927;border-color:#4c5b6a}.dossier.green{background:radial-gradient(ellipse at 100% 0,#194455,transparent 53%),#101927}.dossier.fire{background:radial-gradient(ellipse at 100% 0,#4b2b23,transparent 53%),#101927}.archetype{background:#111d2b;border-color:#526172}.talent{background:#172537;border-color:#4c5c6f}.ribbon{background:#192b3d;border-color:#496078}.interactive-output{background:#142438;border-color:#5b7180}.interactive-controls button,.interactive-controls select{background:#1b3041;color:#f1e9db;border-color:#7a7c70}.interactive-controls button.selected,.interactive-controls button[aria-pressed=true]{background:#604c2d;border-color:#ffdf99}th{background:#232a39}.heat1{background:#2b3746}.heat2{background:#465974}.heat3{background:#72869a}.heat4{background:#ba9b71}.heat5{background:#f4ce86}.pill{display:inline-block;padding:4px 9px;margin:3px 3px 3px 0;border-radius:22px;font-size:11px;border:1px solid #786944;background:#2c281d;color:#f9dfad}.pill.ok{background:#173540;border-color:#467a87;color:#a9e4f2}.pill.exp{background:#35221e;border-color:#986756;color:#ffc6a9}.mini-flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:7px}.mini-flow span{flex:1 1 120px;padding:13px;background:#1b2d40;border:1px solid #547088;border-radius:10px;text-align:center;font-size:12px}.mini-flow b{display:block;color:#f4cf90}.mini-flow i{font-style:normal;color:#dfb879;align-self:center}.step-layout{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.step-layout div{padding:13px;background:#213247;border:1px solid #58758d;border-radius:10px;font-size:12px}.step-layout b{font:normal 27px Georgia;color:#f4d49b;display:block}.print-btn{border:1px solid #b89b62;border-radius:8px;background:#3d3224;color:#ffecce;padding:10px 13px;cursor:pointer}.print-btn:hover{background:#5d4b30}.matrix .filter-hide{display:none}.ability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.ability-grid .panel:before{content:attr(data-icon);display:block;font-size:25px;margin-bottom:6px}.lead strong{color:#fbe4b7}.timeline .tick{background:#1b2e42;border-color:#58758f}.alert{background:#31251e}
@@ -32,30 +32,29 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
 .reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
 .reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
 .reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
-.compendium-cover-subtitle{font:normal clamp(20px,2.4vw,31px)/1.3 Georgia,serif;color:var(--gold,#dec28c);margin:12px 0 15px;}
 @media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
 
 /* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
 .hero .series-manuscript {
-  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif !important;
-  letter-spacing: .06em !important;
-  text-transform: none !important;
+  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif;
+  letter-spacing: .06em;
+  text-transform: none;
   max-width: 940px;
   overflow-wrap: break-word;
   text-shadow: 0 2px 10px rgba(0,0,0,.92);
 }
 .hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
 .hero .compendium-series-subtitle {
-  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif !important;
+  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif;
   letter-spacing: .008em;
   color: #f2d9a8;
   max-width: 900px;
-  margin: 11px 0 15px !important;
+  margin: 11px 0 15px;
   text-shadow: 0 3px 20px rgba(0,0,0,.65);
 }
 @media (max-width: 650px) {
-  .hero .series-manuscript { font-size: 11px !important; letter-spacing: .025em !important; }
-  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px) !important; margin: 8px 0 10px !important; }
+  .hero .series-manuscript { font-size: 11px; letter-spacing: .025em; }
+  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px); margin: 8px 0 10px; }
 }
 
 /* Reader-first note, visually subordinate to the original manuscript design. */
@@ -67,8 +66,6 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
 .reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
 .reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
 .reader-field-exercise p{margin:0;line-height:1.75}
-.reader-build-comparisons{margin:24px 0;padding:18px 24px;background:rgba(255,255,255,.02);border-left:2px solid var(--gold,#d7bc84)}
-.reader-build-comparisons h4{margin-top:22px}
 
 .reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
 /* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
@@ -78,7 +75,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
 .vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
 .vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
 @media print{.vol-switch{display:none}}
-</style><meta content="15 November 2026; official hotfix review and editorial accessibility pass; independent live testing outstanding" name="compendium-revision"></head>
+</style></head>
 <body>
   <script>
   /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
@@ -166,7 +163,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
   </script>
   <button id="navToggle" class="notprint" type="button" aria-controls="toc" aria-expanded="false"><span aria-hidden="true">☰</span> Chapters</button>
   <nav id="toc" aria-label="Chapters">
-    <div class="mini">THE GOLDEN CODEX</div>
+    <div class="mini">THE GOLDEN OATH</div>
     <div class="sig">FOREVER<br>PALADIN</div>
     <a href="#begin">00 / The opening oath</a>
     <a href="#foundation">01 / The Paladin engine</a>
@@ -680,7 +677,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
       <div class="shell">
         <div class="eyebrow">Chapter 05 · The pilgrimage</div>
         <h2>Leveling, gear, races and party compositions</h2>
-        <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment after the November 13 dungeon experience restriction: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
+        <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment to dungeon experience: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
         </aside>
         <p class="lead">Leveling, gear and party composition matter at least as much as the final talent split. Forever rewards keeping an offensive set and a group-role set rather than trying to make one outfit do everything.</p>
         <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>From first quest to first dungeon</strong><p>In solo leveling, being able to heal between attacks can reduce recovery time, but it does not mean Mana is infinite. Gear for your current job: a weapon for a damage-focused adventure, suitable defense for tanking, and healing-oriented attributes when assigned to keep others alive. In a party, tell the group whether you intend to heal, tank, or deal damage; a hybrid talent layout does not automatically confer equal strength in all three jobs. When a fight goes wrong, use utility to keep the party alive before judging the rotation by its damage numbers.</p>
@@ -792,7 +789,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
             </tbody>
           </table>
         </div>
-        <div class="alert"><strong>Hit and procs:</strong> the November 11 hotfix treats Judgement as a ranged attack. Avoid treating all melee accuracy or on-hit effects as interchangeable with Judgement hit/procs.</div>
+        <div class="alert"><strong>Hit and procs:</strong> Judgement of Command counts as a melee attack and can activate eligible on-hit effects. All other Judgements remain classified as ranged attacks. Avoid treating all melee accuracy or on-hit effects as interchangeable with Judgement hit/procs.</div>
         <h3>Racial choices in Forever</h3>
         <div class="grid3">
           <div class="panel">
@@ -902,7 +899,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
       <div class="shell">
         <div class="eyebrow">Chapter 06 · The live record</div>
         <h2>The rules of the Light, as of 13 November 2026</h2>
-        <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum — Judgement · attack classification</strong><p>November 13 supersedes the broad November 11 rule: Judgement of Command now counts as a melee attack and activates on-hit effects. All other Judgements remain ranged attacks, using the relevant ranged interaction rules. Any older blanket statement that every Judgement is ranged is outdated. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
+        <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum: Judgement · attack classification</strong><p>November 13 supersedes the broad November 11 rule: Judgement of Command now counts as a melee attack and activates on-hit effects. All other Judgements remain ranged attacks, using the relevant ranged interaction rules. Any older blanket statement that every Judgement is ranged is outdated. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
         </aside>
         <p class="lead">This compendium covers <strong>World of Warcraft: Forever</strong> only. It follows the live 1.60.1 family, not Retail, Classic Era, Season of Discovery, or an unpatched beta build.</p>
         <div class="grid3">
@@ -913,8 +910,8 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
           </div>
           <div class="panel">
             <div class="eyebrow">11 NOVEMBER HOTFIX</div>
-            <h3>Judgement is ranged</h3>
-            <p>Judgement now uses ranged hit and does <b>not</b> produce melee-attack item/effect procs. Windfury Totem attacks no longer create Unsealed Fury/Wrath echoes.</p>
+            <h3>Judgement is ranged, except Command</h3>
+            <p>Judgement then used ranged hit and did <b>not</b> produce melee-attack item/effect procs. Since the 13 November hotfix, Judgement of Command counts as a melee attack and can activate eligible on-hit effects; all other Judgements remain classified as ranged attacks. Windfury Totem attacks no longer create Unsealed Fury/Wrath echoes.</p>
           </div>
           <div class="panel">
             <div class="eyebrow">FUTURE PVE CONTENT</div>

@@ -19,7 +19,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
 .muted{color:var(--mute)}.fine{font-size:12px;color:#b2a8b4}.right{text-align:right}.spacer-lg{height:28px}.notprint{display:block}.key{color:var(--gold)}
 #navToggle{display:none;position:fixed;z-index:60;right:16px;top:16px;padding:9px 13px;border:1px solid var(--gold);border-radius:9px;background:var(--pan);color:var(--gold);font:inherit;font-size:13px;box-shadow:0 7px 24px #0006;cursor:pointer}
 @media(max-width:1100px){#toc{display:none}#toc.open{display:block}#navToggle{display:block}main{margin-left:0}.grid3,.card-grid,.spectable{grid-template-columns:1fr 1fr}.hero{height:650px}.decision{grid-template-columns:1fr 1fr}}
-@media(max-width:680px){.grid2,.grid3,.card-grid,.spectable,.dossier .cols,.dossier .ribbons,.source-list{grid-template-columns:1fr}.chapter-banner{grid-template-columns:1fr}.sigil{height:120px;width:120px;font-size:54px}.hero{height:720px;padding:20px 25px 70px;background-position:49% center}.timeline{grid-template-columns:repeat(2,1fr)}.timeline .tick:after{display:none}.decision{grid-template-columns:1fr}.dossier-head{display:block}.interactive-output .step-grid{grid-template-columns:1fr 1fr}.dot-lanes{grid-template-columns:95px 1fr}}
+@media(max-width:680px){.grid2,.grid3,.card-grid,.spectable,.dossier .cols,.dossier .ribbons,.source-list{grid-template-columns:1fr}.chapter-banner{grid-template-columns:1fr}.sigil{height:120px;width:120px;font-size:54px}.hero{height:auto;min-height:720px;padding:70px 25px 70px;background-position:49% center}.timeline{grid-template-columns:repeat(2,1fr)}.timeline .tick:after{display:none}.decision{grid-template-columns:1fr}.dossier-head{display:block}.interactive-output .step-grid{grid-template-columns:1fr 1fr}.dot-lanes{grid-template-columns:95px 1fr}}
 @media print{@page{size:A4;margin:14mm 12mm;}html,body{background:#0b0912!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}#toc,.notprint{display:none!important}main{margin:0}section{padding:24px 8px;break-before:auto}h2,h3,h4{break-after:avoid}h2{font-size:27px}.hero{height:260mm;padding:70mm 28px 25px;page-break-after:always}.hero h1{font-size:52px}.hero .deck{font-size:17px}.dossier,.panel,.spec-tile,.archetype,.compare,.flow,.dot-lanes,.table-wrap{break-inside:avoid}.grid3,.card-grid,.spectable{grid-template-columns:repeat(3,minmax(0,1fr))}.dossier{break-before:page;break-inside:auto}.dossier .cols{grid-template-columns:1fr 1fr}.dossier p,.dossier li{font-size:12px}table{font-size:11px}th,td{padding:7px 6px}.source-list{grid-template-columns:repeat(2,1fr)}.interactive-output{display:none}.timeline .tick{min-height:102px}.small{font-size:10px} .flow .node{min-width:85px} .dashboard{overflow:visible}.matrix{min-width:0}.matrix th:not(:first-child){height:130px;font-size:10px;min-width:30px}.matrix td:first-child{min-width:140px}.matrix .heat{width:21px;height:15px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
@@ -27,30 +27,29 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
 .reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
 .reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
 .reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
-.compendium-cover-subtitle{font:normal clamp(20px,2.4vw,31px)/1.3 Georgia,serif;color:var(--gold,#dec28c);margin:12px 0 15px;}
 @media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
 
 /* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
 .hero .series-manuscript {
-  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif !important;
-  letter-spacing: .06em !important;
-  text-transform: none !important;
+  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif;
+  letter-spacing: .06em;
+  text-transform: none;
   max-width: 940px;
   overflow-wrap: break-word;
   text-shadow: 0 2px 10px rgba(0,0,0,.92);
 }
 .hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
 .hero .compendium-series-subtitle {
-  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif !important;
+  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif;
   letter-spacing: .008em;
   color: #f2d9a8;
   max-width: 900px;
-  margin: 11px 0 15px !important;
+  margin: 11px 0 15px;
   text-shadow: 0 3px 20px rgba(0,0,0,.65);
 }
 @media (max-width: 650px) {
-  .hero .series-manuscript { font-size: 11px !important; letter-spacing: .025em !important; }
-  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px) !important; margin: 8px 0 10px !important; }
+  .hero .series-manuscript { font-size: 11px; letter-spacing: .025em; }
+  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px); margin: 8px 0 10px; }
 }
 
 /* Reader-first note, visually subordinate to the original manuscript design. */
@@ -62,8 +61,6 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
 .reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
 .reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
 .reader-field-exercise p{margin:0;line-height:1.75}
-.reader-build-comparisons{margin:24px 0;padding:18px 24px;background:rgba(255,255,255,.02);border-left:2px solid var(--gold,#d7bc84)}
-.reader-build-comparisons h4{margin-top:22px}
 
 .reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
 /* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
@@ -73,7 +70,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
 .vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
 .vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
 @media print{.vol-switch{display:none}}
-</style><meta content="15 November 2026; official hotfix review and editorial accessibility pass; independent live testing outstanding" name="compendium-revision"></head>
+</style></head>
 <body>
   <script>
   /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
@@ -920,7 +917,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
       <div class="shell">
         <div class="eyebrow">05 · The road to the sixtieth seal</div>
         <h2>Leveling, endgame, PvP, stats and races</h2>
-        <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment after the November 13 dungeon experience restriction: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
+        <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment to dungeon experience: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
         </aside>
         <p class="lead">Gear changes who does the damage. Leveling changes which resource is scarce. PvP changes whether an offensive pet is worth more than an interrupt or a defensive cooldown.</p>
         <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Learn the price of safety</strong><p>While leveling, a pet that holds enemy attention may save more Health than a small improvement to the damage rotation. Life Tap can shorten downtime if you have safe recovery available, but tapping low Health next to a patrol is a dangerous bargain. In a dungeon, coordinate utility Curses and damage Banes with the group and avoid uncontrolled Fear near additional enemies. Gear changes how reliably spells land and how long Mana lasts; do not turn an experimental build into a promised raid ranking without testing. Your most important resource is often the next safe second.</p>
@@ -1099,7 +1096,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
       <div class="shell">
         <div class="eyebrow">06 · The covenant with evidence</div>
         <h2>What is actually live?</h2>
-        <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum — Affliction · silence rule</strong><p>As of the November 13 hotfix, Siphon Life Rank 1 cannot be cast while silenced. The November 10 redesign of Wrack remains in force: while channeled, it advances the periodic ticks of Corruption, Siphon Life and Bane of Agony without shortening their overall durations. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
+        <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum: Affliction · silence rule</strong><p>As of the November 13 hotfix, Siphon Life Rank 1 cannot be cast while silenced. The November 10 redesign of Wrack remains in force: while channeled, it advances the periodic ticks of Corruption, Siphon Life and Bane of Agony without shortening their overall durations. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
         </aside>
         <p class="lead">Three Warlocks can enter the same battle with the same primary tree and still face completely different tactical puzzles. Separate live mechanics from inherited assumptions and untested inventions.</p>
         <div class="grid3">

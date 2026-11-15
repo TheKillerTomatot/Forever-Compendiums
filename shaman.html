@@ -13,7 +13,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
 .statcomps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.statcomps .paper{padding:17px}.statcomps .leadstat{font-family:Georgia,serif;font-size:1.5rem;color:#f5deb0}.gearcompare{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gearcompare .paper{padding:18px}.wep{font-family:Georgia,serif;font-size:1.7rem;color:#f9d8a5}.gearcompare .paper p{font-size:.87rem}
 .src{padding:10px 0;border-bottom:1px solid #385067}.src a{font-weight:750;text-decoration:none}.src small{display:block}.source-list{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}.foot{border-top:1px solid #59708b55;padding:32px 0 60px;color:#b3c5c6}.foot strong{color:#f4d7a7}
 @media(max-width:1080px){.intro-grid,.metrics-wrap{grid-template-columns:minmax(0,1fr)}.build-grid,.statcomps,.gearcompare{grid-template-columns:repeat(2,minmax(0,1fr))}.spec-hero{grid-template-columns:300px 1fr}.hero{min-height:580px}}
-@media(max-width:760px){.topbar .inner{gap:12px}.brand{font-size:.86rem}.hero{min-height:520px}.hero .content{padding-top:80px;padding-bottom:46px}.hero:after{background:linear-gradient(90deg,#091018e8,#09101844),linear-gradient(0deg,#091018,transparent 90%)}.columns2,.columns3,.build-grid,.boxgrid,.talentlines,.gearcompare,.statcomps,.source-list,.dash-filter{grid-template-columns:1fr}.spec-hero{display:block}.spec-hero img{height:360px}.spec-hero .copy{padding:18px 24px}.totem-board{grid-template-columns:1fr}.build-section .head{grid-template-columns:100px 1fr}.build-section .head img{width:100px;height:190px}.build-section .head h3{font-size:1.5rem}.build-section .head .hd-copy{padding:12px 10px 10px 0}.metrics-wrap .paper{padding:16px}.chapter{padding-top:80px}.chapter:before{top:36px}h2{font-size:2.2rem}.metric-list{grid-template-columns:1fr 1fr}.flow-node{min-width:170px}}
+@media(max-width:760px){.topbar .inner{gap:12px;flex-wrap:wrap}.brand{font-size:.86rem;white-space:normal}.hero{min-height:520px}.hero .content{padding-top:80px;padding-bottom:46px}.hero:after{background:linear-gradient(90deg,#091018e8,#09101844),linear-gradient(0deg,#091018,transparent 90%)}.columns2,.columns3,.build-grid,.boxgrid,.talentlines,.gearcompare,.statcomps,.source-list,.dash-filter{grid-template-columns:1fr}.spec-hero{display:block}.spec-hero img{height:360px}.spec-hero .copy{padding:18px 24px}.totem-board{grid-template-columns:1fr}.build-section .head{grid-template-columns:100px 1fr}.build-section .head img{width:100px;height:190px}.build-section .head h3{font-size:1.5rem}.build-section .head .hd-copy{padding:12px 10px 10px 0}.metrics-wrap .paper{padding:16px}.chapter{padding-top:80px}.chapter:before{top:36px}h2{font-size:2.2rem}.metric-list{grid-template-columns:1fr 1fr}.flow-node{min-width:170px}}
 @media print{.topbar,.actionbar button,.buttonlike{display:none}.hero{min-height:300px}.hero-img{filter:brightness(.65)}.chapter{page-break-before:always}.build-section{break-inside:avoid}.paper{box-shadow:none}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
@@ -26,25 +26,25 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
 
 /* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
 .hero .series-manuscript {
-  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif !important;
-  letter-spacing: .06em !important;
-  text-transform: none !important;
+  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif;
+  letter-spacing: .06em;
+  text-transform: none;
   max-width: 940px;
   overflow-wrap: break-word;
   text-shadow: 0 2px 10px rgba(0,0,0,.92);
 }
 .hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
 .hero .compendium-series-subtitle {
-  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif !important;
+  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif;
   letter-spacing: .008em;
   color: #f2d9a8;
   max-width: 900px;
-  margin: 11px 0 15px !important;
+  margin: 11px 0 15px;
   text-shadow: 0 3px 20px rgba(0,0,0,.65);
 }
 @media (max-width: 650px) {
-  .hero .series-manuscript { font-size: 11px !important; letter-spacing: .025em !important; }
-  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px) !important; margin: 8px 0 10px !important; }
+  .hero .series-manuscript { font-size: 11px; letter-spacing: .025em; }
+  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px); margin: 8px 0 10px; }
 }
 
 /* Reader-first note, visually subordinate to the original manuscript design. */
@@ -68,7 +68,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
 .vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
 @media print{.vol-switch{display:none}}
 .mainnav .vol-switch{flex:none;margin:0}.mainnav .vol-switch button{flex:none;padding:6px 9px}
-</style><meta content="15 November 2026; official hotfix review and editorial accessibility pass; independent live testing outstanding" name="compendium-revision"></head>
+</style></head>
 <body>
   <script>
   /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
@@ -180,7 +180,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       <p class="compendium-cover-subtitle compendium-series-subtitle">The Covenant of Storm and Stone</p>
       <p class="deck">Wind carries warnings, fire demands judgment, water remembers its wounded, and earth holds the line. A Shaman listens to all four before calling on any one.</p>
       <div class="meta-row">
-        <span class="pill">Totems, spellcraft and healing · external validation pending</span>
+        <span class="pill">Totems, spellcraft and healing</span>
         <span class="pill">Official hotfix review through 15 Nov; original client 70938 snapshot</span>
         <span class="pill">Interactive encounter and build atlas</span>
       </div>
@@ -707,7 +707,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   <section class="chapter shell" id="optimization">
     <div class="chapter-number">CHAPTER 06</div>
     <h2>Equipment, leveling and optimization</h2>
-    <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment after the November 13 dungeon experience restriction: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
+    <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment to dungeon experience: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
     </aside>
     <p class="lead">Shaman is a class in which different equipment is not just a bigger stat number. A weapon upgrade can make Enhancement feel more physical; a shield can convert an Elemental caster into a survivor; a healing set turns the same mana pool into lifesaving efficiency.</p>
     <h3>Level 1–60: how the class changes along the way</h3>
@@ -952,7 +952,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   <section class="chapter shell" id="quickstart">
     <div class="chapter-number">CHAPTER 07</div>
     <h2>Read the rules before the builds</h2>
-    <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum — Shaman · Windfury</strong><p>The November 13 official fix makes Windfury Totem activate correctly from eligible melee abilities even if an ability does not involve a main-hand weapon. Blizzard separately clarifies that off-hand strikes from multi-hand abilities such as Whirlwind or Mutilate do not independently trigger Windfury; eligible main-hand strikes still can. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
+    <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum: Shaman · Windfury</strong><p>The November 13 official fix makes Windfury Totem activate correctly from eligible melee abilities even if an ability does not involve a main-hand weapon. Blizzard separately clarifies that when an ability such as Whirlwind or Mutilate strikes with both weapons, its off-hand strike cannot activate Windfury on its own; its main-hand strike still can. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
     </aside>
     <p class="lead">WoW Forever is a separate, live 1–60 ruleset. A convincing-looking talent tree or guide can still be wrong when its client tooltip is older than the server hotfix.</p>
     <div class="intro-grid">
@@ -1036,6 +1036,8 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   <section class="chapter shell" id="archetypes">
     <div class="chapter-number">CHAPTER 08</div>
     <h2>The Build Dossiers</h2>
+    <p class="lead">All 51 points are assigned. Below the build names you can inspect every individual talent rank, the key synergies, totem choices, weapon/gear profile and real combat behavior. This is a validated set of <em>proposed</em> builds, not nine proven best-in-slot meta templates.</p>
+    <p class="reader-dossier-threshold">The elements have spoken through common rules, practical tools and hard decisions. The nine build dossiers that follow show what happens when those decisions become full talent allocations. The comparisons belong here because the reader now knows what the numbers are trying to accomplish, and what they cannot promise.</p>
     <div class="reader-build-comparisons">
       <h3>Comparative notes from the disciplines</h3>
       <p>The early chapters examined the mechanics in their own right. These preserved comparisons now show how complete talent allocations put those principles to work.</p>
@@ -1160,8 +1162,6 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
         </div>
       </div>
     </div>
-    <p class="lead">All 51 points are assigned. Below the build names you can inspect every individual talent rank, the key synergies, totem choices, weapon/gear profile and real combat behavior. This is a validated set of <em>proposed</em> builds, not nine proven best-in-slot meta templates.</p>
-    <p class="reader-dossier-threshold">The elements have spoken through common rules, practical tools and hard decisions. The nine build dossiers that follow show what happens when those decisions become full talent allocations. The comparisons belong here because the reader now knows what the numbers are trying to accomplish—and what they cannot promise.</p>
     <div class="build-grid">
       <article class="buildcard">
         <div class="card-top">
