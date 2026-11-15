@@ -140,6 +140,7 @@ Result:
 
 - New beginner text: now part of the user's text work (see above). It needs sources, because Claude cannot check game facts.
 - Print style for the front page: today it prints light text on white paper when background graphics are off.
+- Title images cut off at the top (reported 15 November 2026). Find out where: on the front page only the Shaman cover crops its top; the class page heroes crop by screen width.
 - Delete the merged branches `audit-fixes`, `claude/magical-swanson-f5774b` and `fantasy-landing` (needs approval).
 
 ## Testing notes
