@@ -53,14 +53,64 @@ Result:
 - Six position fixes, each listed in the commit message of its page.
 - On the Rogue page, the "weapons" and "stealth" chapters are the Combat and Subtlety specs, not extra mechanics chapters.
 
-## Phase 2: Volumes (next)
+## Phase 1.5: Break up the lines (next)
 
+Decided on 15 November 2026.
+
+Goal: one block element per line, so git can merge parallel work line by line. Only whitespace changes. The pages look and work exactly as before.
+
+Why: most pages put whole chapters on one line, and Warrior and Priest put the whole body on one line (about 206,000 and 179,000 characters). A text edit and a phase 2 change on the same line would conflict.
+
+Scope:
+
+- The page body.
+- These JSON data blocks in the scripts, and no others: Druid `DATA`, Hunter `B`, Mage `INDEX`, Paladin `SCENES` and `RECS`, Priest `DATA` and `PREFS`, Rogue `<script id="rogue-data">`, Shaman `BDATA` and `TIME`, Warlock `DATA`, Warrior `BUILDS` and `BEATS`. They are strict JSON. All other `const` data in the scripts is under 1 KB, except Shaman's `totemChoices`, which already spans several lines.
+- Not CSS and not JS code. Phase 4 rewrites the CSS, and JS code needs a real parser to break safely.
+
+Layout:
+
+- One block element per line, indented 2 spaces per level. A paragraph stays on one line, however long. No wrapping.
+- Decide by the computed display, not by the tag name. Many chips, pills and badges are `div` or `p` elements styled `inline-block`, and a line break between two of them adds a visible space. Add a break only where the browser ignores it: inside a flex, grid or table container, or between two block-level boxes. Take the display values from the original page at 375, 768 and 1280px. For an element hidden at load, use the display it gets when shown. Where it is not clear, do not break.
+- Never add whitespace inside an element that holds only text and inline elements, and never inside `a`, `button`, `th` or `svg`. Scripts read text from some of them: the Warlock sort compares link text with the build names, and the Priest page copies table header text into buttons.
+- JSON data: insert line breaks and indentation into the original text, outside strings only, one value per line, indented 2 spaces. Do not re-serialize it (for example with `json.dumps`), because that changes escapes and non-ASCII characters.
+- Keep CRLF line endings and UTF-8 without BOM.
+
+Tool: a small Python script that uses only the standard library. No downloads.
+
+Checks for each page. They are the review, because the diff touches nearly every line. "Before" is the page as committed (`git show HEAD:<page>.html`).
+
+1. Text and tags: outside the JSON data, the old and new files are identical with the whitespace between tags removed. Each JSON block is identical with the whitespace outside strings removed, and it still parses. This check proves text and tags, not looks.
+2. Whitespace and layout:
+   - Each new whitespace sits where the Layout rules allow it.
+   - Before and after, every element has the same `getBoundingClientRect()`, and the page has the same `innerText`, at 375, 768 and 1280px.
+3. Screenshots before and after are identical, pixel for pixel, at 375, 768 and 1280px.
+4. Before and after, use each interactive part once (menus, filters, tabs, sorting, sliders, calculators) and follow every in-page link. The results are the same, and the console shows no errors. The phase 1 test scripts are not in the repo, so write this test again.
+
+Order and stops:
+
+- Warrior first, as a test. Test it, run the `reviewer` subagent, then stop for the user's review. Commit it after approval.
+- Then the other 8 pages without the user's input. Run the `reviewer` once after all 8.
+- Apply the rules above without asking. A page needs the user's input only when a check fails and no rule says what to do: for example, screenshots differ for an unclear reason, a check 4 test fails, or a reviewer finding needs a decision. Then leave the changed page in place, uncommitted, so the user can look at it. Write down the problem and what was tried, and go to the next page.
+- Stop when every page is done or needs input. Do not commit the 8 pages during the run. After the user's review, make one commit per approved page.
+
+## Phase 2: Volumes
+
+- Runs in parallel with the user's text work (see below). Change tags (for example `<section>`) and add CSS and JS. Avoid changing text lines. Where phase 2 must change one, list it, because it can conflict with the user's text work.
 - One page per class. Primer, Advanced and Complete are views of the same page. No copied text.
 - Primer: chapters 1 to 4. Advanced: chapters 5 to 8. Complete: all chapters.
 - "Chapters 1 to 4" here means steps 1 to 4 of the phase 1 chapter order, not the chapter numbers printed on the pages.
 - Without JavaScript, the page shows the complete book.
 - The Primer uses existing text only.
 - Open: the volume names, where the sources appear, the volume links on the front page shelf, and the volume switch on the class page.
+
+## Text work by the user (parallel to phase 2)
+
+- After phase 1.5 is merged, the user edits text directly in the HTML: text refinement and new beginner text.
+- The user works in a separate folder (a git worktree) on an own branch, made from `main` after phase 1.5.
+- No commits until all changes and checks are done (the user's choice). Then the work goes to `main` as one commit. Until that commit, git has no copy of this work.
+- The user checks the game facts. Claude can check language, HTML and the tests, but not game facts.
+- In the script data, a text sits between quote marks. Inside it, write a quote mark of the same kind with a backslash: `\"` or `\'`.
+- When the work comes back: merge it, resolve conflicts with phase 2, and run the tests.
 
 ## Phase 3: Librarian quiz
 
@@ -79,7 +129,7 @@ Result:
 
 ## Later
 
-- New beginner text: its own phase. It needs sources and review, because Claude cannot check game facts.
+- New beginner text: now part of the user's text work (see above). It needs sources, because Claude cannot check game facts.
 - Print style for the front page: today it prints light text on white paper when background graphics are off.
 - Delete the merged branches `audit-fixes`, `claude/magical-swanson-f5774b` and `fantasy-landing` (needs approval).
 
