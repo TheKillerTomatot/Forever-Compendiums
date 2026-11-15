@@ -25,8 +25,99 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
 @media(max-width:420px){.phase-line,.budget-row{grid-template-columns:1fr}.hero h1{font-size:49px}.hero .hero-meta span{font-size:10px}.source-item{grid-template-columns:31px 1fr}.rank{white-space:normal}.spec-card{min-height:auto}.doss-heading h3{font-size:28px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 @media print{@page{size:A4;margin:13mm 11mm}html,body{background:#0c0c0e!important;color:#e9e5dc!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}#rail,#mobile-nav,#scrolltop,.notprint{display:none!important}main{margin:0}section.chapter{padding:22px 5px;border-top:1px solid #5b4243;overflow:visible;break-before:auto}h2,h3,h4,h5{break-after:avoid}.hero{height:260mm;min-height:0;page-break-after:always;background-position:64% center}.hero h1{font-size:73px}.panel,.spec-card,.choice,.source-item,.mini-build,.flowchart,.phase,.doss-ribbon>div{break-inside:avoid}.grid3,.archetype-grid{grid-template-columns:repeat(3,1fr)}.dossier{break-before:page;break-inside:auto;padding:19px 20px;margin:10px 0 20px}.doss-columns{grid-template-columns:1fr 1fr}.doss-row{break-inside:avoid}.doss-row p{font-size:11px}.doss-ribbon{grid-template-columns:repeat(4,1fr)}.lab-cards{grid-template-columns:repeat(3,1fr)}.lab-card,.budget-step{break-inside:avoid}.encounter-print{display:block!important}#enc-output,#enc-notes{display:none!important}.print-encounter{break-before:page}.print-encounter .lab-card{padding:9px}.print-encounter .lab-card h5{font:normal 15px Georgia,serif;margin:4px 0}.print-encounter .lab-meta{grid-template-columns:1fr 1fr;gap:3px}.print-encounter .lab-meta>div{font-size:10px;padding:4px}.print-encounter .action-steps{gap:2px}.print-encounter .action{font-size:10px;padding:5px 5px 5px 28px}.print-encounter .action:before{font-size:11px;top:5px;left:3px}.lab-card .action{font-size:10px}.heat-table{min-width:0}.heat-table th button{font-size:10px;min-height:100px}.heat-table th:first-child{min-width:135px}.heat-table td .heat{width:23px;height:18px}.heat-table td{padding:3px}.source-grid{grid-template-columns:1fr 1fr}.phase-line{grid-template-columns:repeat(5,1fr)}.mini-build{min-height:0;padding:12px}.mini-build p{font-size:10px}}
+/* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
+.vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
+.vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
+.vol-switch button:hover{border-color:currentColor}
+.vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
+.vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
+@media print{.vol-switch{display:none}}
 </style></head>
 <body>
+  <script>
+  /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
+     ?volume=primer or ?volume=advanced in the URL picks a view. Without it, or without
+     JavaScript, the page shows the complete book. The cover, the sources and the footer
+     belong to every view. This script runs before the page draws, so hidden chapters never flash. */
+  (()=>{
+    const CHAPTERS={
+      primer:['#opening','#foundation','#assassination','#combat','#subtlety','#journey'],
+      advanced:['#evidence','#characters','#encounters','#dashboard']
+    };
+    const MENU='#rail';
+    const SWITCH_BEFORE='#rail .rail-link'; // the switch goes right before this element
+    const LABELS={primer:'Primer',advanced:'Advanced',complete:'Complete'};
+    const style=document.createElement('style');
+    document.head.append(style);
+    let current='complete';
+    // The chapters that the current view hides.
+    const hidden=()=>current==='primer'?CHAPTERS.advanced:current==='advanced'?CHAPTERS.primer:[];
+    // True when the element sits in a hidden chapter.
+    const isHidden=el=>hidden().some(s=>document.querySelector(s)?.contains(el));
+    // Show one view: hide the other view's chapters and the menu links to them (by id).
+    function apply(view){
+      current=view;
+      const list=hidden();
+      style.textContent=list.length?list.map(s=>s.startsWith('#')?`${s},${MENU} a[href="${s}"]`:s).join(',')+'{display:none!important}':'';
+    }
+    const asked=new URLSearchParams(location.search).get('volume');
+    apply(['primer','advanced'].includes(asked)?asked:'complete');
+    document.addEventListener('DOMContentLoaded',()=>{
+      // The switch: one button per view. Screen readers hear the group as "Reading level".
+      const group=document.createElement('div');
+      group.className='vol-switch';
+      group.setAttribute('role','group');
+      group.setAttribute('aria-label','Reading level');
+      for(const view in LABELS){
+        const button=document.createElement('button');
+        button.type='button';
+        button.textContent=LABELS[view];
+        button.dataset.view=view;
+        button.addEventListener('click',()=>choose(view,true));
+        group.append(button);
+      }
+      document.querySelector(SWITCH_BEFORE).before(group);
+      const mark=()=>group.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===current)));
+      mark();
+      // Change the view and the URL. With move: when the chapter at the reading line (a third down
+      // the screen) stays, keep it where it is; else go to the first chapter of the new view.
+      function choose(view,move){
+        if(view===current)return;
+        const anchor=move&&[...document.querySelectorAll('header[id],section')].find(el=>el.getClientRects().length&&el.getBoundingClientRect().bottom>innerHeight/3);
+        const top=anchor?anchor.getBoundingClientRect().top:0;
+        apply(view);
+        mark();
+        try{
+          const url=new URL(location.href);
+          if(view==='complete')url.searchParams.delete('volume');else url.searchParams.set('volume',view);
+          // A hash into a hidden chapter would bring back the complete book on reload, so drop it.
+          const target=url.hash&&document.getElementById(url.hash.slice(1));
+          if(target&&isHidden(target))url.hash='';
+          history.replaceState(history.state,'',url);
+        }catch{/* if the browser refuses to change the URL, the view still changes */}
+        if(anchor&&anchor.getClientRects().length)window.scrollTo({top:window.scrollY+anchor.getBoundingClientRect().top-top,behavior:'instant'});
+        else if(move&&view!=='complete')document.querySelector(CHAPTERS[view][0]).scrollIntoView({behavior:'instant'});
+        window.dispatchEvent(new Event('scroll')); // the menu highlight updates on scroll
+      }
+      // A link into a hidden chapter shows the complete book. The browser then follows the link.
+      document.addEventListener('click',e=>{
+        const link=e.target.closest('a[href^="#"]');
+        const target=link&&document.getElementById(link.hash.slice(1));
+        if(target&&isHidden(target))choose('complete',false);
+      },true);
+      // The same for a URL that opens at a hidden chapter, and for the back and forward buttons.
+      const reveal=()=>{
+        const target=location.hash&&document.getElementById(location.hash.slice(1));
+        if(target&&isHidden(target)){
+          choose('complete',false);
+          target.scrollIntoView({behavior:'instant'});
+        }
+      };
+      window.addEventListener('hashchange',reveal);
+      reveal();
+    });
+  })();
+  </script>
   <div id="reading" aria-hidden="true"></div>
   <button id="mobile-nav" type="button" aria-controls="rail" aria-expanded="false"><span aria-hidden="true">☰</span> &nbsp;CHAPTERS</button>
   <nav id="rail" aria-label="Chapter navigation"><svg class="seal" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke="#956866"/><circle cx="50" cy="50" r="35" stroke="#d2b38c" stroke-dasharray="2 6"/><path d="M24 22 L70 76 M70 18 L29 78" stroke="#d2b38c" stroke-width="5" stroke-linecap="round"/><path d="M20 13 L31 25 L24 32 L15 22 Z M78 9 L68 22 L77 31 L87 20 Z" fill="#a9515a"/><path d="M50 39 L59 49 L50 60 L41 49 Z" fill="#84b58c"/></svg><div class="rail-head">FOREVER<br>ROGUE</div>
@@ -4524,7 +4615,7 @@ const rail=document.getElementById('rail'),navButton=document.getElementById('mo
 navButton.addEventListener('click',()=>{const open=rail.classList.toggle('open');navButton.setAttribute('aria-expanded',String(open))});
 rail.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{rail.classList.remove('open');navButton.setAttribute('aria-expanded','false')}));
 const navAnchors=[...rail.querySelectorAll('.rail-link')];const ids=navAnchors.map(a=>a.getAttribute('href').slice(1));
-function scrollState(){const y=window.scrollY;const height=Math.max(1,document.documentElement.scrollHeight-innerHeight);document.getElementById('reading').style.width=(100*y/height)+'%';const top=document.getElementById('scrolltop');top.style.display=y>950?'block':'none';let current='begin';for(const id of ids){const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<180)current=id}navAnchors.forEach(a=>{const on=a.getAttribute('href')==='#'+current;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});}
+function scrollState(){const y=window.scrollY;const height=Math.max(1,document.documentElement.scrollHeight-innerHeight);document.getElementById('reading').style.width=(100*y/height)+'%';const top=document.getElementById('scrolltop');top.style.display=y>950?'block':'none';let current='begin';for(const id of ids){const el=document.getElementById(id);if(el&&el.getClientRects().length/* skip chapters the volume view hides */&&el.getBoundingClientRect().top<180)current=id}navAnchors.forEach(a=>{const on=a.getAttribute('href')==='#'+current;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});}
 window.addEventListener('scroll',scrollState,{passive:true});window.addEventListener('resize',scrollState,{passive:true});scrollState();document.getElementById('scrolltop').addEventListener('click',()=>window.scrollTo({top:0}/* no behavior: the CSS scroll-behavior decides, so reduced motion applies */));
 // Five encounters x nine independently authored five-step plans.
 const scenarioSelect=document.getElementById('scenario'),scenarioSpec=document.getElementById('scenario-spec');

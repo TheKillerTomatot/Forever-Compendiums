@@ -22,8 +22,8 @@ h1{margin:0;font-family:var(--fell);font-weight:400;font-size:clamp(38px,6.4vw,7
 .flourish span:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
 .deck{max-width:600px;margin:0 auto;text-align:left;color:var(--muted);font-size:18px}
 .deck::first-letter{float:left;font-size:3.4em;line-height:.85;padding:6px 10px 0 0;color:var(--gold)}
-/* the shelf: each card is a leather-bound book; --frame is the left edge of the gilt frame, shared by the frame and the corner stars */
-.shelf{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:40px 34px;--frame:30px}
+/* the shelf: each card is a leather-bound book; --frame is the left edge of the gilt frame, shared by the frame and the corner stars; --ribbon is how far the ribbon bookmarks hang below a book */
+.shelf{list-style:none;margin:0;padding:0 0 var(--ribbon);display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:calc(26px + var(--ribbon)) 34px;--frame:30px;--ribbon:58px}
 .shelf li{position:relative;transition:transform .35s}
 /* gilt corner stars, two per pseudo-element, pushed to the corners by justified text; they sit on the list item, so the whole item lifts on hover and the stars move with the book.
    The second content line adds empty alt text, so screen readers skip the stars; old browsers without that syntax (Firefox before 128) keep the first line and may read them */
@@ -62,11 +62,23 @@ h1{margin:0;font-family:var(--fell);font-weight:400;font-size:clamp(38px,6.4vw,7
 /* margin-top:auto keeps the star and the specs at the bottom of the label, level across a row */
 .orn{margin:auto 0 6px;padding-top:10px;color:var(--gold);font-size:14px;line-height:1}
 .specs{color:var(--muted);font-size:15px;font-variant:small-caps;letter-spacing:.05em;line-height:1.45}
+/* ribbon bookmarks (phase 2): links to the Primer, Advanced and Complete views, hanging out of the bottom of the book in front of the page edges.
+   The silk and its notch sit on ::before, because clip-path would also cut away the focus outline */
+.ribbons{position:absolute;top:100%;left:var(--frame);right:0;display:flex;align-items:flex-start;justify-content:center;gap:8px;margin:0;filter:drop-shadow(0 4px 3px #000b)}
+.ribbon{position:relative;isolation:isolate;flex:0 0 88px;padding:20px 0 22px;color:#fbf1d8;font:15px/1 var(--fell);letter-spacing:.05em;text-align:center;text-decoration:none;transition:padding-bottom .25s}
+.ribbon::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#00000038,#ffffff12 45%,#00000045),var(--silk);clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 10px),0 100%)}
+.ribbon.primer{--silk:#2e5e3e}
+.ribbon.advanced{--silk:#7c2630}
+.ribbon.complete{--silk:#7a5716}
+/* hover and keyboard focus pull a ribbon a little longer */
+.ribbon:hover,.ribbon:focus-visible{padding-bottom:28px}
+.ribbon:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.ribbon{transition:none}}
 /* colophon */
 footer{padding:46px 0 54px;text-align:center;color:var(--muted);font-size:14px}
 footer p{max-width:620px;margin:0 auto;font-style:italic}
 .sc{font-style:normal;font-variant:small-caps;letter-spacing:.12em;color:var(--gold)}
-@media (max-width:600px){.wrap{padding:0 16px}header{padding:44px 0 30px}.deck{font-size:16px}.shelf{gap:32px;--frame:26px}.tome{padding:26px 22px 26px 36px}.tome h2{font-size:34px}}
+@media (max-width:600px){.wrap{padding:0 16px}header{padding:44px 0 30px}.deck{font-size:16px}.shelf{gap:calc(18px + var(--ribbon)) 32px;--frame:26px}.tome{padding:26px 22px 26px 36px}.tome h2{font-size:34px}}
 @media (prefers-reduced-motion:reduce){.shelf li,.tome{transition:none}.shelf li:hover{transform:none}.shelf li:has(.tome:focus-visible){transform:none}}
 /* the gilt titles are a background seen through the letters: show plain text where backgrounds may be dropped */
 @media print,(forced-colors:active){h1,.tome h2{background:none;-webkit-text-fill-color:currentColor;filter:none}}
@@ -82,15 +94,195 @@ footer p{max-width:620px;margin:0 auto;font-style:italic}
 </header>
 <main>
 <ul class="shelf">
-<li><a class="tome" href="druid.html" style="--accent:#8cc9a1"><span class="clasp" aria-hidden="true"></span><div class="plate"><img src="images/druid-hero.webp" alt="" width="1536" height="1024" style="object-position:54% center"></div><div class="label"><h2>Druid</h2><p class="vol">Volume I</p><p class="sub">The Living Archive</p><p class="guide">A field guide to nine paths of the wild</p><p class="orn" aria-hidden="true">&#10022;</p><p class="specs">Balance · Feral Combat · Restoration</p></div></a></li>
-<li><a class="tome" href="hunter.html" style="--accent:#ce8b60"><span class="clasp" aria-hidden="true"></span><div class="plate"><img src="images/hunter-hero.webp" alt="" width="1672" height="941" style="object-position:58% 31%"></div><div class="label"><h2>Hunter</h2><p class="vol">Volume II</p><p class="sub">The Verdant Folio</p><p class="guide">A field guide to nine paths of the hunt</p><p class="orn" aria-hidden="true">&#10022;</p><p class="specs">Beast Mastery · Marksmanship · Survival</p></div></a></li>
-<li><a class="tome" href="mage.html" style="--accent:#bf86fa"><span class="clasp" aria-hidden="true"></span><div class="plate"><img src="images/mage-hero.jpg" alt="" width="1536" height="1024" style="object-position:58% 37%"></div><div class="label"><h2>Mage</h2><p class="vol">Volume III</p><p class="sub">The Astral Athenaeum</p><p class="guide">An illuminated codex of nine Arcane paths</p><p class="orn" aria-hidden="true">&#10022;</p><p class="specs">Arcane · Fire · Frost</p></div></a></li>
-<li><a class="tome" href="paladin.html" style="--accent:#f3d49a"><span class="clasp" aria-hidden="true"></span><div class="plate"><img src="images/paladin-hero.webp" alt="" width="1450" height="967" loading="lazy" style="object-position:49% 32%"></div><div class="label"><h2>Paladin</h2><p class="vol">Volume IV</p><p class="sub">The Golden Codex</p><p class="guide">Nine sacred paths</p><p class="orn" aria-hidden="true">&#10022;</p><p class="specs">Holy · Protection · Retribution</p></div></a></li>
-<li><a class="tome" href="priest.html" style="--accent:#f7ead1"><span class="clasp" aria-hidden="true"></span><div class="plate"><img src="images/priest-hero.webp" alt="" width="1500" height="1000" loading="lazy" style="object-position:58% 26%"></div><div class="label"><h2>Priest</h2><p class="vol">Volume V</p><p class="sub">The Illuminated Codex</p><p class="guide">Nine paths of Light and Shadow</p><p class="orn" aria-hidden="true">&#10022;</p><p class="specs">Discipline · Holy · Shadow</p></div></a></li>
-<li><a class="tome" href="rogue.html" style="--accent:#b5525a"><span class="clasp" aria-hidden="true"></span><div class="plate"><img src="images/rogue-hero.jpg" alt="" width="1536" height="1024" loading="lazy" style="object-position:63% 36%"></div><div class="label"><h2>Rogue</h2><p class="vol">Volume VI</p><p class="sub">The Shadowblade Manual</p><p class="guide">Nine paths of the assassin</p><p class="orn" aria-hidden="true">&#10022;</p><p class="specs">Assassination · Combat · Subtlety</p></div></a></li>
-<li><a class="tome" href="shaman.html" style="--accent:#70c7ff"><span class="clasp" aria-hidden="true"></span><div class="plate"><img class="triptych" src="images/shaman-hero.webp" alt="" width="2000" height="667" loading="lazy"></div><div class="label"><h2>Shaman</h2><p class="vol">Volume VII</p><p class="sub">The Shaman Codex</p><p class="guide">The definitive field manual</p><p class="orn" aria-hidden="true">&#10022;</p><p class="specs">Elemental · Enhancement · Restoration</p></div></a></li>
-<li><a class="tome" href="warlock.html" style="--accent:#91e9a7"><span class="clasp" aria-hidden="true"></span><div class="plate"><img src="images/warlock-hero.jpg" alt="" width="1599" height="900" loading="lazy" style="object-position:49% 32%"></div><div class="label"><h2>Warlock</h2><p class="vol">Volume VIII</p><p class="sub">The Obsidian Library</p><p class="guide">A field guide to nine dark paths</p><p class="orn" aria-hidden="true">&#10022;</p><p class="specs">Affliction · Demonology · Destruction</p></div></a></li>
-<li><a class="tome" href="warrior.html" style="--accent:#b58a58"><span class="clasp" aria-hidden="true"></span><div class="plate"><img src="images/warrior-hero.jpg" alt="" width="1536" height="1024" loading="lazy" style="object-position:57% 36%"></div><div class="label"><h2>Warrior</h2><p class="vol">Volume IX</p><p class="sub">The Iron Vanguard</p><p class="guide">A field guide to nine paths of war</p><p class="orn" aria-hidden="true">&#10022;</p><p class="specs">Arms · Fury · Protection</p></div></a></li>
+<li>
+  <a class="tome" href="druid.html" style="--accent:#8cc9a1">
+    <span class="clasp" aria-hidden="true"></span>
+    <div class="plate">
+      <img src="images/druid-hero.webp" alt="" width="1536" height="1024" style="object-position:54% center">
+    </div>
+    <div class="label">
+      <h2>Druid</h2>
+      <p class="vol">Volume I</p>
+      <p class="sub">The Living Archive</p>
+      <p class="guide">A field guide to nine paths of the wild</p>
+      <p class="orn" aria-hidden="true">&#10022;</p>
+      <p class="specs">Balance · Feral Combat · Restoration</p>
+    </div>
+  </a>
+  <p class="ribbons">
+    <a class="ribbon primer" href="druid.html?volume=primer" aria-label="Druid Primer">Primer</a>
+    <a class="ribbon advanced" href="druid.html?volume=advanced" aria-label="Druid Advanced">Advanced</a>
+    <a class="ribbon complete" href="druid.html" aria-label="Druid Complete">Complete</a>
+  </p>
+</li>
+<li>
+  <a class="tome" href="hunter.html" style="--accent:#ce8b60">
+    <span class="clasp" aria-hidden="true"></span>
+    <div class="plate">
+      <img src="images/hunter-hero.webp" alt="" width="1672" height="941" style="object-position:58% 31%">
+    </div>
+    <div class="label">
+      <h2>Hunter</h2>
+      <p class="vol">Volume II</p>
+      <p class="sub">The Verdant Folio</p>
+      <p class="guide">A field guide to nine paths of the hunt</p>
+      <p class="orn" aria-hidden="true">&#10022;</p>
+      <p class="specs">Beast Mastery · Marksmanship · Survival</p>
+    </div>
+  </a>
+  <p class="ribbons">
+    <a class="ribbon primer" href="hunter.html?volume=primer" aria-label="Hunter Primer">Primer</a>
+    <a class="ribbon advanced" href="hunter.html?volume=advanced" aria-label="Hunter Advanced">Advanced</a>
+    <a class="ribbon complete" href="hunter.html" aria-label="Hunter Complete">Complete</a>
+  </p>
+</li>
+<li>
+  <a class="tome" href="mage.html" style="--accent:#bf86fa">
+    <span class="clasp" aria-hidden="true"></span>
+    <div class="plate">
+      <img src="images/mage-hero.jpg" alt="" width="1536" height="1024" style="object-position:58% 37%">
+    </div>
+    <div class="label">
+      <h2>Mage</h2>
+      <p class="vol">Volume III</p>
+      <p class="sub">The Astral Athenaeum</p>
+      <p class="guide">An illuminated codex of nine Arcane paths</p>
+      <p class="orn" aria-hidden="true">&#10022;</p>
+      <p class="specs">Arcane · Fire · Frost</p>
+    </div>
+  </a>
+  <p class="ribbons">
+    <a class="ribbon primer" href="mage.html?volume=primer" aria-label="Mage Primer">Primer</a>
+    <a class="ribbon advanced" href="mage.html?volume=advanced" aria-label="Mage Advanced">Advanced</a>
+    <a class="ribbon complete" href="mage.html" aria-label="Mage Complete">Complete</a>
+  </p>
+</li>
+<li>
+  <a class="tome" href="paladin.html" style="--accent:#f3d49a">
+    <span class="clasp" aria-hidden="true"></span>
+    <div class="plate">
+      <img src="images/paladin-hero.webp" alt="" width="1450" height="967" loading="lazy" style="object-position:49% 32%">
+    </div>
+    <div class="label">
+      <h2>Paladin</h2>
+      <p class="vol">Volume IV</p>
+      <p class="sub">The Golden Codex</p>
+      <p class="guide">Nine sacred paths</p>
+      <p class="orn" aria-hidden="true">&#10022;</p>
+      <p class="specs">Holy · Protection · Retribution</p>
+    </div>
+  </a>
+  <p class="ribbons">
+    <a class="ribbon primer" href="paladin.html?volume=primer" aria-label="Paladin Primer">Primer</a>
+    <a class="ribbon advanced" href="paladin.html?volume=advanced" aria-label="Paladin Advanced">Advanced</a>
+    <a class="ribbon complete" href="paladin.html" aria-label="Paladin Complete">Complete</a>
+  </p>
+</li>
+<li>
+  <a class="tome" href="priest.html" style="--accent:#f7ead1">
+    <span class="clasp" aria-hidden="true"></span>
+    <div class="plate">
+      <img src="images/priest-hero.webp" alt="" width="1500" height="1000" loading="lazy" style="object-position:58% 26%">
+    </div>
+    <div class="label">
+      <h2>Priest</h2>
+      <p class="vol">Volume V</p>
+      <p class="sub">The Illuminated Codex</p>
+      <p class="guide">Nine paths of Light and Shadow</p>
+      <p class="orn" aria-hidden="true">&#10022;</p>
+      <p class="specs">Discipline · Holy · Shadow</p>
+    </div>
+  </a>
+  <p class="ribbons">
+    <a class="ribbon primer" href="priest.html?volume=primer" aria-label="Priest Primer">Primer</a>
+    <a class="ribbon advanced" href="priest.html?volume=advanced" aria-label="Priest Advanced">Advanced</a>
+    <a class="ribbon complete" href="priest.html" aria-label="Priest Complete">Complete</a>
+  </p>
+</li>
+<li>
+  <a class="tome" href="rogue.html" style="--accent:#b5525a">
+    <span class="clasp" aria-hidden="true"></span>
+    <div class="plate">
+      <img src="images/rogue-hero.jpg" alt="" width="1536" height="1024" loading="lazy" style="object-position:63% 36%">
+    </div>
+    <div class="label">
+      <h2>Rogue</h2>
+      <p class="vol">Volume VI</p>
+      <p class="sub">The Shadowblade Manual</p>
+      <p class="guide">Nine paths of the assassin</p>
+      <p class="orn" aria-hidden="true">&#10022;</p>
+      <p class="specs">Assassination · Combat · Subtlety</p>
+    </div>
+  </a>
+  <p class="ribbons">
+    <a class="ribbon primer" href="rogue.html?volume=primer" aria-label="Rogue Primer">Primer</a>
+    <a class="ribbon advanced" href="rogue.html?volume=advanced" aria-label="Rogue Advanced">Advanced</a>
+    <a class="ribbon complete" href="rogue.html" aria-label="Rogue Complete">Complete</a>
+  </p>
+</li>
+<li>
+  <a class="tome" href="shaman.html" style="--accent:#70c7ff">
+    <span class="clasp" aria-hidden="true"></span>
+    <div class="plate">
+      <img class="triptych" src="images/shaman-hero.webp" alt="" width="2000" height="667" loading="lazy">
+    </div>
+    <div class="label">
+      <h2>Shaman</h2>
+      <p class="vol">Volume VII</p>
+      <p class="sub">The Shaman Codex</p>
+      <p class="guide">The definitive field manual</p>
+      <p class="orn" aria-hidden="true">&#10022;</p>
+      <p class="specs">Elemental · Enhancement · Restoration</p>
+    </div>
+  </a>
+  <p class="ribbons">
+    <a class="ribbon primer" href="shaman.html?volume=primer" aria-label="Shaman Primer">Primer</a>
+    <a class="ribbon advanced" href="shaman.html?volume=advanced" aria-label="Shaman Advanced">Advanced</a>
+    <a class="ribbon complete" href="shaman.html" aria-label="Shaman Complete">Complete</a>
+  </p>
+</li>
+<li>
+  <a class="tome" href="warlock.html" style="--accent:#91e9a7">
+    <span class="clasp" aria-hidden="true"></span>
+    <div class="plate">
+      <img src="images/warlock-hero.jpg" alt="" width="1599" height="900" loading="lazy" style="object-position:49% 32%">
+    </div>
+    <div class="label">
+      <h2>Warlock</h2>
+      <p class="vol">Volume VIII</p>
+      <p class="sub">The Obsidian Library</p>
+      <p class="guide">A field guide to nine dark paths</p>
+      <p class="orn" aria-hidden="true">&#10022;</p>
+      <p class="specs">Affliction · Demonology · Destruction</p>
+    </div>
+  </a>
+  <p class="ribbons">
+    <a class="ribbon primer" href="warlock.html?volume=primer" aria-label="Warlock Primer">Primer</a>
+    <a class="ribbon advanced" href="warlock.html?volume=advanced" aria-label="Warlock Advanced">Advanced</a>
+    <a class="ribbon complete" href="warlock.html" aria-label="Warlock Complete">Complete</a>
+  </p>
+</li>
+<li>
+  <a class="tome" href="warrior.html" style="--accent:#b58a58">
+    <span class="clasp" aria-hidden="true"></span>
+    <div class="plate">
+      <img src="images/warrior-hero.jpg" alt="" width="1536" height="1024" loading="lazy" style="object-position:57% 36%">
+    </div>
+    <div class="label">
+      <h2>Warrior</h2>
+      <p class="vol">Volume IX</p>
+      <p class="sub">The Iron Vanguard</p>
+      <p class="guide">A field guide to nine paths of war</p>
+      <p class="orn" aria-hidden="true">&#10022;</p>
+      <p class="specs">Arms · Fury · Protection</p>
+    </div>
+  </a>
+  <p class="ribbons">
+    <a class="ribbon primer" href="warrior.html?volume=primer" aria-label="Warrior Primer">Primer</a>
+    <a class="ribbon advanced" href="warrior.html?volume=advanced" aria-label="Warrior Advanced">Advanced</a>
+    <a class="ribbon complete" href="warrior.html" aria-label="Warrior Complete">Complete</a>
+  </p>
+</li>
 </ul>
 </main>
 <footer>

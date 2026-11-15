@@ -22,8 +22,99 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
 @media(max-width:680px){.grid2,.grid3,.card-grid,.spectable,.dossier .cols,.dossier .ribbons,.source-list{grid-template-columns:1fr}.chapter-banner{grid-template-columns:1fr}.sigil{height:120px;width:120px;font-size:54px}.hero{height:720px;padding:20px 25px 70px;background-position:49% center}.timeline{grid-template-columns:repeat(2,1fr)}.timeline .tick:after{display:none}.decision{grid-template-columns:1fr}.dossier-head{display:block}.interactive-output .step-grid{grid-template-columns:1fr 1fr}.dot-lanes{grid-template-columns:95px 1fr}}
 @media print{@page{size:A4;margin:14mm 12mm;}html,body{background:#0b0912!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}#toc,.notprint{display:none!important}main{margin:0}section{padding:24px 8px;break-before:auto}h2,h3,h4{break-after:avoid}h2{font-size:27px}.hero{height:260mm;padding:70mm 28px 25px;page-break-after:always}.hero h1{font-size:52px}.hero .deck{font-size:17px}.dossier,.panel,.spec-tile,.archetype,.compare,.flow,.dot-lanes,.table-wrap{break-inside:avoid}.grid3,.card-grid,.spectable{grid-template-columns:repeat(3,minmax(0,1fr))}.dossier{break-before:page;break-inside:auto}.dossier .cols{grid-template-columns:1fr 1fr}.dossier p,.dossier li{font-size:12px}table{font-size:11px}th,td{padding:7px 6px}.source-list{grid-template-columns:repeat(2,1fr)}.interactive-output{display:none}.timeline .tick{min-height:102px}.small{font-size:10px} .flow .node{min-width:85px} .dashboard{overflow:visible}.matrix{min-width:0}.matrix th:not(:first-child){height:130px;font-size:10px;min-width:30px}.matrix td:first-child{min-width:140px}.matrix .heat{width:21px;height:15px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
+.vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
+.vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
+.vol-switch button:hover{border-color:currentColor}
+.vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
+.vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
+@media print{.vol-switch{display:none}}
 </style></head>
 <body>
+  <script>
+  /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
+     ?volume=primer or ?volume=advanced in the URL picks a view. Without it, or without
+     JavaScript, the page shows the complete book. The cover, the sources and the footer
+     belong to every view. This script runs before the page draws, so hidden chapters never flash. */
+  (()=>{
+    const CHAPTERS={
+      primer:['#foundation','#affliction','#demonology','#destruction','#journey'],
+      advanced:['#evidence','#characters','#encounters','#dashboard']
+    };
+    const MENU='#toc';
+    const SWITCH_BEFORE='#toc a'; // the switch goes right before this element
+    const LABELS={primer:'Primer',advanced:'Advanced',complete:'Complete'};
+    const style=document.createElement('style');
+    document.head.append(style);
+    let current='complete';
+    // The chapters that the current view hides.
+    const hidden=()=>current==='primer'?CHAPTERS.advanced:current==='advanced'?CHAPTERS.primer:[];
+    // True when the element sits in a hidden chapter.
+    const isHidden=el=>hidden().some(s=>document.querySelector(s)?.contains(el));
+    // Show one view: hide the other view's chapters and the menu links to them (by id).
+    function apply(view){
+      current=view;
+      const list=hidden();
+      style.textContent=list.length?list.map(s=>s.startsWith('#')?`${s},${MENU} a[href="${s}"]`:s).join(',')+'{display:none!important}':'';
+    }
+    const asked=new URLSearchParams(location.search).get('volume');
+    apply(['primer','advanced'].includes(asked)?asked:'complete');
+    document.addEventListener('DOMContentLoaded',()=>{
+      // The switch: one button per view. Screen readers hear the group as "Reading level".
+      const group=document.createElement('div');
+      group.className='vol-switch';
+      group.setAttribute('role','group');
+      group.setAttribute('aria-label','Reading level');
+      for(const view in LABELS){
+        const button=document.createElement('button');
+        button.type='button';
+        button.textContent=LABELS[view];
+        button.dataset.view=view;
+        button.addEventListener('click',()=>choose(view,true));
+        group.append(button);
+      }
+      document.querySelector(SWITCH_BEFORE).before(group);
+      const mark=()=>group.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===current)));
+      mark();
+      // Change the view and the URL. With move: when the chapter at the reading line (a third down
+      // the screen) stays, keep it where it is; else go to the first chapter of the new view.
+      function choose(view,move){
+        if(view===current)return;
+        const anchor=move&&[...document.querySelectorAll('header[id],section')].find(el=>el.getClientRects().length&&el.getBoundingClientRect().bottom>innerHeight/3);
+        const top=anchor?anchor.getBoundingClientRect().top:0;
+        apply(view);
+        mark();
+        try{
+          const url=new URL(location.href);
+          if(view==='complete')url.searchParams.delete('volume');else url.searchParams.set('volume',view);
+          // A hash into a hidden chapter would bring back the complete book on reload, so drop it.
+          const target=url.hash&&document.getElementById(url.hash.slice(1));
+          if(target&&isHidden(target))url.hash='';
+          history.replaceState(history.state,'',url);
+        }catch{/* if the browser refuses to change the URL, the view still changes */}
+        if(anchor&&anchor.getClientRects().length)window.scrollTo({top:window.scrollY+anchor.getBoundingClientRect().top-top,behavior:'instant'});
+        else if(move&&view!=='complete')document.querySelector(CHAPTERS[view][0]).scrollIntoView({behavior:'instant'});
+        window.dispatchEvent(new Event('scroll')); // the menu highlight updates on scroll
+      }
+      // A link into a hidden chapter shows the complete book. The browser then follows the link.
+      document.addEventListener('click',e=>{
+        const link=e.target.closest('a[href^="#"]');
+        const target=link&&document.getElementById(link.hash.slice(1));
+        if(target&&isHidden(target))choose('complete',false);
+      },true);
+      // The same for a URL that opens at a hidden chapter, and for the back and forward buttons.
+      const reveal=()=>{
+        const target=location.hash&&document.getElementById(location.hash.slice(1));
+        if(target&&isHidden(target)){
+          choose('complete',false);
+          target.scrollIntoView({behavior:'instant'});
+        }
+      };
+      window.addEventListener('hashchange',reveal);
+      reveal();
+    });
+  })();
+  </script>
   <button id="navToggle" class="notprint" type="button" aria-controls="toc" aria-expanded="false"><span aria-hidden="true">☰</span> Chapters</button>
   <nav id="toc" aria-label="Chapters">
     <div class="mini">THE BLACK GRIMOIRE</div>
