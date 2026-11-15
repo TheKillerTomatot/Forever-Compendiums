@@ -11,8 +11,96 @@
 @media(max-width:390px){.step-grid,.flow{grid-template-columns:1fr}.ribbons{grid-template-columns:1fr}.hero h1{font-size:43px}}
 @media print{@page{size:A4;margin:12mm}html,body{background:#11171a!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}#toc,#mobile-nav,.notprint,.backtop,.nav-progress{display:none!important}main{margin:0}.hero{height:255mm;min-height:0;break-after:page;background-position:54% center}.chapter{padding:28px 6px;break-before:auto}.chapter-top{margin-bottom:23px}h2{font-size:31px}h3{font-size:20px}.chapter-number{font-size:67px}.chapter-lead{font-size:15px}.grid3,.vs-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4,.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.dossier{break-before:page;break-inside:auto;padding:17px}.dossier-head h3{font-size:29px}.panel,.weapon-card,.node,.spec-tile,.compare,.encounter-card{break-inside:avoid}.dossier-grid{grid-template-columns:1fr 1fr}.dossier p,.dossier li{font-size:11px}.ribbons{grid-template-columns:repeat(4,minmax(0,1fr))}.matrix-scroll{overflow:visible}.matrix{min-width:0;font-size:10px}.matrix th:not(:first-child){height:150px;min-width:23px;font-size:10px}.matrix td:first-child{max-width:110px;white-space:normal}.heat{height:16px;width:18px;font-size:10px}.source-list{grid-template-columns:repeat(2,1fr)}.interactive-output{display:none}.encounter-static{break-inside:avoid}.step-grid{grid-template-columns:repeat(5,1fr)}.foot{padding:14px}.callout{break-inside:avoid}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+/* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
+.vol-switch{--vol-on:var(--gold);display:flex;gap:5px;margin:14px 0 8px}
+.vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
+.vol-switch button:hover{border-color:currentColor}
+.vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
+.vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
+@media print{.vol-switch{display:none}}
 </style></head>
 <body>
+  <script>
+  /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
+     ?volume=primer or ?volume=advanced in the URL picks a view. Without it, or without
+     JavaScript, the page shows the complete book. The cover, the sources and the footer
+     belong to every view. This script runs before the page draws, so hidden chapters never flash. */
+  (()=>{
+    const CHAPTERS={
+      primer:['#opening','#foundation','#arms','#fury','#protection','#journey'],
+      advanced:['#evidence','#characters','#encounters','#atlas']
+    };
+    const MENU='#toc';
+    const SWITCH_AFTER='#toc .side-sub';
+    const LABELS={primer:'Primer',advanced:'Advanced',complete:'Complete'};
+    const style=document.createElement('style');
+    document.head.append(style);
+    let current='complete';
+    // The chapters that the current view hides.
+    const hidden=()=>current==='primer'?CHAPTERS.advanced:current==='advanced'?CHAPTERS.primer:[];
+    // True when the element sits in a hidden chapter.
+    const isHidden=el=>hidden().some(s=>document.querySelector(s)?.contains(el));
+    // Show one view: hide the other view's chapters and the menu links to them (by id).
+    function apply(view){
+      current=view;
+      const list=hidden();
+      style.textContent=list.length?list.map(s=>s.startsWith('#')?`${s},${MENU} a[href="${s}"]`:s).join(',')+'{display:none!important}':'';
+    }
+    const asked=new URLSearchParams(location.search).get('volume');
+    apply(['primer','advanced'].includes(asked)?asked:'complete');
+    document.addEventListener('DOMContentLoaded',()=>{
+      // The switch: one button per view. Screen readers hear the group as "Reading level".
+      const group=document.createElement('div');
+      group.className='vol-switch';
+      group.setAttribute('role','group');
+      group.setAttribute('aria-label','Reading level');
+      for(const view in LABELS){
+        const button=document.createElement('button');
+        button.type='button';
+        button.textContent=LABELS[view];
+        button.dataset.view=view;
+        button.addEventListener('click',()=>choose(view,true));
+        group.append(button);
+      }
+      document.querySelector(SWITCH_AFTER).after(group);
+      const mark=()=>group.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===current)));
+      mark();
+      // Change the view and the URL. With move: when the chapter at the reading line (a third down
+      // the screen) stays, keep it where it is; else go to the first chapter of the new view.
+      function choose(view,move){
+        if(view===current)return;
+        const anchor=move&&[...document.querySelectorAll('header[id],section')].find(el=>el.getClientRects().length&&el.getBoundingClientRect().bottom>innerHeight/3);
+        const top=anchor?anchor.getBoundingClientRect().top:0;
+        apply(view);
+        mark();
+        try{
+          const url=new URL(location.href);
+          if(view==='complete')url.searchParams.delete('volume');else url.searchParams.set('volume',view);
+          history.replaceState(history.state,'',url);
+        }catch{/* if the browser refuses to change the URL, the view still changes */}
+        if(anchor&&anchor.getClientRects().length)window.scrollTo({top:window.scrollY+anchor.getBoundingClientRect().top-top,behavior:'instant'});
+        else if(move&&view!=='complete')document.querySelector(CHAPTERS[view][0]).scrollIntoView({behavior:'instant'});
+        window.dispatchEvent(new Event('scroll')); // the menu highlight updates on scroll
+      }
+      // A link into a hidden chapter shows the complete book. The browser then follows the link.
+      document.addEventListener('click',e=>{
+        const link=e.target.closest('a[href^="#"]');
+        const target=link&&document.getElementById(link.hash.slice(1));
+        if(target&&isHidden(target))choose('complete',false);
+      },true);
+      // The same for a URL that opens at a hidden chapter, and for the back and forward buttons.
+      const reveal=()=>{
+        const target=location.hash&&document.getElementById(location.hash.slice(1));
+        if(target&&isHidden(target)){
+          choose('complete',false);
+          target.scrollIntoView({behavior:'instant'});
+        }
+      };
+      window.addEventListener('hashchange',reveal);
+      reveal();
+    });
+  })();
+  </script>
   <div class="nav-progress" id="nav-progress"></div>
   <button id="mobile-nav" class="notprint" type="button" aria-expanded="false" aria-controls="toc"><span aria-hidden="true">☰</span> &nbsp; CHAPTERS</button>
   <nav id="toc" aria-label="Compendium chapters"><svg viewBox="0 0 90 100" class="crest" aria-hidden="true"><path d="M45 4 80 17v30Q77 75 45 94 13 75 10 47V17Z" fill="#1d272b" stroke="#c09c65" stroke-width="3"/><path d="M45 17v58M25 34l40 25M65 34 25 59" stroke="#a3493d" stroke-width="7" stroke-linecap="round"/><path d="M45 11 73 22v25Q69 67 45 83 21 67 17 47V22Z" fill="none" stroke="#d0b181" stroke-width="1"/></svg><div class="side-name">THE IRON<br>VANGUARD</div>
@@ -4620,7 +4708,7 @@ $('scenario-picker').addEventListener('change',drawScenario);$('scenario-spec').
 function drawAtlas(){const sp=$('atlas-spec').value,wp=$('atlas-weapon').value,content=$('atlas-content').value,sort=$('atlas-sort').value;let matches=BUILDS.filter(b=>(sp==='All'||b.spec===sp)&&(wp==='All'||b.weapon===wp)&&(content==='All'||b.content.includes(content)));if(sort!=='default')matches.sort((a,b)=>b.scores[+sort]-a.scores[+sort]||a.order-b.order);const tbody=document.querySelector('#atlas-matrix tbody');for(const b of matches){const r=tbody.querySelector('tr[data-id="'+b.id+'"]');tbody.appendChild(r);r.hidden=false;}for(const r of tbody.querySelectorAll('tr'))if(!matches.some(b=>b.id===r.dataset.id))r.hidden=true;$('atlas-count').textContent='Showing '+matches.length+' of 9 characters'+(sort==='default'?' · muster order':' · sorted by '+CATS[+sort]+' (high to low)');}
 ['atlas-spec','atlas-weapon','atlas-content','atlas-sort'].forEach(id=>$(id).addEventListener('change',drawAtlas));drawAtlas();
 const mob=$('mobile-nav'),toc=$('toc');mob.addEventListener('click',()=>{const on=toc.classList.toggle('open');mob.setAttribute('aria-expanded',String(on));});toc.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{toc.classList.remove('open');mob.setAttribute('aria-expanded','false');}));
-const navLinks=[...toc.querySelectorAll('a[href^="#"]')];let ticking=false;const topbtn=$('backtop');function scrollState(){const y=window.scrollY,max=Math.max(document.documentElement.scrollHeight-innerHeight,1);$('nav-progress').style.height=(100*y/max)+'%';topbtn.classList.toggle('visible',y>750);let current='begin';for(const s of document.querySelectorAll('header[id],section[id]'))if(s.getBoundingClientRect().top<Math.min(180,innerHeight/3))current=s.id;navLinks.forEach(a=>{let active=a.getAttribute('href')==='#'+current;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});ticking=false;}window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(scrollState);ticking=true;}},{passive:true});window.addEventListener('resize',scrollState);topbtn.addEventListener('click',()=>window.scrollTo({top:0}/* no behavior: the CSS scroll-behavior decides, so reduced motion applies */));scrollState();
+const navLinks=[...toc.querySelectorAll('a[href^="#"]')];let ticking=false;const topbtn=$('backtop');function scrollState(){const y=window.scrollY,max=Math.max(document.documentElement.scrollHeight-innerHeight,1);$('nav-progress').style.height=(100*y/max)+'%';topbtn.classList.toggle('visible',y>750);let current='begin';for(const s of document.querySelectorAll('header[id],section[id]'))if(s.getClientRects().length/* skip chapters the volume view hides */&&s.getBoundingClientRect().top<Math.min(180,innerHeight/3))current=s.id;navLinks.forEach(a=>{let active=a.getAttribute('href')==='#'+current;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});ticking=false;}window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(scrollState);ticking=true;}},{passive:true});window.addEventListener('resize',scrollState);topbtn.addEventListener('click',()=>window.scrollTo({top:0}/* no behavior: the CSS scroll-behavior decides, so reduced motion applies */));scrollState();
 </script>
   </main>
 </body>
