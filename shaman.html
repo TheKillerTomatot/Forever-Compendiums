@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A research-grounded 2026 live WoW Forever Shaman guide, with nine checked talent builds, interactive totems, decisions and combat timelines."><title>The Shaman Codex | World of Warcraft: Forever</title><style>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The Forever Shaman Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Shaman Compendium: The Covenant of Storm and Stone</title><style>
 :root{--bg:#090e16;--panel:#131d2b;--panel2:#192437;--ink:#eef4ef;--muted:#a9bbbf;--line:#324359;--gold:#e5c88b;--cyan:#70c7ff;--fire:#ff9e6b;--water:#7de5c2;--shadow:0 22px 60px #0006}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 20% 0%,#152a41 0,transparent 38%),radial-gradient(ellipse at 100% 30%,#132b32 0,transparent 35%),var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.64;font-size:15.5px}
 a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;line-height:1.15}h1{font-size:clamp(2.4rem,7vw,6rem);margin:0;letter-spacing:-.05em;color:#f7ebcf;text-shadow:0 6px 40px #0019}h2{font-size:clamp(2rem,4.2vw,3.6rem);margin:0 0 20px;color:#f4e9d3;letter-spacing:-.025em}h3{font-size:clamp(1.22rem,2vw,1.75rem);margin:0 0 12px;color:#f5deac}h4{font-size:1.08rem;color:#d5eee3;margin:14px 0 8px}p{margin:10px 0 15px}small,.subtle{color:var(--muted)}.kicker{color:#f7dba3;text-transform:uppercase;font-size:.73rem;letter-spacing:.23em;font-weight:800}.eyebrow{color:#a6cce4;text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:700;margin-bottom:9px}.muted{color:var(--muted)}.shell{max-width:1480px;margin:auto;padding-left:min(5vw,68px);padding-right:min(5vw,68px)}.topbar{position:sticky;top:0;z-index:20;background:#080e18e8;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff22}.topbar .inner{display:flex;align-items:center;gap:24px;justify-content:space-between;min-height:65px}.brand{font-family:Georgia,serif;font-size:1.15rem;letter-spacing:.08em;color:var(--gold);white-space:nowrap}.mainnav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}.mainnav a{text-decoration:none;color:#bed1d7;font-size:.83rem;white-space:nowrap}.mainnav a:hover{color:white}
@@ -16,6 +16,50 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
 @media(max-width:760px){.topbar .inner{gap:12px}.brand{font-size:.86rem}.hero{min-height:520px}.hero .content{padding-top:80px;padding-bottom:46px}.hero:after{background:linear-gradient(90deg,#091018e8,#09101844),linear-gradient(0deg,#091018,transparent 90%)}.columns2,.columns3,.build-grid,.boxgrid,.talentlines,.gearcompare,.statcomps,.source-list,.dash-filter{grid-template-columns:1fr}.spec-hero{display:block}.spec-hero img{height:360px}.spec-hero .copy{padding:18px 24px}.totem-board{grid-template-columns:1fr}.build-section .head{grid-template-columns:100px 1fr}.build-section .head img{width:100px;height:190px}.build-section .head h3{font-size:1.5rem}.build-section .head .hd-copy{padding:12px 10px 10px 0}.metrics-wrap .paper{padding:16px}.chapter{padding-top:80px}.chapter:before{top:36px}h2{font-size:2.2rem}.metric-list{grid-template-columns:1fr 1fr}.flow-node{min-width:170px}}
 @media print{.topbar,.actionbar button,.buttonlike{display:none}.hero{min-height:300px}.hero-img{filter:brightness(.65)}.chapter{page-break-before:always}.build-section{break-inside:avoid}.paper{box-shadow:none}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Collection-wide editorial annotation, kept subordinate to each class theme. */
+.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
+.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
+.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
+.compendium-cover-subtitle{font:normal clamp(20px,2.4vw,31px)/1.3 Georgia,serif;color:var(--gold,#dec28c);margin:12px 0 15px;}
+@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
+
+/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
+.hero .series-manuscript {
+  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .06em !important;
+  text-transform: none !important;
+  max-width: 940px;
+  overflow-wrap: break-word;
+  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+}
+.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
+.hero .compendium-series-subtitle {
+  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .008em;
+  color: #f2d9a8;
+  max-width: 900px;
+  margin: 11px 0 15px !important;
+  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+}
+@media (max-width: 650px) {
+  .hero .series-manuscript { font-size: 11px !important; letter-spacing: .025em !important; }
+  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px) !important; margin: 8px 0 10px !important; }
+}
+
+/* Reader-first note, visually subordinate to the original manuscript design. */
+.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
+.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
+.reader-orientation p{margin:0;line-height:1.64}
+
+/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
+.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
+.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
+.reader-field-exercise p{margin:0;line-height:1.75}
+.reader-build-comparisons{margin:24px 0;padding:18px 24px;background:rgba(255,255,255,.02);border-left:2px solid var(--gold,#d7bc84)}
+.reader-build-comparisons h4{margin-top:22px}
+
+.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
 /* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
 .vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
 .vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
@@ -24,7 +68,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
 .vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
 @media print{.vol-switch{display:none}}
 .mainnav .vol-switch{flex:none;margin:0}.mainnav .vol-switch button{flex:none;padding:6px 9px}
-</style></head>
+</style><meta content="15 November 2026; official hotfix review and editorial accessibility pass; independent live testing outstanding" name="compendium-revision"></head>
 <body>
   <script>
   /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
@@ -112,7 +156,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   </script>
   <div class="topbar">
     <div class="inner shell">
-      <div class="brand">✧ THE SHAMAN CODEX</div>
+      <div class="brand">✧ THE FOREVER SHAMAN COMPENDIUM</div>
       <nav class="mainnav" aria-label="Guide chapters">
         <a href="#start">Introduction</a>
         <a href="#foundation">Class systems</a>
@@ -121,7 +165,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
         <a href="#enhancement">Enhancement</a>
         <a href="#restoration">Restoration</a>
         <a href="#optimization">Gearing / leveling</a>
-        <a href="#archetypes">Nine builds</a>
+        <a href="#archetypes">Build dossiers</a>
         <a href="#encounters">Encounter timelines</a>
         <a href="#dashboard">Dashboard</a>
         <a href="#sources">Sources</a>
@@ -131,12 +175,13 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   <header class="hero" id="start">
     <img class="hero-img" src="images/shaman-hero.webp" alt="Original illustration of three shamans: storm caster, two-handed warrior and water healer">
     <div class="content shell">
-      <div class="kicker">The definitive field manual • Live Forever • November 13, 2026</div>
-      <h1>THE SHAMAN<br>CODEX</h1>
-      <p class="deck">Three specializations. Nine legal level-60 talent paths. One elementally versatile class – from lightning artillery to shield skirmishing and predictive tank healing.</p>
+      <div class="kicker series-manuscript">The Covenant of Storm and Stone<span class="series-sep"> / </span>Testimonies of the Elements</div>
+      <h1>THE FOREVER<br>SHAMAN COMPENDIUM</h1>
+      <p class="compendium-cover-subtitle compendium-series-subtitle">The Covenant of Storm and Stone</p>
+      <p class="deck">Wind carries warnings, fire demands judgment, water remembers its wounded, and earth holds the line. A Shaman listens to all four before calling on any one.</p>
       <div class="meta-row">
-        <span class="pill">51/51 points validated per build</span>
-        <span class="pill">Current live fixes, 13 Nov client 70938</span>
+        <span class="pill">Totems, spellcraft and healing · external validation pending</span>
+        <span class="pill">Official hotfix review through 15 Nov; original client 70938 snapshot</span>
         <span class="pill">Interactive encounter and build atlas</span>
       </div>
       <p class="artcredit">Cover and specialization artwork: original illustrative fantasy art, not in-game screenshots. No combat numbers are simulated.</p>
@@ -145,7 +190,13 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   <section class="chapter shell" id="foundation">
     <div class="chapter-number">CHAPTER 01</div>
     <h2>The Shaman foundation</h2>
-    <p class="lead">Your shared class system matters more than your signature damage or healing spell. You are a mana user controlling a four-element totem network while weaving weapon imbues, shocks, healing and elemental damage.</p>
+    <p class="lead">The elements are not interchangeable ammunition. A Shaman learns to place totems, manage Mana, choose between shock and cast, and read when the party needs protection rather than another strike.</p>
+    <div class="reader-orientation">
+      <h3>Learning the fourfold covenant</h3>
+      <p>Begin with the common toolkit and the battlefield created by your totems. Elemental, Enhancement and Restoration come next as connected disciplines, followed by practical gearing and progression. Detailed build ledgers belong to the later dossier section.</p>
+    </div>
+    <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>The fourfold attention</strong><p>A Shaman often watches more than one resource at once: Mana for spells, weapon uptime for melee pressure, ally health for support, and totem placement for battlefield effects. A totem creates a localized benefit or hazard rather than a permanent aura following you everywhere. Before pulling, know whether the next fight is a caster duel, a melee chase, or a healing assignment. Interrupting a dangerous cast or moving a totem to reach allies can be worth more than squeezing out another Lightning Bolt. The elements reward preparation as much as intensity.</p>
+    </aside>
     <div class="columns3">
       <div class="paper cyan">
         <h3>⚡ Elemental toolkit</h3>
@@ -222,6 +273,8 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
     <div class="chapter-number">CHAPTER 02</div>
     <h2>Totems: build a four-element battlefield</h2>
     <p class="lead">Forever streamlines placing and moving totems, but does not remove their tactical opportunity cost. One Earth, Fire, Water and Air totem slot per Shaman still determines which competing effects you can keep active.</p>
+    <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>A small map of the battle</strong><p>Think in four kinds of totem duty: strengthen allies, hinder enemies, deal damage, and restore resources. Placement matters: a well-chosen effect outside the group’s reach may provide nothing. If your party moves, consider repositioning or recalling totems instead of forgetting them behind the group. A buff improves an ally; a debuff hinders an opponent; neither should be confused with direct damage. Windfury Totem supports eligible melee attack events, and the November 13 rules clarify that an off-hand strike from certain abilities does not itself trigger Windfury even when the corresponding main-hand strike can.</p>
+    </aside>
     <div class="totem-board">
       <div>
         <h3>The four-slot totem network</h3><svg class="totem-diagram" viewBox="0 0 520 350" role="img" aria-label="Shaman center with Earth totem north, Fire totem east, Water totem south and Air totem west; rings represent illustrative coverage, not to scale"><defs><radialGradient id="tg"><stop stop-color="#619eac" stop-opacity=".24"/><stop offset="1" stop-color="#50a2ac" stop-opacity=".01"/></radialGradient></defs><circle cx="260" cy="178" r="144" fill="url(#tg)" stroke="#7ca7a8" stroke-dasharray="5 7" opacity=".85"/><circle cx="260" cy="178" r="94" fill="none" stroke="#cfe9ba" stroke-opacity=".3" stroke-dasharray="2 8"/><g fill="none" stroke="#92bec9" stroke-width="2"><path d="M260 178 L260 62 M260 178 L420 178 M260 178 L260 290 M260 178 L100 178"/></g><g font-size="15" text-anchor="middle" fill="#f7e5ce"><circle cx="260" cy="178" r="34" fill="#263b4d" stroke="#bed5c9"/><text x="260" y="173">SHAMAN</text><text x="260" y="193" font-size="11">position</text><circle cx="260" cy="62" r="29" fill="#725d3a" stroke="#ffdf9c"/><text x="260" y="68">EARTH</text><circle cx="420" cy="178" r="29" fill="#813f30" stroke="#ff9e6b"/><text x="420" y="183">FIRE</text><circle cx="260" cy="290" r="29" fill="#275f69" stroke="#7bdadf"/><text x="260" y="295">WATER</text><circle cx="100" cy="178" r="29" fill="#486a73" stroke="#bce1e9"/><text x="100" y="183">AIR</text></g></svg><p class="figure-caption">Illustrative positioning diagram; dashed circles are not actual measured totem radii. Check each totem's own 20- or 30-yard tooltip rather than assuming one universal radius.</p>
@@ -306,7 +359,9 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   <section class="chapter shell" id="elemental">
     <div class="chapter-number">CHAPTER 03</div>
     <h2>The Elemental discipline</h2>
-    <p class="lead">Three spellcasters can use the same lightning school while differing in burst concentration, party economy and survival-minded control.</p>
+    <p class="lead">Elemental makes a battlefield out of distance, cast time and the weather itself. Lightning needs a safe moment, Fire rewards the right gathering of enemies, and totems can buy room to breathe when pressure reaches the caster.</p>
+    <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>The storm has a casting time</strong><p>Elemental play asks you to control space long enough for Lightning Bolt and other damaging spells to complete. An instant Shock may answer a moving target or a spell-interrupt need better than forcing a long cast. Mana expenditure is part of the plan: a full-health foe at range is not worth spending every emergency resource before it arrives. Damage procs and talent-triggered overloads can improve a cast, but cannot be promised on every attempt. A beginner should practice choosing an interruption or reposition over one more Bolt when the enemy begins a dangerous cast.</p>
+    </aside>
     <div class="spec-hero cyan"><img src="images/shaman-elemental.webp" alt="Original illustrative Elemental Shaman concept art"><div class="copy">
         <div class="number">PATH 03 / THREE EXPRESSIONS</div>
         <h2>Elemental</h2>
@@ -342,50 +397,9 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       </div>
       <p class="muted mini"><strong>Important precision:</strong> the Chain Lightning Overload roll structure for every jump has <em>not</em> been independently established for the live ruleset. Do not multiply 30% blindly by all chained targets. Elemental Focus is a 10% damage-spell Clearcasting proc; current update notes say Overload activations do not consume it. <sup><a href="#S3">[S3]</a></sup><sup><a href="#S7">[S7]</a></sup><sup><a href="#S8">[S8]</a></sup></p>
     </div>
-    <h3>How the three Elemental builds actually differ</h3>
-    <div class="tablewrap">
-      <table class="">
-        <thead>
-          <tr>
-            <th>Elemental build</th>
-            <th>Single target</th>
-            <th>Pack/AoE</th>
-            <th>Mana plan</th>
-            <th>While attacked</th>
-            <th>Raid utility</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Lightning Artillery · 41/5/5</strong></td>
-            <td>Stand and Bolts; chain Mastery to planned burn</td>
-            <td>Two talented fire-damage rows plus Overload and Mastery cleave</td>
-            <td>Convection and spell-hit investment; no Water Shield/Tide</td>
-            <td>Earthbind, Warding, shield and preplanned positioning</td>
-            <td>Offensive pressure, basic Shaman totems</td>
-          </tr>
-          <tr>
-            <td><strong>Stormcaller Support · 31/0/20</strong></td>
-            <td>Still full Overload, Fury and Lightning Mastery</td>
-            <td>Less invested in Nova/Reach; use efficient cleave only</td>
-            <td>Mindfulness + Water Shield + Mana Tide; monitor group mana</td>
-            <td>Shield and healing; cannot afford to waste mana support</td>
-            <td>Mana Tide, stronger Mana Spring and cheaper totem operations</td>
-          </tr>
-          <tr>
-            <td><strong>Elemental Controller · 31/20/0</strong></td>
-            <td>Casts only during safe intervals</td>
-            <td>Earthbound to hold adds, Fire totem for passive control</td>
-            <td>Convection + Shamanistic Focus; many utility casts</td>
-            <td>Instant Ghost Wolf; Earthbind radius, Grounding, dodge/stamina</td>
-            <td>Interrupts, positioning, defensive totems; fewer uninterrupted casts</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="callout warn"><strong>Not all 31-point Elementals are identical:</strong> in the 31/0/20 or 31/20/0 splits you have exactly enough points for Lightning Mastery and no more deep Elemental discretionary points. Talent choices within those 31 must be intentional. The support version can still take 5/5 Fury; the controller sacrifices some Fury for Warding, Reach and Earthbound.</div>
+    <p class="fine">The exact talent comparisons and named character variations are gathered with the full dossiers later in this book. Here, focus on the practical decisions behind the discipline.</p>
     <h3>Combat decision flowcharts</h3>
-    <h4>Lightning Artillery – damage before distraction</h4>
+    <h4>Lightning: cast before moving</h4>
     <div class="diagram-flow" aria-label="Decision sequence">
       <div class="flow-node"><strong>1. Safe caster lane?</strong>If not, Earthbind/Grounding and reposition.</div>
       <div class="flow-arrow" aria-hidden="true">›</div>
@@ -397,7 +411,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       <div class="flow-arrow" aria-hidden="true">›</div>
       <div class="flow-node"><strong>5. Mana check</strong>Recall/refresh totems and return to cheap casts.</div>
     </div>
-    <h4>Stormcaller Support – damage plus a mana schedule</h4>
+    <h4>Support: watch the Mana schedule</h4>
     <div class="diagram-flow" aria-label="Decision sequence">
       <div class="flow-node"><strong>1. Assess party mana</strong>If Tide would overcap everyone, save it.</div>
       <div class="flow-arrow" aria-hidden="true">›</div>
@@ -409,7 +423,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       <div class="flow-arrow" aria-hidden="true">›</div>
       <div class="flow-node"><strong>5. Return to steady state</strong>Replace Mana Spring and continue DPS.</div>
     </div>
-    <h4>Elemental Controller – manufacture a casting window</h4>
+    <h4>Control: earn a casting window</h4>
     <div class="diagram-flow" aria-label="Decision sequence">
       <div class="flow-node"><strong>1. Enemy closing?</strong>Earthbind + Earthbound root; widen with Earth’s Grasp.</div>
       <div class="flow-arrow" aria-hidden="true">›</div>
@@ -431,11 +445,17 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
         <p>Artillery accelerates pulls but may need to drink often; support improves downtime in long content; controller handles difficult elites and PvP pressure but uses more GCDs on survival. A full raid parse is not the same objective as reliable solo quest completion.</p>
       </div>
     </div>
+    <div class="reader-field-exercise">
+      <h3>Field test: the cast in the storm</h3>
+      <p>A Shaman is preparing Lightning Bolt when an enemy begins to close. A slower cast may be interrupted or punished; a shock, totem or shift of position may buy a better window. Treat the elements as answers to a specific battlefield, not as an automatic order of buttons.</p>
+    </div>
   </section>
   <section class="chapter shell" id="enhancement">
     <div class="chapter-number">CHAPTER 04</div>
     <h2>Enhancement: the weapon–spell frontier</h2>
-    <p class="lead">Forever Enhancement is not a dual-wield class. It is an argument between slow two-handed weapons, spell-rich Fire Nova setups, and hard-to-kill shield skirmishing – played out swing by swing.</p>
+    <p class="lead">Enhancement brings weapon contact and spell choices into one rhythm. A totem, a shock or a defensive response can be worth more than the next swing, provided you keep enough Mana and awareness to act.</p>
+    <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Strike, then read the result</strong><p>Enhancement turns weapon contact into opportunities for further actions. Stormstrike is a talent-linked melee ability, and Maelstrom Weapon uses applications gained through eligible attack events to reduce a later Lightning Bolt’s cast time and Mana cost. At sufficient applications, that Bolt can be instant, but you still must earn the setup through contact. The November 10 hotfix changed several numerical assumptions, so old pre-hotfix gearing and rotation charts can mislead. If you cannot stay in range, plan a safe return instead of pretending every theoretical attack landed.</p>
+    </aside>
     <div class="spec-hero fire"><img src="images/shaman-enhancement.webp" alt="Original illustrative Enhancement Shaman concept art"><div class="copy">
         <div class="number">PATH 04 / THREE EXPRESSIONS</div>
         <h2>Enhancement</h2>
@@ -473,13 +493,13 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
     <div class="gearcompare">
       <div class="paper orange">
         <div class="wep">⚔︎ Slow two-hander</div>
-        <h4>Windfury Berserker</h4>
+        <h4>Windfury and contact</h4>
         <p>Weapon damage, auto-attacks, Windfury and Stormstrike matter most. More damage per individual swing means large swing-shaped burst. You must remain within melee range to generate Maelstrom.</p>
         <p><strong>Feel:</strong> wait for the next heavy contact, react to stacks, then instant Bolt.</p>
       </div>
       <div class="paper cyan">
         <div class="wep">✧ 2H hybrid / caster mix</div>
-        <h4>Elemental Battlemage</h4>
+        <h4>Melee and spell timing</h4>
         <p>Keep legitimate two-handed or 1H configurations, but layer Intellect and spellpower alongside attack stats. Your Magma+Fire Nova decisions become important; too many hardcasts may lose melee swings.</p>
         <p><strong>Feel:</strong> swing → Stormstrike → fire / instant lightning → swing.</p>
       </div>
@@ -494,71 +514,9 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       <h3>What changes after November 10?</h3>
       <p>Do not use early-November spreadsheet weights that value Mental Dexterity at 150% Intellect or Stormstrike at 150% / 6s. Current live values pull some weight back from “Intellect converts everything” gearing. <strong>Hybrid spellpower/Intellect gearing still has a logical talent basis, but whether it beats a weapon-stat build is untested here.</strong> The official hotfix explicitly targeted over-favoring Spell Power and Intellect gear. <sup><a href="#S1">[S1]</a></sup><sup><a href="#S2">[S2]</a></sup><sup><a href="#S9">[S9]</a></sup></p>
     </div>
-    <h3>Three Enhancement identities compared</h3>
-    <div class="tablewrap">
-      <table class="">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Windfury Berserker</th>
-            <th>Elemental Battlemage</th>
-            <th>Spiritbound Skirmisher</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Allocation</strong></td>
-            <td>10/41/0</td>
-            <td>20/31/0</td>
-            <td>0/24/27</td>
-          </tr>
-          <tr>
-            <td><strong>Main attack</strong></td>
-            <td>Slow 2H melee + Stormstrike</td>
-            <td>Melee, Stormstrike, Fire Nova</td>
-            <td>1H + shield, Stormstrike, shocks</td>
-          </tr>
-          <tr>
-            <td><strong>Full Maelstrom?</strong></td>
-            <td>YES: 5/5, free instant Bolt at 5 stacks</td>
-            <td>YES: 5/5, same mechanic</td>
-            <td><strong>NO: 0/5</strong> – all Bolts are ordinary casts</td>
-          </tr>
-          <tr>
-            <td><strong>Rage of the Farseer?</strong></td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td><strong>No</strong></td>
-          </tr>
-          <tr>
-            <td><strong>Improved Stormstrike?</strong></td>
-            <td>2/2 for mana</td>
-            <td>0/2 to afford fire talents</td>
-            <td>0/2; relies on Restoration sustain</td>
-          </tr>
-          <tr>
-            <td><strong>Fire Nova</strong></td>
-            <td>Situational side button</td>
-            <td>Important part of AoE plan</td>
-            <td>Budgeted utility / situational AoE</td>
-          </tr>
-          <tr>
-            <td><strong>Emergency</strong></td>
-            <td>Kite then heal</td>
-            <td>Fire controls plus shield swap</td>
-            <td>Nature’s Swiftness + Healing Wave / shield</td>
-          </tr>
-          <tr>
-            <td><strong>Trade-off</strong></td>
-            <td>Less dedicated fire support</td>
-            <td>Less sustained mana and defensive talent depth</td>
-            <td>Loses proc-driven free Bolt and deep melee burst</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <p class="fine">The exact talent comparisons and named character variations are gathered with the full dossiers later in this book. Here, focus on the practical decisions behind the discipline.</p>
     <h3>Enhancement decision flowcharts</h3>
-    <h4>Windfury Berserker – preserve the swing clock</h4>
+    <h4>Preserve the swing clock</h4>
     <div class="diagram-flow" aria-label="Decision sequence">
       <div class="flow-node"><strong>1. In melee?</strong>Move in; do not cast long Bolts when next swing is imminent.</div>
       <div class="flow-arrow" aria-hidden="true">›</div>
@@ -570,7 +528,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       <div class="flow-arrow" aria-hidden="true">›</div>
       <div class="flow-node"><strong>5. Long uptime?</strong>Use Rage of the Farseer during known melee window.</div>
     </div>
-    <h4>Elemental Battlemage – weave around the totem</h4>
+    <h4>Weave around the totem</h4>
     <div class="diagram-flow" aria-label="Decision sequence">
       <div class="flow-node"><strong>1. Where will pack stand?</strong>Put Magma/Searing there before spending a Nova.</div>
       <div class="flow-arrow" aria-hidden="true">›</div>
@@ -582,7 +540,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       <div class="flow-arrow" aria-hidden="true">›</div>
       <div class="flow-node"><strong>5. Mana or movement risk?</strong>Switch to safe weapon / shock use and reassess fire casts.</div>
     </div>
-    <h4>Spiritbound Skirmisher – play the enemy’s cooldowns</h4>
+    <h4>Read the enemy’s cooldowns</h4>
     <div class="diagram-flow" aria-label="Decision sequence">
       <div class="flow-node"><strong>1. Need to hold aggro?</strong>If explicitly assigned: shield + Rockbiter, else avoid accidental threat.</div>
       <div class="flow-arrow" aria-hidden="true">›</div>
@@ -605,11 +563,17 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       </div>
     </div>
     <div class="callout warn"><strong>Tank viability boundary:</strong> A shield, parry, dodge, added threat from Spirit Weapons and Rockbiter are real. They do <strong>not</strong> demonstrate stable raid boss mitigation, dedicated tank toolkit equivalence or reliable taunt coverage. Treat an Enhancement “tank” as a controlled, group-consented experiment, mainly for appropriate low-pressure dungeon content. No endgame tank ranking is claimed.</div>
+    <div class="reader-field-exercise">
+      <h3>Field test: contact and commitment</h3>
+      <p>A target steps out of melee reach just as a weapon swing would land. Consider the next totem placement, whether a shock is worth its Mana and whether rushing back into contact is safe. Enhancement does not become stronger by pretending every second is an uninterrupted melee swing.</p>
+    </div>
   </section>
   <section class="chapter shell" id="restoration">
     <div class="chapter-number">CHAPTER 05</div>
-    <h2>Restoration: three styles of rescue</h2>
-    <p class="lead">A Restoration Shaman heals by anticipating damage, positioning allies around Chain Heal, and deciding which tool will save the most health per mana and cast-time commitment.</p>
+    <h2>Restoration: The Shape of a Rescue</h2>
+    <p class="lead">Restoration begins by reading damage before it spreads. Healing Wave, faster emergency care, Chain Heal and the totem network answer different problems; their value depends on timing, party position and remaining Mana.</p>
+    <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Water follows the wound</strong><p>A Restoration Shaman heals by choosing whom to support, whether to stand still for a longer cast, and which totem effects will reach the party. A direct heal restores missing health now; a healing-over-time effect restores it in installments; an area or chained heal can help a group only if the right allies are in reach. Before a tank takes a large hit, watch the casting window and protect enough Mana to finish the encounter. Moving a support totem is not a wasted action if it saves a healer from standing in danger or keeps an entire group supplied.</p>
+    </aside>
     <div class="spec-hero water"><img src="images/shaman-restoration.webp" alt="Original illustrative Restoration Shaman concept art"><div class="copy">
         <div class="number">PATH 05 / THREE EXPRESSIONS</div>
         <h2>Restoration</h2>
@@ -695,24 +659,10 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       </table>
     </div>
     <div class="paper">
-      <h3>Cross-tree identity: what 51 points buy</h3>
-      <div class="columns3">
-        <div>
-          <h4>Dedicated Spirit Healer · 0/0/51</h4>
-          <p>Has <em>every Restoration talent</em>, including maximum Purification, Totemic Focus, Tidal Mastery, Healing Way and both emergency cooldowns. Group-first, long-form sustain.</p>
-        </div>
-        <div>
-          <h4>Mobile Combat Medic · 0/20/31</h4>
-          <p>Retains the required Riptide chain and Mana Tide/NS but spends 20 points on instant indoor Ghost Wolf, Guardian Totems, Stamina and dodge. Sacrifices some deep healing enhancements for position.</p>
-        </div>
-        <div>
-          <h4>Tank Guardian · 0/10/41</h4>
-          <p>Trades part of group-heal crit / totem depth for Intellect and spell crit from Enhancement, while keeping Healing Way, full Purification, Ancestral Healing, Riptide, Tide and NS. Focuses on timing and tank safety.</p>
-        </div>
-      </div>
+      <p class="fine">The exact talent comparisons and named character variations are gathered with the full dossiers later in this book. Here, focus on the practical decisions behind the discipline.</p>
     </div>
     <h3>Healing decision flowcharts</h3>
-    <h4>Dedicated Spirit Healer – group coverage</h4>
+    <h4>Group recovery under pressure</h4>
     <div class="diagram-flow" aria-label="Decision sequence">
       <div class="flow-node"><strong>1. Tank stable?</strong>Precast/cancel lower-rank Healing Wave if predictable.</div>
       <div class="flow-arrow" aria-hidden="true">›</div>
@@ -724,7 +674,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       <div class="flow-arrow" aria-hidden="true">›</div>
       <div class="flow-node"><strong>5. Group mana depleted?</strong>Safely use Mana Tide then restore Mana Spring.</div>
     </div>
-    <h4>Mobile Combat Medic – reposition then rescue</h4>
+    <h4>Reposition, then rescue</h4>
     <div class="diagram-flow" aria-label="Decision sequence">
       <div class="flow-node"><strong>1. Hazard or enemy targeting you?</strong>Grounding/Earthbind and instant Ghost Wolf to safe ground.</div>
       <div class="flow-arrow" aria-hidden="true">›</div>
@@ -736,7 +686,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       <div class="flow-arrow" aria-hidden="true">›</div>
       <div class="flow-node"><strong>5. Prolonged pressure?</strong>Protect Water Shield globes and Tide; trade output for survival.</div>
     </div>
-    <h4>Tank Guardian – prevent the next death</h4>
+    <h4>Protect the next endangered target</h4>
     <div class="diagram-flow" aria-label="Decision sequence">
       <div class="flow-node"><strong>1. Read tank swing timer</strong>Predict whether a hit will land before your cast.</div>
       <div class="flow-arrow" aria-hidden="true">›</div>
@@ -749,10 +699,16 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       <div class="flow-node"><strong>5. Tank stable and group hurt?</strong>Chain Heal the cluster, then resume tank vigilance.</div>
     </div>
     <div class="callout good"><strong>Precast/cancel discipline:</strong> starting a Healing Wave need not mean finishing it. Cancel it if the tank remains safe and the heal would be overheal; immediately begin another if another swing is approaching. The correct rank depends on actual health deficits, mana, talents, and +healing gear – not a universal “always rank X” prescription.</div>
+    <div class="reader-field-exercise">
+      <h3>Field test: the group splits</h3>
+      <p>A cluster of allies is injured while another player is far from the group. Consider which healing spell can reach whom, whether Chain Heal has suitable nearby targets and whether a faster direct heal will prevent a death before group recovery can begin.</p>
+    </div>
   </section>
   <section class="chapter shell" id="optimization">
     <div class="chapter-number">CHAPTER 06</div>
     <h2>Equipment, leveling and optimization</h2>
+    <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment after the November 13 dungeon experience restriction: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
+    </aside>
     <p class="lead">Shaman is a class in which different equipment is not just a bigger stat number. A weapon upgrade can make Enhancement feel more physical; a shield can convert an Elemental caster into a survivor; a healing set turns the same mana pool into lifesaving efficiency.</p>
     <h3>Level 1–60: how the class changes along the way</h3>
     <div class="tablewrap">
@@ -870,7 +826,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       </table>
     </div>
     <div class="callout warn"><strong>Stat-weight rule:</strong> Do not treat “spell power = X attack power” or “3.6-speed weapon = Y% more DPS” as known. Current Forever boss logs, discoveries and simulations are too young, and the November 10 hotfix invalidated some early spellhance comparisons. The build archetypes here are practical hypotheses with known mechanics, not verified BiS rankings.</div>
-    <h3>The same item, three different decisions</h3>
+    <h3>The same item, different responsibilities</h3>
     <div class="statcomps">
       <div class="paper orange">
         <div class="leadstat">3.6-speed two-handed axe</div>
@@ -996,6 +952,8 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   <section class="chapter shell" id="quickstart">
     <div class="chapter-number">CHAPTER 07</div>
     <h2>Read the rules before the builds</h2>
+    <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum — Shaman · Windfury</strong><p>The November 13 official fix makes Windfury Totem activate correctly from eligible melee abilities even if an ability does not involve a main-hand weapon. Blizzard separately clarifies that off-hand strikes from multi-hand abilities such as Whirlwind or Mutilate do not independently trigger Windfury; eligible main-hand strikes still can. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
+    </aside>
     <p class="lead">WoW Forever is a separate, live 1–60 ruleset. A convincing-looking talent tree or guide can still be wrong when its client tooltip is older than the server hotfix.</p>
     <div class="intro-grid">
       <div class="paper gold">
@@ -1077,8 +1035,133 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   </section>
   <section class="chapter shell" id="archetypes">
     <div class="chapter-number">CHAPTER 08</div>
-    <h2>Nine level-60 build dossiers</h2>
+    <h2>The Build Dossiers</h2>
+    <div class="reader-build-comparisons">
+      <h3>Comparative notes from the disciplines</h3>
+      <p>The early chapters examined the mechanics in their own right. These preserved comparisons now show how complete talent allocations put those principles to work.</p>
+      <h4>Elemental talent comparisons</h4>
+      <div class="tablewrap">
+        <table class="">
+          <thead>
+            <tr>
+              <th>Elemental build</th>
+              <th>Single target</th>
+              <th>Pack/AoE</th>
+              <th>Mana plan</th>
+              <th>While attacked</th>
+              <th>Raid utility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Lightning Artillery · 41/5/5</strong></td>
+              <td>Stand and Bolts; chain Mastery to planned burn</td>
+              <td>Two talented fire-damage rows plus Overload and Mastery cleave</td>
+              <td>Convection and spell-hit investment; no Water Shield/Tide</td>
+              <td>Earthbind, Warding, shield and preplanned positioning</td>
+              <td>Offensive pressure, basic Shaman totems</td>
+            </tr>
+            <tr>
+              <td><strong>Stormcaller Support · 31/0/20</strong></td>
+              <td>Still full Overload, Fury and Lightning Mastery</td>
+              <td>Less invested in Nova/Reach; use efficient cleave only</td>
+              <td>Mindfulness + Water Shield + Mana Tide; monitor group mana</td>
+              <td>Shield and healing; cannot afford to waste mana support</td>
+              <td>Mana Tide, stronger Mana Spring and cheaper totem operations</td>
+            </tr>
+            <tr>
+              <td><strong>Elemental Controller · 31/20/0</strong></td>
+              <td>Casts only during safe intervals</td>
+              <td>Earthbound to hold adds, Fire totem for passive control</td>
+              <td>Convection + Shamanistic Focus; many utility casts</td>
+              <td>Instant Ghost Wolf; Earthbind radius, Grounding, dodge/stamina</td>
+              <td>Interrupts, positioning, defensive totems; fewer uninterrupted casts</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn"><strong>Not all 31-point Elementals are identical:</strong> in the 31/0/20 or 31/20/0 splits you have exactly enough points for Lightning Mastery and no more deep Elemental discretionary points. Talent choices within those 31 must be intentional. The support version can still take 5/5 Fury; the controller sacrifices some Fury for Warding, Reach and Earthbound.</div>
+      <h4>Enhancement talent comparisons</h4>
+      <div class="tablewrap">
+        <table class="">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Windfury Berserker</th>
+              <th>Elemental Battlemage</th>
+              <th>Spiritbound Skirmisher</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Allocation</strong></td>
+              <td>10/41/0</td>
+              <td>20/31/0</td>
+              <td>0/24/27</td>
+            </tr>
+            <tr>
+              <td><strong>Main attack</strong></td>
+              <td>Slow 2H melee + Stormstrike</td>
+              <td>Melee, Stormstrike, Fire Nova</td>
+              <td>1H + shield, Stormstrike, shocks</td>
+            </tr>
+            <tr>
+              <td><strong>Full Maelstrom?</strong></td>
+              <td>YES: 5/5, free instant Bolt at 5 stacks</td>
+              <td>YES: 5/5, same mechanic</td>
+              <td><strong>NO: 0/5</strong> – all Bolts are ordinary casts</td>
+            </tr>
+            <tr>
+              <td><strong>Rage of the Farseer?</strong></td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td><strong>No</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Improved Stormstrike?</strong></td>
+              <td>2/2 for mana</td>
+              <td>0/2 to afford fire talents</td>
+              <td>0/2; relies on Restoration sustain</td>
+            </tr>
+            <tr>
+              <td><strong>Fire Nova</strong></td>
+              <td>Situational side button</td>
+              <td>Important part of AoE plan</td>
+              <td>Budgeted utility / situational AoE</td>
+            </tr>
+            <tr>
+              <td><strong>Emergency</strong></td>
+              <td>Kite then heal</td>
+              <td>Fire controls plus shield swap</td>
+              <td>Nature’s Swiftness + Healing Wave / shield</td>
+            </tr>
+            <tr>
+              <td><strong>Trade-off</strong></td>
+              <td>Less dedicated fire support</td>
+              <td>Less sustained mana and defensive talent depth</td>
+              <td>Loses proc-driven free Bolt and deep melee burst</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Restoration talent comparisons</h4>
+      <div class="columns3">
+        <div>
+          <h4>Dedicated Spirit Healer · 0/0/51</h4>
+          <p>Has <em>every Restoration talent</em>, including maximum Purification, Totemic Focus, Tidal Mastery, Healing Way and both emergency cooldowns. Group-first, long-form sustain.</p>
+        </div>
+        <div>
+          <h4>Mobile Combat Medic · 0/20/31</h4>
+          <p>Retains the required Riptide chain and Mana Tide/NS but spends 20 points on instant indoor Ghost Wolf, Guardian Totems, Stamina and dodge. Sacrifices some deep healing enhancements for position.</p>
+        </div>
+        <div>
+          <h4>Tank Guardian · 0/10/41</h4>
+          <p>Trades part of group-heal crit / totem depth for Intellect and spell crit from Enhancement, while keeping Healing Way, full Purification, Ancestral Healing, Riptide, Tide and NS. Focuses on timing and tank safety.</p>
+        </div>
+      </div>
+    </div>
     <p class="lead">All 51 points are assigned. Below the build names you can inspect every individual talent rank, the key synergies, totem choices, weapon/gear profile and real combat behavior. This is a validated set of <em>proposed</em> builds, not nine proven best-in-slot meta templates.</p>
+    <p class="reader-dossier-threshold">The elements have spoken through common rules, practical tools and hard decisions. The nine build dossiers that follow show what happens when those decisions become full talent allocations. The comparisons belong here because the reader now knows what the numbers are trying to accomplish—and what they cannot promise.</p>
     <div class="build-grid">
       <article class="buildcard">
         <div class="card-top">
@@ -2241,7 +2324,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   </section>
   <section class="chapter shell" id="dashboard">
     <div class="chapter-number">CHAPTER 10</div>
-    <h2>Interactive nine-build selection dashboard</h2>
+    <h2>Interactive Build Atlas</h2>
     <p class="lead">Pick a specialization or preferred content, then inspect the comparison bars and jump to the exact 51-point talent dossier. The indicators are editorial expressions of playstyle, not DPS, HPS or probability calculations.</p>
     <div class="paper">
       <div class="actionbar">
@@ -2355,6 +2438,8 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
   <section class="chapter shell" id="sources">
     <div class="chapter-number">CHAPTER 11</div>
     <h2>Research notes, source ledger and verification</h2>
+    <aside aria-label="Source review methodology" class="reader-hotfix"><strong>Editorial verification record · 15 November 2026</strong><p>Primary cross-check: <a href="https://worldofwarcraft.blizzard.com/en-us/news/24302097" rel="noopener noreferrer" target="_blank">Blizzard class deep dive</a> (published September–October 2026; beta-era design context) and the <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">official rolling hotfix ledger through November 13, 2026</a> (takes precedence on changes it addresses). Build descriptions and comparison scores remain editorial theorycraft, not independently in-game-tested rankings. Third-party links and historical calculators are reference leads, not universally revalidated live citations. Do not infer from an externally linked beta tooltip that the current client is identical.</p>
+    </aside>
     <p class="lead">References are linked directly so individual ability claims can be checked again after new live hotfixes. The source priority is Blizzard live updates → current server-aware talent / client data → Forever-specific guides → early beta as history only.</p>
     <div class="columns2">
       <div class="paper">
@@ -2418,7 +2503,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
     <p class="figure-caption">Illustrations generated specially for this guide; none is labeled as a live Forever gameplay screenshot. In-game archival talent screenshots and a Forever gameplay screenshot can be examined via <a href="https://classicwowforever.com/talents/shaman/" target="_blank" rel="noopener">archival beta talent screen evidence</a> or <a href="https://www.gamestar.de/galerien/world_of_warcraft_forever%2C137281.html" target="_blank" rel="noopener">GameStar's Forever screenshot gallery</a>; historical images must not be used as authoritative proof of current post-launch tooltips.</p>
   </section>
   <footer class="foot shell">
-    <p><strong>THE SHAMAN CODEX · FOREVER</strong> &nbsp;– &nbsp; An illustrated, standalone, interactive field guide for World of Warcraft: Forever. Game names and mechanics remain the intellectual property of Blizzard Entertainment. Illustrations are original editorial concept art. <span class="muted">Research cutoff: November 13, 2026.</span></p>
+    <p><strong>THE FOREVER SHAMAN COMPENDIUM · FOREVER</strong> &nbsp;– &nbsp; An illustrated, standalone, interactive field guide for World of Warcraft: Forever. Game names and mechanics remain the intellectual property of Blizzard Entertainment. Illustrations are original editorial concept art. <span class="muted">Research cutoff: November 13, 2026.</span></p>
     <p>To use this offline: save this HTML file together with its images folder and open it in a browser. Totem recommendations, timeline tabs, filters and all nine build dossiers work without external libraries. Source links require internet access.</p>
   </footer>
   <script>

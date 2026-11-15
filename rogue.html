@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0b0b0d"><meta name="description" content="The Shadowblade Manual: an illustrated, interactive, source-annotated compendium of nine World of Warcraft: Forever Rogue builds and combat plans."><title>The Forever Rogue Compendium: The Shadowblade Manual</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0b0b0d"><meta name="description" content="The Forever Rogue Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Rogue Compendium: The Shadowblade Manual of Silence and Steel</title><style>
 :root{--black:#08090b;--bg:#0d0e10;--paper:#121315;--panel:#17191b;--raised:#202022;--line:#363637;--line2:#49413b;--text:#e9e5dc;--muted:#b2ada6;--gold:#d3b382;--silver:#b6c3c9;--red:#b5525a;--crimson:#7e202f;--green:#93c597;--cold:#7d9dba;--shadow:0 18px 56px #0009;--r:15px;--rail:232px;--max:1300px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;color:var(--text);font:15px/1.74 system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:radial-gradient(ellipse at 70% -7%,#28161b 0,transparent 27%),radial-gradient(ellipse at -10% 40%,#101d18 0,transparent 29%),var(--black)} ::selection{background:#882f42;color:#fff}
 h1,h2,h3,h4,.quote,.stat-num{font-family:Georgia,'Times New Roman',serif;font-weight:normal;letter-spacing:-.025em}h1{font-size:clamp(62px,7.8vw,124px);line-height:.93;margin:0 0 22px}h2{font-size:clamp(31px,4vw,52px);line-height:1.13;margin:0 0 19px}h3{font-size:clamp(23px,2.5vw,32px);line-height:1.15;margin:0 0 13px}h4{font-size:20px;line-height:1.2;margin:0 0 12px}h5{margin:0;font:750 11px/1.5 system-ui,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}p{margin:0 0 16px}ul,ol{margin:6px 0 16px;padding-left:21px}li{padding-left:2px;margin:5px 0}b,strong{color:#fff;font-weight:700}a{color:#efca9a;text-decoration:none;border-bottom:1px solid #59453a}a:hover{color:#fff;border-color:currentColor}button,select,input{font:inherit}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
@@ -25,6 +25,50 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
 @media(max-width:420px){.phase-line,.budget-row{grid-template-columns:1fr}.hero h1{font-size:49px}.hero .hero-meta span{font-size:10px}.source-item{grid-template-columns:31px 1fr}.rank{white-space:normal}.spec-card{min-height:auto}.doss-heading h3{font-size:28px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 @media print{@page{size:A4;margin:13mm 11mm}html,body{background:#0c0c0e!important;color:#e9e5dc!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}#rail,#mobile-nav,#scrolltop,.notprint{display:none!important}main{margin:0}section.chapter{padding:22px 5px;border-top:1px solid #5b4243;overflow:visible;break-before:auto}h2,h3,h4,h5{break-after:avoid}.hero{height:260mm;min-height:0;page-break-after:always;background-position:64% center}.hero h1{font-size:73px}.panel,.spec-card,.choice,.source-item,.mini-build,.flowchart,.phase,.doss-ribbon>div{break-inside:avoid}.grid3,.archetype-grid{grid-template-columns:repeat(3,1fr)}.dossier{break-before:page;break-inside:auto;padding:19px 20px;margin:10px 0 20px}.doss-columns{grid-template-columns:1fr 1fr}.doss-row{break-inside:avoid}.doss-row p{font-size:11px}.doss-ribbon{grid-template-columns:repeat(4,1fr)}.lab-cards{grid-template-columns:repeat(3,1fr)}.lab-card,.budget-step{break-inside:avoid}.encounter-print{display:block!important}#enc-output,#enc-notes{display:none!important}.print-encounter{break-before:page}.print-encounter .lab-card{padding:9px}.print-encounter .lab-card h5{font:normal 15px Georgia,serif;margin:4px 0}.print-encounter .lab-meta{grid-template-columns:1fr 1fr;gap:3px}.print-encounter .lab-meta>div{font-size:10px;padding:4px}.print-encounter .action-steps{gap:2px}.print-encounter .action{font-size:10px;padding:5px 5px 5px 28px}.print-encounter .action:before{font-size:11px;top:5px;left:3px}.lab-card .action{font-size:10px}.heat-table{min-width:0}.heat-table th button{font-size:10px;min-height:100px}.heat-table th:first-child{min-width:135px}.heat-table td .heat{width:23px;height:18px}.heat-table td{padding:3px}.source-grid{grid-template-columns:1fr 1fr}.phase-line{grid-template-columns:repeat(5,1fr)}.mini-build{min-height:0;padding:12px}.mini-build p{font-size:10px}}
+
+/* Collection-wide editorial annotation, kept subordinate to each class theme. */
+.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
+.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
+.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
+.compendium-cover-subtitle{font:normal clamp(20px,2.4vw,31px)/1.3 Georgia,serif;color:var(--gold,#dec28c);margin:12px 0 15px;}
+@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
+
+/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
+.hero .series-manuscript {
+  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .06em !important;
+  text-transform: none !important;
+  max-width: 940px;
+  overflow-wrap: break-word;
+  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+}
+.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
+.hero .compendium-series-subtitle {
+  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .008em;
+  color: #f2d9a8;
+  max-width: 900px;
+  margin: 11px 0 15px !important;
+  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+}
+@media (max-width: 650px) {
+  .hero .series-manuscript { font-size: 11px !important; letter-spacing: .025em !important; }
+  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px) !important; margin: 8px 0 10px !important; }
+}
+
+/* Reader-first note, visually subordinate to the original manuscript design. */
+.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
+.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
+.reader-orientation p{margin:0;line-height:1.64}
+
+/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
+.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
+.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
+.reader-field-exercise p{margin:0;line-height:1.75}
+.reader-build-comparisons{margin:24px 0;padding:18px 24px;background:rgba(255,255,255,.02);border-left:2px solid var(--gold,#d7bc84)}
+.reader-build-comparisons h4{margin-top:22px}
+
+.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
 /* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
 .vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
 .vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
@@ -32,7 +76,7 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
 .vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
 .vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
 @media print{.vol-switch{display:none}}
-</style></head>
+</style><meta content="15 November 2026; official hotfix review and editorial accessibility pass; independent live testing outstanding" name="compendium-revision"></head>
 <body>
   <script>
   /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
@@ -129,28 +173,29 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
     <a class="rail-link" href="#subtlety"><span>04</span>Shadow operative's codex</a>
     <a class="rail-link" href="#journey"><span>05</span>Leveling & equipment</a>
     <a class="rail-link" href="#evidence"><span>06</span>Intelligence report</a>
-    <a class="rail-link" href="#characters"><span>07</span>Nine dossiers</a>
+    <a class="rail-link" href="#characters"><span>07</span>Character dossiers</a>
     <a class="rail-link" href="#encounters"><span>08</span>Encounter laboratory</a>
     <a class="rail-link" href="#dashboard"><span>09</span>Shadowblade atlas</a>
     <a class="rail-link" href="#sources"><span>10</span>Sources & uncertainty</a>
-    <div class="rail-footer">FIELD EDITION / 13 NOV 2026<br>CLIENT BASELINE 1.60.1.70938<br>51 POINTS × 9 AUDITED DOSSIERS<br><br>Original cover illustration. All CSS and JavaScript embedded.</div>
+    <div class="rail-footer">FIELD EDITION / 13 NOV 2026<br>CLIENT BASELINE 1.60.1.70938<br>51 POINTS × talent dossier research<br><br>Original cover illustration. All CSS and JavaScript embedded.</div>
   </nav>
   <main>
     <header class="hero" id="begin" aria-labelledby="cover-title">
-      <div class="hero-number">CLASS DOSSIER / R·09</div>
+      <div class="hero-number">CLASS MANUAL / FIELD NOTES</div>
       <div class="hero-inner">
-        <div class="eyebrow">The Shadowblade Manual <span style="color:#8d9a94"> / </span> Nine Paths of the Assassin</div>
+        <div class="eyebrow series-manuscript">The Shadowblade Manual<span class="series-sep"> / </span>Notes from the Unseen War</div>
         <h1 id="cover-title">
           <span class="line1">THE FOREVER</span>
           <span class="line2">ROGUE</span>
           <span class="line3">Compendium</span>
         </h1>
-        <p class="deck">Not nine different names for the same blade. Nine distinct approaches to the same fatal problem – where to stand, when to strike, what to poison, and how much Energy to save for the moment the enemy strikes back.</p>
+        <div class="compendium-series-subtitle">The Shadowblade Manual of Silence and Steel</div>
+        <p class="deck">The cleanest victory begins with a question: where can you stand without being seen, and what happens if the target survives? Master Energy, poisons, weapons and the art of leaving on your own terms.</p>
         <div class="hero-meta">
           <span>Assassination</span>
           <span>Combat</span>
           <span>Subtlety</span>
-          <span>9 audited builds</span>
+          <span>Advanced field dossiers</span>
           <span>Interactive field laboratory</span>
         </div>
         <div class="hero-footer"><span class="slash"></span> LIVE FOREVER / 13 NOVEMBER 2026 <span class="slash"></span> LEATHER · STEALTH · ENERGY</div>
@@ -160,7 +205,13 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
       <div class="shell">
         <div class="eyebrow">00 / The Opening Blade</div>
         <h2>Victory begins before the first blow.</h2>
-        <p class="lead">A Warlock reshapes the field with curses and companions. A Rogue reshapes <em>time</em>: the time an enemy cannot act, the time a second target stays Sapped, the time until Energy arrives, and the brief time a poisoned dagger has to matter.</p>
+        <p class="lead">A Rogue survives by deciding before others notice a decision was made. The first weapon is position; the second is an Energy reserve large enough to change plans when the enemy refuses to fall.</p>
+        <div class="reader-orientation">
+          <h3>The rules of the hidden blade</h3>
+          <p>Begin with stealth, Energy, combo points and the cost of a failed opener. Assassination, Combat and Subtlety are different ways of managing those same constraints. The full character identities come later, after the underlying fighting methods are clear.</p>
+        </div>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>The blade begins before combat</strong><p>Stealth is time to choose the fight, not a guarantee that an opponent cannot see you. A Rogue survives by controlling the opening, the target, and the Energy budget. Before attacking a camp, check where nearby enemies patrol and where you can escape. A finisher is an ability that consumes combo points built by earlier attacks; it is valuable only if it answers the actual target. A burst finisher can end a short fight, whereas a bleed may be better when the enemy will survive longer. The first victory is not pulling a second enemy accidentally.</p>
+        </aside>
         <div class="grid3">
           <article class="panel redtop">
             <div class="micro">The first question</div>
@@ -212,6 +263,8 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
         <div class="eyebrow">01 / Anatomy · Resources and control</div>
         <h2>The assassination is an economy.</h2>
         <p class="lead">Energy is continuously regained, combo points are attached to a chosen target, and the stealth advantage is spent as soon as you engage. Good Rogues plan those three economies at once. <a class="cite" href="#src-O1">[O1]</a> <a class="cite" href="#src-G2">[G2]</a></p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>A practical combo-point budget</strong><p>Energy regenerates, while combo points belong to the opponent being worked on. Builders such as Sinister Strike or a suitable dagger attack create points; finishers such as Slice and Dice, Rupture, and Eviscerate spend them for very different effects. Slice and Dice improves future attack tempo, Rupture leaves a bleed that damages over time, and Eviscerate emphasizes immediate damage. Spending a maximum-strength bleed on an enemy one hit from death can be worse than using the points to finish now. Save enough Energy for control when more than one enemy is involved.</p>
+        </aside>
         <div class="grid3">
           <div class="panel redtop">
             <div class="micro">Resource 01</div>
@@ -413,22 +466,24 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
     <section id="assassination" class="chapter" data-num="02">
       <div class="shell">
         <div class="eyebrow">02 / Assassination · Poisoner's Laboratory</div>
-        <h2>Three ways to make one cut fatal.</h2>
-        <p class="lead">Assassination is not simply an instruction to use daggers. Its tension is between poison throughput, critical-strike-driven combo points, and spending talent points on the control needed to deliver a final blow.</p>
+        <h2>Assassination: The Slow Certainty of Venom</h2>
+        <p class="lead">Assassination asks whether you can keep the enemy exposed to pressure long enough for poison and finishers to matter. The first strike opens the account; Energy, combo points and the threat of retaliation determine its closing entry.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Poison is a schedule</strong><p>Poisons create extra effects through weapon contact, and the right combination depends on the opponent and build. An effect that activates by chance is a proc, not a guaranteed opening move. An Assassination talent such as Mutilate must be purchased and has its own weapon requirements; a new Rogue cannot assume the talent exists just because a dossier describes it. In a long fight, maintaining the intended finishing-move buffs matters; in a short quest encounter, a simpler damage finisher may be enough. Watch the target’s survival time before committing a complicated poison setup.</p>
+        </aside>
         <div class="grid3">
           <article class="panel redtop">
-            <h3>Venom Alchemist</h3>
-            <p><strong>Repeated chemistry.</strong> Improved Poisons 5/5, Vile Poisons 5/5, Shank → Venom and strong refund talent investment. On a long enemy, repeated poison events and maintained finishers matter more than one crit.</p>
+            <h3>A poison that has time to work</h3>
+            <p>Poison applications and repeated strikes reward a sustained exchange. Watch the target’s remaining lifetime and your available attacks before choosing a longer pressure plan.</p>
             <p class="fine">Test: venom uptime, damage split, poison charge use, CP waste.</p>
           </article>
           <article class="panel greentop">
-            <h3>Dagger Executioner</h3>
-            <p><strong>Fewer builders.</strong> Mutilate's two-CP baseline plus Seal Fate and Puncturing Wounds changes how often a finisher becomes available. The target must be poisoned, both daggers equipped, and Energy conserved.</p>
+            <h3>The commitment of two daggers</h3>
+            <p>Dagger-dependent attacks require the appropriate weapons, sufficient Energy and a target you can reach. Combo-point gains matter only if you can spend them before wasting the next opportunity.</p>
             <p class="fine">Test: Mutilate crit frequency, finisher cadence, positional failure.</p>
           </article>
           <article class="panel silvertop">
-            <h3>Cold-Blooded Duelist</h3>
-            <p><strong>A controlled verdict.</strong> Invests in Premeditation, Initiative, Hemorrhage and Dirty Deeds instead of Mutilate. Cheap Shot can supply an immediate five CP with preloaded Premeditation and max Initiative.</p>
+            <h3>One controlled opening</h3>
+            <p>Stealth preparation and crowd control can create a brief advantage. Decide how you will finish the attack—and how you will escape—before you spend the opener.</p>
             <p class="fine">Test: success after trinket, duration of control, kill window.</p>
           </article>
         </div>
@@ -512,27 +567,33 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
           </div>
         </div>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: the target survives</h3>
+        <p>Your opening strike leaves the enemy standing, and its next attack could be dangerous. You have Energy and combo points, but not enough for every possible action. Decide whether the existing poison will continue to work, whether the finisher is urgent and whether a control button must come first.</p>
+      </div>
     </section>
     <section id="combat" class="chapter" data-num="03">
       <div class="shell">
         <div class="eyebrow">03 / Combat · Blademaster's Arsenal</div>
         <h2>Weapons write the rotation.</h2>
-        <p class="lead">Combat rewards time on target. It also changes its output according to the chosen weapon type: Hack and Slash folds the old separate weapon talents into one flexible rule, not a universal sword advantage.</p>
+        <p class="lead">Combat is the discipline of staying useful once stealth is gone. Weapon contact, attack timing, target switching and a reserved interrupt can shape an encounter as decisively as a well-placed finisher.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Every weapon has a consequence</strong><p>Combat Rogues often favor reliable weapon contact and efficient Energy spending, but the chosen weapon changes which attacks are sensible. An ability designed for daggers should not be placed in a sword rotation by habit. Auto-attacks keep occurring during many decisions, so positioning and uptime matter even while waiting for Energy. In a dungeon, avoid stealing the tank’s first target; attack from the safer side and use threat-reducing tools if needed. A strong sequence against one enemy may be unsafe against three enemies clustered around the healer.</p>
+        </aside>
         <div class="grid3">
           <article class="panel silvertop">
-            <h3>Swordmaster</h3>
-            <p>Slow main-hand sword or axe → reliable Sinister Strike and extra-attack opportunities; 15 Assassination points support Slice and Dice and crit. <strong>Commitment:</strong> consistent damage over the whole fight.</p>
+            <h3>A weapon’s natural rhythm</h3>
+            <p>Auto-attacks are part of the resource economy. A good Combat Rogue recognizes how weapon choice and swing timing affect the next available action.</p>
           </article>
           <article class="panel redtop">
-            <h3>Blade Dancer</h3>
-            <p>Five Flash of Steel ranks → stronger Shank Energy engine; Blade Flurry + Adrenaline Rush in a 15-sec window. <strong>Commitment:</strong> two enemies truly standing together.</p>
+            <h3>When several enemies close in</h3>
+            <p>Cleave damage and movement matter when nearby enemies can be struck safely. Do not commit to an area attack that leaves you standing in avoidable danger.</p>
           </article>
           <article class="panel greentop">
-            <h3>Tactical Duelist</h3>
-            <p>Interrupts, Riposte, Improved Sprint, Premeditation and reduced Energy costs. Gives up Adrenaline Rush for control. <strong>Commitment:</strong> decisive responses to dangerous mechanics.</p>
+            <h3>The interrupt is an attack</h3>
+            <p>Kick, Gouge and other control tools can prevent more harm than an extra damage builder. Keep enough Energy and attention for the enemy’s dangerous cast.</p>
           </article>
         </div>
-        <h3 class="spaced">Hack and Slash: three actual weapon incentives</h3>
+        <h3 class="spaced">Hack and Slash: weapon incentives</h3>
         <div class="grid3">
           <div class="panel">
             <div class="iconcard">
@@ -624,24 +685,30 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
           </article>
         </div>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: the caster in the pack</h3>
+        <p>You are damaging the primary target when a nearby enemy starts a dangerous cast. The highest personal damage sequence may be to keep attacking—but the best group action may be to interrupt. Keep the necessary Energy, close the distance safely and return to the main target after the threat is resolved.</p>
+      </div>
     </section>
     <section id="subtlety" class="chapter" data-num="04">
       <div class="shell">
         <div class="eyebrow">04 / Subtlety · Shadow Operative's Codex</div>
         <h2>Stealth is a method, not a permanent state.</h2>
-        <p class="lead">Subtlety in live Forever ends in Death Mark – not Shadow Dance or Thousand Cuts. Its distinctiveness is the way it converts temporary access, a Ghostly Strike bridge and controlled target selection into more chances to act.</p>
+        <p class="lead">Subtlety treats the opening of a fight as a choice—and the second opening as something to earn. Stealth, position and control create the advantage; sound judgment keeps you alive when the first plan fails.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Control the first mistake</strong><p>Subtlety rewards planning where a fight begins and how it can be interrupted. Sap removes a suitable target from the encounter before the group commits; attacks on that target can destroy the advantage. Distract changes enemy attention and detection rather than dealing damage. When a dangerous caster survives your opening, a control or interrupt action can protect the party better than another damage builder. Talents that alter stealth attacks or allow special openers during combat apply only to builds that actually select those ranks; keep the fantasy distinct from baseline spell access.</p>
+        </aside>
         <div class="grid3">
           <article class="panel redtop">
-            <h3>Ambush Predator</h3>
-            <p>Rear dagger → Improved Ambush, Premeditation, Initiative and 5/5 Boot Knife. Wants a fight so short or a reset so reliable that its opener remains the story.</p>
+            <h3>Entering unseen</h3>
+            <p>A strong opener depends on stealth, the required weapon and a usable position. Prepare a different first move for an enemy who turns or detects you.</p>
           </article>
           <article class="panel greentop">
-            <h3>Shadow Controller</h3>
-            <p>Quick Getaway and Dirty Tricks give meaningful multi-Sap routing, while Elusiveness, Preparation and improved defenses offer a second plan.</p>
+            <h3>Choosing when a fight begins</h3>
+            <p>Sap and other tools can remove a suitable enemy from the pull before it starts. The value is in the safe route and isolated target, not in a larger first hit.</p>
           </article>
           <article class="panel silvertop">
-            <h3>Persistent Infiltrator</h3>
-            <p>Hemorrhage, Serrated Blades, Blood Splatter and Death Mark make an actual post-opener bleed-and-finisher loop; its Boot Knife is low rank, so CP efficiency is weaker.</p>
+            <h3>Surviving the second exchange</h3>
+            <p>When the opener fails to finish the target, sustained attacks, bleeds and a reserved escape keep the Rogue dangerous. Stealth is a resource to regain, not a permanent state to assume.</p>
           </article>
         </div>
         <h3 class="spaced">The seven-second exception: Ghostly Strike</h3>
@@ -713,11 +780,17 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
           </div>
         </div>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: the broken opening</h3>
+        <p>A target turns just as you attempt a rear-position opener. The plan that depended on perfect positioning has failed. Use a practical front-safe action or control tool, then decide whether Stealth can realistically be regained. Prepared Rogues carry an exit, not just an entry.</p>
+      </div>
     </section>
     <section id="journey" class="chapter" data-num="05">
       <div class="shell">
         <div class="eyebrow">05 / Leveling, Weapons, PvE & PvP</div>
         <h2>A Rogue becomes dangerous in stages.</h2>
+        <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment after the November 13 dungeon experience restriction: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
+        </aside>
         <p class="lead">Talent choices do not compensate for a poor weapon indefinitely. From one to sixty, prioritize trained ranks, a current main-hand weapon, sufficient hit consistency, reliable escapes and the ability to avoid unnecessary fights.</p>
         <div class="table-scroll">
           <table class="data-table">
@@ -893,6 +966,8 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
       <div class="shell">
         <div class="eyebrow">06 / Intelligence Report · Evidence and version</div>
         <h2>The living rules are not Classic's rules.</h2>
+        <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum — Rogue · official baseline</strong><p>The October 7 Blizzard class deep dive confirms that Sap no longer breaks Stealth baseline; Dirty Tricks instead reduces the Energy costs of Sap and Blind. The November 13 Windfury clarification applies to main-hand versus off-hand strikes from abilities such as Mutilate: the off-hand strike does not itself trigger Windfury. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
+        </aside>
         <p class="lead">This guide uses the <strong>13 November 2026 live-client baseline, build 1.60.1.70938</strong>, for Rogue talent descriptions and spell ranks, cross-checked against Blizzard's 2 November development notes. The build layout is checked against direct prerequisites in an earlier post-overhaul calculator. Numbers the client does not resolve stay unresolved. <a class="cite" href="#src-O2">[O2]</a> <a class="cite" href="#src-D1">[D1]</a> <a class="cite" href="#src-D2">[D2]</a></p>
         <div class="grid4">
           <article class="panel">
@@ -974,6 +1049,7 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
         <div class="eyebrow">07 / The Nine Character Dossiers</div>
         <h2>Every blade has a complete field file.</h2>
         <p class="lead">All nine allocations contain exactly 51 points, use the current 54-talent Rogue tree, and pass the named-prerequisite and row-gate audit. Each profile separates source-backed mechanical facts from a tactical thesis that still needs live logs.</p>
+        <p class="reader-dossier-threshold">The fundamentals have been learned in the dark; now come the individual field files. Nine Rogue dossiers examine what changes when a weapon, a poison, a talent and an escape plan are chosen in earnest. None should be mistaken for an automatic kill or a fixed leaderboard: the target always has a say.</p>
         <p class="fine">Choose any dossier in the quick index. Each field file includes every purchased talent rank (with tier and prerequisite on hover), weapon strategy, poisons, builders and finishers, Energy, openers, cooldowns, control, leveling, PvE/PvP, equipment, strengths, liabilities and Forever-specific evidence links.</p>
         <div class="archetype-grid">
           <a href="#build-venom" class="mini-build assassin"><span class="code">01 / Assassination</span><h4>The Venom Alchemist</h4><p>A maximum-poison investment with two daggers, high application frequency, a Shank-driven Venom window and long bleeds. A poison-disabled or rapidly dying target changes the entire value proposition.</p><div class="mini-bottom"><span>41/10/0</span><span>Poison engine ↗</span></div></a>
@@ -3268,6 +3344,8 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
       <div class="shell">
         <div class="eyebrow">10 / Sources · Patch history and uncertainty</div>
         <h2>Every dossier should survive inspection.</h2>
+        <aside aria-label="Source review methodology" class="reader-hotfix"><strong>Editorial verification record · 15 November 2026</strong><p>Primary cross-check: <a href="https://worldofwarcraft.blizzard.com/en-us/news/24310968" rel="noopener noreferrer" target="_blank">Blizzard class deep dive</a> (published September–October 2026; beta-era design context) and the <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">official rolling hotfix ledger through November 13, 2026</a> (takes precedence on changes it addresses). Build descriptions and comparison scores remain editorial theorycraft, not independently in-game-tested rankings. Third-party links and historical calculators are reference leads, not universally revalidated live citations. Do not infer from an externally linked beta tooltip that the current client is identical.</p>
+        </aside>
         <p class="lead">The primary evidence stack combines Blizzard's published class plan and development notes with current Forever client data and post-November talent calculators. Every external link is optional; the file's visuals, interactive cards, selector, resource model and matrix work offline.</p>
         <div class="source-grid">
           <article class="source-item" id="src-O1">
@@ -3374,7 +3452,7 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
     </section>
     <footer class="foot">
       <div class="shell">
-        <div><b>THE FOREVER ROGUE COMPENDIUM</b><br>The Shadowblade Manual · Nine Paths of the Assassin</div>
+        <div><b>THE FOREVER ROGUE COMPENDIUM</b><br>The Shadowblade Manual of Silence and Steel · Nine Paths of the Assassin</div>
         <div>Edition 13.11.2026 · Live-client baseline 1.60.1.70938<br>Self-contained HTML5 / editorial simulation and field evidence</div>
         <div><a href="#begin">Return to the opening blade ↑</a></div>
       </div>

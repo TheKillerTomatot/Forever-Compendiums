@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#100d1a"><meta name="description" content="The Forever Priest Compendium: nine validated 51-point Priest builds, current World of Warcraft: Forever mechanics, tactical encounter explorer and source archive."><title>The Forever Priest Compendium: The Illuminated Codex of Nine Paths</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#100d1a"><meta name="description" content="The Forever Priest Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Priest Compendium: The Litany of Dawn and Deep Shadow</title><style>
 :root{--bg:#090910;--night:#0c0c17;--paper:#14121c;--card:#1c1724;--line:#514657;--ink:#f4eee5;--ivory:#f7ead1;--gold:#e5bd73;--gold2:#ffe8af;--azure:#93cbea;--vio:#c3a2ec;--shadow:#6b508b;--mute:#c2b8c5;--disc:#e7c987;--holy:#a5d6f2;--void:#c09de3;--radius:17px;--inner:1250px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;color:var(--ink);font-family:'Segoe UI',Candara,Arial,sans-serif;background:radial-gradient(ellipse at 100% 3%,#3d244a 0,transparent 27%),radial-gradient(ellipse at 0 40%,#101f37 0,transparent 37%),#090910;font-size:15px;line-height:1.72}body:before{content:"";pointer-events:none;position:fixed;inset:0;z-index:-1;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0v60M0 30h60' stroke='%23d5bfec' stroke-width='.5'/%3E%3C/svg%3E");background-size:60px 60px}
 ::selection{background:#c0a3d1;color:#080911}a{color:var(--gold2);text-decoration:none;border-bottom:1px solid #866c7b}a:hover{color:white;border-color:#fff}button,select{font:inherit}.sort-head{all:unset;cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--azure);outline-offset:3px}strong,b{color:#fff}em{color:var(--ivory)}p{margin:0 0 14px}h1,h2,h3,h4{font-family:Georgia,'Palatino Linotype',serif;line-height:1.16;letter-spacing:-.015em}h1{font-size:clamp(43px,6.1vw,88px);margin:0 0 17px}h2{font-size:clamp(32px,3.4vw,49px);margin:0 0 17px}h3{font-size:clamp(21px,2vw,28px);margin:0 0 11px}h4{font:800 12px 'Segoe UI',sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin:0 0 10px}ul,ol{padding-left:23px;margin:9px 0 15px}li{margin:0 0 7px}small,.fine{font-size:12px;color:var(--mute)}.muted{color:var(--mute)}.eyebrow{display:block;font:800 11px 'Segoe UI',sans-serif;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin:0 0 16px}.kicker{color:var(--azure);font-size:12px;letter-spacing:.12em;text-transform:uppercase}.lead{font:20px/1.55 Georgia,serif;color:#ded7e7;max-width:1050px}.shell{max-width:var(--inner);margin:auto}.src{color:#b8baf9;font-size:11px;border:0;white-space:nowrap;margin:0 3px}.src:hover{color:white;text-decoration:underline}.chapter{padding:69px clamp(25px,5vw,81px);border-top:1px solid #4a374e;position:relative;overflow:hidden}.chapter:nth-of-type(2n){background:linear-gradient(110deg,#100f1b,#0b0d14 62%)}.chapter:before{content:'✦';position:absolute;right:20px;top:20px;color:#c6a96a10;font-size:200px;line-height:1;pointer-events:none}h2:after{content:'';display:block;width:115px;height:2px;margin-top:19px;background:linear-gradient(90deg,var(--gold),transparent)}
@@ -17,6 +17,50 @@
 .encounter-tradeoffs{min-width:900px}.encounter-tradeoffs td:first-child{min-width:165px}.encounter-tradeoffs td:not(:first-child){width:28%;font-size:12px;line-height:1.55}.encounter-tradeoffs tbody tr:nth-child(3n+1){border-top:2px solid #806a77}.encounter-tradeoffs strong{color:var(--gold2)}@media print{.encounter-tradeoffs{min-width:0;font-size:10px}.encounter-tradeoffs td{font-size:10px!important;padding:5px}.encounter-tradeoffs td:first-child{min-width:0}}
 /* very small phones: the title word COMPENDIUM must fit inside the side padding */@media(max-width:340px){.hero h1{font-size:38px}}
 /* visually hidden, still read by screen readers */.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Collection-wide editorial annotation, kept subordinate to each class theme. */
+.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
+.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
+.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
+.compendium-cover-subtitle{font:normal clamp(20px,2.4vw,31px)/1.3 Georgia,serif;color:var(--gold,#dec28c);margin:12px 0 15px;}
+@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
+
+/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
+.hero .series-manuscript {
+  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .06em !important;
+  text-transform: none !important;
+  max-width: 940px;
+  overflow-wrap: break-word;
+  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+}
+.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
+.hero .compendium-series-subtitle {
+  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .008em;
+  color: #f2d9a8;
+  max-width: 900px;
+  margin: 11px 0 15px !important;
+  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+}
+@media (max-width: 650px) {
+  .hero .series-manuscript { font-size: 11px !important; letter-spacing: .025em !important; }
+  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px) !important; margin: 8px 0 10px !important; }
+}
+
+/* Reader-first note, visually subordinate to the original manuscript design. */
+.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
+.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
+.reader-orientation p{margin:0;line-height:1.64}
+
+/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
+.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
+.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
+.reader-field-exercise p{margin:0;line-height:1.75}
+.reader-build-comparisons{margin:24px 0;padding:18px 24px;background:rgba(255,255,255,.02);border-left:2px solid var(--gold,#d7bc84)}
+.reader-build-comparisons h4{margin-top:22px}
+
+.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
 /* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
 .vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
 .vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
@@ -24,7 +68,7 @@
 .vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
 .vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
 @media print{.vol-switch{display:none}}
-</style></head>
+</style><meta content="15 November 2026; official hotfix review and editorial accessibility pass; independent live testing outstanding" name="compendium-revision"></head>
 <body>
   <script>
   /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
@@ -121,9 +165,9 @@
     <a href="#shadow">04 / Shadow</a>
     <a href="#journey">05 / Leveling, equipment &amp; PvP</a>
     <a href="#evidence">06 / Scripture &amp; evidence</a>
-    <a href="#dossiers">07 / Nine character dossiers</a>
-    <a href="#encounters">08 / One encounter, nine answers</a>
-    <a href="#atlas">09 / Atlas of nine priesthoods</a>
+    <a href="#dossiers">07 / Character dossiers</a>
+    <a href="#encounters">08 / One encounter, Different answers</a>
+    <a href="#atlas">09 / Atlas of Priesthoods</a>
     <a href="#sources">10 / Archive &amp; limits</a>
     <div class="footnote">LIVE RULES · 13 NOV 2026<br>CLIENT 1.60.1.70938<br>51 points at level 60 · No external resources required</div>
   </nav>
@@ -131,14 +175,14 @@
     <header id="begin" class="hero" aria-label="Chapter zero, The Opening Revelation">
       <img src="images/priest-hero.webp" alt="Original illustration of an ivory-robed priest standing between golden celestial light and violet shadow inside a towering cathedral" width="1536" height="1024">
       <div class="hero-content">
-        <div class="eyebrow">00 / The Opening Revelation · Volume II</div>
+        <div class="eyebrow series-manuscript">The Litany of Dawn<span class="series-sep"> / </span>Prayers at the Edge of Shadow</div>
         <h1>THE FOREVER <span>PRIEST COMPENDIUM</span></h1>
-        <div class="subtitle">The Illuminated Codex of Nine Paths of Light and Shadow</div>
-        <p class="deck">Nine souls. Three disciplines. One eternal question: does your power arrive before the wound, after it, or in the darkness between? A source-audited field guide to World of Warcraft: Forever’s live Priest.</p>
+        <div class="subtitle compendium-series-subtitle">The Litany of Dawn and Deep Shadow</div>
+        <p class="deck">Some wounds are prevented, some are healed, and others are answered by confronting their source. A Priest learns which mercy the moment requires—and what every answer costs.</p>
         <div class="metadata">
           <span class="chip">✦ Official rules + client-data checks</span>
-          <span class="chip">✦ Nine 51-point, gate-audited allocations</span>
-          <span class="chip">✦ 45 interactive encounter plans</span>
+          <span class="chip">✦ Specialization research</span>
+          <span class="chip">✦ Interactive encounter laboratory</span>
           <span class="chip">✦ 13 November 2026</span>
         </div>
         <p class="fine" style="margin-top:18px;color:#e6dbdd">Original cover illustration generated for this volume. Not a Blizzard illustration.</p>
@@ -159,14 +203,20 @@
             <p>Sustained damage, Spirit-and-Vampiric party support, or the ruthless geometry of a PvP duel.</p><a href="#shadow">Enter the Archive</a></div>
         </div>
         <blockquote class="quote">“Two Priests may choose the same tree and still disagree about every global cooldown.”</blockquote>
-        <p class="lead">This companion volume answers that disagreement through the exact talents each person spends, the abilities they choose to hold, the resources they protect, and the failures their build is willing to risk.</p>
+        <p class="lead">This book begins with the work of the Priest rather than a prescribed talent destination: guard the living, understand the cost of each spell, and decide which wound—or enemy action—matters next.</p>
       </div>
     </section>
     <section class="chapter" id="foundation">
       <div class="shell">
         <div class="eyebrow">01 / The Priest’s foundation</div>
         <h2>Four ways to spend the same second</h2>
-        <p class="lead">A Priest has health to restore, incoming damage to prevent, mana to preserve, and enemies to disrupt. The priority is dictated by the next failure – not by a fixed damage-style rotation.</p>
+        <p class="lead">The Priest’s true rhythm is the rhythm of other lives. Forecast the injury, judge its urgency, protect your Mana and intervene before the same mistake becomes another wound.</p>
+        <div class="reader-orientation">
+          <h3>How this scripture is arranged</h3>
+          <p>First come the decisions every Priest shares: prevention, recovery, resource discipline and control. Discipline, Holy and Shadow then examine how those decisions change under pressure. The character dossiers follow later as complete applications of these principles.</p>
+        </div>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>The heartbeat before the heal</strong><p>Priests use Mana to solve several different problems: prevent incoming harm, restore missing health, dispel a dangerous effect, or stop an enemy from reaching the party. Power Word: Shield absorbs damage before it occurs and brings restrictions on repeat use; Renew is a heal-over-time spell that restores health gradually. A direct heal answers damage already taken. Threat is the enemy’s interest in attacking you, so a healer who draws unwanted attention should move toward the tank and use appropriate threat-management tools. The best spell is the one the next few seconds actually require.</p>
+        </aside>
         <div class="grid4">
           <article class="panel">
             <h3>I. Forecast</h3>
@@ -292,20 +342,25 @@
       <div class="shell">
         <div class="eyebrow">02 / The Sanctum of Protection</div>
         <h2>Discipline: the interval before the wound</h2>
-        <p class="lead">The same protective tree can be a pre-emptive wardkeeper, a Smite-driven offensive assistant, or a field medic who deliberately trades the capstone for Holy triage. They do not use Penance in the same way.</p>
+        <p class="lead">Discipline asks what can be prevented before anyone falls. Shields, Penance and careful offensive moments all compete for time and Mana; knowing which is needed matters more than committing to one fixed routine.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Prevention is not always free</strong><p>A shield placed shortly before a predictable strike can save time for the next heal; one placed too early may expire or restrict a better later use. Discipline choices often trade immediate healing throughput for prevention and utility. A proc is a triggered effect, not a button you can count on being available at the exact second of danger. When an ally is healthy, avoid burning Mana merely to keep every protective effect active. When a cast is interrupted, it may be better to protect the healer’s position than to begin the same long spell again.</p>
+        </aside>
         <div class="grid3">
           <article class="panel">
-            <div class="kicker">36/15/0 · Ward first</div>
-            <h3>The Aegis Keeper</h3>
-            <p>Deep Divine Aegis, Renewed Hope and Power Infusion: saves a tank by anticipating the hit; may be inefficient if shields expire.</p><a href="#d-aegis">See audited dossier</a></article>
+            <div class="kicker">DISCIPLINE · PREVENTION</div>
+            <h3>Preventing the first wound</h3>
+            <p>A protective spell matters most when its absorb catches actual incoming damage. Watch the next attack and Weakened Soul before deciding whether the target needs a shield now or later.</p>
+          </article>
           <article class="panel">
-            <div class="kicker">31/20/0 · Confess by fire</div>
-            <h3>The Battle Confessor</h3>
-            <p>Power in Light, Holy Precision and Holy damage talents: attacks during safe seconds, then Penance on friend if urgency flips.</p><a href="#d-confessor">See audited dossier</a></article>
+            <div class="kicker">DISCIPLINE · CHOICE</div>
+            <h3>Offense between obligations</h3>
+            <p>A Priest may contribute Holy damage when allies are secure. The moment danger returns, a spell such as Penance can have a different and more urgent use on a friendly target.</p>
+          </article>
           <article class="panel">
-            <div class="kicker">34/17/0 · Treat the collapse</div>
-            <h3>The Soulward Medic</h3>
-            <p>Shield + Penance + Holy Binding: the life-saving cast arrives on time; no Power Infusion capstone.</p><a href="#d-soulward">See audited dossier</a></article>
+            <div class="kicker">DISCIPLINE · TRIAGE</div>
+            <h3>The rescue that arrives on time</h3>
+            <p>Survival often depends on spell timing rather than maximal theoretical healing. Learn which immediate action buys enough time for the larger heal to finish.</p>
+          </article>
         </div>
         <h3 style="margin-top:34px">Penance has two targets and one shared cooldown</h3>
         <div class="grid2">
@@ -321,7 +376,7 @@
           </article>
         </div>
         <div class="note blue"><strong>Damage or healing?</strong> Ask: (1) Is the ally safe until Penance returns? (2) Will a kill or interrupt substitute for healing? (3) Is the enemy properly debuffed for Power in Light? (4) Can you stand still for the whole channel? If any answer is no, avoid a speculative offensive channel. <a class="src" href="https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696" target="_blank" rel="noopener noreferrer" title="Blizzard · Forever Beta Development Notes, updated Nov 2">[B2]</a> <a class="src" href="https://wowfdb.com/talents/priest/" target="_blank" rel="noopener noreferrer" title="WoW Forever DB · Priest talent tree, client 70938">[T1]</a> <a class="src" href="https://wowfdb.com/classes/priest/discipline/spells/" target="_blank" rel="noopener noreferrer" title="WoW Forever DB · Discipline spells and ranks">[D2]</a></div>
-        <h3>Shielding at the wrong time: three different outcomes</h3>
+        <h3>When a shield arrives at the wrong moment</h3>
         <div class="diagram">
           <div class="step amber">
             <span class="ico">◴</span>
@@ -354,25 +409,34 @@
           </div>
         </div>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: before the blow</h3>
+        <p>A predictable attack is coming, but your ally is still healthy. Check whether a shield can absorb the strike and whether Weakened Soul would prevent a more important later shield. A protective spell used too early may be as unhelpful as a direct heal used too late.</p>
+      </div>
     </section>
     <section class="chapter" id="holy">
       <div class="shell">
         <div class="eyebrow">03 / The Cathedral of Renewal</div>
-        <h2>Holy: a thousand wounds, three philosophies</h2>
-        <p class="lead">A Seraph watches the tank castbar. A Choir watches the entire party map. A Lightweaver watches both the healing budget and the enemy – and knows when offense stops paying for itself.</p>
+        <h2>Holy: The Care of the Living</h2>
+        <p class="lead">A Holy Priest studies the whole injury: who will be hurt next, which heal can finish in time, and how much Mana can be spent without abandoning the next emergency.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Heal the wound that matters</strong><p>Healing is a question of urgency and efficiency, not a contest to produce the largest number. A quick direct spell can cover an ally about to fall; a slower, cheaper option may be sufficient after predictable damage. A heal-over-time effect can continue restoring health while the Priest moves, but spending it on someone already full wastes its later ticks. In group play, anticipate whom the tank will be protecting and avoid standing where a loose enemy can interrupt your casts. Keep enough Mana for dispels and the next pull, not only the present health bar.</p>
+        </aside>
         <div class="grid3">
           <article class="panel">
-            <div class="kicker">15/36/0 · One champion</div>
-            <h3>The Seraphic Guardian</h3>
-            <p>Pre-cast large heals around the predicted strike; cancel safely to protect Mana. Flash Heal is emergency insurance, not the default.</p><a href="#d-seraph">See audited dossier</a></article>
+            <div class="kicker">HOLY · TIMING</div>
+            <h3>Predictable wounds</h3>
+            <p>When a heavy hit is approaching, begin the right heal with enough time for it to land. A fast emergency spell is precious; it need not be your answer to every small injury.</p>
+          </article>
           <article class="panel">
-            <div class="kicker">15/36/0 · The wounded party</div>
-            <h3>The Choir of Renewal</h3>
-            <p>Direct Prayer of Healing at the injured target’s party and route Prayer of Mending within 20 yards.</p><a href="#d-choir">See audited dossier</a></article>
+            <div class="kicker">HOLY · GROUP CARE</div>
+            <h3>Healing the gathered party</h3>
+            <p>Group recovery depends on who is injured and how allies are positioned. Prayer of Healing and Prayer of Mending solve different patterns of damage; read the party before choosing.</p>
+          </article>
           <article class="panel">
-            <div class="kicker">19/32/0 · Spells in counterpoint</div>
-            <h3>The Lightweaver</h3>
-            <p>Alternate healing names for Litany when the wounds warrant each cast; attack only when the next healing decision is covered.</p><a href="#d-lightweaver">See audited dossier</a></article>
+            <div class="kicker">HOLY · MANA</div>
+            <h3>Efficient variety</h3>
+            <p>The Litany talent may reward changing healing spell names, but it cannot make an unnecessary heal valuable. Let the injury determine the spell, then accept the resource benefit when it naturally follows.</p>
+          </article>
         </div>
         <div class="note"><strong>Holy Binding is NOT the original Binding Heal talent.</strong> Official November 2 notes remove the old talent and install <strong>Holy Binding</strong> in its slot: Flash Heal cast on a friendly target other than yourself also heals you for <strong>50% of that Flash Heal’s healing</strong> without threat. Some live client records still list a separate trainable Binding Heal spell; do not confuse the spellbook entry with the now-replaced talent or assume it qualifies for Renewed Hope. <a class="src" href="https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696" target="_blank" rel="noopener noreferrer" title="Blizzard · Forever Beta Development Notes, updated Nov 2">[B2]</a> <a class="src" href="https://wowfdb.com/talents/priest/" target="_blank" rel="noopener noreferrer" title="WoW Forever DB · Priest talent tree, client 70938">[T1]</a> <a class="src" href="https://wowfdb.com/classes/priest/changes/" target="_blank" rel="noopener noreferrer" title="WoW Forever DB · Priest changes / corrections">[D1]</a></div>
         <h3>Prayer of Mending: the litany that travels</h3>
@@ -439,25 +503,34 @@
         </div>
         <div class="note blue"><strong>Spiritual Guidance and the hybrid trap:</strong> at 5/5, Spirit contributes up to 25% to spell healing but only ~8% to spell damage. Searing Light improves Holy damage by 5% at 2/2 and enables a chance for free Holy Nova from Holy Fire periodic damage. None of this verifies Holy as equal to a specialized Shadow damage build at endgame. <a class="src" href="https://worldofwarcraft.blizzard.com/en-us/news/24301514/" target="_blank" rel="noopener noreferrer" title="Blizzard · Priest / Warrior class deep dive">[B1]</a> <a class="src" href="https://wowfdb.com/talents/priest/" target="_blank" rel="noopener noreferrer" title="WoW Forever DB · Priest talent tree, client 70938">[T1]</a></div>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: a healer’s arithmetic</h3>
+        <p>Three allies are damaged, but one is at immediate risk of dying. Compare the cast time of group recovery with the targeted spell that can arrive first. When the crisis passes, take stock of Mana and overhealing rather than casting every available heal just to keep bars full.</p>
+      </div>
     </section>
     <section class="chapter" id="shadow">
       <div class="shell">
         <div class="eyebrow">04 / The Forbidden Archive</div>
         <h2>Shadow: power with a life attached</h2>
-        <p class="lead">Shadow damage is no longer simply maintain Pain and stand still. Three builds must choose between finishing channels, aiding their party, or breaking an opponent’s timing – all while Shadowform forbids healing spells.</p>
+        <p class="lead">Shadow damage is not simply a matter of maintaining Pain and standing still. A Shadow Priest must weigh channeled pressure, party support and enemy control while remembering that Shadowform prevents casting healing spells.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>The darker bargain</strong><p>A Shadow Priest can pressure an opponent through damage-over-time spells while managing Mana and personal safety. Shadow Word: Pain continues to deal damage after application; repeated early refreshes can waste casting opportunities. A fear effect may send an enemy running into another dungeon group, so use it with awareness of nearby foes. Shadowform and other talents bring real restrictions and benefits: a build without the required talent should not be treated as if it has the form. A Shadow player in a party still watches threat and may need to interrupt damage to survive or assist.</p>
+        </aside>
         <div class="grid3">
           <article class="panel">
-            <div class="kicker">13/0/38 · Sustained harm</div>
-            <h3>The Void Harbinger</h3>
-            <p>Maintain durable DoTs, finish valuable Mind Flay channels, trigger Dark Inspiration and consider your own Shadow Weaving stacks.</p><a href="#d-harbinger">See audited dossier</a></article>
+            <div class="kicker">SHADOW · PRESSURE</div>
+            <h3>Pressure that lasts</h3>
+            <p>Damage-over-time spells keep working while the Priest plans the next action. Their value depends on the enemy surviving long enough for the effect to matter.</p>
+          </article>
           <article class="panel">
-            <div class="kicker">15/0/36 · The oracle’s pact</div>
-            <h3>The Vampiric Oracle</h3>
-            <p>Vampiric Embrace heals party members from real Shadow damage; Spirit Tap and Meditation buy time, not free group healing.</p><a href="#d-oracle">See audited dossier</a></article>
+            <div class="kicker">SHADOW · SUPPORT</div>
+            <h3>The party behind the shadow</h3>
+            <p>A Shadow Priest’s damage and supportive effects can be connected. Keep track of allies’ needs as well as the target’s remaining health; damage is not always the only useful outcome.</p>
+          </article>
           <article class="panel">
-            <div class="kicker">15/0/36 · Shadow as geometry</div>
-            <h3>The Shadow Duelist</h3>
-            <p>Silence, Psychic Scream, Blackout and line-of-sight interrupt enemy plans; one missed lethal read on SW:D costs 30% health.</p><a href="#d-duelist">See audited dossier</a></article>
+            <div class="kicker">SHADOW · CONTROL</div>
+            <h3>Control the next exchange</h3>
+            <p>A duel is shaped by Fear, positioning, interruptions and Mana as much as by spell damage. Control creates the safe interval in which pressure can do its work.</p>
+          </article>
         </div>
         <h3 style="margin-top:32px">The Shadow scriptorium: effect lanes, not DPS logs</h3>
         <p class="fine">Illustrative 24-second window normalized to 100% width. Actual timing changes with talents and encounter length; Mind Flay clips lose its increasingly powerful later ticks.</p>
@@ -516,12 +589,20 @@
         <p class="fine">SW:D: baseline from level 32; 18-second cooldown. <strong>Early Demise</strong> raises crit chance at or below 20% target health, but critical chance is not certainty of a kill. Shadowform buffs critical strike bonus, but its healing restriction remains; exiting form to heal is a separate tactical action. <a class="src" href="https://us.forums.blizzard.com/en/wow/t/wow-forever-beta-development-notes-%E2%80%93-updated-november-2/2360696" target="_blank" rel="noopener noreferrer" title="Blizzard · Forever Beta Development Notes, updated Nov 2">[B2]</a> <a class="src" href="https://wowfdb.com/classes/priest/shadow/spells/" target="_blank" rel="noopener noreferrer" title="WoW Forever DB · Shadow spells and ranks">[D3]</a> <a class="src" href="https://wowfdb.com/talents/priest/" target="_blank" rel="noopener noreferrer" title="WoW Forever DB · Priest talent tree, client 70938">[T1]</a></p>
         <div class="note violet"><strong>The PvP distinction:</strong> the Void Harbinger prizes sustained DoT value and full channels; the Vampiric Oracle spends points on Spirit Tap and Meditation to stay useful longer; the Shadow Duelist gives those up for <strong>Blackout 5/5</strong>, <strong>Improved Psychic Scream 2/2</strong>, <strong>Silent Resolve</strong> and <strong>Martyrdom</strong>. The Duelist’s average damage is not the same objective as preventing an enemy heal with the 45-second Silence. <a class="src" href="https://wowfdb.com/talents/priest/" target="_blank" rel="noopener noreferrer" title="WoW Forever DB · Priest talent tree, client 70938">[T1]</a> <a class="src" href="https://wowfdb.com/classes/priest/shadow/spells/" target="_blank" rel="noopener noreferrer" title="WoW Forever DB · Shadow spells and ranks">[D3]</a></div>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: the fear that spreads</h3>
+        <p>A melee enemy reaches the back line in a crowded dungeon. Fear may interrupt its pressure, but it can also send the target toward another group. Weigh movement, control and the fact that healing spells are unavailable in Shadowform before committing to an extended damaging channel.</p>
+      </div>
     </section>
     <section class="chapter" id="journey">
       <div class="shell">
         <div class="eyebrow">05 / Pilgrimage, equipment &amp; responsibilities</div>
         <h2>The road from the first wand to the final altar</h2>
+        <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment after the November 13 dungeon experience restriction: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
+        </aside>
         <p class="lead">A Priest who levels alone and a Priest who heals a dungeon do not need identical gear or point order. Forever’s revised spell values, two-specialization unlock, new Priest racials and class-specific party tools make that decision more interesting.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Learning the healer’s geography</strong><p>Early wand attacks and inexpensive spells can conserve Mana between quests; the precise best option changes with gear, enemies, and talent points. When entering a first dungeon, position near enough to heal but far enough from patrols to avoid pulling them. Ask the tank to mark a dangerous caster or control target. If two allies lose health, identify who will be struck next rather than reflexively healing the lower displayed percentage. A veteran Priest carries a plan for an unexpected add, a missed heal, and the moment the fight outlasts the original Mana budget.</p>
+        </aside>
         <div class="table-outer">
           <table>
             <thead>
@@ -600,7 +681,7 @@
         <div class="grid3">
           <article class="panel">
             <h3>Dungeon assignment</h3>
-            <p>Set the tank-heal owner, designate group-damage coverage and agree on dispels. The Aegis Keeper wards predictable spikes, Seraph manages sustained tank restoration, Choir manages the actual injured party, and Shadow supports from damage. A Battle Confessor should not assume the group has a second healer.</p>
+            <p>Set the tank-heal owner, designate group-damage coverage and agree on dispels. Assign prevention for predictable spikes, sustained tank healing, group recovery and dispels before the pull. An offensively inclined Priest should not assume someone else is covering the next life-saving heal.</p>
           </article>
           <article class="panel">
             <h3>Raid assignment</h3>
@@ -672,7 +753,7 @@
           <article class="panel">
             <h3>Dual specialization and saved lives</h3>
             <p>Forever unlocks dual specialization at <b>level 40</b>. Practical pairings include <em>Shadow for solo leveling / Holy for dungeons</em>, <em>Battle Confessor for questing / Aegis Keeper for group protection</em>, and <em>Shadow Duelist for PvP / Vampiric Oracle for group support</em>. Keep two gear kits, not merely two talent pages.</p>
-            <p>Trainers can change talents; the guide’s nine builds each assume conventional 51 level-60 points. <a class="src" href="https://worldofwarcraft.blizzard.com/en-us/news/24301514/" target="_blank" rel="noopener noreferrer" title="Blizzard · Priest / Warrior class deep dive">[B1]</a></p>
+            <p>Trainers can change talents; the advanced talent plans use the conventional level-60 budget of 51 points. <a class="src" href="https://worldofwarcraft.blizzard.com/en-us/news/24301514/" target="_blank" rel="noopener noreferrer" title="Blizzard · Priest / Warrior class deep dive">[B1]</a></p>
           </article>
         </div>
       </div>
@@ -681,6 +762,8 @@
       <div class="shell">
         <div class="eyebrow">06 / Scripture &amp; evidence</div>
         <h2>What is actually live?</h2>
+        <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum — Priest · Legacy talent</strong><p>The November 13 official fix makes the Legacy Perk The Quick and the Dead correctly reduce Divine Spirit’s Mana cost. This is a perk-specific correction; the book should not imply every Priest automatically has the perk. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
+        </aside>
         <p class="lead">A beautiful codex is only useful if its spells are real. This volume separates official changes, client-data spell text, and editorial encounter hypotheses. The September class deep dive is an origin – not the final ruleset.</p>
         <div class="grid3">
           <article class="panel">
@@ -769,8 +852,9 @@
     <section class="chapter" id="dossiers">
       <div class="shell">
         <div class="eyebrow">07 / The nine character dossiers</div>
-        <h2>Nine lives, nine full expenditures</h2>
+        <h2>Lives in the Light and Shadow</h2>
         <p class="lead">These are complete, rank-by-rank 51-point level-60 character identities – not placeholder talent strings. Each is checked against the 70938 talent roster, tier spending gates, rank caps and direct dependency chains. Every profile distinguishes known spell rules from untested role strength.</p>
+        <p class="reader-dossier-threshold">Here the general teachings become personal disciplines. Nine Priest dossiers put complete talent choices beside the injuries, enemies and party assignments they are meant to answer. They are not a verdict on which faith is strongest; they are invitations to see what each choice protects and what it leaves exposed.</p>
         <div class="nine-grid" aria-label="Nine archetype index">
           <article class="card-index">
             <div class="no">01</div>
@@ -2143,7 +2227,7 @@
     <section class="chapter" id="encounters">
       <div class="shell">
         <div class="eyebrow">08 / One encounter, nine answers</div>
-        <h2>The same disaster, nine decisions</h2>
+        <h2>The Same Disaster, Different Decisions</h2>
         <p class="lead">Compare sequences – not invented damage meters. The event order below is a tactical storyboard, and each specialization’s three members face the same encounter conditions. The live explorer below renders all nine builds across five scenarios, 45 plans in total.</p>
         <h3>One tank boss, three Discipline answers</h3>
         <div class="compare-grid">
@@ -2911,6 +2995,8 @@
       <div class="shell">
         <div class="eyebrow">10 / Source archive &amp; verification limits</div>
         <h2>The manuscript’s witnesses</h2>
+        <aside aria-label="Source review methodology" class="reader-hotfix"><strong>Editorial verification record · 15 November 2026</strong><p>Primary cross-check: <a href="https://worldofwarcraft.blizzard.com/en-us/news/24301514" rel="noopener noreferrer" target="_blank">Blizzard class deep dive</a> (published September–October 2026; beta-era design context) and the <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">official rolling hotfix ledger through November 13, 2026</a> (takes precedence on changes it addresses). Build descriptions and comparison scores remain editorial theorycraft, not independently in-game-tested rankings. Third-party links and historical calculators are reference leads, not universally revalidated live citations. Do not infer from an externally linked beta tooltip that the current client is identical.</p>
+        </aside>
         <p class="lead">The codex is usable offline; the links below are optional verification paths. Each factual passage uses compact [ID] links. The archive favors primary Blizzard updates and current Forever client talent data; lower-confidence interpretations are described as such.</p>
         <div class="source-list">
           <div class="source-item">
@@ -3073,7 +3159,7 @@
         </div>
       </div>
     </section>
-    <footer class="foot">THE FOREVER PRIEST COMPENDIUM · THE ILLUMINATED CODEX OF NINE PATHS<br>Compiled against World of Warcraft: Forever, client 1.60.1.70938 and official hotfixes through 11 November 2026 · Editorial cut 13 November 2026<br>Original generated cover illustration · All markup, CSS and JS embedded, artwork in the images folder · Unofficial independent reference, not affiliated with Blizzard Entertainment.</footer>
+    <footer class="foot">THE FOREVER PRIEST COMPENDIUM · THE LITANY OF DAWN AND DEEP SHADOW<br>Compiled against World of Warcraft: Forever, client 1.60.1.70938 and official hotfixes through 11 November 2026 · Editorial cut 13 November 2026<br>Original generated cover illustration · All markup, CSS and JS embedded, artwork in the images folder · Unofficial independent reference, not affiliated with Blizzard Entertainment.</footer>
   </main>
   <script>
 (() => {

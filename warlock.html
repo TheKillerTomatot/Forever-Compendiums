@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interactive WoW Forever Warlock compendium: nine 51-point Affliction, Demonology and Destruction builds, character dossiers and encounter comparisons."><title>The Forever Warlock Compendium: A Field Guide to Nine Dark Paths</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The Forever Warlock Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Warlock Compendium: The Grimoire of Ash and Bound Souls</title><style>
 :root{--bg:#07070e;--paper:#0e0c17;--pan:#14121f;--line:#373044;--txt:#eee8e4;--mute:#b7aebd;--vio:#bb83fb;--vio2:#6b3e91;--fel:#91e9a7;--orange:#ffa36f;--gold:#e6c58a;--shadow:0 14px 55px rgba(0,0,0,.35)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{background:radial-gradient(ellipse at 80% 0%,#2d1740 0%,transparent 32%),radial-gradient(ellipse at 2% 38%,#10231b 0%,transparent 35%),var(--bg);color:var(--txt);margin:0;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.64}
 h1,h2,h3,h4,.display{font-family:Georgia,'Times New Roman',serif;line-height:1.17;letter-spacing:.005em}h1{font-size:clamp(42px,6.5vw,86px);margin:0 0 14px}h2{font-size:clamp(29px,3.3vw,43px);margin:0 0 14px}h3{font-size:23px;margin:0 0 10px}h4{font-size:16px;margin:0 0 8px}p{margin:0 0 13px}b,strong{color:#fff}a{color:#e6c49a;text-decoration:none;border-bottom:1px solid #6d5b65}a:hover{color:#fff;border-color:#fff}small,.small{font-size:12px}sup{color:var(--gold)}
@@ -22,6 +22,50 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
 @media(max-width:680px){.grid2,.grid3,.card-grid,.spectable,.dossier .cols,.dossier .ribbons,.source-list{grid-template-columns:1fr}.chapter-banner{grid-template-columns:1fr}.sigil{height:120px;width:120px;font-size:54px}.hero{height:720px;padding:20px 25px 70px;background-position:49% center}.timeline{grid-template-columns:repeat(2,1fr)}.timeline .tick:after{display:none}.decision{grid-template-columns:1fr}.dossier-head{display:block}.interactive-output .step-grid{grid-template-columns:1fr 1fr}.dot-lanes{grid-template-columns:95px 1fr}}
 @media print{@page{size:A4;margin:14mm 12mm;}html,body{background:#0b0912!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}#toc,.notprint{display:none!important}main{margin:0}section{padding:24px 8px;break-before:auto}h2,h3,h4{break-after:avoid}h2{font-size:27px}.hero{height:260mm;padding:70mm 28px 25px;page-break-after:always}.hero h1{font-size:52px}.hero .deck{font-size:17px}.dossier,.panel,.spec-tile,.archetype,.compare,.flow,.dot-lanes,.table-wrap{break-inside:avoid}.grid3,.card-grid,.spectable{grid-template-columns:repeat(3,minmax(0,1fr))}.dossier{break-before:page;break-inside:auto}.dossier .cols{grid-template-columns:1fr 1fr}.dossier p,.dossier li{font-size:12px}table{font-size:11px}th,td{padding:7px 6px}.source-list{grid-template-columns:repeat(2,1fr)}.interactive-output{display:none}.timeline .tick{min-height:102px}.small{font-size:10px} .flow .node{min-width:85px} .dashboard{overflow:visible}.matrix{min-width:0}.matrix th:not(:first-child){height:130px;font-size:10px;min-width:30px}.matrix td:first-child{min-width:140px}.matrix .heat{width:21px;height:15px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Collection-wide editorial annotation, kept subordinate to each class theme. */
+.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
+.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
+.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
+.compendium-cover-subtitle{font:normal clamp(20px,2.4vw,31px)/1.3 Georgia,serif;color:var(--gold,#dec28c);margin:12px 0 15px;}
+@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
+
+/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
+.hero .series-manuscript {
+  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .06em !important;
+  text-transform: none !important;
+  max-width: 940px;
+  overflow-wrap: break-word;
+  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+}
+.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
+.hero .compendium-series-subtitle {
+  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .008em;
+  color: #f2d9a8;
+  max-width: 900px;
+  margin: 11px 0 15px !important;
+  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+}
+@media (max-width: 650px) {
+  .hero .series-manuscript { font-size: 11px !important; letter-spacing: .025em !important; }
+  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px) !important; margin: 8px 0 10px !important; }
+}
+
+/* Reader-first note, visually subordinate to the original manuscript design. */
+.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
+.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
+.reader-orientation p{margin:0;line-height:1.64}
+
+/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
+.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
+.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
+.reader-field-exercise p{margin:0;line-height:1.75}
+.reader-build-comparisons{margin:24px 0;padding:18px 24px;background:rgba(255,255,255,.02);border-left:2px solid var(--gold,#d7bc84)}
+.reader-build-comparisons h4{margin-top:22px}
+
+.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
 /* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
 .vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
 .vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
@@ -29,7 +73,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
 .vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
 .vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
 @media print{.vol-switch{display:none}}
-</style></head>
+</style><meta content="15 November 2026; official hotfix review and editorial accessibility pass; independent live testing outstanding" name="compendium-revision"></head>
 <body>
   <script>
   /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
@@ -126,22 +170,23 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
     <a href="#destruction">04 / Destruction forge</a>
     <a href="#journey">05 / Leveling, gear & PvP</a>
     <a href="#evidence">06 / Evidence & live changes</a>
-    <a href="#characters">07 / Nine character dossiers</a>
-    <a href="#encounters">08 / Same encounter: nine answers</a>
+    <a href="#characters">07 / Character dossiers</a>
+    <a href="#encounters">08 / Same encounter: Different answers</a>
     <a href="#dashboard">09 / Build-selection atlas</a>
     <a href="#sources">10 / Sources & limitations</a>
   </nav>
   <main>
     <header id="begin" class="hero" style="background-image:url('images/warlock-hero.jpg')">
       <div class="hero-inner">
-        <div class="eyebrow">THE OBSIDIAN LIBRARY · 2026 LIVE EDITION</div>
+        <div class="eyebrow series-manuscript">The Grimoire of Bound Souls<span class="series-sep"> / </span>On Pact and Sacrifice</div>
         <h1>
           <span class="white">THE FOREVER</span><span class="gild">WARLOCK</span><span class="white" style="font-size:.58em;letter-spacing:.08em">COMPENDIUM</span>
         </h1>
-        <p class="deck">Nine identities. Three talent trees. An entire language of curses, sacrifice, demon control and Fire–Shadow spellcraft.</p>
+        <div class="compendium-series-subtitle">The Grimoire of Ash and Bound Souls</div>
+        <p class="deck">Every bargain has a cost. Master curses, creeping damage, demon contracts and the dangerous exchange between Health and Mana before deciding which price you are willing to pay.</p>
         <div class="hero-badges">
           <span>Forever only</span>
-          <span>51-point level-60 builds</span>
+          <span>Spellcraft, demons &amp; resource study</span>
           <span>November 13, 2026</span>
           <span>Research + experimental atlas</span>
         </div>
@@ -152,7 +197,13 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
       <div class="shell">
         <div class="eyebrow">01 · The anatomy of a soulbinder</div>
         <h2>A Warlock has more than one resource bar</h2>
-        <p class="lead">Your damage is a network. Health funds mana. Mana funds DoTs and direct spells. Drains return health. Shards fund the demons, stones and specific nukes. Your demon determines where danger goes.</p>
+        <p class="lead">A Warlock wins by understanding what can be spent without leaving the fight unfinished: time for a curse to work, Mana for the next cast, Health for a refill and the trustworthiness of a bound demon.</p>
+        <div class="reader-orientation">
+          <h3>Before opening the forbidden pages</h3>
+          <p>Begin with Health, Mana, Soul Shards, pets and the distinction between a Bane and a Curse. Affliction, Demonology and Destruction each manipulate those constraints; their complete character ledgers are reserved for a later chapter.</p>
+        </div>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Three purses of forbidden power</strong><p>Mana buys spells, Health can be traded for Mana through Life Tap, and Soul Shards pay for particular demonic tools. The trade is not free: a Warlock at low Health can be killed while attempting to sustain a long fight. A curse supplies a utility debuff, while a Bane supplies a damaging affliction; Forever makes that distinction mechanically important. Your pet has health, positioning, and threat to manage. Learn to watch all four quantities before copying an advanced rotation. In a dungeon, pull the assigned target and keep fear effects away from unexplored packs.</p>
+        </aside>
         <div class="grid3">
           <div class="spec-tile violet">
             <div class="roman">I · THE SHADOW</div>
@@ -372,25 +423,27 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
         <div class="chapter-banner">
           <div class="sigil">☾</div>
           <div>
-            <h2>Three masters of decay</h2>
-            <p class="lead">One spreads a controlled epidemic; one turns suffering into survival; one hardcasts a Shadow Bolt between lingering curses.</p>
+            <h2>Affliction: The Long Bargain</h2>
+            <p class="lead">Affliction turns time into pressure. An effect that damages slowly has value only if the target lives long enough to feel it, and survival may depend on a drain or a demon rather than another immediate attack.</p>
+            <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Time is the weapon</strong><p>A damage-over-time spell continues hurting while you use other actions. Corruption, Siphon Life, and Bane of Agony are not interchangeable: each contributes something to the target and the Warlock’s overall plan. Wrack is acquired through a deep Affliction talent, and the November 10 hotfix changed how its channel accelerates ticks from those three effects; it does not make the effects expire sooner. Before applying several DoTs, ask whether the enemy will survive long enough for them to pay off. On a short-lived target, a simpler spell may be more economical.</p>
+            </aside>
           </div>
         </div>
         <div class="grid3">
           <div class="panel">
-            <div class="eyebrow">A1 · PLAGUEBRINGER</div>
-            <h3>DoT conductor</h3>
-            <p>Wrack and three named periodic effects are a single engine. Sacrifice Imp for +15% Shadow. The strongest mechanic is <strong>tick acceleration</strong>, not a shorter effect duration.</p>
+            <div class="eyebrow">AFFLICTION · TIME</div>
+            <h3>The value of lasting damage</h3>
+            <p>Affliction works over time. The first judgment is whether the target will live long enough for a damage-over-time effect to do meaningful work and whether another refresh is worth its Mana.</p>
           </div>
           <div class="panel">
-            <div class="eyebrow">A2 · SOUL DRAINER</div>
-            <h3>Attrition tank</h3>
-            <p>Deliberately skips Wrack, buys Soul Link, Fel Concentration and Improved Drains. The filler becomes Drain Life when health matters; the pet absorbs hits.</p>
+            <div class="eyebrow">AFFLICTION · SUSTAIN</div>
+            <h3>Survival through the bargain</h3>
+            <p>Drain effects and demon protection can let a Warlock stay in danger longer. Understand which resource pays for that endurance and what happens when the demon is no longer available.</p>
           </div>
           <div class="panel">
-            <div class="eyebrow">A3 · SHADOW HYBRID</div>
-            <h3>Shadow artillery</h3>
-            <p>Deliberately skips Wrack and buys Bane, Ruin and Improved Shadow Bolt. Corruption is a damage platform, but casts dominate the idle time.</p>
+            <div class="eyebrow">AFFLICTION · CASTING</div>
+            <h3>When a direct cast is worth it</h3>
+            <p>Not every fight lasts long enough for every periodic effect. Direct Shadow spells can fill the safer windows while a Warlock still watches threat and the cost of standing still.</p>
           </div>
         </div>
         <h3 style="margin-top:34px">Diagram: Wrack changes tick timing, not spell expiration</h3>
@@ -445,11 +498,11 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
           </div>
         </div>
         <div class="verdict"><strong>Why Pandemic matters.</strong> Forever periodic effects can critically strike. Pandemic at 3/3 increases the <em>critical-damage bonus</em> of Corruption, Bane of Agony, Bane of Doom, Drain Life, Drain Soul, Siphon Life and Wrack; it is not a modern Retail “DoT duration rollover” mechanic. Shadow Mastery adds up to 10% to Shadow damage and healing from Shadow drain; Improved Corruption 5/5 makes Corruption instant and increases its damage 10%. <a class="source" href="https://news.blizzard.com/en-us/article/24310968/world-of-warcraft-forever-class-deep-dives-rogue-and-warlock" target="_blank" rel="noopener">[S01]</a> <a class="source" href="https://foreverguide.net/tools/talent-calculator/warlock/" target="_blank" rel="noopener">[S09]</a></div>
-        <h3 style="margin-top:28px">Priority comparison – one stationary boss</h3>
+        <h3 style="margin-top:28px">A stationary boss: where the time goes</h3>
         <div class="spectable">
           <div class="compare">
             <div class="label">A1 / Wrack (6-second channel)</div>
-            <h4>The Plaguebringer</h4>
+            <h4>Sustained damage and periodic effects</h4>
             <ol class="seq">
               <li>Assigned Curse + amplified Agony</li>
               <li>Corruption + Siphon Life</li>
@@ -461,7 +514,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
           </div>
           <div class="compare">
             <div class="label">A2 / Drain Life (defensive) / Wrack unavailable</div>
-            <h4>The Soul Drainer</h4>
+            <h4>The drain-and-survive choice</h4>
             <ol class="seq">
               <li>Soul Link + assign pet position</li>
               <li>Curse, Corruption, Agony, Siphon</li>
@@ -473,7 +526,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
           </div>
           <div class="compare">
             <div class="label">A3 / Shadow Bolt (Bane + Ruin)</div>
-            <h4>The Shadow Hybrid</h4>
+            <h4>When direct Shadow casts matter</h4>
             <ol class="seq">
               <li>Curse + long-duration Bane</li>
               <li>Corruption</li>
@@ -484,23 +537,27 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="stamp">Sayaad / Felhunter · No</div>
           </div>
         </div>
-        <h3>Same Affliction tree, four simultaneous enemies</h3>
+        <h3>Affliction under pressure from several enemies</h3>
         <p>DoT spreading is not automatically the highest-value action. A target that dies in five seconds is a poor host for a long Agony ramp, and an avoidable target pulling through Fear can wipe a group. Choosing <em>which</em> monster gets a full set of effects is part of the build identity.</p>
         <div class="grid3">
           <div class="panel">
-            <h4>A1 · The Plaguebringer</h4>
+            <h4>Maintaining effects under crowd pressure</h4>
             <p>Spreads Corruption and Agony to A/B/C if they last, uses Siphon Life where healing helps, channels Wrack on a valuable survivor, and Drain Souls the first kill for replacement shards. No pet damage or pet threat to manage.</p>
           </div>
           <div class="panel">
-            <h4>A2 · The Soul Drainer</h4>
+            <h4>Managing Health and enemy attention</h4>
             <p>Voidwalker grabs A; Fear/Banish removes dangerous D when valid; Corruption rolls on durable A/B; Drain Life stabilizes health while Soul Link shifts damage. Uses a slower but safer kill profile.</p>
           </div>
           <div class="panel">
-            <h4>A3 · The Shadow Hybrid</h4>
+            <h4>Choosing a cast while enemies move</h4>
             <p>Sayaad is assigned to priority A; maintains Corruption/Agony on durable B, then hardcasts Shadow Bolt into A. A killed priority add can justify abandoning a partially matured DoT elsewhere.</p>
           </div>
         </div>
         <div class="alert">Do not copy the “Wrack boosts every Shadow DoT” language found in stale tooltips, and do not treat Doom as a Wrack enabler. The November 10 hotfix explicitly names the effects that work. <a class="source" href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-10-2026" target="_blank" rel="noopener">[S02]</a> <a class="source" href="https://www.wowhead.com/forever/guide/classes/warlock/affliction/talent-builds-pve-dps" target="_blank" rel="noopener">[S03]</a></div>
+      </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: the dying target</h3>
+        <p>A minor enemy will fall almost immediately, while the next one is durable. Applying every long damage-over-time effect to the first may waste both Mana and future ticks. Save the fuller pressure sequence for the target that will survive it, and use the freed time to place your demon or protect yourself.</p>
       </div>
     </section>
     <section id="demonology">
@@ -509,8 +566,10 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
         <div class="chapter-banner">
           <div class="sigil demon">⛧</div>
           <div>
-            <h2>Demonology is four separate decisions</h2>
-            <p class="lead">What to sacrifice. What to keep alive. Which damage school to cast. Which danger to transfer from yourself to the demon.</p>
+            <h2>Demonology: The Pact and Its Keeper</h2>
+            <p class="lead">Demonology is an exchange of responsibilities. The Warlock keeps a demon, sacrifices one, commands another or relies on the bond to survive. Each choice changes what must be protected during an encounter.</p>
+            <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>The companion is a commitment</strong><p>A demon contributes attacks, defensive tools, and sometimes the ability to hold an enemy away from its summoner. But pets can lose contact with a moving target, die under area damage, or pull unwanted attention. A talent that sacrifices a demon trades its active abilities for a different benefit; Soul Link and later talents can change the value of keeping a companion. Choose which problem your demon solves before a pull. A Voidwalker protecting a solo Warlock and an Imp supporting a caster in a dungeon are not doing the same job.</p>
+            </aside>
           </div>
         </div>
         <h3>Two demons can empower one Warlock – but they cannot be the same demon</h3>
@@ -578,11 +637,11 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div>Keep Felhunter, hold Spell Lock and Devour Magic; sacrifice something <em>other than Felhunter</em> if retaining Pact.</div>
           </div>
         </div>
-        <h3 style="margin-top:33px">Three genuinely different fight loops</h3>
+        <h3 style="margin-top:33px">How the demon changes the encounter</h3>
         <div class="spectable">
           <div class="compare">
             <div class="label">M1 · Sayaad (melee)</div>
-            <h4>The Shadow Demon Commander</h4>
+            <h4>A demon directed toward damage</h4>
             <ol class="seq">
               <li>Sacrifice Imp → summon Sayaad</li>
               <li>Soul Link + petattack</li>
@@ -594,7 +653,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
           </div>
           <div class="compare">
             <div class="label">M2 · Imp (ranged)</div>
-            <h4>The Felfire Conjurer</h4>
+            <h4>Direct fire supported by a demon</h4>
             <ol class="seq">
               <li>Sacrifice Sayaad → summon Imp</li>
               <li>Position Imp out of danger</li>
@@ -606,7 +665,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
           </div>
           <div class="compare">
             <div class="label">M3 · Voidwalker (default); Felhunter vs caster</div>
-            <h4>The Soulbound Guardian</h4>
+            <h4>Survival bound to a demon</h4>
             <ol class="seq">
               <li>Felhunter sacrificed; Voidwalker active</li>
               <li>Voidwalker positioned outside frontal</li>
@@ -620,12 +679,12 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
         <div class="grid2">
           <article class="panel">
             <div class="eyebrow">SHADOW CASTING</div>
-            <h3>Commander: Searing Pain is a <em>command</em></h3>
+            <h3>When Searing Pain is part of a command</h3>
             <p>With a Sayaad and Shadow Bolt filler, Searing Pain activates Demonic Brand, which improves the pet's next attacks. You must refresh the mark when it falls or its attacks are consumed, rather than paying Searing Pain’s opportunity cost every filler cast. The melee pet risks travel time and boss melee-area hazards. <a class="source" href="https://www.wowhead.com/forever/guide/classes/warlock/demonology/talent-builds-pve-dps" target="_blank" rel="noopener">[S04]</a> <a class="source" href="https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide" target="_blank" rel="noopener">[S07]</a></p>
           </article>
           <article class="panel">
             <div class="eyebrow">FIRE CASTING</div>
-            <h3>Conjurer: Searing Pain is the <em>filler</em></h3>
+            <h3>When Searing Pain fills the casting window</h3>
             <p>With an Imp, Searing Pain repeatedly extends the value of Brand and aligns with Fire damage bonuses. Demonic Energies restores Imp mana whenever you Life Tap, preventing extended Firebolt downtime; Decimation lets Soul Fire replace filler under 35% without shard expenditure while its buff is active. <a class="source" href="https://www.wowhead.com/forever/guide/classes/warlock/demonology/talent-builds-pve-dps" target="_blank" rel="noopener">[S04]</a> <a class="source" href="https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide" target="_blank" rel="noopener">[S07]</a></p>
           </article>
         </div>
@@ -715,6 +774,10 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
         </div>
         <p class="fine">The Shadow and Fire pairing efficiency is supported by Forever specialist guides, but relative live DPS can vary with length, pet uptime, gear and tuning. Published Mobalytics beta simulations currently lean Fire slightly; this guide does not turn that into a ranking. <a class="source" href="https://www.wowhead.com/forever/guide/classes/warlock/demonology/talent-builds-pve-dps" target="_blank" rel="noopener">[S04]</a> <a class="source" href="https://mobalytics.gg/wow-forever/classes/demonology-warlock-guide" target="_blank" rel="noopener">[S07]</a></p>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: the demon in danger</h3>
+        <p>Your bound companion takes heavy damage as the enemy turns toward you. Revisit the role you asked the demon to perform: absorbing harm, adding damage or supplying a sacrificed benefit. If it dies or is absent, some of your expected defenses and offensive choices may disappear with it.</p>
+      </div>
     </section>
     <section id="destruction">
       <div class="shell">
@@ -722,8 +785,10 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
         <div class="chapter-banner">
           <div class="sigil destroy">✹</div>
           <div>
-            <h2>Three pyromancers, three battle rhythms</h2>
-            <p class="lead">Destruction in Forever is not one-button Fire damage. It is a two-school engine whose most important buttons do more than deal immediate damage.</p>
+            <h2>Destruction: The Price of Fire</h2>
+            <p class="lead">Destruction converts a narrow safe window into a forceful answer. Fire and Shadow interact through distinct effects, but even the largest spell is a mistake if casting it gives away your survival or control.</p>
+            <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Fire has prerequisites</strong><p>Destruction emphasizes short windows in which a completed spell and the right preceding effects create a valuable hit. Immolate places damage over time on the enemy; Incinerate is a deep Destruction talent ability, not a universally trained spell, and its extra damage depends on the target being affected appropriately. Bane of Havoc and other talents have build prerequisites: check the chosen dossier before describing a full rotation. A global cooldown is the short delay shared by many actions. Spending one on unnecessary setup can cost the burst window you were trying to create.</p>
+            </aside>
           </div>
         </div>
         <div class="flow">
@@ -791,11 +856,11 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <p style="margin-top:15px">Bane of Havoc is a five-minute debuff on the receiving target. It mirrors 15% of your damage to <em>other</em> targets onto the Havoc target. It uses the Bane slot on B, and post-November-10 correctly triggers the global cooldown. <a class="source" href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-10-2026" target="_blank" rel="noopener">[S02]</a> <a class="source" href="https://foreverguide.net/tools/talent-calculator/warlock/" target="_blank" rel="noopener">[S09]</a></p>
           </article>
         </div>
-        <h3 style="margin-top:30px">The Destruction split: pet, proc or sacrifice?</h3>
+        <h3 style="margin-top:30px">Fire and the cost of a demon</h3>
         <div class="spectable">
           <div class="compare">
             <div class="label">D1 · Sayaad / Incubus (melee)</div>
-            <h4>The Fel-Flame Artillery Mage</h4>
+            <h4>The direct-fire casting window</h4>
             <ol class="seq">
               <li>Pet attack + Curse/Doom</li>
               <li>Immolate + Corruption</li>
@@ -807,7 +872,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
           </div>
           <div class="compare">
             <div class="label">D2 · Sayaad / Felhunter</div>
-            <h4>The Shadowfire Hybrid</h4>
+            <h4>The mixed-school pressure loop</h4>
             <ol class="seq">
               <li>Corruption + Immolate</li>
               <li>Conflagrate: Shadow window</li>
@@ -819,7 +884,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
           </div>
           <div class="compare">
             <div class="label">D3 · None</div>
-            <h4>The Sacrificial Infernalist</h4>
+            <h4>The cost of fighting without a pet</h4>
             <ol class="seq">
               <li>Sacrifice Sayaad pre-pull</li>
               <li>Curse/Bane + Immolate</li>
@@ -832,26 +897,34 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
         </div>
         <div class="grid3">
           <article class="panel">
-            <h4>Artillery: stronger direct buttons</h4>
+            <h4>Direct casts and timing</h4>
             <p>Three ranks of Fire and Brimstone add critical-strike chance to Conflagrate; the remaining talents fit a heavily Fire-oriented 14/4/33 caster supported by a damage pet. The Sayaad's passive melee damage is only useful while it can actually attack. <a class="source" href="https://mobalytics.gg/wow-forever/classes/destruction-warlock-guide" target="_blank" rel="noopener">[S08]</a></p>
           </article>
           <article class="panel">
-            <h4>Shadowfire: extra proc decisions</h4>
+            <h4>Procs and changing priorities</h4>
             <p>Nightfall's Shadow Trance gives an instant Shadow Bolt opportunity after Conflagrate's Shadow bonus. This is an intentionally designed hybrid; proc availability and its real damage per global cooldown require live testing against simply continuing Incinerate.</p>
           </article>
           <article class="panel">
-            <h4>Infernalist: no pet, no distraction</h4>
+            <h4>Fighting without an active demon</h4>
             <p>Sacrificing the <strong>Sayaad</strong> gives +15% Fire, but without 31-point Demonic Pact a later summon cancels it. The build loses pet damage and control. Its value is execution simplicity, not a claim of best raid DPS. <a class="source" href="https://www.wowhead.com/forever/guide/classes/warlock/destruction/talent-builds-pve-dps" target="_blank" rel="noopener">[S05]</a></p>
           </article>
         </div>
         <div class="verdict"><strong>The Bane trap:</strong> placing Bane of Havoc on target B is useful only when you deal damage to A, C or others while B remains alive. If a stationary boss is alone, Havoc is a required talent tax for Incinerate, not a free extra source of single-target damage. <a class="source" href="https://news.blizzard.com/en-us/article/24310968/world-of-warcraft-forever-class-deep-dives-rogue-and-warlock" target="_blank" rel="noopener">[S01]</a> <a class="source" href="https://www.wowhead.com/forever/guide/classes/warlock/destruction/talent-builds-pve-dps" target="_blank" rel="noopener">[S05]</a></div>
+      </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: fire under interruption</h3>
+        <p>The enemy prepares to interrupt a long damaging cast. Decide whether the spell can finish safely, whether a control tool creates a better opening and whether the target is worth a cooldown now. Destruction is powerful precisely because good windows are valuable.</p>
       </div>
     </section>
     <section id="journey">
       <div class="shell">
         <div class="eyebrow">05 · The road to the sixtieth seal</div>
         <h2>Leveling, endgame, PvP, stats and races</h2>
+        <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment after the November 13 dungeon experience restriction: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
+        </aside>
         <p class="lead">Gear changes who does the damage. Leveling changes which resource is scarce. PvP changes whether an offensive pet is worth more than an interrupt or a defensive cooldown.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Learn the price of safety</strong><p>While leveling, a pet that holds enemy attention may save more Health than a small improvement to the damage rotation. Life Tap can shorten downtime if you have safe recovery available, but tapping low Health next to a patrol is a dangerous bargain. In a dungeon, coordinate utility Curses and damage Banes with the group and avoid uncontrolled Fear near additional enemies. Gear changes how reliably spells land and how long Mana lasts; do not turn an experimental build into a promised raid ranking without testing. Your most important resource is often the next safe second.</p>
+        </aside>
         <div class="table-wrap">
           <table>
             <thead>
@@ -1026,6 +1099,8 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
       <div class="shell">
         <div class="eyebrow">06 · The covenant with evidence</div>
         <h2>What is actually live?</h2>
+        <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum — Affliction · silence rule</strong><p>As of the November 13 hotfix, Siphon Life Rank 1 cannot be cast while silenced. The November 10 redesign of Wrack remains in force: while channeled, it advances the periodic ticks of Corruption, Siphon Life and Bane of Agony without shortening their overall durations. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
+        </aside>
         <p class="lead">Three Warlocks can enter the same battle with the same primary tree and still face completely different tactical puzzles. Separate live mechanics from inherited assumptions and untested inventions.</p>
         <div class="grid3">
           <article class="panel">
@@ -1068,8 +1143,9 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
     <section id="characters">
       <div class="shell">
         <div class="eyebrow">07 · Nine grimoire entries</div>
-        <h2>Nine complete character dossiers</h2>
+        <h2>Character Dossiers</h2>
         <p class="lead">Every dossier is a full 51-point level-60 talent allocation, not a vague “take the core” recommendation. Green means Demonology, violet Affliction, orange Destruction. The build labels distinguish documented templates from experimental identities.</p>
+        <p class="reader-dossier-threshold">The contract now has names written beneath it. Nine Warlock dossiers commit to particular demons, damage patterns and resource exchanges, with the price of each bargain made visible. Their purpose is to make the wider art of Warlock play more intelligible, not to declare a final hierarchy of forbidden powers.</p>
         <div class="alert greenbox">Legality method: each tree was checked for a maximum talent rank, its 5/10/15/20/25/30 prior-row point gate and all documented prerequisite arrows (including Siphon Life → Wrack; Demonic Sacrifice → Soul Link → Demonic Pact; Master Summoner → Fel Domination; Conflagrate → Fire and Brimstone; and Bane of Havoc → Incinerate). All nine contain exactly 51 points. This is a <strong>calculator-structure validation</strong>, not a claim that each build was executed or simulated in the live client. <a href="https://foreverguide.net/tools/talent-calculator/warlock/">Open current Forever talent calculator →</a></div>
         <div class="card-grid">
           <div class="archetype">
@@ -3103,6 +3179,8 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
       <div class="shell">
         <div class="eyebrow">10 · The source archive</div>
         <h2>Research trail and verification limits</h2>
+        <aside aria-label="Source review methodology" class="reader-hotfix"><strong>Editorial verification record · 15 November 2026</strong><p>Primary cross-check: <a href="https://worldofwarcraft.blizzard.com/en-us/news/24310968" rel="noopener noreferrer" target="_blank">Blizzard class deep dive</a> (published September–October 2026; beta-era design context) and the <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">official rolling hotfix ledger through November 13, 2026</a> (takes precedence on changes it addresses). Build descriptions and comparison scores remain editorial theorycraft, not independently in-game-tested rankings. Third-party links and historical calculators are reference leads, not universally revalidated live citations. Do not infer from an externally linked beta tooltip that the current client is identical.</p>
+        </aside>
         <p class="lead">Sources are exclusively Forever-specific. Primary Blizzard changes take precedence over stale beta tooltips, search snippets, old screenshots and cross-expansion assumptions.</p>
         <div class="source-list">
           <div class="source-item"><a href="https://news.blizzard.com/en-us/article/24310968/world-of-warcraft-forever-class-deep-dives-rogue-and-warlock" target="_blank" rel="noopener">[S01] Blizzard – Warlock class deep dive, 7 Oct 2026</a><span>Primary design, talents and sacrifices</span>

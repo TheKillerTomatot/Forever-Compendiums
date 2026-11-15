@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Interactive WoW Forever Paladin compendium: nine Holy, Protection and Retribution builds, talent allocations, encounter laboratory, gear and comparisons."><title>The Forever Paladin Compendium: Nine Sacred Paths</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="The Forever Paladin Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Paladin Compendium: The Golden Oath of Mercy and Judgment</title><style>
 :root{--bg:#080d17;--paper:#111928;--pan:#182436;--line:#3b5063;--txt:#f4efe7;--mute:#b3c2d1;--vio:#eeca8a;--vio2:#745633;--fel:#91d7ed;--orange:#f5a37e;--gold:#f3d49a;--shadow:0 14px 55px rgba(0,0,0,.35)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{background:radial-gradient(ellipse at 80% 0%,#2d1740 0%,transparent 32%),radial-gradient(ellipse at 2% 38%,#10231b 0%,transparent 35%),var(--bg);color:var(--txt);margin:0;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.64}
 h1,h2,h3,h4,.display{font-family:Georgia,'Times New Roman',serif;line-height:1.17;letter-spacing:.005em}h1{font-size:clamp(42px,6.5vw,86px);margin:0 0 14px}h2{font-size:clamp(29px,3.3vw,43px);margin:0 0 14px}h3{font-size:23px;margin:0 0 10px}h4{font-size:16px;margin:0 0 8px}p{margin:0 0 13px}b,strong{color:#fff}a{color:#e6c49a;text-decoration:none;border-bottom:1px solid #6d5b65}a:hover{color:#fff;border-color:#fff}small,.small{font-size:12px}sup{color:var(--gold)}
@@ -27,6 +27,50 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
 @media print{.hero{height:245mm}.spec-tile{min-height:330px;padding-top:180px}.spec-tile:before{height:195px}.step-layout{grid-template-columns:repeat(4,1fr)}.notprint{display:none!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 /* very small phones: the title word COMPENDIUM must fit inside the side padding */@media(max-width:340px){.hero h1{font-size:37px}}
+
+/* Collection-wide editorial annotation, kept subordinate to each class theme. */
+.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
+.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
+.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
+.compendium-cover-subtitle{font:normal clamp(20px,2.4vw,31px)/1.3 Georgia,serif;color:var(--gold,#dec28c);margin:12px 0 15px;}
+@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
+
+/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
+.hero .series-manuscript {
+  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .06em !important;
+  text-transform: none !important;
+  max-width: 940px;
+  overflow-wrap: break-word;
+  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+}
+.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
+.hero .compendium-series-subtitle {
+  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif !important;
+  letter-spacing: .008em;
+  color: #f2d9a8;
+  max-width: 900px;
+  margin: 11px 0 15px !important;
+  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+}
+@media (max-width: 650px) {
+  .hero .series-manuscript { font-size: 11px !important; letter-spacing: .025em !important; }
+  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px) !important; margin: 8px 0 10px !important; }
+}
+
+/* Reader-first note, visually subordinate to the original manuscript design. */
+.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
+.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
+.reader-orientation p{margin:0;line-height:1.64}
+
+/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
+.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
+.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
+.reader-field-exercise p{margin:0;line-height:1.75}
+.reader-build-comparisons{margin:24px 0;padding:18px 24px;background:rgba(255,255,255,.02);border-left:2px solid var(--gold,#d7bc84)}
+.reader-build-comparisons h4{margin-top:22px}
+
+.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
 /* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
 .vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
 .vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
@@ -34,7 +78,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
 .vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
 .vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
 @media print{.vol-switch{display:none}}
-</style></head>
+</style><meta content="15 November 2026; official hotfix review and editorial accessibility pass; independent live testing outstanding" name="compendium-revision"></head>
 <body>
   <script>
   /* Volumes (phase 2): Primer, Advanced and Complete are three views of this one page.
@@ -131,7 +175,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
     <a href="#retribution">04 / Retribution Paladin</a>
     <a href="#journey">05 / Leveling, gear & groups</a>
     <a href="#evidence">06 / Live ruleset & evidence</a>
-    <a href="#characters">07 / Nine character dossiers</a>
+    <a href="#characters">07 / Character dossiers</a>
     <a href="#encounters">08 / Encounter laboratory</a>
     <a href="#dashboard">09 / Build-selection atlas</a>
     <a href="#sources">10 / Sources & verdict</a>
@@ -139,16 +183,17 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
   <main>
     <header id="begin" class="hero" style="background-image:url('images/paladin-hero.webp')">
       <div class="hero-inner">
-        <div class="eyebrow">THE GOLDEN CODEX · VOLUME I · NINE SACRED PATHS</div>
+        <div class="eyebrow series-manuscript">The Golden Oath<span class="series-sep"> / </span>In Service of the Light</div>
         <h1>
           <span class="white">THE FOREVER</span><span class="gild">PALADIN COMPENDIUM</span></h1>
-        <p class="deck">Three disciplines. Nine ways to fight. An illustrated, interactive field guide to Holy, Protection and Retribution in World of Warcraft: Forever.</p>
-        <div class="byline">LIVE RULESET · LEVEL 60 · 51 TALENT POINTS · RESEARCH SNAPSHOT 13 NOVEMBER 2026</div>
+        <div class="compendium-series-subtitle">The Golden Oath of Mercy and Judgment</div>
+        <p class="deck">A Paladin bears three duties beneath one oath: keep faith with the wounded, hold the ground others cannot, and answer cruelty with judgment. Each duty begins with attention, not damage.</p>
+        <div class="byline">LIVE-ERA REFERENCE · LEVEL 60 · 51 TALENT POINTS · RESEARCH SNAPSHOT 13 NOVEMBER 2026</div>
         <div class="hero-badges">
           <span>HOLY</span>
           <span>PROTECTION</span>
           <span>RETRIBUTION</span>
-          <span>NINE CHARACTER DOSSIERS</span>
+          <span>CHARACTER DOSSIERS</span>
           <span>OFFLINE EDITION</span>
         </div>
         <p class="small" style="color:#efe1c8;margin-top:14px">Original illustrative fantasy art · Not a screenshot from the game</p>
@@ -158,7 +203,13 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
       <div class="shell">
         <div class="eyebrow">Chapter 01 · Shared class systems</div>
         <h2>The Paladin combat engine</h2>
-        <p class="lead">A Paladin is a weapon user, an armored spellcaster and a group utility character at the same time. What makes the three specializations different is not which baseline spells they own; it is <b>why and when they spend resources on those spells</b>.</p>
+        <p class="lead">The Light does not choose your next action for you. Learn how Seals, Judgements, Mana and defensive timing fit together before asking whether your calling is to heal, to protect or to strike.</p>
+        <div class="reader-orientation">
+          <h3>The oath in practice</h3>
+          <p>First learn the shared combat engine. Holy, Protection and Retribution become clearer when you understand the same tools from three responsibilities: saving a life, keeping a foe occupied and ending a threat.</p>
+        </div>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>The seal, the judgement, the promise</strong><p>A Seal is a maintained self-effect that shapes what the Paladin’s attacks do. Judgement uses the active Seal to deliver a separate effect; in Forever it does not simply consume the Seal as an old guide might suggest. After the November 13 hotfix, Judgement of Command is specifically treated as a melee attack for on-hit effects, while the other Judgements remain ranged attacks. Mana pays for spells and emergency healing. Threat is the reason a tank uses an ability on the enemy threatening the healer rather than only on the nearest foe. Learn to protect a person before optimizing a damage sequence.</p>
+        </aside>
         <h3>Seals → weapon attacks → Judgement</h3>
         <div class="mini-flow">
           <span><b>ACTIVATE ONE SEAL</b>Choose offensive or tanking posture</span>
@@ -166,7 +217,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
           <span><b>JUDGEMENT</b>Release the current Seal's target effect</span>
           <span><b>SEAL REMAINS</b>Continue, maintain or intentionally swap</span>
         </div>
-        <p class="fine">In Forever, Judgement does not consume the active Seal. After the November 11 hotfix, its hit/proc behavior is ranged. That one change invalidates older melee proc comparisons.</p>
+        <p class="fine">In Forever, Judgement does not consume the active Seal. The November 11 hotfix made most Judgements ranged, but the November 13 correction restores Judgement of Command as a melee attack that can activate on-hit effects; other Judgements remain ranged. Older blanket descriptions are no longer accurate.</p>
         <h3>Seal identities</h3>
         <div class="table-wrap">
           <table>
@@ -273,7 +324,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
             </tbody>
           </table>
         </div>
-        <h3>Three characters, same elite enemy</h3>
+        <h3>The same elite enemy, different responsibilities</h3>
         <div class="grid3">
           <div class="panel">
             <h3>Holy</h3>
@@ -293,24 +344,26 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
     <section id="holy">
       <div class="shell">
         <div class="eyebrow">Chapter 02 · The hand of salvation</div>
-        <h2>Holy: three identities, one healing spellbook</h2>
-        <p class="lead">The reliable healer, the melee spellcaster and the armored battlefield medic have the same baseline heals but radically different ideas of when it is safe to do damage.</p>
+        <h2>Holy: The Art of Answering Wounds</h2>
+        <p class="lead">Holy begins with the wounded person, not the spellbar. Learn how soon healing must land, what Mana can be spared and when a Paladin may safely add offense without abandoning a life entrusted to them.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>What a healer watches</strong><p>A Holy Paladin watches both the injured ally and the next expected hit. A large heal has little value if it finishes too late; a smaller efficient heal may be better when damage is predictable. Mana matters over the entire dungeon, not just one pull. When fighting solo, offensive Seals and Judgements help turn defense into progress; in a party, changing targets to save a fragile ally is often the right use of a global cooldown. Healing talents add options to this baseline kit, but their presence should always be checked against the actual build.</p>
+        </aside>
         <div class="grid3">
           <div class="spec-tile holy" style="--portrait:url('images/paladin-holy.webp')">
-            <div class="roman">PATH 1 · HOLY</div>
-            <h3>Dedicated Holy Healer</h3>
-            <p>A patient healer who wins fights through mana discipline and reliable priority-target healing.</p>
-            <p class="code">33 / 5 / 13</p><a href="#dedicated-holy-healer">Complete build dossier ↗</a></div>
+            <div class="roman">HOLY · TRIAGE</div>
+            <h3>The endangered ally</h3>
+            <p>A healing Paladin watches the next dangerous hit and the time required for a heal to land. Reserve sufficient Mana for the crisis instead of treating every missing point of health as equally urgent.</p>
+          </div>
           <div class="spec-tile holy" style="--portrait:url('images/paladin-holy.webp')">
-            <div class="roman">PATH 2 · HOLY</div>
-            <h3>Combat Cleric / Shockadin</h3>
-            <p>A warrior-priest who must constantly choose between attacking and healing.</p>
-            <p class="code">31 / 0 / 20</p><a href="#combat-cleric-shockadin">Complete build dossier ↗</a></div>
+            <div class="roman">HOLY · OPPORTUNITY</div>
+            <h3>When offense can safely help</h3>
+            <p>Holy damage has a place when immediate healing is covered. Every attack still spends time and resources that might be needed to restore an ally, so reassess when the battlefield changes.</p>
+          </div>
           <div class="spec-tile holy" style="--portrait:url('images/paladin-holy.webp')">
-            <div class="roman">PATH 3 · HOLY</div>
-            <h3>Defensive Battlefield Medic</h3>
-            <p>A healer who keeps casting when enemies reach the backline.</p>
-            <p class="code">31 / 20 / 0</p><a href="#defensive-battlefield-medic">Complete build dossier ↗</a></div>
+            <div class="roman">HOLY · RESILIENCE</div>
+            <h3>Healing under pressure</h3>
+            <p>A Paladin in the thick of an encounter must protect casting space and survive stray attacks. Position, armor and defensive cooldowns are part of the healing plan.</p>
+          </div>
         </div>
         <div class="spacer-lg"></div>
         <h3>Important talent and spell interactions</h3>
@@ -347,16 +400,16 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
           <span><b>PARTY SPIKE</b>Vigil + Holy Shock</span>
           <span><b>LETHAL PRESSURE</b>Immediate rescue or defensive</span>
         </div>
-        <h3>Exactly the same crisis, three different characters</h3>
+        <h3>The same crisis, different obligations</h3>
         <p class="fine">Decision sequence, not a scripted live-boss rotation.</p>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
                 <th>Encounter moment</th>
-                <th>Dedicated Holy Healer</th>
-                <th>Combat Cleric / Shockadin</th>
-                <th>Defensive Battlefield Medic</th>
+                <th>Preventing an emergency</th>
+                <th>Offense in safe intervals</th>
+                <th>Healing while threatened</th>
               </tr>
             </thead>
             <tbody>
@@ -395,28 +448,34 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
         </div>
         <p><a href="#encounters">Open the interactive encounter laboratory ↗</a> to compare normal enemies, packs, elites, dungeon bosses and PvP.</p>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: the healer’s second duty</h3>
+        <p>A dungeon ally loses a little Health while the tank is about to receive a heavy attack. Do not spend your last reliable cast window topping the safer player merely because that bar is incomplete. Choose the heal that can arrive before the true danger, then decide whether there is room to attack again.</p>
+      </div>
     </section>
     <section id="protection">
       <div class="shell">
         <div class="eyebrow">Chapter 03 · The living fortress</div>
-        <h2>Protection: three definitions of tanking well</h2>
-        <p class="lead">Threat is not a pure damage meter. A safe tank predicts incoming damage; an aggressive tank claims a pack early; a hybrid tank preserves utility and efficient Judgement control.</p>
+        <h2>Protection: Holding the Line</h2>
+        <p class="lead">Protection is the promise that an enemy will not be free to choose a weaker victim. Build threat, wear the shield when its protections are required, and treat predictable survival as an active part of your duty.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>Holding the line is a group task</strong><p>A tank’s first job is not to take the most damage: it is to keep dangerous enemies attacking the character equipped to survive them. Threat is that attraction; aggro is the enemy choosing whom to attack. Righteous Fury and appropriate Holy attacks help establish it, while a taunt-style rescue ability solves an immediate target problem without permanently replacing steady threat. Face enemies away from vulnerable party members and watch for new arrivals. Spending all available Mana on a harmless pack can leave you with nothing when a second group appears.</p>
+        </aside>
         <div class="grid3">
           <div class="spec-tile prot" style="--portrait:url('images/paladin-protection.webp')">
-            <div class="roman">PATH 1 · PROTECTION</div>
-            <h3>Unbreakable Bulwark</h3>
-            <p>An anchor tank; your healer should always know what the next hit will feel like.</p>
-            <p class="code">0 / 35 / 16</p><a href="#unbreakable-bulwark">Complete build dossier ↗</a></div>
+            <div class="roman">PROTECTION · THREAT</div>
+            <h3>Holding the front line</h3>
+            <p>Protection is a commitment to enemy attention, shield use and predictable survival. The question is whether the next attacker stays on you, not whether your personal damage looks impressive.</p>
+          </div>
           <div class="spec-tile prot" style="--portrait:url('images/paladin-protection.webp')">
-            <div class="roman">PATH 2 · PROTECTION</div>
-            <h3>Holy Aggressor</h3>
-            <p>An offensive tank who establishes group threat with deliberate Holy ground pressure.</p>
-            <p class="code">20 / 31 / 0</p><a href="#holy-aggressor">Complete build dossier ↗</a></div>
+            <div class="roman">PROTECTION · TEMPO</div>
+            <h3>Threat through decisive action</h3>
+            <p>An aggressive tank can use active offense to keep an enemy engaged, but the shield and healer remain central. Spend Mana on meaningful control instead of chasing every damage opportunity.</p>
+          </div>
           <div class="spec-tile prot" style="--portrait:url('images/paladin-protection.webp')">
-            <div class="roman">PATH 3 · PROTECTION</div>
-            <h3>Hybrid Crusader</h3>
-            <p>An agile shield knight who keeps a Retribution support and mana toolkit.</p>
-            <p class="code">0 / 31 / 20</p><a href="#hybrid-crusader">Complete build dossier ↗</a></div>
+            <div class="roman">PROTECTION · SUPPORT</div>
+            <h3>Support without surrendering the pull</h3>
+            <p>A Paladin may bring more than one kind of utility, but cannot neglect the task the party has assigned. Secure enemy control first; aid allies when it does not leave them exposed.</p>
+          </div>
         </div>
         <div class="spacer-lg"></div>
         <h3>Important talent and spell interactions</h3>
@@ -453,16 +512,16 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
           <span><b>BLOCK PROC</b>Recover limited mana</span>
           <span><b>HOLY STRIKE</b>Maintain Iron Creed/Shieldsworn rhythm</span>
         </div>
-        <h3>Exactly the same crisis, three different characters</h3>
+        <h3>The same crisis, different obligations</h3>
         <p class="fine">Decision sequence, not a scripted live-boss rotation.</p>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
                 <th>Encounter moment</th>
-                <th>Unbreakable Bulwark</th>
-                <th>Holy Aggressor</th>
-                <th>Hybrid Crusader</th>
+                <th>Defensive security</th>
+                <th>Claiming early threat</th>
+                <th>Holding threat while assisting</th>
               </tr>
             </thead>
             <tbody>
@@ -501,28 +560,34 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
         </div>
         <p><a href="#encounters">Open the interactive encounter laboratory ↗</a> to compare normal enemies, packs, elites, dungeon bosses and PvP.</p>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: the loose enemy</h3>
+        <p>The group is attacking your first target when another foe starts toward the healer. Keep the shield and any shield-dependent benefits in mind, regain the second enemy’s attention and avoid spending all Mana on the first target’s damage. A tank’s success is shared safety.</p>
+      </div>
     </section>
     <section id="retribution">
       <div class="shell">
         <div class="eyebrow">Chapter 04 · The divine executioner</div>
         <h2>Retribution: weapon, spell and support</h2>
-        <p class="lead">The strongest mechanical separation comes from whether you own the 31-point Seal-echo capstone or abandon it to buy the 21-point Holy Shock talent.</p>
+        <p class="lead">Retribution weighs the heavy strike against the spell and the obligation to the group. A Seal, a Judgement and a utility action each claim time and Mana; choosing well matters more than chasing an uninterrupted damage string.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>A weapon in service of judgment</strong><p>Retribution blends weapon contact with Holy effects, so a missed approach or a forced retreat can disrupt the entire sequence. Decide which Seal and Judgement support the fight rather than treating every button as an unconditional cooldown. An on-hit effect is a secondary event triggered by an eligible attack; the November 13 rules make Judgement of Command an exception to the generally ranged Judgement classification. A two-handed Paladin can still support an ally with a timely heal or blessing, but that choice consumes Mana and time that could have been spent attacking.</p>
+        </aside>
         <div class="grid3">
           <div class="spec-tile ret" style="--portrait:url('images/paladin-retribution.webp')">
-            <div class="roman">PATH 1 · RETRIBUTION</div>
-            <h3>Two-Handed Crusader</h3>
-            <p>A two-handed knight who builds and spends stored divine Seal attacks.</p>
-            <p class="code">14 / 6 / 31</p><a href="#two-handed-crusader">Complete build dossier ↗</a></div>
+            <div class="roman">RETRIBUTION · WEAPON</div>
+            <h3>The commitment of a heavy weapon</h3>
+            <p>A two-handed attack can be decisive, but its timing and the target’s movement matter. Pair pressure with the right Seal and Judgement rather than assuming weapon size solves every fight.</p>
+          </div>
           <div class="spec-tile ret" style="--portrait:url('images/paladin-retribution.webp')">
-            <div class="roman">PATH 2 · RETRIBUTION</div>
-            <h3>Holy Spellblade</h3>
-            <p>A Holy-damage spellsword; Holy Shock replaces the capstone Seal echo cycle.</p>
-            <p class="code">21 / 0 / 30</p><a href="#holy-spellblade">Complete build dossier ↗</a></div>
+            <div class="roman">RETRIBUTION · SPELLWORK</div>
+            <h3>Weapon and spell in counterpoint</h3>
+            <p>Holy and weapon attacks share a combat rhythm shaped by Mana and cooldowns. Choose the next action because the target and timing warrant it, not to alternate attacks for their own sake.</p>
+          </div>
           <div class="spec-tile ret" style="--portrait:url('images/paladin-retribution.webp')">
-            <div class="roman">PATH 3 · RETRIBUTION</div>
-            <h3>Supportive Templar</h3>
-            <p>A protector who can save a friend without setting the sword down.</p>
-            <p class="code">0 / 20 / 31</p><a href="#supportive-templar">Complete build dossier ↗</a></div>
+            <div class="roman">RETRIBUTION · DUTY</div>
+            <h3>The strength of an ally</h3>
+            <p>A damage-focused Paladin still brings Blessings, Auras and emergency intervention. Understanding when to protect the group is part of Retribution, not an admission that the fight has gone wrong.</p>
+          </div>
         </div>
         <div class="spacer-lg"></div>
         <h3>Important talent and spell interactions</h3>
@@ -558,16 +623,16 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
           <span><b>SPELLBLADE</b>Holy Shock → Holy Strike → mana check</span>
           <span><b>TEMPLAR</b>Weapon pressure → ally protection → pressure</span>
         </div>
-        <h3>Exactly the same crisis, three different characters</h3>
+        <h3>The same crisis, different obligations</h3>
         <p class="fine">Decision sequence, not a scripted live-boss rotation.</p>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
                 <th>Encounter moment</th>
-                <th>Two-Handed Crusader</th>
-                <th>Holy Spellblade</th>
-                <th>Supportive Templar</th>
+                <th>A heavy weapon commitment</th>
+                <th>Balancing spells and weapons</th>
+                <th>Protecting allies while attacking</th>
               </tr>
             </thead>
             <tbody>
@@ -606,12 +671,20 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
         </div>
         <p><a href="#encounters">Open the interactive encounter laboratory ↗</a> to compare normal enemies, packs, elites, dungeon bosses and PvP.</p>
       </div>
+      <div class="reader-field-exercise">
+        <h3>Field test: judgment or rescue</h3>
+        <p>An enemy is nearly defeated when an ally is suddenly threatened. Finish the foe only if doing so is actually the safest answer; a Blessing, a defensive tool or an emergency heal may buy the party more than another swing. Your oath includes that choice.</p>
+      </div>
     </section>
     <section id="journey">
       <div class="shell">
         <div class="eyebrow">Chapter 05 · The pilgrimage</div>
         <h2>Leveling, gear, races and party compositions</h2>
+        <aside aria-label="Latest dungeon experience correction" class="reader-hotfix"><strong>15 November addendum · Dungeon XP</strong><p>Blizzard clarified a November 14 adjustment after the November 13 dungeon experience restriction: XP nullification now applies when a higher-level party member is more than 12 levels above the enemies. The updated rule applies to newly started instances; a dungeon already in progress when the change deployed was not retroactively updated. <a href="https://us.forums.blizzard.com/en/wow/t/player-level-dungeon-xp-adjustment-november-14/2416343/1" rel="noopener noreferrer" target="_blank">Official development clarification</a>.</p>
+        </aside>
         <p class="lead">Leveling, gear and party composition matter at least as much as the final talent split. Forever rewards keeping an offensive set and a group-role set rather than trying to make one outfit do everything.</p>
+        <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>From first quest to first dungeon</strong><p>In solo leveling, being able to heal between attacks can reduce recovery time, but it does not mean Mana is infinite. Gear for your current job: a weapon for a damage-focused adventure, suitable defense for tanking, and healing-oriented attributes when assigned to keep others alive. In a party, tell the group whether you intend to heal, tank, or deal damage; a hybrid talent layout does not automatically confer equal strength in all three jobs. When a fight goes wrong, use utility to keep the party alive before judging the rotation by its damage numbers.</p>
+        </aside>
         <h3>The 1–60 pilgrimage</h3>
         <div class="timeline">
           <div class="tick">
@@ -705,7 +778,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
                 <td>Seal procs, Holy Strike and Champion of the Light</td>
               </tr>
               <tr>
-                <td>Holy Spellblade</td>
+                <td>Spell-focused Retribution</td>
                 <td>2H weapon with Holy-spell gear opportunities</td>
                 <td>Holy spell damage, Intellect, relevant hit, crit plus weapon DPS</td>
                 <td>Holy Shock and mixed magic/physical pressure</td>
@@ -747,11 +820,11 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
           <div class="panel">
             <h3>Useful paired identities</h3>
             <ul>
-              <li>Dedicated Holy Healer ↔ Two-Handed Crusader</li>
-              <li>Unbreakable Bulwark ↔ Holy Aggressor</li>
-              <li>Combat Cleric ↔ Dedicated Holy Healer</li>
-              <li>Hybrid Crusader ↔ Dedicated Holy Healer</li>
-              <li>Two-Handed Crusader ↔ Supportive Templar</li>
+              <li>Healing for groups ↔ two-handed solo play</li>
+              <li>Defensive tanking ↔ proactive threat generation</li>
+              <li>Offensive Holy ↔ dedicated healing</li>
+              <li>Hybrid support ↔ dedicated healing</li>
+              <li>Heavy-weapon pressure ↔ utility-minded Retribution</li>
             </ul>
           </div>
         </div>
@@ -829,6 +902,8 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
       <div class="shell">
         <div class="eyebrow">Chapter 06 · The live record</div>
         <h2>The rules of the Light, as of 13 November 2026</h2>
+        <aside aria-label="Official hotfix verification note" class="reader-hotfix"><strong>15 November 2026 · official rules addendum — Judgement · attack classification</strong><p>November 13 supersedes the broad November 11 rule: Judgement of Command now counts as a melee attack and activates on-hit effects. All other Judgements remain ranged attacks, using the relevant ranged interaction rules. Any older blanket statement that every Judgement is ranged is outdated. <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">Official Blizzard hotfix ledger (November 13)</a>.</p>
+        </aside>
         <p class="lead">This compendium covers <strong>World of Warcraft: Forever</strong> only. It follows the live 1.60.1 family, not Retail, Classic Era, Season of Discovery, or an unpatched beta build.</p>
         <div class="grid3">
           <div class="panel">
@@ -869,8 +944,9 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
     <section id="characters">
       <div class="shell">
         <div class="eyebrow">Chapter 07 · Nine oaths of the Light</div>
-        <h2>Nine complete Paladin character dossiers</h2>
+        <h2>The Paladin Character Dossiers</h2>
         <p class="lead">Nine separate fantasies, nine exact 51-point rank ledgers and nine distinct priorities. All point totals are arithmetically checked. Three clearly labeled speculative rank plans still require current calculator verification; do not mistake them for published legal exports.</p>
+        <p class="reader-dossier-threshold">An oath acquires its meaning in practice. The nine Paladin dossiers that follow offer complete talent expenditures for different healing, tanking and damage obligations. Each is one possible expression of the Light; the earlier chapters remain the foundation on which any of them must stand.</p>
         <div class="card-grid">
           <div class="archetype">
             <span class="num">01</span>
@@ -1854,7 +1930,7 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
     <section id="dashboard">
       <div class="shell">
         <div class="eyebrow">Chapter 09 · The atlas of oaths</div>
-        <h2>Nine-build comparison and selection dashboard</h2>
+        <h2>Combat Comparison and Build Selection</h2>
         <p class="lead">These are editorial 1–5 ratings about intended playstyle, not measured damage, HPS, threat-per-second or PvP win-rate. Difficulty 5 means harder to execute, not better.</p>
         <div class="interactive-controls notprint"><button class="selected" id="filter-all" type="button" aria-pressed="true">All nine</button><button id="filter-holy" type="button" aria-pressed="false">Holy only</button><button id="filter-prot" type="button" aria-pressed="false">Protection only</button><button id="filter-ret" type="button" aria-pressed="false">Retribution only</button></div>
         <div class="dashboard table-wrap">
@@ -2179,6 +2255,8 @@ body{background:radial-gradient(ellipse at 80% 0%,#3a2b1a 0%,transparent 33%),ra
       <div class="shell">
         <div class="eyebrow">Chapter 10 · The final inscription</div>
         <h2>Sources, limitations and final verdict</h2>
+        <aside aria-label="Source review methodology" class="reader-hotfix"><strong>Editorial verification record · 15 November 2026</strong><p>Primary cross-check: <a href="https://worldofwarcraft.blizzard.com/en-us/news/24302099" rel="noopener noreferrer" target="_blank">Blizzard class deep dive</a> (published September–October 2026; beta-era design context) and the <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">official rolling hotfix ledger through November 13, 2026</a> (takes precedence on changes it addresses). Build descriptions and comparison scores remain editorial theorycraft, not independently in-game-tested rankings. Third-party links and historical calculators are reference leads, not universally revalidated live citations. Do not infer from an externally linked beta tooltip that the current client is identical.</p>
+        </aside>
         <p class="lead">A curated source index and limitations ledger for the live November 13 edition. Links open the current site when you are online; the body, art and interactive controls work offline.</p>
         <div class="source-list">
           <div class="source-item"><a href="https://worldofwarcraft.blizzard.com/en-us/news/24302099" target="_blank" rel="noopener">Blizzard · Forever Paladin class deep dive ↗</a><span>Official design baseline; old preview mechanics can be superseded.</span>
