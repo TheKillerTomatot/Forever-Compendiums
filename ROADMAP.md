@@ -112,14 +112,42 @@ Result:
 - The Primer uses existing text only.
 - Open: the volume names, where the sources appear, the volume links on the front page shelf, and the volume switch on the class page.
 
-## Text work by the user (parallel to phase 2)
+## Text work by the user (after phase 2)
 
-- After phase 1.5 is merged, the user edits text directly in the HTML: text refinement and new beginner text.
-- The user works in a separate folder (a git worktree) on an own branch, made from `main` after phase 1.5.
-- No commits until all changes and checks are done (the user's choice). Then the work goes to `main` as one commit. Until that commit, git has no copy of this work.
-- The user checks the game facts. Claude can check language, HTML and the tests, but not game facts.
-- In the script data, a text sits between quote marks. Inside it, write a quote mark of the same kind with a backslash: `\"` or `\'`.
-- When the work comes back: merge it, resolve conflicts with phase 2, and run the tests.
+The user did the text work outside the project with an external editor and sent it back on 15 November 2026 as a zip: `%USERPROFILE%\Downloads\Forever_Class_Compendiums_COMPLETE_All_Editorial_Revisions.zip`. Keep the zip until this work is merged.
+
+Review on 15 November 2026, against the phase 1.5 pages (`bcff272`):
+
+- Intact: the scripts are identical, all ids are the same and in the same order, the images are identical, no in-page link is broken, no tag is badly nested, and the Warlock sort works.
+- The editor rewrote every line (attribute order, `/>`, indentation, SVG end tags). The real content changes are about 600: new titles, subtitles and cover text; per page 5 field notes, 3 field tests, an orientation box, a lead-in to the dossiers and 3 hotfix notes; spec cards rewritten without build names; 36 "Open dossier" links removed; 3 Shaman tables moved to the dossier chapter; about 3 KB of CSS per page.
+- Must fix:
+  1. Phone covers: at 375px the Druid cover line sits under the menu bar and the Paladin cover line above the page top. At 320px also Hunter and Warlock, and Shaman scrolls sideways by 8px. The cover content is anchored to the bottom, so the extra lines push it up.
+  2. Druid: a spec card presents Lifebloom as usable. The book's own "Lifebloom provenance warning" says no live way to get it is confirmed.
+  3. Paladin: new notes make Judgement of Command a melee attack, but older lines still say "Judgement is ranged".
+  4. Mage: a new note says Blizzard damage breaks Frost Nova, but the dossiers still teach "Frost Nova gives room for Blizzard".
+- New game facts to check, each with a Blizzard link: the dungeon XP 12-level rule; Wild Growth (no cast while moving, 6.6% from 3.3%); Hunter Volley, 11% mana and pet health 115%; Paladin Judgement of Command; Priest The Quick and the Dead; Rogue and Shaman Windfury off-hand strikes; Warlock Siphon Life while silenced; Warrior Berserker Rage removes Sap; Mage Frost Nova and Blizzard. Also the Shaman "class deep dive" link: it is the link the Mage page cites, and the old Shaman page never cited it.
+- Polish:
+  - 21 em dashes; the pages had none.
+  - Old names left: the Druid side menu ("The Living Archive · Vol. II"), the Rogue source footer ("Nine Paths of the Assassin") and the front page shelf subtitles.
+  - Odd labels: "51 POINTS · hunter field notes", "51 POINTS × talent dossier research", Priest "One encounter, Different answers", Mage "Arcane Solutions", Shaman "external validation pending".
+  - Unused CSS classes `compendium-cover-subtitle` and `reader-build-comparisons`, 9 `!important` per page, and the `compendium-revision` meta tag.
+  - The dungeon XP note refers to a "November 13 restriction" that the books never describe.
+  - The Hunter note dates the pet-health fix differently from the book's own list.
+  - On Shaman, the moved tables come before the paragraph that introduces them.
+
+Decisions on 15 November 2026:
+
+- Start after phase 2 is merged, in a fresh session, on its own branch from `main`.
+- Port, do not copy: a script applies the zip's content changes to the current pages and skips the formatting noise. Proof: a formatting-blind diff between each ported page and its zip page is empty.
+- Two commits: first the edits as delivered, then the fixes.
+- Leave the 36 removed "Open dossier" links out.
+- Phone covers: fix the layout so the cover shows all its text. Keep the text.
+- Content fixes (Lifebloom, Judgement, Frost Nova): propose the smallest wording change for each, and the user approves it. Judgement and Frost Nova follow the fact check: if the new rule is correct, update the older lines; if it is wrong, remove the new note.
+- Fact check: give the user one checklist (claim, sentence, link). The user answers each item with "correct", "wrong" or "changed to ...". Claude cannot check game facts.
+- Polish: fix every polish item with the smallest change and list each one for review. An em dash becomes a colon, a comma or a full stop.
+- Front page: update the shelf titles and subtitles to match the new books.
+- Tests: the cover text is visible at 320, 375, 768 and 1280px; no sideways scroll; in-page links; the console; the interactive parts; the phase 2 views. Then the `reviewer`, then a merge after approval.
+- Review tools from the planning session (scratchpad, may be cleared): `semdiff.py` (formatting-blind HTML diff) and `zipreview/REVIEW.md` in `%USERPROFILE%\AppData\Local\Temp\claude\c7df57030140bfb9\1f4627ae-15fa-496f-aa00-361b9f27051d\scratchpad\`. If they are gone, rebuild the diff from the zip and `bcff272`.
 
 ## Phase 3: Librarian quiz
 
