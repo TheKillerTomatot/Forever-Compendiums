@@ -102,7 +102,7 @@ Result:
 - "Before" comes from `git cat-file --filters HEAD:<page>.html`. Git stores LF, so `git show` does not give the CRLF file.
 - The formatter and test scripts are not in the repo.
 
-## Phase 2: Volumes (next)
+## Phase 2: Volumes (done 15 November 2026)
 
 - Runs in parallel with the user's text work (see below). Change tags (for example `<section>`) and add CSS and JS. Avoid changing text lines. Where phase 2 must change one, list it, because it can conflict with the user's text work.
 - One page per class. Primer, Advanced and Complete are views of the same page. No copied text.
@@ -110,7 +110,24 @@ Result:
 - "Chapters 1 to 4" here means steps 1 to 4 of the phase 1 chapter order, not the chapter numbers printed on the pages.
 - Without JavaScript, the page shows the complete book.
 - The Primer uses existing text only.
-- Open: the volume names, where the sources appear, the volume links on the front page shelf, and the volume switch on the class page.
+
+Decided on 15 November 2026:
+
+- Names: Primer, Advanced and Complete. No group word shows on screen, because "Volume" already names the class books on the shelf and the covers. Screen readers hear the switch as "Reading level".
+- The cover, the Sources chapter and the footer show in all three views.
+- The URL picks the view: `?volume=primer` or `?volume=advanced`. Without it, the page shows Complete. The page does not remember the choice between visits.
+- A link or URL hash into a hidden chapter shows the complete book and goes to the target.
+- Class page: three buttons at the top of the chapter menu, built by JavaScript. The menu lists only the shown chapters. Chapter numbers do not change.
+- Front page: three ribbon bookmarks under each book, green Primer, crimson Advanced and gold Complete. The book itself still opens the complete book.
+
+Result:
+
+- All 9 class pages and the front page are done on the branch `claude/volumes-e0cdd7`: the Warrior pilot, one commit per other page, a Warrior follow-up and one front page commit. Merged into `main`.
+- Each class page has a new script right after `<body>` and new CSS lines at the end of its style block. The script is the same on all 9 pages. Only the chapter lists (`CHAPTERS`), the menu (`MENU`) and the switch position (`SWITCH_BEFORE`) differ.
+- Changed lines on the class pages: one code line each on Druid, Rogue and Warrior. The menu highlight loop now skips hidden chapters. No text line changed.
+- Front page: the 9 books are now one element per line (only whitespace changed), plus the ribbons and their CSS.
+- Tests: the Complete view is identical to the page before phase 2 (element positions, text, print, no JavaScript, and a run over every control and link). The views, the switch, the links into hidden chapters and the menu highlight work at 375 and 1280px. The test scripts are not in the repo.
+- Known limits: in the Complete view, the Shaman chapter bar overflows at 1440px and wider; the hidden links are still reachable by scrolling the bar (phase 4 redesigns it). On Mage phones, the switch sits in the chapter strip at the top of the page.
 
 ## Text work by the user (parallel to phase 2)
 
@@ -120,10 +137,12 @@ Result:
 - The user checks the game facts. Claude can check language, HTML and the tests, but not game facts.
 - In the script data, a text sits between quote marks. Inside it, write a quote mark of the same kind with a backslash: `\"` or `\'`.
 - When the work comes back: merge it, resolve conflicts with phase 2, and run the tests.
+- Expected conflicts with phase 2: on `index.html`, the 9 book lines and 3 CSS lines (keep both: the new text and the one-element-per-line layout with the ribbons); on Druid, Rogue and Warrior, the menu highlight code line (keep the phase 2 version).
 
-## Phase 3: Librarian quiz
+## Phase 3: Librarian quiz (next)
 
 - On the front page: a short conversation with the librarian, 4 to 6 questions.
+- Phase 2 gives each book three ribbon links: `<class>.html?volume=primer`, `?volume=advanced` and the plain page. A spec can be added as a hash, for example `druid.html?volume=primer#balance`.
 - Result: a class, a spec and a volume, and the matching book on the shelf.
 - The shelf stays usable without JavaScript. The quiz works with keyboard and screen readers.
 - Base the scoring on what the class pages say, and show it for review.
