@@ -53,7 +53,7 @@ Result:
 - Six position fixes, each listed in the commit message of its page.
 - On the Rogue page, the "weapons" and "stealth" chapters are the Combat and Subtlety specs, not extra mechanics chapters.
 
-## Phase 1.5: Break up the lines (next)
+## Phase 1.5: Break up the lines (done 15 November 2026)
 
 Decided on 15 November 2026.
 
@@ -93,7 +93,16 @@ Order and stops:
 - Apply the rules above without asking. A page needs the user's input only when a check fails and no rule says what to do: for example, screenshots differ for an unclear reason, a check 4 test fails, or a reviewer finding needs a decision. Then leave the changed page in place, uncommitted, so the user can look at it. Write down the problem and what was tried, and go to the next page.
 - Stop when every page is done or needs input. Do not commit the 8 pages during the run. After the user's review, make one commit per approved page.
 
-## Phase 2: Volumes
+Result:
+
+- All 9 pages are reformatted on the branch `claude/break-lines-0a75b9`, one commit per page plus a Warrior follow-up, and merged into `main`.
+- All 9 pages pass the four checks. Check 2 also ran at both sides of each media-query width, in print, and without JavaScript.
+- Added rule: content that a script replaces at load shows only without JavaScript, so its breaks follow the display without JavaScript. This split the Mage atlas table and put the Warrior no-JavaScript note on its own line.
+- Lines that stay long: `svg` elements, long paragraphs and CSS.
+- "Before" comes from `git cat-file --filters HEAD:<page>.html`. Git stores LF, so `git show` does not give the CRLF file.
+- The formatter and test scripts are not in the repo.
+
+## Phase 2: Volumes (next)
 
 - Runs in parallel with the user's text work (see below). Change tags (for example `<section>`) and add CSS and JS. Avoid changing text lines. Where phase 2 must change one, list it, because it can conflict with the user's text work.
 - One page per class. Primer, Advanced and Complete are views of the same page. No copied text.
