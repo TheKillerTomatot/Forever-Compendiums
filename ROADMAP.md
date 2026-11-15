@@ -9,14 +9,14 @@ Decided on 14 November 2026. Each phase runs in its own fresh session. Read this
 - Commit only after approval. Work on a branch and merge into `main` only after approval.
 - Each phase starts with its own grilling for the points marked "Open" below.
 
-## Phase 1: Sort the content (next)
+## Phase 1: Sort the content (done 15 November 2026)
 
 Goal: each class page reads from general to specific.
 
 Chapter order:
 
 1. Opening
-2. Class mechanics, including extra mechanics chapters (for example the Rogue chapters on the energy economy, weapons and stealth)
+2. Class mechanics, including extra mechanics chapters (for example the Shaman chapter on totems)
 3. The three specs
 4. Leveling, gear, endgame and PvP
 5. Forever's rules (the "live changes" chapter, which is chapter 2 on most pages today)
@@ -44,12 +44,20 @@ Facts from the inventory on 14 November 2026:
 - Paladin and Warlock start with the live rules and have no opening chapter heading.
 - Shaman has two headings for each spec.
 - Rogue chapter titles are sentences, so its chapter mapping needs a closer read.
-- In-page links: Druid 67, Hunter 79, Paladin 5. The other pages were not counted.
+- In-page links (`href="#..."` in the file, recounted on 15 November 2026): Druid 187, Hunter 357, Mage 102, Paladin 42, Priest 50, Rogue 125, Shaman 57, Warlock 37, Warrior 186. Scripts build a few more at runtime. The first count (Druid 67, Hunter 79, Paladin 5) counted lines with links, not links.
 
-## Phase 2: Volumes
+Result:
+
+- All 9 pages are sorted on the branch `claude/sort-content-5ebb39`, one commit per page.
+- Pages without an opening chapter (Paladin, Warlock, Shaman): the cover counts as chapter 00, and the chapters start at 01. Shaman now runs from CHAPTER 01 to 11.
+- Six position fixes, each listed in the commit message of its page.
+- On the Rogue page, the "weapons" and "stealth" chapters are the Combat and Subtlety specs, not extra mechanics chapters.
+
+## Phase 2: Volumes (next)
 
 - One page per class. Primer, Advanced and Complete are views of the same page. No copied text.
 - Primer: chapters 1 to 4. Advanced: chapters 5 to 8. Complete: all chapters.
+- "Chapters 1 to 4" here means steps 1 to 4 of the phase 1 chapter order, not the chapter numbers printed on the pages.
 - Without JavaScript, the page shows the complete book.
 - The Primer uses existing text only.
 - Open: the volume names, where the sources appear, the volume links on the front page shelf, and the volume switch on the class page.
