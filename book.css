@@ -1,0 +1,216 @@
+/* The Forever Compendiums: the shared book design of the nine class pages (phase 4).
+   Each class page links this file. Its own small style block then sets:
+   --accent    the class ink. It marks the kicker, chapter numbers, drop caps, note rules and rating dots,
+               and tints the dark leather of the contents panel and the plate headers. It must be dark
+               enough for small text on the paper, and white text must be readable on it (rating dots 4 and 5).
+   --ornament  one character for the flourishes, for example '✦'.
+   and the styles of the parts that only that page has. */
+
+/* IM Fell English SC, Latin subset from Google Fonts; SIL Open Font License, see fonts/OFL.txt */
+@font-face{font-family:'IM Fell English SC';src:url(fonts/im-fell-english-sc.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+
+:root{
+  color-scheme:light;
+  --fell:'IM Fell English SC',Georgia,'Times New Roman',serif;
+  --serif:Georgia,'Times New Roman',serif;
+  /* paper and ink */
+  --paper:#f4ecd8;--paper-2:#eadfc4;--card:#f8f2e2;--plate:#efe4c9;
+  --ink:#2b2118;--ink-2:#5a4836;--line:#c8b48a;--rule:#a07f45;--frame:#6f5326;
+  /* gilt and leather: the contents panel and the plate headers */
+  --gold:#d9b56b;--gold-dim:#d9b56b70;--gilt:linear-gradient(180deg,#fbeec4 15%,#d7aa58 65%,#a8792e);
+  --leather:linear-gradient(160deg,color-mix(in srgb,var(--accent) 30%,#2b1c11),#140d08);
+  --brass:linear-gradient(180deg,#f6e6b4,#d9b062 60%,#bf9142);
+  /* the frame of a bookplate card: a thin inner line and a soft shadow */
+  --bookplate:inset 0 0 0 4px var(--card),inset 0 0 0 5px #d6c193,2px 4px 8px #0002;
+  /* defaults; each page sets its own */
+  --accent:#5b3c8c;--ornament:'✦';
+}
+
+/* ---------- the desk and the layout: contents panel on the left, the book pages on the right ---------- */
+*{box-sizing:border-box}
+html{background:#170f0a;scroll-behavior:smooth;scroll-padding-top:24px}
+body{display:grid;grid-template-columns:270px minmax(0,860px);align-items:start;justify-content:center;gap:0 40px;margin:0;padding:36px 32px 80px;color:var(--ink);font:18px/1.65 var(--serif);background:radial-gradient(ellipse 70% 45% at 50% 0%,#6b44205c,transparent 70%),radial-gradient(ellipse at center,transparent 50%,#000000b3 100%),repeating-linear-gradient(90deg,#1b120c 0 3px,#1f150e 3px 7px,#1a110b 7px 12px);background-attachment:fixed}
+body>.book-nav{grid-column:1;grid-row:1}
+body>main{grid-column:2;grid-row:1;min-width:0}
+
+/* ---------- text ---------- */
+h1,h2,h3,h4{margin:0 0 .5em;font-family:var(--fell);font-weight:400;line-height:1.15;color:var(--ink)}
+h2{font-size:clamp(30px,4vw,40px);text-align:center}
+h3{font-size:24px}
+h4{font-size:18px;letter-spacing:.04em}
+p{margin:0 0 1em}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{color:var(--accent);text-decoration-color:currentColor}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+ul,ol{margin:.5em 0 1em;padding-left:1.4em}
+li{margin-bottom:.3em}
+li::marker{color:var(--accent)}
+small,.fine{font-size:14px;color:var(--ink-2)}
+code{font-size:.9em}
+::placeholder{color:var(--ink-2);opacity:1;font-style:italic}
+
+/* ---------- the contents panel: dark leather with a gilt frame, like the librarian panel on the front page ---------- */
+.book-nav{position:sticky;top:24px;display:flex;flex-direction:column;max-height:calc(100vh - 48px);padding:26px 22px 24px;color:#f0e5cc;border:1px solid #000;border-radius:6px;background:radial-gradient(ellipse at 30% 0%,#ffffff12,transparent 60%),var(--leather);box-shadow:inset 2px 2px 0 #ffffff1f,inset -3px -3px 0 #0000004d,0 20px 40px #000c}
+.book-nav::after{content:'';position:absolute;inset:9px;border:1px solid var(--gold-dim);outline:1px solid var(--gold-dim);outline-offset:3px;pointer-events:none}
+.nav-series{margin:0;color:var(--gold);font:14px var(--fell);letter-spacing:.16em;text-align:center}
+/* the gilt is a background seen through the letters */
+.nav-title{margin:4px 0 0;font:400 30px/1.1 var(--fell);letter-spacing:.04em;text-align:center;background:var(--gilt);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-title em{font-style:normal}
+.nav-divider{height:1px;margin:0 0 8px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
+/* the list scrolls inside the panel when the screen is short, so the gilt frame stays still */
+.nav-body{flex:0 1 auto;min-height:0;overflow:auto}
+.nav-body ol{margin:0;padding:0;list-style:none;font-size:15px;line-height:1.35}
+.nav-body li{margin:0}
+.nav-body a{display:grid;grid-template-columns:30px 1fr;padding:7px 4px;color:#e9dcc0;text-decoration:none;border-bottom:1px solid #d9b56b26}
+.nav-body a span{color:var(--gold);font-family:var(--fell)}
+.nav-body a:hover,.nav-body a.active{color:#fff;background:linear-gradient(90deg,#d9b56b26,transparent)}
+.book-nav :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+/* inside the scrolling list the ring goes inward, so the list edge does not cut it */
+.nav-body :focus-visible{outline-offset:-2px}
+.nav-print{display:block;width:100%;margin-top:16px;padding:8px 10px;color:#f2dca4;font:15px var(--fell);letter-spacing:.06em;background:none;border:1px solid var(--gold-dim);border-radius:3px;cursor:pointer}
+.nav-print:hover{border-color:var(--gold)}
+/* the Contents button shows only on narrow screens; its script removes the hidden attribute */
+.nav-toggle{display:none;margin:0 0 8px;padding:6px 12px;color:#f2dca4;font:15px var(--fell);letter-spacing:.06em;background:transparent;border:1px solid var(--gold-dim);border-radius:3px;cursor:pointer}
+.nav-toggle::before{content:'☰ ' / ''}
+
+/* the Primer, Advanced and Complete switch (phase 2 script, class vol-switch): three silk ribbons, as on the front page.
+   The silk and its notch sit on ::before, because clip-path would also cut away the focus outline */
+.book-nav .vol-switch{display:flex;align-items:flex-start;justify-content:center;gap:6px;margin:16px 0 18px}
+.vol-switch button{position:relative;isolation:isolate;flex:0 0 68px;min-width:0;padding:12px 0 18px;color:#fbf1d8;font:13px/1 var(--fell);letter-spacing:.04em;text-align:center;background:none;border:0;cursor:pointer;filter:drop-shadow(0 3px 2px #000a);transition:padding-bottom .25s}
+.vol-switch button::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#00000038,#ffffff12 45%,#00000045),var(--silk);clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 8px),0 100%)}
+.vol-switch [data-view=primer]{--silk:#2e5e3e}
+.vol-switch [data-view=advanced]{--silk:#7c2630}
+.vol-switch [data-view=complete]{--silk:#7a5716}
+/* the current view hangs longest; hover pulls a ribbon a little */
+.vol-switch button:hover{padding-bottom:22px}
+.vol-switch button[aria-pressed=true]{padding-bottom:28px}
+.vol-switch button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---------- the book pages: one sheet of cream paper per chapter, with the page block on the right edge ---------- */
+main>:is(header,section,footer){position:relative;padding:64px clamp(22px,7vw,84px) 70px;background:radial-gradient(ellipse at 20% 0%,#fffaf0,transparent 60%),radial-gradient(ellipse at 100% 100%,#d9c9a3 0,transparent 55%),var(--paper);border-radius:2px 6px 6px 2px;box-shadow:inset 22px 0 30px -22px #6b4a2266,2px 2px 0 -1px #efe5c9,4px 4px 0 -1px #bfa97e,6px 6px 0 -1px #ebe0c2,8px 8px 0 -1px #baa478,10px 10px 0 -1px #6f5c3c,0 30px 60px #000d}
+main>:is(header,section,footer):not(:first-child){margin-top:46px}
+/* chapter head: the chapter number in the class ink, the title, then a flourish with the page's ornament */
+.eyebrow{margin:0 0 6px;color:var(--accent);font:15px var(--fell);letter-spacing:.16em}
+.eyebrow:has(+h2){text-align:center}
+main>section h2::after{content:var(--ornament) / '';display:block;width:min(320px,80%);margin:18px auto 28px;color:var(--rule);font-size:20px;line-height:1;text-align:center;background:linear-gradient(90deg,transparent,var(--rule) 44%,transparent 44% 56%,var(--rule) 56%,transparent) center/100% 1px no-repeat}
+.lead{font-size:20px;line-height:1.6}
+/* drop cap on the first paragraph after a chapter title */
+main>section h2+.lead::first-letter,.hero .deck::first-letter{float:left;padding:6px 10px 0 0;color:var(--accent);font:4em/.82 var(--fell)}
+
+/* ---------- the cover: a title page with the full picture in a gilt frame ---------- */
+.hero{text-align:center}
+.hero .series-manuscript{margin:0;color:var(--accent);font:15px var(--fell);letter-spacing:.16em}
+.hero h1{margin:8px 0 0;font-size:clamp(36px,5vw,58px);line-height:1.08}
+.hero .compendium-series-subtitle{margin:10px 0 0;color:var(--ink-2);font-size:22px;font-style:italic}
+.frontis{max-width:640px;margin:26px auto 8px;border:6px solid transparent;background:linear-gradient(145deg,#f0d38c,#8d6a2c 55%,#d8b46a) border-box;box-shadow:0 8px 20px #0006}
+.frontis img{display:block;width:100%;height:auto}
+.hero .deck{max-width:600px;margin:22px auto 0;font-size:19px;text-align:left}
+.chip{display:inline-block;padding:2px 10px;color:var(--ink-2);font:15px var(--fell);letter-spacing:.06em;border:1px solid var(--line);border-radius:3px}
+.chip::before{content:var(--ornament) ' ' / '';color:var(--accent)}
+
+/* ---------- notes from the editors, shared by all nine books ---------- */
+.reader-fieldnote,.reader-hotfix{margin:24px 0;padding:14px 18px;font-size:16px;line-height:1.6;background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--accent);box-shadow:2px 3px 0 #0000000f;break-inside:avoid}
+.reader-fieldnote>strong,.reader-hotfix>strong{display:block;margin-bottom:4px;color:var(--accent);font:16px var(--fell);letter-spacing:.08em}
+.reader-fieldnote p,.reader-hotfix p{margin:0}
+.reader-orientation{margin:22px 0;padding:14px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.reader-orientation h3{margin:0 0 6px;color:var(--accent);font-size:20px}
+.reader-orientation p{margin:0}
+.reader-field-exercise{margin:32px 0 0;padding:18px 22px;background:var(--card);border:1px solid #b8955a;box-shadow:var(--bookplate)}
+.reader-field-exercise h3{margin:0 0 8px;font-size:22px}
+.reader-field-exercise p{margin:0}
+.reader-dossier-threshold{margin:14px 0 24px;padding-bottom:12px;font-size:19px;font-style:italic;border-bottom:1px solid var(--line)}
+
+/* ---------- cards: panels and dossiers are bookplates glued onto the page ---------- */
+.panel,.dossier{background:var(--card);border:1px solid #b8955a;box-shadow:var(--bookplate)}
+.panel{padding:18px 20px}
+.panel h3{font-size:22px}
+.panel p{font-size:16px}
+.panel p:last-child{margin-bottom:0}
+.dossier{margin:30px 0;padding:28px 30px}
+.grid2,.grid3{display:grid;gap:18px}
+.grid2{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.grid3{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+
+/* ---------- plates: interactive parts and figures, glued into the book in a framed panel.
+   The header is a band of dark leather tinted with the class color: the plate's first h3, or a band with the ornament ---------- */
+.plate{clear:both;margin:34px 9px;padding:0 16px 16px;background:var(--plate);border:1px solid var(--frame);outline:1px solid #b8955a;outline-offset:4px;box-shadow:0 0 0 8px var(--plate),0 0 0 9px var(--frame),0 10px 26px #0005}
+.plate>h3:first-child,.plate::before{display:block;margin:0 -16px 16px;padding:10px 16px;color:#f2dca4;background:var(--leather);font-size:20px;letter-spacing:.04em}
+.plate::before{content:var(--ornament) / '';padding:3px 16px;font-size:14px;line-height:1.2;text-align:center;color:var(--gold)}
+.plate:has(>h3:first-child)::before{content:none}
+.plate label{color:var(--ink-2);font:14px var(--fell);letter-spacing:.08em}
+/* dropdowns and text fields on ledger lines */
+select,input:not([type]),input[type=text],input[type=search]{padding:4px 2px;color:var(--ink);font:16px var(--serif);background:transparent;border:0;border-bottom:1px solid var(--ink-2);border-radius:0}
+select option{background:#fff}
+input[type=range]{accent-color:var(--accent)}
+/* brass buttons */
+main button{padding:6px 14px;color:#2a1a08;font:15px var(--fell);letter-spacing:.06em;background:var(--brass);border:1px solid var(--frame);border-radius:3px;box-shadow:inset 0 1px 0 #fff8,0 2px 3px #0004;cursor:pointer}
+main button:hover{filter:brightness(1.06)}
+main button[aria-pressed=true]{background:linear-gradient(180deg,#bf9142,#d9b062);box-shadow:inset 0 2px 4px #0006}
+
+/* ---------- tables: ruled like a ledger ---------- */
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5}
+th{padding:8px;color:var(--ink-2);font:14px var(--fell);letter-spacing:.06em;text-align:left;vertical-align:bottom;border-bottom:2px solid var(--ink-2)}
+td{padding:8px;vertical-align:top;border-bottom:1px solid var(--line)}
+
+/* ---------- rating dots: 1 to 5, the more class ink the higher ---------- */
+.heat{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;color:var(--ink);font:14px/1 var(--serif);background:color-mix(in srgb,var(--accent) var(--heat),var(--card));border:1px solid var(--frame);border-radius:50%;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.heat1{--heat:6%}.heat2{--heat:20%}.heat3{--heat:36%}.heat4{--heat:80%;color:#fff}.heat5{--heat:100%;color:#fff}
+
+/* ---------- sources ---------- */
+.source-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.source-item{padding:12px 14px;font-size:16px;background:var(--card);border:1px solid var(--line)}
+.source-item p{margin:6px 0 0;color:var(--ink-2);font-size:14px}
+
+/* ---------- narrow screens: a top bar with the Contents button and the ribbons; the list drops down from it ---------- */
+@media (max-width:900px){
+  html{scroll-padding-top:76px}
+  body{display:block;padding:0 0 60px}
+  .book-nav{top:0;z-index:20;flex-direction:row;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:0 10px;max-height:none;padding:8px 14px 0;border-width:0 0 1px;border-color:var(--gold-dim);border-radius:0;box-shadow:0 6px 14px #000a}
+  .book-nav::after,.nav-series,.nav-title,.nav-divider{display:none}
+  .nav-toggle{display:block}
+  .nav-toggle[hidden]{display:none}
+  .book-nav .vol-switch{margin:-8px 0 0;gap:4px}
+  .vol-switch button{flex-basis:58px;padding:16px 0 14px;font-size:12px}
+  .vol-switch button:hover{padding-bottom:17px}
+  .vol-switch button[aria-pressed=true]{padding-bottom:22px}
+  /* the bar is one row, so scroll-padding-top above clears it; without JavaScript the list
+     stays open under the bar, and the bar does not stick */
+  .book-nav.js{flex-wrap:nowrap}
+  .book-nav:not(.js){position:static}
+  .book-nav:not(.js) .nav-body{flex:1 0 100%;padding:4px 0 12px}
+  .book-nav.js .nav-body{display:none;position:absolute;top:100%;left:0;right:0;max-height:calc(100vh - 80px);padding:6px 18px 18px;background:var(--leather);border-bottom:1px solid var(--gold-dim);box-shadow:0 14px 24px #000c}
+  .book-nav.js.open .nav-body{display:block}
+  main>:is(header,section,footer){margin:18px 10px 0 6px;padding:40px 20px 46px}
+  main>:is(header,section,footer):not(:first-child){margin-top:30px}
+  .plate{margin:30px 9px}
+  .dossier{padding:22px 18px}
+}
+@media (max-width:400px){
+  .book-nav{padding:8px 10px 0}
+  .nav-toggle{padding:6px 10px}
+  .book-nav .vol-switch{gap:3px}
+  .vol-switch button{flex-basis:52px;font-size:11.5px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .vol-switch button{transition:none}
+}
+/* the gilt title is a background seen through the letters: show plain text where backgrounds may be dropped */
+@media (forced-colors:active){.nav-title{background:none;-webkit-text-fill-color:currentColor}}
+
+/* ---------- print: only the paper, with every plate in full; no desk, panel or ribbons ---------- */
+@media print{
+  @page{size:A4;margin:14mm 12mm}
+  html,body{background:none}
+  body{display:block;padding:0;font-size:11pt}
+  .book-nav,.vol-switch,.notprint{display:none!important}
+  main>:is(header,section,footer){margin:0!important;padding:0;background:none;border-radius:0;box-shadow:none}
+  main>section{break-before:page}
+  .hero .frontis{max-width:150mm;box-shadow:none}
+  .plate{margin:18px 0;outline:0;box-shadow:none;break-inside:auto}
+  .plate>h3:first-child,.plate::before{color:var(--ink);background:none;border-bottom:2px solid var(--accent)}
+  .panel,.dossier,.reader-field-exercise{box-shadow:none}
+  .reader-fieldnote,.reader-hotfix{background:none;box-shadow:none}
+  a{text-decoration:none}
+}
