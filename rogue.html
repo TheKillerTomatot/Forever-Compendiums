@@ -1,78 +1,194 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0b0b0d"><meta name="description" content="The Forever Rogue Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Rogue Compendium: The Shadowblade Manual of Silence and Steel</title><style>
-:root{--black:#08090b;--bg:#0d0e10;--paper:#121315;--panel:#17191b;--raised:#202022;--line:#363637;--line2:#49413b;--text:#e9e5dc;--muted:#b2ada6;--gold:#d3b382;--silver:#b6c3c9;--red:#b5525a;--crimson:#7e202f;--green:#93c597;--cold:#7d9dba;--shadow:0 18px 56px #0009;--r:15px;--rail:232px;--max:1300px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;color:var(--text);font:15px/1.74 system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:radial-gradient(ellipse at 70% -7%,#28161b 0,transparent 27%),radial-gradient(ellipse at -10% 40%,#101d18 0,transparent 29%),var(--black)} ::selection{background:#882f42;color:#fff}
-h1,h2,h3,h4,.quote,.stat-num{font-family:Georgia,'Times New Roman',serif;font-weight:normal;letter-spacing:-.025em}h1{font-size:clamp(62px,7.8vw,124px);line-height:.93;margin:0 0 22px}h2{font-size:clamp(31px,4vw,52px);line-height:1.13;margin:0 0 19px}h3{font-size:clamp(23px,2.5vw,32px);line-height:1.15;margin:0 0 13px}h4{font-size:20px;line-height:1.2;margin:0 0 12px}h5{margin:0;font:750 11px/1.5 system-ui,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}p{margin:0 0 16px}ul,ol{margin:6px 0 16px;padding-left:21px}li{padding-left:2px;margin:5px 0}b,strong{color:#fff;font-weight:700}a{color:#efca9a;text-decoration:none;border-bottom:1px solid #59453a}a:hover{color:#fff;border-color:currentColor}button,select,input{font:inherit}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-#rail{width:var(--rail);position:fixed;inset:0 auto 0 0;z-index:70;background:#090a0df5;border-right:1px solid #453b36;padding:27px 17px 22px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5f4746 transparent;box-shadow:15px 0 60px #0005}#rail .seal{width:62px;height:62px;margin:0 auto 14px}#rail .rail-head{text-align:center;font:normal 21px/1.1 Georgia,serif;letter-spacing:.12em;color:#e6d6bd;margin:0 0 8px}#rail .rail-sub{text-align:center;color:#a49486;text-transform:uppercase;font-weight:700;letter-spacing:.22em;font-size:10px;margin:0 0 28px}#rail a.rail-link{display:flex;gap:12px;align-items:flex-start;color:#bcb6ae;border:0;border-top:1px solid #28272a;padding:10px 6px;font-size:11px;line-height:1.4;transition:.2s}#rail a.rail-link span{color:#a4776c;font-size:10px;min-width:20px;font-weight:800}#rail a.rail-link:hover,#rail a.rail-link.active{background:#321f24;color:#fff;border-left:2px solid #b5525a;padding-left:4px}#rail .rail-footer{font-size:10px;color:#84786f;line-height:1.6;border-top:1px solid #413737;padding-top:20px;margin-top:20px}#reading{position:absolute;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold),var(--red));z-index:90;position:fixed}#mobile-nav{display:none}
-main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 auto}.chapter{padding:70px clamp(24px,5vw,78px) 82px;border-top:1px solid #3f3234;position:relative;overflow:hidden;isolation:isolate}.chapter:nth-of-type(odd){background:linear-gradient(116deg,#111113e8,#0b0d0fe8)}.chapter:nth-of-type(even){background:radial-gradient(ellipse at 90% 0%,#24151955,transparent 55%),#0e1011}.chapter:before{content:attr(data-num);font:normal 170px/.7 Georgia,serif;color:#ffffff05;position:absolute;right:1%;top:4%;pointer-events:none;z-index:-1}.eyebrow{color:var(--gold);font:800 10px/1.5 system-ui,Arial,sans-serif;text-transform:uppercase;letter-spacing:.26em}.lead{font:normal clamp(17px,1.75vw,22px)/1.55 Georgia,serif;color:#dad7ce;max-width:1000px;margin-bottom:26px}.lede{max-width:930px;color:#c9c5bc}.small,.fine{color:#aaa29a;font-size:12px;line-height:1.6}.spaced{margin-top:28px}.line{height:1px;background:linear-gradient(90deg,#8c5357,transparent);margin:30px 0}.divider{text-align:center;color:#a08c72;font:19px Georgia,serif;letter-spacing:.7em;margin:33px auto}
-/* Cover */
-.hero{min-height:770px;height:min(92vh,920px);display:flex;align-items:flex-end;padding:60px clamp(32px,5vw,80px) 85px;position:relative;overflow:hidden;background:#0b0d0f url('images/rogue-hero.jpg') no-repeat 67% 36%/cover;border-bottom:1px solid #6f4241}.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#07080af5 0%,#090a0cdb 23%,#0a0a0c68 55%,transparent 90%),linear-gradient(0deg,#07090b 0%,#0a090cab 22%,transparent 68%)}.hero:after{content:'';position:absolute;left:15%;bottom:-260px;width:650px;height:390px;background:#7e202f48;filter:blur(160px);pointer-events:none}.hero-inner{position:relative;z-index:2;max-width:840px}.hero h1 .line1{font-size:clamp(22px,2.8vw,40px);display:block;letter-spacing:.34em;font-family:system-ui,Arial,sans-serif;font-weight:300;color:#f1dfc8;margin-bottom:18px}.hero h1 .line2{display:block;color:#f7eee5}.hero h1 .line3{display:block;font-style:italic;color:#d8b584;font-size:.72em;margin-top:6px}.hero .deck{font:normal 20px/1.6 Georgia,serif;max-width:750px;color:#e0d5cc;text-shadow:0 2px 9px #000}.hero .hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin:27px 0}.hero .hero-meta span{border:1px solid #9c777366;background:#100c0ec9;padding:5px 12px;border-radius:30px;text-transform:uppercase;letter-spacing:.1em;font-size:10px;color:#d9c6b3}.hero .hero-footer{display:flex;align-items:center;gap:17px;margin-top:38px;font-size:11px;letter-spacing:.13em;color:#bdaea6}.slash{width:40px;height:1px;background:var(--gold)}.hero-number{position:absolute;top:32px;right:37px;font-size:10px;color:#e6cbba;letter-spacing:.2em;border:1px solid #93807a90;padding:8px 15px;background:#0a08098a}
-.grid2,.grid3,.grid4{display:grid;gap:18px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.panel{background:linear-gradient(135deg,#1b1c1e,#111315);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);min-width:0;break-inside:avoid}.panel h4{color:#ecddce}.panel p,.panel li{color:#c4c0b9}.panel .micro{font-size:10px;color:#a99a88;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.panel.redtop{border-top:3px solid var(--red)}.panel.greentop{border-top:3px solid var(--green)}.panel.silvertop{border-top:3px solid var(--silver)}.panel .big-num{font:normal 52px/.9 Georgia,serif;color:var(--gold);margin:10px 0 20px}.callout{border-left:3px solid var(--gold);padding:19px 23px;background:#24201a99;margin:22px 0;border-radius:0 12px 12px 0}.callout.red{border-color:var(--red);background:#281a1e99}.callout.green{border-color:var(--green);background:#17241b99}.callout strong{color:var(--gold)}.chip{display:inline-block;padding:4px 10px;border-radius:30px;border:1px solid #69605a;color:#d9c9b6;font-size:11px;background:#141313}.cite{font-size:11px;color:#ebc198;white-space:nowrap;margin-right:4px}.bar{height:6px;border-radius:9px;background:#323333;margin:7px 0 15px;overflow:hidden}.bar b{height:100%;display:block;background:linear-gradient(90deg,#9e3749,#dec4a0)}
-.spec-card{padding:33px 26px 28px;border:1px solid #59413e;border-top:4px solid var(--red);border-radius:18px;min-height:365px;background:radial-gradient(circle at 90% 0%,#521d293f,transparent 59%),linear-gradient(150deg,#24171b,#111214);position:relative;overflow:hidden}.spec-card:nth-child(2){border-top-color:var(--silver);background:radial-gradient(circle at 90% 0%,#3248564a,transparent 59%),linear-gradient(150deg,#1a2126,#111214)}.spec-card:nth-child(3){border-top-color:var(--green);background:radial-gradient(circle at 90% 0%,#19432d59,transparent 59%),linear-gradient(150deg,#18241f,#111214)}.spec-card:after{content:'✦';position:absolute;font:170px Georgia,serif;right:-10px;top:55px;color:#ffffff08;transform:rotate(15deg)}.spec-card h3{font:normal 35px Georgia,serif;color:#f2e3d9;margin:15px 0}.spec-card .glyph{font:italic 68px Georgia,serif;color:#d7b28e;line-height:.8}.spec-card:nth-child(2) .glyph{color:#b1c2d2}.spec-card:nth-child(3) .glyph{color:#a0d6aa}.spec-card p{color:#c7c1b8;max-width:370px}.spec-card strong{color:#f6e5d6}.spec-card .spec-foot{padding-top:15px;border-top:1px solid #514545;margin-top:24px;font-size:12px;color:#dfccad}
-.table-scroll{width:100%;overflow:auto;border-radius:13px;border:1px solid #48403b;scrollbar-width:thin}.data-table{border-collapse:collapse;min-width:690px;width:100%;font-size:13px}.data-table th{text-align:left;background:#252023;color:#e3c69d;font-size:10px;text-transform:uppercase;letter-spacing:.14em;padding:13px 12px;white-space:nowrap}.data-table td{padding:13px 12px;border-top:1px solid #393437;vertical-align:top;color:#c8c0b7}.data-table tr:nth-child(even){background:#ffffff04}.data-table td:first-child{color:#f3e1d0;font-weight:700}.iconcard{display:flex;gap:14px;align-items:flex-start}.iconcard .ico{width:54px;height:54px;flex:0 0 54px;border:1px solid #765458;border-radius:15px;display:grid;place-items:center;font:26px Georgia,serif;background:#291c21;color:var(--gold)}
-/* thematic diagrams */
-.flowchart{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:16px 0 24px}.flowchart .node{flex:1 1 126px;min-width:112px;border:1px solid #544c4a;background:#211e20;padding:15px 12px;border-radius:11px;text-align:center;display:grid;place-content:center}.flowchart .node strong{font:normal 16px Georgia,serif}.flowchart .node small{color:#ad9b8f;font-size:10px}.flowchart .arrow{align-self:center;color:var(--gold);padding:0 3px}.flowchart .node.venom{border-color:#50704b;background:#17261b}.flowchart .node.flurry{border-color:#557086;background:#1a262f}.flowchart .node.opener{border-color:#874557;background:#321b24}.decision-tree{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}.choice{border:1px solid #554546;border-radius:12px;padding:20px;background:linear-gradient(180deg,#292124,#17191a)}.choice b{color:#e3c292;font:normal 21px Georgia,serif;display:block;margin-bottom:7px}.choice .then{display:block;color:#b3d6c1;text-transform:uppercase;letter-spacing:.15em;font-size:10px;font-weight:800;padding:8px 0}.choice p{font-size:13px;color:#c9bfb4}.phase-line{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:22px 0}.phase{min-height:139px;border:1px solid #6b414b;background:linear-gradient(135deg,#331c25,#171719);padding:15px;border-radius:12px;position:relative}.phase:after{content:'➝';color:#d7ad84;position:absolute;top:45%;right:-12px;z-index:2}.phase:last-child:after{display:none}.phase b{font:normal 27px Georgia,serif;color:var(--gold);display:block}.phase span{color:#ded4c7;font-size:12px;line-height:1.5;display:block}.energy-lane{display:grid;grid-template-columns:155px 1fr;gap:8px 18px;align-items:center;margin:14px 0}.energy-lane>span{color:#c3b5a8;font-size:12px}.energy-track{min-height:22px;background:repeating-linear-gradient(90deg,#2a2a2b,#2a2a2b calc(10% - 1px),#544548 calc(10% - 1px),#544548 10%);border-radius:6px;position:relative;overflow:hidden}.energy-track i{height:100%;display:block;background:linear-gradient(90deg,#6f9f78,#b6e0ac);position:absolute;left:0;top:0}.energy-track.red i{background:linear-gradient(90deg,#a14650,#e1a188)}.energy-track em{position:relative;display:block;padding:2px 0 2px 10px;font:10px system-ui;color:#fff;text-shadow:0 1px 3px #000;z-index:1}
-/* dossiers */
-.archetype-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mini-build{display:block;min-height:218px;padding:24px;border-radius:16px;border:1px solid #674147;background:radial-gradient(circle at 100% 0,#6324314a,transparent 58%),#181619;transition:transform .2s,border-color .2s;color:inherit}.mini-build.combat{border-color:#52616b;background:radial-gradient(circle at 100% 0,#334e6240,transparent 58%),#17191c}.mini-build.shadow{border-color:#49634b;background:radial-gradient(circle at 100% 0,#2158373a,transparent 58%),#171b18}.mini-build:hover{transform:translateY(-3px);border-color:var(--gold);color:inherit}.mini-build .code{color:var(--gold);font-size:10px;letter-spacing:.15em;text-transform:uppercase}.mini-build h4{font:normal 25px Georgia,serif;color:#f2e3d9;margin:10px 0}.mini-build p{font-size:12px;color:#c6beb5;line-height:1.55}.mini-bottom{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #594343;padding-top:10px;color:#dec4ad;font-size:11px}
-.dossier{border:1px solid #664148;background:radial-gradient(ellipse at 100% 0,#511b284a,transparent 40%),linear-gradient(160deg,#18151a,#101112);border-radius:18px;padding:34px clamp(23px,3vw,42px);margin:35px 0 50px;box-shadow:0 20px 65px #0007;break-inside:avoid}.dossier.combat{border-color:#56616a;background:radial-gradient(ellipse at 100% 0,#344b5b4a,transparent 40%),linear-gradient(160deg,#181b1e,#101112)}.dossier.shadow{border-color:#416348;background:radial-gradient(ellipse at 100% 0,#1d4c344a,transparent 40%),linear-gradient(160deg,#161d18,#101112)}.doss-head{display:grid;grid-template-columns:94px 1fr auto;gap:22px;align-items:center;padding-bottom:19px;border-bottom:1px solid #5b4746}.doss-stamp{border:1px solid #775a56;border-radius:50%;width:84px;height:84px;display:flex;align-items:center;justify-content:center;flex-direction:column;font:italic 40px/1 Georgia,serif;color:#d1a186}.doss-stamp span{font:800 10px system-ui;letter-spacing:.1em;margin-top:4px}.doss-heading h3{font:normal clamp(28px,3vw,43px) Georgia,serif;color:#f2e6dc;margin:4px 0 7px}.quote{font:italic 16px/1.5 Georgia,serif;color:#c9c1b8;margin:0}.doss-score{text-align:right;min-width:125px}.stat-num{font-size:30px;color:var(--gold)}.doss-score small{font-size:10px;letter-spacing:.12em;color:#aea7a0}.doss-score .proof{font-size:10px;color:#a7c49e}.doss-prelude{display:flex;gap:19px;align-items:baseline;margin-top:19px}.doss-prelude p{font-size:14px;color:#ddd1c5}.doss-ribbon{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0 24px}.doss-ribbon>div{border:1px solid #4a4041;border-radius:9px;padding:14px 12px;background:#ffffff05;min-width:0}.doss-ribbon small{display:block;color:#b3a49c;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.doss-ribbon b{display:block;font-size:12px;line-height:1.5;color:#e6dcd1;margin-top:3px}.doss-sectionlabel{color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-size:11px;font-weight:800;margin:26px 0 13px}.talent-tree{padding:13px 0;border-bottom:1px solid #544448}.talent-tree h5{color:#ebd2b6;font-size:11px}.talent-tree h5 em{color:#a7a49c;font-weight:400;letter-spacing:0;text-transform:none;font-style:normal}.talent-chips{display:flex;flex-wrap:wrap;gap:5px;margin:11px 0}.rank{background:#2b2527;border:1px solid #645355;border-radius:40px;padding:6px 10px;font-size:11px;color:#dbd3ca;white-space:nowrap}.rank small{color:#c79b8a;font-size:10px;margin-right:4px}.rank b{color:#ffe3b0;margin-left:3px}.prereq-note{padding:10px 0 15px}.doss-columns{display:grid;grid-template-columns:1fr 1fr;gap:10px 32px;margin-top:15px}.doss-columns.secondary{border-top:1px solid #534648;padding-top:9px}.doss-row{border-bottom:1px solid #ffffff10;padding:9px 0 13px}.doss-row h5{color:#ddbd91;margin-bottom:7px}.doss-row p{font-size:13px;line-height:1.64;color:#cfc9c0;margin:0}.doss-bottom{margin-top:25px;border-top:1px solid #755c50;padding:20px 3px 0;color:#e0d4c3;font:italic 17px Georgia,serif}.doss-bottom span{font:800 10px system-ui;letter-spacing:.17em;color:#d2ae82;padding-right:12px}
-/* interactions */
-.lab{border:1px solid #71524e;background:linear-gradient(140deg,#181c1b,#111113);border-radius:20px;padding:26px;box-shadow:var(--shadow)}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:18px 0}.controls label{display:flex;flex-direction:column;gap:7px;color:#b7a99f;font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:800;flex:1 1 155px}.controls select,.controls input[type=range]{width:100%}.controls select{appearance:none;border:1px solid #846f64;border-radius:10px;background:#282324;color:#f4e8d7;padding:11px 35px 11px 13px;min-height:43px;background-image:linear-gradient(45deg,transparent 50%,#d2b38c 50%),linear-gradient(135deg,#d2b38c 50%,transparent 50%);background-position:calc(100% - 19px) 19px,calc(100% - 14px) 19px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}.controls input[type=range]{accent-color:var(--red)}.lab-head{display:flex;justify-content:space-between;gap:20px;align-items:start;border-bottom:1px solid #524542;padding-bottom:16px}.lab-head p{color:#b6b3ad}.lab-head h3{font-size:27px}.lab-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.lab-card{min-width:0;border:1px solid #55494a;background:#201d20;border-radius:12px;padding:18px}.lab-card.assassin{border-top:3px solid #bb5c60}.lab-card.combat{border-top:3px solid #91b2c5}.lab-card.shadow{border-top:3px solid #85be92}.lab-meta{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:9px 0 11px}.lab-meta>div{padding:7px;background:#151516;border:1px solid #493f3e;border-radius:6px;font-size:10px;line-height:1.45;color:#c6c5bd;min-width:0}.lab-meta b{display:block;color:#d3b382;text-transform:uppercase;font:700 10px system-ui,sans-serif;letter-spacing:.08em;margin-bottom:3px}.encounter-print{display:none}.print-encounter{margin-top:24px}.print-encounter h4{font-size:20px}.lab-card h4{font:normal 21px Georgia,serif;margin:3px 0 10px}.lab-card .mood{font-size:10px;color:#d7b995;text-transform:uppercase;letter-spacing:.14em}.action-steps{display:grid;grid-template-columns:1fr;gap:5px;counter-reset:step}.action{padding:7px 0 7px 31px;position:relative;color:#d1c7bd;font-size:12px;border-bottom:1px solid #ffffff12;line-height:1.52;counter-increment:step}.action:before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:6px;color:#d6b08b;font:italic 15px Georgia,serif}.lab-notes{margin-top:16px;border-top:1px solid #544744;padding-top:17px;font-size:12px;color:#bdb6ac}.lab-notes strong{color:#e6d3b6}
-.budget-row{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:20px 0}.budget-step{border:1px solid #554346;background:#252021;border-radius:11px;padding:12px;min-width:0}.budget-step .num{font:normal 22px Georgia,serif;color:var(--gold)}.budget-step h5{font-size:10px;letter-spacing:0;text-transform:none;color:#eee0d2;font-weight:700;min-height:31px}.budget-step .energy-meter{height:7px;background:#443b3e;border-radius:8px;overflow:hidden;margin:9px 0 5px}.budget-step .energy-meter b{display:block;height:100%;background:linear-gradient(90deg,#72b180,#bae4bc)}.budget-step .cc{font-size:10px;color:#b0d6a6}.budget-step .delta{font-size:11px;color:#b9afa5}.budget-step .wait{font-size:10px;color:#cf9c9c}.lab-actions-note{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}.lab-actions-note div{border:1px dashed #625452;padding:12px;border-radius:10px;font-size:12px;color:#c5bcb2}
-.atlas-controls{margin-bottom:17px}.atlas{width:100%;overflow:auto;border:1px solid #534444;border-radius:12px}.heat-table{border-collapse:separate;border-spacing:0;min-width:960px;width:100%;font-size:12px}.heat-table th{background:#241d20;border-bottom:1px solid #5c4649;padding:7px 4px;color:#d2b18b;font-size:10px;letter-spacing:.04em;min-width:48px}.heat-table th:first-child{min-width:225px;text-align:left;padding:12px;position:sticky;left:0;z-index:5;background:#261e21}.heat-table th button{display:block;width:100%;border:0;background:none;color:#dcc39d;cursor:pointer;font:800 10px/1.2 system-ui;min-height:128px;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.05em;padding:5px}.heat-table th button:hover{color:white}.heat-table td{padding:8px 4px;border-bottom:1px solid #3f3435;text-align:center;background:#161619;white-space:nowrap}.heat-table tbody tr:nth-child(even) td{background:#1b1c1e}.heat-table tbody tr td:first-child{position:sticky;left:0;z-index:4;text-align:left;padding:10px 12px;white-space:normal;font-weight:650;color:#e9d7c7;border-right:1px solid #564545}.heat-table tbody tr:nth-child(even) td:first-child{background:#262125}.heat-table td .heat{display:flex;align-items:center;justify-content:center;width:34px;height:22px;border-radius:5px;margin:auto;color:#fff;font-size:11px;font-weight:800}.heat1{background:#34363b}.heat2{background:#555361}.heat3{background:#82676a}.heat4{background:#a66a60}.heat5{background:#d39a71;color:#171316!important}.heat-table a{border:0;color:inherit}.heat-table a:hover{color:var(--gold)}.legend-scores{display:flex;flex-wrap:wrap;gap:9px;font-size:11px;margin:16px 0;color:#b7aaa0}.legend-scores span{border:1px solid #4a4040;padding:4px 9px;border-radius:25px}.quiz-result{margin-top:10px;border-top:1px solid #5b4947;padding-top:18px}.quiz-result h4{color:#f7dac0}.quiz-card{display:flex;align-items:start;gap:15px;border-bottom:1px solid #514648;padding:12px 0}.quiz-card .place{font:italic 30px Georgia,serif;color:#c8a17d;width:35px}.quiz-card a{font:normal 20px Georgia,serif}.quiz-card p{font-size:12px;color:#bfb4aa;margin:2px 0}
-.source-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.source-item{display:grid;grid-template-columns:43px 1fr;gap:13px;border:1px solid #493f40;background:#1a191a;border-radius:11px;padding:15px;scroll-margin-top:50px}.source-item:target{border-color:var(--gold);box-shadow:0 0 0 3px #d3b38222}.s-id{font:normal 22px Georgia,serif;color:#dfac92}.source-item a{font-size:13px;color:#e7c09e}.source-item p{font-size:11px;line-height:1.55;color:#aaa19b;margin:6px 0 0}.foot{background:#090a0b;padding:35px clamp(25px,5vw,78px);border-top:1px solid #614444;color:#a89d95;font-size:11px}.foot .shell{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.foot b{color:#dfb08d}#scrolltop{position:fixed;right:25px;bottom:25px;border:1px solid #94706b;background:#271b20;color:#f2e0d0;padding:10px 13px;border-radius:12px;cursor:pointer;display:none;z-index:80}
-@media(max-width:1350px){.grid3,.archetype-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.budget-row{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:1050px){:root{--rail:0px}#rail{transform:translateX(-101%);width:258px;transition:transform .22s}#rail.open{transform:translateX(0)}#mobile-nav{display:flex;position:fixed;right:16px;top:14px;z-index:85;align-items:center;gap:7px;padding:10px 13px;background:#241b20e9;border:1px solid #9a6b67;border-radius:9px;color:#e3d1ba;cursor:pointer;font-size:12px;letter-spacing:.08em}.hero-number{top:70px}main{margin-left:0}.hero{min-height:710px}}
-@media(max-width:710px){.grid2,.grid3,.grid4,.archetype-grid,.source-grid,.lab-cards,.doss-columns,.doss-ribbon,.lab-actions-note{grid-template-columns:1fr}.chapter{padding:53px 20px 61px}.hero{height:auto;min-height:800px;background-position:63% center;padding:115px 22px 62px}.hero:before{background:linear-gradient(90deg,#090a0cdb,#09090a6c),linear-gradient(0deg,#07090b 0%,#0a090cd1 30%,transparent 90%)}.hero h1{font-size:57px}.hero h1 .line1{font-size:20px}.hero .deck{font-size:17px}.hero-number{top:70px;left:20px;right:auto}.dossier{padding:21px 18px}.doss-head{grid-template-columns:84px 1fr;gap:14px}.doss-score{grid-column:1 / -1;text-align:left}.doss-prelude{display:block}.doss-prelude .chip{margin-bottom:10px}.phase-line,.budget-row{grid-template-columns:repeat(2,1fr)}.phase:after{display:none}.decision-tree{grid-template-columns:1fr}.lab{padding:18px}.lab-head{display:block}.energy-lane{grid-template-columns:104px 1fr;gap:7px}.controls label{flex:1 1 150px}}
-@media(max-width:420px){.phase-line,.budget-row{grid-template-columns:1fr}.hero h1{font-size:49px}.hero .hero-meta span{font-size:10px}.source-item{grid-template-columns:31px 1fr}.rank{white-space:normal}.spec-card{min-height:auto}.doss-heading h3{font-size:28px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
-@media print{@page{size:A4;margin:13mm 11mm}html,body{background:#0c0c0e!important;color:#e9e5dc!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}#rail,#mobile-nav,#scrolltop,.notprint{display:none!important}main{margin:0}section.chapter{padding:22px 5px;border-top:1px solid #5b4243;overflow:visible;break-before:auto}h2,h3,h4,h5{break-after:avoid}.hero{height:260mm;min-height:0;page-break-after:always;background-position:64% center}.hero h1{font-size:73px}.panel,.spec-card,.choice,.source-item,.mini-build,.flowchart,.phase,.doss-ribbon>div{break-inside:avoid}.grid3,.archetype-grid{grid-template-columns:repeat(3,1fr)}.dossier{break-before:page;break-inside:auto;padding:19px 20px;margin:10px 0 20px}.doss-columns{grid-template-columns:1fr 1fr}.doss-row{break-inside:avoid}.doss-row p{font-size:11px}.doss-ribbon{grid-template-columns:repeat(4,1fr)}.lab-cards{grid-template-columns:repeat(3,1fr)}.lab-card,.budget-step{break-inside:avoid}.encounter-print{display:block!important}#enc-output,#enc-notes{display:none!important}.print-encounter{break-before:page}.print-encounter .lab-card{padding:9px}.print-encounter .lab-card h5{font:normal 15px Georgia,serif;margin:4px 0}.print-encounter .lab-meta{grid-template-columns:1fr 1fr;gap:3px}.print-encounter .lab-meta>div{font-size:10px;padding:4px}.print-encounter .action-steps{gap:2px}.print-encounter .action{font-size:10px;padding:5px 5px 5px 28px}.print-encounter .action:before{font-size:11px;top:5px;left:3px}.lab-card .action{font-size:10px}.heat-table{min-width:0}.heat-table th button{font-size:10px;min-height:100px}.heat-table th:first-child{min-width:135px}.heat-table td .heat{width:23px;height:18px}.heat-table td{padding:3px}.source-grid{grid-template-columns:1fr 1fr}.phase-line{grid-template-columns:repeat(5,1fr)}.mini-build{min-height:0;padding:12px}.mini-build p{font-size:10px}}
-
-/* Collection-wide editorial annotation, kept subordinate to each class theme. */
-.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
-.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
-.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
-@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
-
-/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
-.hero .series-manuscript {
-  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif;
-  letter-spacing: .06em;
-  text-transform: none;
-  max-width: 940px;
-  overflow-wrap: break-word;
-  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="theme-color" content="#170f0a"><meta name="description" content="The Forever Rogue Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Rogue Compendium: The Shadowblade Manual of Silence and Steel</title>
+<link rel="stylesheet" href="book.css">
+<style>
+/* Rogue (phase 4): the class ink, the ornament and the parts that only this book has. The shared book design is in book.css. */
+:root{--accent:#7e202f;--ornament:'⚔';--red:#8a2a35;--silver:#3d5563;--green:#285636}
+h5{margin:0;font:15px var(--fell);letter-spacing:.08em}
+.small{color:var(--ink-2);font-size:14px}
+.lede{color:var(--ink-2)}
+.spaced{margin-top:28px}
+.line{height:1px;margin:30px 0;background:linear-gradient(90deg,var(--rule),transparent)}
+.divider{margin:33px auto;color:var(--ink-2);font-size:19px;letter-spacing:.7em;text-align:center}
+.cite{margin-right:4px;font-size:14px;white-space:nowrap}
+/* the reading progress line and the back-to-top button */
+#reading{position:fixed;top:0;left:0;z-index:30;height:3px;width:0;background:var(--gilt);pointer-events:none}
+#scrolltop{position:fixed;right:20px;bottom:20px;z-index:25;display:none;padding:8px 13px;color:#2a1a08;font:18px/1 var(--serif);background:var(--brass);border:1px solid var(--frame);border-radius:3px;box-shadow:0 2px 6px #0006;cursor:pointer}
+/* cover */
+.hero-number{color:var(--ink-2);font:13px var(--fell);letter-spacing:.16em}
+.hero h1 span{display:block}
+.hero h1 .line1{font-size:.5em;letter-spacing:.2em}
+.hero h1 .line3{color:var(--accent);font-size:.72em}
+.hero .hero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:22px 0}
+.hero .hero-meta span{padding:2px 10px;color:var(--ink-2);font:14px var(--fell);letter-spacing:.08em;border:1px solid var(--line);border-radius:3px}
+.hero .hero-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;color:var(--ink-2);font:14px var(--fell);letter-spacing:.12em}
+.slash{width:40px;height:1px;background:var(--rule)}
+/* panels, notes, bars */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:18px}
+.panel .micro{color:var(--ink-2);font:13px var(--fell);letter-spacing:.12em}
+.panel.redtop{border-top:3px solid var(--red)}.panel.greentop{border-top:3px solid var(--green)}.panel.silvertop{border-top:3px solid var(--silver)}
+.panel .big-num{margin:10px 0 18px;color:var(--accent);font:48px/.9 var(--fell)}
+.callout{margin:22px 0;padding:16px 20px;font-size:16px;background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--rule)}
+.callout.red{border-left-color:var(--red)}.callout.green{border-left-color:var(--green)}
+.callout strong{color:var(--accent)}
+.bar{height:6px;margin:7px 0 15px;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);border-radius:3px}
+.bar b{display:block;height:100%;background:var(--accent)}
+/* specialization cards */
+.spec-card{position:relative;overflow:hidden;padding:26px 22px 22px;background:var(--card);border:1px solid #b8955a;border-top:4px solid var(--red);box-shadow:var(--bookplate)}
+.spec-card:nth-child(2){border-top-color:var(--silver)}.spec-card:nth-child(3){border-top-color:var(--green)}
+.spec-card h3{margin:12px 0;font-size:30px}
+.spec-card .glyph{color:var(--red);font:italic 60px/.8 var(--serif)}
+.spec-card:nth-child(2) .glyph{color:var(--silver)}.spec-card:nth-child(3) .glyph{color:var(--green)}
+.spec-card p{font-size:16px}
+.spec-card .spec-foot{margin-top:20px;padding-top:14px;color:var(--ink-2);font-size:14px;border-top:1px solid var(--line)}
+/* tables and icon cards */
+.table-scroll{width:100%;overflow-x:auto}
+.data-table{min-width:690px}
+.data-table th{white-space:nowrap}
+.data-table td:first-child{font-weight:700}
+.iconcard{display:flex;align-items:flex-start;gap:14px}
+.iconcard .ico{display:grid;flex:0 0 50px;place-items:center;width:50px;height:50px;color:var(--accent);font:24px var(--serif);border:1px solid var(--line);border-radius:50%}
+/* flows, decisions, phases, Energy lanes */
+.flowchart{display:flex;flex-wrap:wrap;align-items:stretch;gap:7px;margin:16px 0 24px}
+.flowchart .node{display:grid;flex:1 1 126px;place-content:center;min-width:112px;padding:13px 10px;text-align:center;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--rule);border-radius:3px}
+.flowchart .node strong{font-size:16px}
+.flowchart .node small{font-size:13px}
+.flowchart .arrow{align-self:center;padding:0 3px;color:var(--ink-2)}
+.flowchart .node.venom{border-top-color:var(--green)}.flowchart .node.flurry{border-top-color:var(--silver)}.flowchart .node.opener{border-top-color:var(--red)}
+.decision-tree{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px;margin:20px 0}
+.choice{padding:18px;background:var(--card);border:1px solid var(--line)}
+.choice b{display:block;margin-bottom:6px;color:var(--accent);font:20px var(--fell)}
+.choice .then{display:block;padding:6px 0;color:var(--green);font:13px var(--fell);letter-spacing:.12em}
+.choice p{font-size:14px}
+.phase-line{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:9px;margin:22px 0}
+.phase{min-height:130px;padding:13px;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--red)}
+.phase b{display:block;color:var(--accent);font:26px var(--fell)}
+.phase span{display:block;font-size:14px;line-height:1.5}
+.energy-lane{display:grid;grid-template-columns:155px 1fr;align-items:center;gap:8px 18px;margin:14px 0}
+.energy-lane>span{font-size:14px}
+/* the lanes: a ruled track and a tinted bar, so the ink label reads on both */
+.energy-track{position:relative;min-height:24px;overflow:hidden;background:repeating-linear-gradient(90deg,var(--paper-2) 0 calc(10% - 1px),var(--line) calc(10% - 1px) 10%);border:1px solid var(--line);border-radius:3px}
+.energy-track i{position:absolute;top:0;left:0;display:block;height:100%;background:color-mix(in srgb,var(--green) 35%,var(--card))}
+.energy-track.red i{background:color-mix(in srgb,var(--red) 30%,var(--card))}
+.energy-track em{position:relative;z-index:1;display:block;padding:2px 0 2px 10px;font-size:13px;font-style:normal}
+/* the nine archetype cards (links) and dossiers */
+.archetype-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.mini-build{display:block;min-height:200px;padding:20px;color:inherit;text-decoration:none;background:var(--card);border:1px solid #b8955a;border-top:3px solid var(--red);box-shadow:var(--bookplate);transition:transform .2s}
+.mini-build.combat{border-top-color:var(--silver)}.mini-build.shadow{border-top-color:var(--green)}
+.mini-build:hover{color:inherit;transform:translateY(-3px)}
+.mini-build .code{color:var(--accent);font:13px var(--fell);letter-spacing:.12em}
+.mini-build h4{margin:8px 0;font-size:23px;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:.15em}
+.mini-build p{font-size:14px;line-height:1.55}
+.mini-bottom{display:flex;justify-content:space-between;gap:10px;padding-top:10px;color:var(--ink-2);font-size:13px;border-top:1px solid var(--line)}
+.dossier{padding:30px clamp(20px,3vw,36px);border-top:3px solid var(--red)}
+.dossier.combat{border-top-color:var(--silver)}.dossier.shadow{border-top-color:var(--green)}
+.doss-head{display:grid;grid-template-columns:88px 1fr auto;align-items:center;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.doss-stamp{display:flex;flex-direction:column;align-items:center;justify-content:center;width:84px;height:84px;color:var(--accent);font:36px/1 var(--fell);border:1px solid var(--line);border-radius:50%}
+.doss-stamp span{margin-top:4px;font:10px var(--fell);letter-spacing:.04em}
+.doss-heading h3{margin:4px 0 6px;font-size:clamp(26px,3vw,36px)}
+.quote{margin:0;color:var(--ink-2);font-size:17px;font-style:italic}
+.doss-score{min-width:120px;text-align:right}
+.stat-num{color:var(--accent);font:30px var(--fell)}
+.doss-score small{font-size:13px;letter-spacing:.08em}
+.doss-score .proof{color:var(--green);font-size:13px}
+.doss-prelude{display:flex;align-items:baseline;gap:19px;margin-top:19px}
+.doss-prelude p{font-size:16px}
+.doss-ribbon{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:20px 0 24px}
+.doss-ribbon>div{min-width:0;padding:12px;background:var(--paper-2);border:1px solid var(--line)}
+.doss-ribbon small{display:block;font:13px var(--fell);letter-spacing:.06em}
+.doss-ribbon b{display:block;margin-top:3px;font-size:15px;line-height:1.45}
+.doss-sectionlabel{margin:24px 0 12px;color:var(--accent);font:16px var(--fell);letter-spacing:.12em}
+.talent-tree{padding:12px 0;border-bottom:1px solid var(--line)}
+.talent-tree h5 em{color:var(--ink-2);font-style:normal}
+.talent-chips{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}
+.rank{padding:2px 9px;font-size:14px;white-space:nowrap;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.rank small{margin-right:4px;font-size:12px}
+.prereq-note{padding:10px 0 15px}
+.doss-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px 32px;margin-top:15px}
+.doss-columns.secondary{padding-top:9px;border-top:1px solid var(--line)}
+.doss-row{padding:9px 0 13px;border-bottom:1px solid var(--line)}
+.doss-row h5{margin-bottom:6px;color:var(--accent)}
+.doss-row p{margin:0;font-size:15px;line-height:1.6}
+.doss-bottom{margin-top:24px;padding:18px 3px 0;font-size:17px;font-style:italic;border-top:1px solid var(--rule)}
+.doss-bottom span{padding-right:12px;color:var(--accent);font:13px var(--fell);letter-spacing:.14em}
+/* plates: the encounter laboratory, the resource ledger, the atlas and the character selector */
+.lab-head{display:flex;flex-wrap:wrap;align-items:start;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.lab-head p{color:var(--ink-2)}
+.lab-head h3{font-size:25px}
+.controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:16px 0}
+.controls label{display:flex;flex:1 1 155px;flex-direction:column;gap:2px}
+.controls select,.controls input[type=range]{width:100%}
+.lab-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
+.lab-card{min-width:0;padding:16px;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--rule)}
+.lab-card.assassin{border-top-color:var(--red)}.lab-card.combat{border-top-color:var(--silver)}.lab-card.shadow{border-top-color:var(--green)}
+.lab-card h4{margin:3px 0 10px;font-size:20px}
+.lab-card .mood{color:var(--ink-2);font:13px var(--fell);letter-spacing:.1em}
+.lab-meta{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:9px 0 11px}
+.lab-meta>div{min-width:0;padding:6px;font-size:13px;line-height:1.45;background:var(--paper-2);border:1px solid var(--line)}
+.lab-meta b{display:block;margin-bottom:2px;color:var(--accent);font:12px var(--fell);letter-spacing:.06em}
+.action-steps{display:grid;gap:5px;counter-reset:step}
+.action{position:relative;padding:6px 0 6px 30px;font-size:14px;line-height:1.5;border-bottom:1px solid var(--line);counter-increment:step}
+.action::before{content:counter(step,decimal-leading-zero);position:absolute;top:6px;left:0;color:var(--accent);font:14px var(--fell)}
+.lab-notes{margin-top:16px;padding-top:15px;font-size:14px;border-top:1px solid var(--line)}
+.budget-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:9px;margin:20px 0}
+.budget-step{min-width:0;padding:11px;background:var(--card);border:1px solid var(--line)}
+.budget-step .num{color:var(--accent);font:22px var(--fell)}
+.budget-step h5{min-height:31px;font:700 14px var(--serif);letter-spacing:0}
+.budget-step .energy-meter{height:7px;margin:9px 0 5px;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);border-radius:3px}
+.budget-step .energy-meter b{display:block;height:100%;background:var(--green)}
+.budget-step .cc{color:var(--green);font-size:13px}
+.budget-step .delta{color:var(--ink-2);font-size:13px}
+.budget-step .wait{color:var(--red);font-size:13px}
+.lab-actions-note{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px;margin-top:15px}
+.lab-actions-note div{padding:12px;font-size:14px;border:1px dashed var(--line)}
+.encounter-print{display:none}
+.print-encounter{margin-top:24px}
+.print-encounter h4{font-size:20px}
+/* the atlas: its column titles are buttons that run vertically (read from the bottom up) */
+.atlas{width:100%;overflow-x:auto}
+.heat-table{width:100%;min-width:640px;border-collapse:collapse}
+.heat-table thead tr{border-bottom:2px solid var(--ink-2)}
+.heat-table th{min-width:34px;padding:6px 2px;border:0}
+.heat-table th:first-child{position:sticky;left:0;z-index:2;min-width:170px;padding:10px 6px;text-align:left;background:var(--plate)}
+.heat-table th button{all:unset;display:block;min-height:128px;padding:4px;color:var(--ink-2);font:14px var(--fell);letter-spacing:.04em;writing-mode:vertical-rl;transform:rotate(180deg);cursor:pointer}
+.heat-table th button:focus-visible{outline:2px solid var(--accent)}
+.heat-table td{padding:6px 3px;text-align:center;white-space:nowrap;border-bottom:1px solid var(--line)}
+.heat-table tbody td:first-child{position:sticky;left:0;z-index:1;padding:8px 6px;text-align:left;white-space:normal;font-weight:700;background:var(--plate)}
+.heat-table tbody tr:hover td{background-color:#e6d8b6}
+.legend-scores{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0;color:var(--ink-2);font-size:14px}
+.legend-scores span{padding:2px 9px;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.quiz-result{margin-top:10px;padding-top:14px;border-top:1px solid var(--line)}
+.quiz-card{display:flex;align-items:start;gap:15px;padding:12px 0;border-bottom:1px solid var(--line)}
+.quiz-card .place{width:35px;color:var(--accent);font:30px var(--fell)}
+.quiz-card a{font-size:19px}
+.quiz-card p{margin:2px 0;font-size:14px}
+/* sources and the last page */
+.source-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.source-item{display:grid;grid-template-columns:43px 1fr;gap:12px}
+.source-item:target{outline:2px solid var(--accent)}
+.s-id{color:var(--accent);font:22px var(--fell)}
+.foot{color:var(--ink-2);font-size:14px}
+.foot .shell{display:flex;flex-wrap:wrap;justify-content:space-between;gap:15px}
+@media (max-width:710px){
+  .doss-head{grid-template-columns:88px 1fr}
+  .doss-score{grid-column:1/-1;text-align:left}
+  .doss-prelude{display:block}
+  .energy-lane{grid-template-columns:104px 1fr}
 }
-.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
-.hero .compendium-series-subtitle {
-  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif;
-  letter-spacing: .008em;
-  color: #f2d9a8;
-  max-width: 900px;
-  margin: 11px 0 15px;
-  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+@media (max-width:420px){.rank{white-space:normal}}
+@media (prefers-reduced-motion:reduce){.mini-build{transition:none}}
+@media print{
+  #reading,#scrolltop{display:none!important}
+  .encounter-print{display:block!important}
+  #enc-output,#enc-notes{display:none!important}
+  .print-encounter{break-before:page}
+  .dossier{break-before:page}
+  .atlas{overflow:visible}
+  .heat-table{min-width:0}
+  .heat-table :is(th,td):first-child{position:static}
+  .energy-track,.energy-track i,.bar b,.budget-step .energy-meter b{print-color-adjust:exact;-webkit-print-color-adjust:exact}
 }
-@media (max-width: 650px) {
-  .hero .series-manuscript { font-size: 11px; letter-spacing: .025em; }
-  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px); margin: 8px 0 10px; }
-}
-
-/* Reader-first note, visually subordinate to the original manuscript design. */
-.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
-.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
-.reader-orientation p{margin:0;line-height:1.64}
-
-/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
-.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
-.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
-.reader-field-exercise p{margin:0;line-height:1.75}
-
-.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
-/* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
-.vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
-.vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
-.vol-switch button:hover{border-color:currentColor}
-.vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
-.vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
-@media print{.vol-switch{display:none}}
+/* on phones the table shrinks to its content and the name column stays narrow, so the scores beside it have room */
+@media (max-width:600px){.heat-table{min-width:0}.heat-table th:first-child,.heat-table tbody td:first-child{min-width:110px}}
 </style></head>
 <body>
   <script>
@@ -86,7 +202,7 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
       advanced:['#evidence','#characters','#encounters','#dashboard']
     };
     const MENU='#rail';
-    const SWITCH_BEFORE='#rail .rail-link'; // the switch goes right before this element
+    const SWITCH_BEFORE='#rail .nav-divider'; // the switch goes right before this element
     const LABELS={primer:'Primer',advanced:'Advanced',complete:'Complete'};
     const style=document.createElement('style');
     document.head.append(style);
@@ -160,22 +276,44 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
   })();
   </script>
   <div id="reading" aria-hidden="true"></div>
-  <button id="mobile-nav" type="button" aria-controls="rail" aria-expanded="false"><span aria-hidden="true">☰</span> &nbsp;CHAPTERS</button>
-  <nav id="rail" aria-label="Chapter navigation"><svg class="seal" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke="#956866"/><circle cx="50" cy="50" r="35" stroke="#d2b38c" stroke-dasharray="2 6"/><path d="M24 22 L70 76 M70 18 L29 78" stroke="#d2b38c" stroke-width="5" stroke-linecap="round"/><path d="M20 13 L31 25 L24 32 L15 22 Z M78 9 L68 22 L77 31 L87 20 Z" fill="#a9515a"/><path d="M50 39 L59 49 L50 60 L41 49 Z" fill="#84b58c"/></svg><div class="rail-head">FOREVER<br>ROGUE</div>
-    <div class="rail-sub">The Shadowblade Manual</div>
-    <a class="rail-link" href="#begin"><span>00</span>Opening blade</a>
-    <a class="rail-link" href="#foundation"><span>01</span>Anatomy of the Rogue</a>
-    <a class="rail-link" href="#assassination"><span>02</span>Poisoner's laboratory</a>
-    <a class="rail-link" href="#combat"><span>03</span>Blademaster's arsenal</a>
-    <a class="rail-link" href="#subtlety"><span>04</span>Shadow operative's codex</a>
-    <a class="rail-link" href="#journey"><span>05</span>Leveling & equipment</a>
-    <a class="rail-link" href="#evidence"><span>06</span>Intelligence report</a>
-    <a class="rail-link" href="#characters"><span>07</span>Character dossiers</a>
-    <a class="rail-link" href="#encounters"><span>08</span>Encounter laboratory</a>
-    <a class="rail-link" href="#dashboard"><span>09</span>Shadowblade atlas</a>
-    <a class="rail-link" href="#sources"><span>10</span>Sources & uncertainty</a>
-    <div class="rail-footer">FIELD EDITION / 13 NOV 2026<br>CLIENT BASELINE 1.60.1.70938<br>51 POINTS · TALENT DOSSIER RESEARCH<br><br>Original cover illustration. All CSS and JavaScript embedded.</div>
+  <nav id="rail" class="book-nav" aria-label="Chapter navigation">
+    <svg class="seal" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="46" stroke="#956866"/><circle cx="50" cy="50" r="35" stroke="#d2b38c" stroke-dasharray="2 6"/><path d="M24 22 L70 76 M70 18 L29 78" stroke="#d2b38c" stroke-width="5" stroke-linecap="round"/><path d="M20 13 L31 25 L24 32 L15 22 Z M78 9 L68 22 L77 31 L87 20 Z" fill="#a9515a"/><path d="M50 39 L59 49 L50 60 L41 49 Z" fill="#84b58c"/></svg>
+    <div class="nav-series">The Shadowblade Manual</div>
+    <div class="nav-title">FOREVER<br>ROGUE</div>
+    <button class="nav-toggle" type="button" aria-controls="rail" aria-expanded="false" hidden>Contents</button>
+    <div class="nav-divider"></div>
+    <div class="nav-body">
+      <ol>
+        <li><a class="rail-link" href="#begin"><span>00</span>Opening blade</a></li>
+        <li><a class="rail-link" href="#foundation"><span>01</span>Anatomy of the Rogue</a></li>
+        <li><a class="rail-link" href="#assassination"><span>02</span>Poisoner's laboratory</a></li>
+        <li><a class="rail-link" href="#combat"><span>03</span>Blademaster's arsenal</a></li>
+        <li><a class="rail-link" href="#subtlety"><span>04</span>Shadow operative's codex</a></li>
+        <li><a class="rail-link" href="#journey"><span>05</span>Leveling & equipment</a></li>
+        <li><a class="rail-link" href="#evidence"><span>06</span>Intelligence report</a></li>
+        <li><a class="rail-link" href="#characters"><span>07</span>Character dossiers</a></li>
+        <li><a class="rail-link" href="#encounters"><span>08</span>Encounter laboratory</a></li>
+        <li><a class="rail-link" href="#dashboard"><span>09</span>Shadowblade atlas</a></li>
+        <li><a class="rail-link" href="#sources"><span>10</span>Sources & uncertainty</a></li>
+      </ol>
+      <div class="nav-note">FIELD EDITION / 13 NOV 2026<br>CLIENT BASELINE 1.60.1.70938<br>51 POINTS · TALENT DOSSIER RESEARCH</div>
+    </div>
   </nav>
+  <script>
+  /* Contents button (phase 4): on narrow screens the chapter list folds away under this button.
+     Without JavaScript the button stays hidden and the list stays open. */
+  (()=>{
+    const nav=document.querySelector('.book-nav');
+    const button=nav.querySelector('.nav-toggle');
+    const show=open=>{nav.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));};
+    nav.classList.add('js');
+    button.hidden=false;
+    button.addEventListener('click',()=>show(!nav.classList.contains('open')));
+    // Close the list after a chapter is chosen, and on Escape.
+    nav.querySelector('.nav-body').addEventListener('click',e=>{if(e.target.closest('a'))show(false);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){show(false);button.focus();}});
+  })();
+  </script>
   <main>
     <header class="hero" id="begin" aria-labelledby="cover-title">
       <div class="hero-number">CLASS MANUAL / FIELD NOTES</div>
@@ -187,6 +325,7 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
           <span class="line3">Compendium</span>
         </h1>
         <div class="compendium-series-subtitle">The Shadowblade Manual of Silence and Steel</div>
+        <figure class="frontis"><img src="images/rogue-hero.jpg" alt="" width="1536" height="1024"></figure>
         <p class="deck">The cleanest victory begins with a question: where can you stand without being seen, and what happens if the target survives? Master Energy, poisons, weapons and the art of leaving on your own terms.</p>
         <div class="hero-meta">
           <span>Assassination</span>
@@ -2415,7 +2554,7 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
         <div class="eyebrow">08 / One Encounter, Nine Assassination Plans</div>
         <h2>The interactive combat laboratory.</h2>
         <p class="lead">Select any of five identical encounters and compare three Rogues of the same specialization – or all nine. The five visible actions are <em>decision priorities</em>, not a fabricated deterministic combat rotation. Your target's response can reorder the plan.</p>
-        <div class="lab">
+        <div class="lab plate">
           <div class="lab-head">
             <div>
               <div class="eyebrow">Encounter explorer / dynamic tactical cards</div>
@@ -3228,7 +3367,7 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
         </div>
         <h3 class="spaced">Live resource ledger / change the sequence</h3>
         <p class="lede">A conservative <strong>illustrative accounting model</strong> shows how Poised, builder costs, Shank, Combo Points and optional waits affect the first several actions. This is intentionally <em>not</em> a damage simulator: it assumes successful hits, no critical procs and no weapon swings, treats nonmax-rank Boot Knife as zero guaranteed CP, and uses a configurable interval between actions.</p>
-        <div class="lab" id="resource-lab">
+        <div class="lab plate" id="resource-lab">
           <div class="controls notprint">
             <label>Rogue dossier<select id="resource-build"></select></label>
             <label>Recovery between actions <span id="gap-value">1.5 sec</span><input id="gap" type="range" min="0" max="3" step="0.5" value="1.5"></label>
@@ -3278,8 +3417,8 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
         <div class="eyebrow">09 / The Atlas of Nine Rogues</div>
         <h2>Choose the weapon philosophy, not a fake DPS crown.</h2>
         <p class="lead">These are ordinal, qualitative editorial ratings from <strong>1 to 5</strong>, based on talent access and intended encounter behavior. A score of 5 means very strong capability on positive dimensions; for <em>Stealth dependence, Weapon dependence and Complexity</em>, 5 instead means a <strong>greater requirement or burden</strong>. Nothing here represents measured logs, simulated DPS or a tier-list prediction.</p>
-        <div class="lab">
-          <div class="eyebrow">Sortable and filterable comparison matrix</div>
+        <div class="lab plate">
+          <div class="eyebrow plate-head">Sortable and filterable comparison matrix</div>
           <div class="controls atlas-controls notprint">
             <label>Specialization<select id="atlas-spec"><option value="all">All three specs</option><option value="Assassination">Assassination</option><option value="Combat">Combat</option><option value="Subtlety">Subtlety</option></select></label>
             <label>Weapon preference<select id="atlas-weapon"><option value="all">Any weapon</option><option value="dagger">Daggers</option><option value="sword">Swords</option><option value="axe">Axes</option><option value="mace">Maces</option><option value="fist">Fist weapons</option></select></label>
@@ -3319,20 +3458,22 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
           </div>
           <p class="fine" id="atlas-count" aria-live="polite">Showing all nine builds.</p>
         </div>
-        <h3 class="spaced">Which Rogue are you? / Character selector</h3>
-        <div class="grid2">
-          <div class="panel">
-            <p class="lede">Pick the decisions you want to make. This selector scores declared archetype properties and preferences, not raid performance.</p>
-            <div class="controls notprint">
-              <label style="flex-basis:100%">What do you enjoy most?<select id="quiz-style"><option value="poison">Layering poisons and prolonged damage</option><option value="burst">Surprising an enemy with a precise kill</option><option value="steel">Reliable weapon attacks and uptime</option><option value="cleave">Timing strong two-target cooldowns</option><option value="control">Interrupts, Sap, escapes and disruption</option><option value="hybrid">Outlasting enemies with flexible tactics</option></select></label>
-              <label>Most common content<select id="quiz-mode"><option value="solo">Solo / leveling</option><option value="pve">Dungeon / raid PvE</option><option value="pvp">PvP</option></select></label>
-              <label>Preferred weapon<select id="quiz-weapon"><option value="all">No preference</option><option value="dagger">Daggers</option><option value="sword">Swords / axes</option><option value="mace">Maces / fists</option></select></label>
+        <div class="plate">
+          <h3 class="spaced">Which Rogue are you? / Character selector</h3>
+          <div class="grid2">
+            <div class="panel">
+              <p class="lede">Pick the decisions you want to make. This selector scores declared archetype properties and preferences, not raid performance.</p>
+              <div class="controls notprint">
+                <label style="flex-basis:100%">What do you enjoy most?<select id="quiz-style"><option value="poison">Layering poisons and prolonged damage</option><option value="burst">Surprising an enemy with a precise kill</option><option value="steel">Reliable weapon attacks and uptime</option><option value="cleave">Timing strong two-target cooldowns</option><option value="control">Interrupts, Sap, escapes and disruption</option><option value="hybrid">Outlasting enemies with flexible tactics</option></select></label>
+                <label>Most common content<select id="quiz-mode"><option value="solo">Solo / leveling</option><option value="pve">Dungeon / raid PvE</option><option value="pvp">PvP</option></select></label>
+                <label>Preferred weapon<select id="quiz-weapon"><option value="all">No preference</option><option value="dagger">Daggers</option><option value="sword">Swords / axes</option><option value="mace">Maces / fists</option></select></label>
+              </div>
             </div>
-          </div>
-          <div class="panel">
-            <div class="eyebrow">Top three field recommendations</div>
-            <div id="quiz-results" class="quiz-result" aria-live="polite"></div>
-            <p class="fine">Recommendations express fit only. You still need the listed talents, gear and level. Experimental builds are marked inside their dossier.</p>
+            <div class="panel">
+              <div class="eyebrow">Top three field recommendations</div>
+              <div id="quiz-results" class="quiz-result" aria-live="polite"></div>
+              <p class="fine">Recommendations express fit only. You still need the listed talents, gear and level. Experimental builds are marked inside their dossier.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -3343,7 +3484,7 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
         <h2>Every dossier should survive inspection.</h2>
         <aside aria-label="Source review methodology" class="reader-hotfix"><strong>Editorial verification record · 15 November 2026</strong><p>Primary cross-check: <a href="https://worldofwarcraft.blizzard.com/en-us/news/24310968" rel="noopener noreferrer" target="_blank">Blizzard class deep dive</a> (published September–October 2026; beta-era design context) and the <a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-13-2026" rel="noopener noreferrer" target="_blank">official rolling hotfix ledger through November 13, 2026</a> (takes precedence on changes it addresses). Build descriptions and comparison scores remain editorial theorycraft, not independently in-game-tested rankings. Third-party links and historical calculators are reference leads, not universally revalidated live citations. Do not infer from an externally linked beta tooltip that the current client is identical.</p>
         </aside>
-        <p class="lead">The primary evidence stack combines Blizzard's published class plan and development notes with current Forever client data and post-November talent calculators. Every external link is optional; the file's visuals, interactive cards, selector, resource model and matrix work offline.</p>
+        <p class="lead">The primary evidence stack combines Blizzard's published class plan and development notes with current Forever client data and post-November talent calculators.</p>
         <div class="source-grid">
           <article class="source-item" id="src-O1">
             <div class="s-id">O1</div>
@@ -3442,15 +3583,15 @@ main{margin-left:var(--rail);min-width:0}.shell{max-width:var(--max);margin:0 au
         <div class="callout red"><strong>Uncertainty standard.</strong> In the absence of a confirmed log or resolved client value, this manual says “test,” “conditional,” “illustrative,” or “unresolved.” It does <em>not</em> invent damage, cooldown resets, four-target cleave or future abilities. The Shadowblade Atlas is an informed qualitative comparison, not a claim that a level-five rating represents a 5% or 500 DPS advantage.</div>
         <div class="panel spaced">
           <h4>Provenance and maintenance note</h4>
-          <p>Document assembled for <strong>World of Warcraft: Forever</strong> using sources checked on <strong>13 November 2026</strong>, versioned to the talent/spell client <strong>1.60.1.70938</strong>. This Rogue text, diagrams, design language, data model and cover illustration were created anew. Original AI-generated cover artwork is stored in the images folder next to this file. No external CSS, fonts, image hosting, scripts or runtime APIs are required.</p>
-          <p class="fine">If Forever receives a new patch, recheck talent rank caps, named prerequisites, Shank/Boot Knife and weapon-related effects first. The code will continue to run offline, but its dated mechanics may require revision.</p>
+          <p>Document assembled for <strong>World of Warcraft: Forever</strong> using sources checked on <strong>13 November 2026</strong>, versioned to the talent/spell client <strong>1.60.1.70938</strong>. This Rogue text, diagrams, design language, data model and cover illustration were created anew. Original AI-generated cover artwork.</p>
+          <p class="fine">If Forever receives a new patch, recheck talent rank caps, named prerequisites, Shank/Boot Knife and weapon-related effects first. Its dated mechanics may require revision.</p>
         </div>
       </div>
     </section>
     <footer class="foot">
       <div class="shell">
         <div><b>THE FOREVER ROGUE COMPENDIUM</b><br>The Shadowblade Manual of Silence and Steel</div>
-        <div>Edition 13.11.2026 · Live-client baseline 1.60.1.70938<br>Self-contained HTML5 / editorial simulation and field evidence</div>
+        <div>Edition 13.11.2026 · Live-client baseline 1.60.1.70938<br>editorial simulation and field evidence</div>
         <div><a href="#begin">Return to the opening blade ↑</a></div>
       </div>
     </footer>
@@ -4685,10 +4826,8 @@ const DATA=JSON.parse(document.getElementById('rogue-data').textContent);
 const BUILDS=DATA.builds, SCEN=DATA.scenarios, AXES=DATA.axes;
 const byId=Object.fromEntries(BUILDS.map(b=>[b.id,b]));
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-// Navigation with keyboard-reachable mobile rail and reading progress.
-const rail=document.getElementById('rail'),navButton=document.getElementById('mobile-nav');
-navButton.addEventListener('click',()=>{const open=rail.classList.toggle('open');navButton.setAttribute('aria-expanded',String(open))});
-rail.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{rail.classList.remove('open');navButton.setAttribute('aria-expanded','false')}));
+// Navigation: reading progress, back to top and the chapter highlight.
+const rail=document.getElementById('rail');
 const navAnchors=[...rail.querySelectorAll('.rail-link')];const ids=navAnchors.map(a=>a.getAttribute('href').slice(1));
 function scrollState(){const y=window.scrollY;const height=Math.max(1,document.documentElement.scrollHeight-innerHeight);document.getElementById('reading').style.width=(100*y/height)+'%';const top=document.getElementById('scrolltop');top.style.display=y>950?'block':'none';let current='begin';for(const id of ids){const el=document.getElementById(id);if(el&&el.getClientRects().length/* skip chapters the volume view hides */&&el.getBoundingClientRect().top<180)current=id}navAnchors.forEach(a=>{const on=a.getAttribute('href')==='#'+current;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});}
 window.addEventListener('scroll',scrollState,{passive:true});window.addEventListener('resize',scrollState,{passive:true});scrollState();document.getElementById('scrolltop').addEventListener('click',()=>window.scrollTo({top:0}/* no behavior: the CSS scroll-behavior decides, so reduced motion applies */));
