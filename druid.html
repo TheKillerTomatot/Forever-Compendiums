@@ -1,75 +1,178 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="description" content="The Forever Druid Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Druid Compendium: The Verdant Testament of Moon and Claw</title><style>
-:root{--bg:#060d0c;--deep:#07110e;--forest:#8cc9a1;--lunar:#a5c9f2;--harvest:#e5b96b;--bark:#9a7864;--silver:#d3e6e3;--text:#ecf3e8;--muted:#b2c0b6;--border:#355348;--panel:#101c19;--glass:rgba(17,30,25,.91);--shadow:0 16px 54px rgba(0,0,0,.32);--nav:230px;--gold:#e5b96b;--small:12px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:16px}body{margin:0;color:var(--text);font:15px/1.7 'Segoe UI',Arial,Helvetica,sans-serif;background:radial-gradient(ellipse at 84% 2%,#233c3e 0,transparent 29%),radial-gradient(ellipse at 3% 42%,#243a24 0,transparent 32%),radial-gradient(ellipse at 94% 91%,#302817 0,transparent 30%),var(--bg)}body::before{position:fixed;inset:0;content:'';pointer-events:none;opacity:.09;z-index:0;background-image:radial-gradient(circle,#cce5bf 0.6px,transparent 0.9px);background-size:18px 18px;mask-image:linear-gradient(90deg,transparent 20%,#000 90%)}
-h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',serif;font-weight:normal;line-height:1.17}h1{font-size:clamp(50px,6.3vw,99px);margin:8px 0 15px;letter-spacing:-.035em}h2{font-size:clamp(31px,3.3vw,48px);margin:0 0 14px;letter-spacing:-.017em}h3{font-size:23px;margin:0 0 12px}h4{margin:0 0 9px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--harvest)}p{margin:0 0 14px}a{color:#e6c589;text-decoration:none;border-bottom:1px solid #82715e}a:hover{color:#fff;border-color:#dfe5d1}strong,b{color:#f8fff5}small,.small{font-size:12px;color:var(--muted)}ul,ol{padding-left:21px;margin:7px 0 15px}li{margin:0 0 6px}li::marker{color:var(--harvest)}button,select{font:inherit}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--lunar);outline-offset:3px}
-#toc{position:fixed;inset:0 auto 0 0;width:var(--nav);overflow-y:auto;z-index:50;padding:29px 18px;background:linear-gradient(180deg,rgba(7,17,15,.98),rgba(9,21,18,.96));border-right:1px solid #355044;box-shadow:15px 0 45px rgba(0,0,0,.18)}#toc .tiny{font-weight:800;color:var(--harvest);letter-spacing:.25em;font-size:10px;margin:4px 0 20px}#toc .logo{font:normal 24px/1.14 Georgia,serif;color:#f1e8cf;letter-spacing:.035em;padding-bottom:23px;border-bottom:1px solid #3b5547}#toc .logo span{color:var(--forest)}#toc .toc-block{font-size:10px;color:#85aa9b;letter-spacing:.2em;text-transform:uppercase;font-weight:bold;padding-top:20px}#toc .toc-link{display:flex;align-items:center;gap:11px;padding:9px 3px;border:0;border-bottom:1px solid #1e342c;font-size:12px;color:#cedbd0;line-height:1.32;transition:.2s}#toc .toc-link:hover,#toc .toc-link.active{color:#fff;background:rgba(131,174,136,.1)}#toc .toc-link b{font-family:Georgia,serif;color:var(--harvest);font-size:13px;min-width:21px}#toc .nfooter{font-size:11px;color:#9fac9b;padding-top:25px}#toc .nfooter button{display:block;width:100%;margin-top:10px;padding:9px 5px;background:#172b22;color:#e8d7ae;border:1px solid #516b54;border-radius:8px;cursor:pointer}#toc .nfooter button:hover{background:#294738}
-#progress{position:fixed;z-index:100;top:0;left:var(--nav);height:3px;width:0%;background:linear-gradient(90deg,#78b789,#d5cc91,#9cbffa);transition:width .08s linear;pointer-events:none}#mobile-top{display:none}main{margin-left:var(--nav);position:relative;z-index:1;max-width:1750px}section{scroll-margin-top:10px}.hero{height:790px;min-height:680px;position:relative;background-position:center center;background-size:cover;background-repeat:no-repeat;display:flex;align-items:flex-end;overflow:hidden;padding:70px clamp(28px,5.2vw,88px) 76px}.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,9,10,.13),rgba(3,10,10,.08) 36%,rgba(3,8,8,.65) 75%,#07100e 100%),linear-gradient(90deg,rgba(5,11,9,.54),transparent 90%)}.hero::after{content:'';position:absolute;inset:17px;border:1px solid rgba(220,207,157,.15);pointer-events:none}.hero-content{position:relative;z-index:1;max-width:1060px;text-shadow:0 5px 22px #030809}.hero h1 span{display:block}.hero h1 .golden{color:#f5ce86;font-style:italic;font-weight:normal}.hero .hero-kicker{font-weight:800;letter-spacing:.35em;color:#f5db9b;font-size:12px;text-transform:uppercase}.hero .deck{font:normal clamp(18px,2vw,24px)/1.46 Georgia,serif;color:#ebf4ed;max-width:830px}.hero .deck b{color:var(--lunar)}.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(220,219,190,.5);background:#071813aa;padding:6px 12px;border-radius:60px;font-size:11px;color:#f4e8d1;letter-spacing:.045em}.hero-by{margin-top:20px;font-size:11px;letter-spacing:.13em;color:#c5d8cb}.hero-cta{display:inline-block;margin-top:24px;border:1px solid #dab877;background:linear-gradient(135deg,#e0b477,#a98250);color:#101910!important;text-shadow:none;padding:11px 20px;border-radius:7px;font-weight:800;font-size:12px;letter-spacing:.09em}.hero-cta:hover{background:#f6d69e}
-.chapter{padding:68px clamp(22px,5vw,85px);border-top:1px solid #304a3c;position:relative}.chapter:nth-of-type(even){background:linear-gradient(105deg,rgba(20,37,27,.53),rgba(7,19,19,.32))}.shell{max-width:1370px;margin:auto}.chapter-head{display:grid;grid-template-columns:112px 1fr 112px;gap:24px;align-items:start;margin-bottom:30px}.chapter-n{color:var(--harvest);padding-top:8px}.chapter-n span{font-size:10px;letter-spacing:.2em;display:block;text-transform:uppercase;color:#92a999}.chapter-n b{display:block;color:#d9bd84;font:normal 68px/1 Georgia,serif;padding:2px 0 5px}.chapter-sigil{width:100px;height:100px;border:1px solid #4b7063;border-radius:50%;display:grid;place-items:center;font-size:49px;color:var(--forest);box-shadow:inset 0 0 27px #24453454,0 0 30px #54806b1b;position:relative}.chapter-sigil::after{content:'';position:absolute;inset:9px;border:1px dashed #75978266;border-radius:50%}.eyebrow{color:var(--harvest);font-size:10px;letter-spacing:.23em;font-weight:900;text-transform:uppercase;margin-bottom:9px}.lead{font:normal clamp(16px,1.65vw,21px)/1.56 Georgia,serif;color:#dae4dc;max-width:1050px}.section-label{font-size:10px;letter-spacing:.23em;text-transform:uppercase;color:var(--harvest);margin:34px 0 12px;font-weight:800}.sub{color:var(--muted)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.panel,.spec-tile{border:1px solid var(--border);border-radius:15px;background:linear-gradient(147deg,#18281f,#111d1a 65%,#101819);padding:22px;box-shadow:var(--shadow);break-inside:avoid}.panel p,.panel li{color:#cadbd1}.panel h3{font-size:22px}.panel h4{margin-top:14px}.panel ul{margin-bottom:0}.panel .eyebrow{margin-bottom:10px}.badge-code{display:inline-block;font-size:10px;letter-spacing:.15em;border:1px solid #617b67;color:#d7ead9;border-radius:40px;padding:2px 10px;background:#13271e}.factbox{border-left:3px solid var(--forest);background:rgba(24,55,40,.65);padding:16px 20px;border-radius:0 10px 10px 0;margin:19px 0}.factbox.warn{border-color:var(--harvest);background:#33251988}.factbox.blue{border-color:var(--lunar);background:#1c30408a}.factbox strong{color:#f0d293}.factbox p:last-child{margin-bottom:0}.sref{font-size:10px;color:#edc782;border-bottom:0;white-space:nowrap;font-weight:bold}.sref:hover{text-decoration:underline}.source-rule{font-size:12px;color:#bad0c1;margin:8px 0}
-.spec-tile{position:relative;min-height:315px;overflow:hidden;border-top:3px solid var(--tone);background:radial-gradient(circle at 93% 10%,var(--aura),transparent 58%),linear-gradient(150deg,#182620,#11191a)}.spec-tile.balance{--tone:#a2c8fb;--aura:#203b68}.spec-tile.feral{--tone:#e5b46a;--aura:#614023}.spec-tile.restoration{--tone:#91d2a3;--aura:#244c31}.spec-tile .sig{font-size:54px;color:var(--tone);height:65px;text-shadow:0 0 35px var(--aura)}.spec-tile h3{color:var(--tone);font-size:30px}.spec-tile p{font-size:13px;color:#d6e1d7}.spec-tile .num{position:absolute;right:21px;top:19px;font:normal 50px Georgia,serif;color:#ffffff1c}.spec-tile .theme{font-size:10px;letter-spacing:.22em;color:#dfd0b1}.spec-tile .spec-links{font-size:12px;margin-top:14px;color:#e6ca98}
-.mini-flow{display:flex;align-items:stretch;gap:8px;margin:13px 0 20px;flex-wrap:wrap}.mini-flow .node{flex:1 1 110px;min-width:94px;background:linear-gradient(145deg,#183129,#112019);border:1px solid #517961;border-radius:10px;padding:12px 10px;text-align:center;font-size:12px;display:flex;justify-content:center;flex-direction:column;min-height:86px}.mini-flow .node strong{font-size:12px;color:#f3dbaf}.mini-flow .node span{font-size:11px;line-height:1.45;color:#c7dacc;margin-top:4px}.mini-flow i{font-style:normal;color:var(--harvest);font-size:24px;align-self:center}.mini-flow.blue .node{background:#172b38;border-color:#486b8c}.mini-flow.autumn .node{background:#32251b;border-color:#836441}.dual-gauge{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.dual-gauge .gauge{border:1px solid #40584b;background:#0b211d;border-radius:11px;padding:14px}.gauge .label{font-size:11px;color:#bed4c4}.gauge .big{display:block;font:normal 42px/1.3 Georgia,serif;color:#e6bc76}.gauge p{font-size:12px;margin:4px 0;color:#b9cbbb}
-.wheel-wrap{border:1px solid #49685c;background:radial-gradient(ellipse at center,#193a36,#0b1d19 68%);border-radius:17px;overflow:hidden;padding:22px;display:grid;grid-template-columns:minmax(0,1fr) 1fr;align-items:center;gap:25px}.wheel-wrap svg{max-width:100%;height:auto;display:block;margin:auto}.wheel-wrap p{color:#c9dad0}.wheel-key{font-size:12px;color:var(--harvest);text-transform:uppercase;letter-spacing:.16em;font-weight:bold}.wheel-wrap h3{font-size:26px}.decision{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.choice{border:1px solid #476454;border-radius:12px;background:#172820;padding:15px;min-height:140px}.choice strong{display:block;color:#eac78f;font:normal 20px Georgia,serif}.choice p{font-size:12px;color:#c5d6cc;margin-top:8px}.diagram{border:1px solid #3f6253;border-radius:16px;padding:21px;background:#0e211b;margin:20px 0;overflow:hidden}.diagram-title{font-size:11px;color:#ebc58d;letter-spacing:.2em;font-weight:900;text-transform:uppercase;margin-bottom:14px}.diagram .axis{display:flex;gap:9px;align-items:center}.diagram .segment{height:41px;display:flex;align-items:center;justify-content:center;padding:7px;flex:1;background:#264333;border:1px solid #638968;border-radius:8px;font-size:12px;text-align:center}.diagram .segment.blue{background:#233f56;border-color:#5c82a4}.diagram .segment.gold{background:#403121;border-color:#8e764a}.diagram .arrow{font-size:20px;color:var(--harvest)}
-.table-wrap{overflow-x:auto;border:1px solid #3d594b;border-radius:14px;margin:17px 0 27px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px solid #354d43;padding:11px 12px;text-align:left;vertical-align:top}th{background:#1b3028;color:#ebc782;font-size:10px;letter-spacing:.13em;text-transform:uppercase}tbody tr:nth-child(even){background:#11231b}tbody tr:hover{background:#203b2d}td strong{color:#e8f0e9}td small{display:block}
-.character-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:21px 0}.char-preview{background:radial-gradient(circle at 100% 0,#2a4b3b99,transparent 60%),#12231c;border:1px solid #496e51;border-radius:15px;padding:20px;position:relative}.char-preview.balance{border-top:3px solid #8dbae8}.char-preview.feral{border-top:3px solid #d4ad62}.char-preview.restoration{border-top:3px solid #8acb9d}.char-preview .num{float:right;font:normal 36px Georgia,serif;color:#8cae943e}.char-preview h3{font-size:23px;margin:3px 0 8px}.char-preview .code{font:12px monospace;color:#eec78c}.char-preview p{color:#c6d9ca;font-size:13px}.char-preview a{font-size:12px}
-.dossier{position:relative;padding:26px 27px;margin:29px 0;background:radial-gradient(ellipse at 96% 0,#20453650 0,transparent 48%),linear-gradient(145deg,#13261d,#101c19 78%);border:1px solid #567157;border-radius:20px;box-shadow:0 18px 52px rgba(0,0,0,.23)}.dossier.spec-balance{border-top:3px solid #9ecbf2}.dossier.spec-feral{border-top:3px solid #d9b16b;background:radial-gradient(ellipse at 96% 0,#55402260,transparent 47%),#15201b}.dossier.spec-restoration{border-top:3px solid #9edfa8;background:radial-gradient(ellipse at 96% 0,#245d3555,transparent 47%),#15201b}.dossier-header{display:flex;align-items:center;gap:18px;padding-bottom:13px;border-bottom:1px solid #4f6856}.dossier-number{font-size:48px;color:#d5c18d;line-height:1}.dossier-number small{display:block;font:11px Arial;letter-spacing:.13em;color:#91ab96;text-align:center}.dossier-header h3{font-size:clamp(29px,3vw,40px);margin:0 0 3px}.dossier-tagline{font:italic 17px Georgia,serif;color:#b7ddbf;margin:0}.dossier-icon{margin-left:auto;font-size:52px;color:#e9c57c}.dossier-sub{margin:13px 0 18px;color:#d5e7dd;font-size:13px;letter-spacing:.05em}.ribbons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:13px 0 20px}.ribbon{background:#142b22;border:1px solid #486b58;border-radius:10px;padding:11px}.ribbon span{display:block;font-size:10px;color:#95ad9e;letter-spacing:.05em;text-transform:uppercase}.ribbon b{font-size:12px;line-height:1.5}.dossier-cols{display:grid;grid-template-columns:1.08fr 1fr;gap:23px}.dossier-bit{border-top:1px solid #3b5546;padding-top:13px;margin-bottom:13px}.dossier-bit p,.dossier-bit li{font-size:13px;color:#cddfd3;line-height:1.7}.dossier-bit ol{padding-left:19px}.dossier-bit li{margin-bottom:7px}.talent-box{border:1px solid #4a7158;background:#0d241c;border-radius:13px;margin-top:10px;padding:17px}.talent-super{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid #456550;margin-bottom:12px;padding-bottom:8px}.talent-super h4{margin:0}.talent-super small{font-size:11px}.talent-group{padding:7px 0}.talent-title{font-size:10px;font-weight:800;color:#bad2c1;letter-spacing:.15em;margin-bottom:7px}.talent-title b{color:#ecc98c}.talent-row{display:flex;flex-wrap:wrap;gap:5px}.talent{padding:4px 8px;border-radius:20px;font-size:11px;border:1px solid #46664b;background:#1c3328;color:#dce9df}.talent b{color:#f0cc87}.triple-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:19px 0}.triple-notes>div{background:#15291f;border:1px solid #3b5749;border-radius:11px;padding:14px}.triple-notes p{color:#c9dacd;font-size:12px;margin:0}.dossier-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:17px}.sacrifice{border-left:3px solid #d4a66b;background:#2c251c85;padding:13px 15px}.sacrifice.no{border-color:#9bd6b0;background:#20392c65}.sacrifice b{font-size:10px;color:#e7c18a;letter-spacing:.13em}.sacrifice p{margin:5px 0 0;font-size:12px}.dossier-foot{border-top:1px solid #415a4b;margin-top:16px;padding-top:11px;font-size:12px;color:#b7c9be}.dossier-foot strong{font-weight:500;color:#f2d6a9}
-.encounter-comparison{margin:22px 0 34px}.encounter-comparison h3{font-size:25px}.encounter-comparison .sub{font-size:12px}.spectable{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.compare-card{border:1px solid #476a56;border-radius:13px;background:linear-gradient(160deg,#193128,#101f1a);padding:17px}.compare-card h4{font:normal 20px Georgia,serif;text-transform:none;letter-spacing:0;color:#e9dab8}.compare-card .stamp{display:inline-block;font-size:10px;color:#d1ba88;background:#2b3a29;border:1px solid #586e51;border-radius:30px;padding:2px 8px;margin-bottom:9px}.compare-card ol{counter-reset:step;list-style:none;padding:0;margin:6px 0 0}.compare-card li{position:relative;counter-increment:step;padding:8px 0 8px 30px;margin:0;border-bottom:1px solid #3b5144;font-size:12px;color:#d0e0d3}.compare-card li:before{content:counter(step);position:absolute;top:8px;left:0;border-radius:50%;width:22px;height:22px;background:#486e4d;color:#fff;font:bold 11px Arial;display:grid;place-items:center}.compare-card li:nth-child(2n):before{background:#5d6585}.compare-card li:nth-child(3n):before{background:#795c38}.compare-card li:last-child{border:0}.combat-lens{margin-top:14px;padding:11px;border-radius:9px;border:1px solid #355341;background:#0b211bb8}.combat-lens p{font-size:11px;color:#c9d9d1;margin:0 0 6px;line-height:1.4}.combat-lens p:last-child{margin:0}.combat-lens b{color:#dbb86d;text-transform:uppercase;font-size:10px;letter-spacing:.08em;margin-right:5px} 
-.explorer{background:radial-gradient(circle at 80% 0,#263e36,transparent 60%),#0e201b;border:1px solid #5f816c;border-radius:17px;padding:23px;margin:24px 0}.controlbar{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0 18px}.controlbar label,.atlas-controls label,.quizbox label{display:flex;flex-direction:column;color:#dec99d;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;gap:6px}.controlbar select,.atlas-controls select,.quizbox select{background:#1b3428;color:#f3f5eb;border:1px solid #60826e;border-radius:8px;padding:10px 12px;min-height:45px;cursor:pointer;font:normal 13px Arial}.interactive-output{border:1px solid #547963;padding:18px;border-radius:13px;background:#152e23}.interactive-output h3{font-size:27px;color:#f1dfb6}.interactive-output .step-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.interactive-output .step-grid>div{border:1px solid #4c705b;background:#1e3c2d;border-radius:9px;padding:11px;min-height:112px;color:#d7e5d8;font-size:12px}.step-grid span{font:normal 27px Georgia,serif;color:#e0c486;display:block;margin-bottom:7px}.interactive-output .scenario-meta{font-size:12px;color:#a9ccbb;margin:0 0 14px}.build-mini-summary{font-size:13px;color:#e2d8c2;border-bottom:1px solid #496753;padding:0 0 12px;margin-bottom:15px}
-.atlas-controls{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.atlas-controls label{min-width:0}.atlas-controls select{width:100%;min-width:0;max-width:100%}.dashboard{overflow-x:auto;border:1px solid #456751;border-radius:14px}.matrix{min-width:1130px;margin:0}.matrix th:not(:first-child){writing-mode:vertical-rl;transform:rotate(180deg);height:128px;min-width:50px;text-transform:uppercase;vertical-align:bottom;padding:12px 11px}.matrix td{text-align:center;padding:7px 9px}.matrix td:first-child,.matrix th:first-child{text-align:left;min-width:224px}.matrix td:first-child a{color:#f2e4c5}.matrix td:first-child span{display:block;font-size:10px;color:#9cbba8}.matrix .heat{width:34px;height:23px;border-radius:5px;display:inline-grid;place-items:center;color:#fff;font:700 11px Georgia,serif}.heat1{background:#25453d}.heat2{background:#36665d}.heat3{background:#667b69}.heat4{background:#a78f5e}.heat5{background:#d7b372;color:#1a2418!important}.hidden-row{display:none!important}.heat-legend{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}.heat-legend span{padding:5px 9px;border:1px solid #567663;border-radius:40px;font-size:11px;color:#d4e2d7}.atlas-count{font-size:12px;color:#b4d4be;margin-bottom:9px}.quizbox{border:1px solid #567866;border-radius:14px;padding:20px;background:#102b22}.quizbox .quiz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.quizresult{border-left:3px solid var(--harvest);padding:12px 17px;margin-top:14px;background:#274032;color:#f3eedb;border-radius:0 10px 10px 0}.quizresult strong{color:#f5d38c}.source-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.source-item{display:grid;grid-template-columns:37px 1fr;gap:10px;padding:16px;border-bottom:1px solid #365143;background:#10221c}.source-item .source-number{font:normal 28px Georgia,serif;color:#d4b77e}.source-item a{font-size:13px;font-weight:bold}.source-item small{display:block;font-size:10px;color:#9cb9a7;margin:4px 0}.source-item p{font-size:12px;color:#cddccf;margin:4px 0}.source-item em{font-size:11px;color:#c2ab8f;font-style:normal;display:block;margin-top:7px}
-.endcap{padding:50px 24px;text-align:center;border-top:1px solid #5a765a;background:radial-gradient(circle at center,#204135,#0c1914);color:#dfd7c6}.endcap .sun{font:normal 50px Georgia,serif;color:#d7c28b}.endcap h3{font:normal 34px Georgia,serif;margin:9px}.endcap p{max-width:680px;margin:0 auto}
-@media (max-width:1260px){#toc{width:205px}main{margin-left:205px}#progress{left:205px}.chapter-head{grid-template-columns:95px 1fr 85px;gap:17px}.chapter-sigil{width:85px;height:85px;font-size:39px}.dual-gauge{grid-template-columns:1fr 1fr}.wheel-wrap{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}.spec-tile{min-height:355px}}
-@media (max-width:1020px){#toc{transform:translateX(-110%);transition:transform .25s;box-shadow:none;width:260px}body.menu-open #toc{transform:none;box-shadow:22px 0 65px #0009}main{margin-left:0}#progress{left:0}#mobile-top{display:flex;position:sticky;top:0;z-index:52;align-items:center;justify-content:space-between;background:#0b2019f0;border-bottom:1px solid #40604c;padding:8px 15px;backdrop-filter:blur(12px)}#menu-toggle{background:#213f30;color:#f3dcad;border:1px solid #537a60;border-radius:9px;padding:8px 13px;cursor:pointer}#mobile-top .mark{font:normal 17px Georgia,serif;color:#e4d2ab}#mobile-top .mark span{color:#8ac7a0}.hero{height:700px}.character-map,.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas-controls{grid-template-columns:1fr 1fr}}
-@media (max-width:700px){.hero{height:auto;min-height:720px;padding:30px 23px 58px;background-position:54% center}.hero h1{font-size:47px}.hero .deck{font-size:17px}.hero-kicker{font-size:10px}.chapter{padding:42px 20px}.chapter-head{grid-template-columns:1fr;gap:11px}.chapter-n{display:flex;align-items:center;gap:9px;padding:0}.chapter-n b{font-size:39px}.chapter-n span{font-size:10px}.chapter-sigil{display:none}.grid2,.grid3,.grid4,.character-map,.spectable,.dossier-cols,.triple-notes,.dossier-bottom,.source-list,.quizbox .quiz-grid{grid-template-columns:1fr}.panel,.spec-tile{padding:18px}.decision{grid-template-columns:1fr 1fr}.mini-flow .node{flex:1 1 130px}.mini-flow i{display:none}.dossier{padding:18px}.dossier-header{gap:11px}.dossier-number{font-size:32px}.dossier-header h3{font-size:27px}.dossier-icon{font-size:33px}.ribbons{grid-template-columns:1fr 1fr}.controlbar,.atlas-controls{grid-template-columns:1fr}.interactive-output .step-grid{grid-template-columns:1fr 1fr}.interactive-output .step-grid>div{min-height:93px}.diagram .axis{flex-wrap:wrap}.diagram .segment{flex:1 1 43%}.diagram .arrow{display:none}.dual-gauge{grid-template-columns:1fr}.quizresult{font-size:13px}.spec-tile{min-height:260px}.chapter h2{font-size:33px}}
-@media (max-width:400px){.ribbons{grid-template-columns:1fr}.decision{grid-template-columns:1fr}.hero h1{font-size:42px}.interactive-output .step-grid{grid-template-columns:1fr}}
-@media print{@page{size:A4;margin:12mm 11mm}html,body{background:#0d1a14!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;font-size:11px!important}#toc,#mobile-top,#progress,.notprint,.hero-cta{display:none!important}main{margin:0!important;max-width:none}.hero{height:265mm;min-height:0;padding:75mm 22px 22px;break-after:page}.hero h1{font-size:54px}.hero .deck{font-size:19px}.chapter{padding:20px 8px;break-before:page}.chapter-head{grid-template-columns:70px 1fr 65px;gap:8px;margin-bottom:17px}.chapter-n b{font-size:44px}.chapter-sigil{width:62px;height:62px;font-size:26px}.chapter h2{font-size:29px}.lead{font-size:16px}.panel,.spec-tile,.char-preview,.compare-card,.diagram,.wheel-wrap{break-inside:avoid}.grid3,.character-map,.spectable{grid-template-columns:repeat(3,1fr)}.grid2,.source-list{grid-template-columns:repeat(2,1fr)}.spec-tile{min-height:0}.spec-tile h3{font-size:21px}.dossier{break-before:page;padding:16px;break-inside:auto}.dossier-header h3{font-size:27px}.dossier-cols{grid-template-columns:1fr 1fr}.dossier-bit p,.dossier-bit li{font-size:11px}.dossier-bit{margin-bottom:8px;padding-top:7px}.ribbons{grid-template-columns:repeat(4,1fr)}.ribbon{padding:7px}.triple-notes{grid-template-columns:repeat(3,1fr)}.talent-row .talent{font-size:10px;padding:2px 5px}.dashboard{overflow:visible}.matrix{min-width:0;font-size:10px}.matrix th:not(:first-child){min-width:25px;height:115px;font-size:10px;padding:4px}.matrix td:first-child{min-width:110px}.matrix td{padding:2px}.matrix .heat{width:17px;height:15px;font-size:10px}.explorer{display:none}.source-item{padding:7px}.source-item p,.source-item em{font-size:10px}.endcap{padding:17px}}
-@media print{.hidden-row{display:table-row!important}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-
-/* Collection-wide editorial annotation, kept subordinate to each class theme. */
-.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
-.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
-.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
-@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
-
-/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
-.hero .series-manuscript {
-  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif;
-  letter-spacing: .06em;
-  text-transform: none;
-  max-width: 940px;
-  overflow-wrap: break-word;
-  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="The Forever Druid Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Druid Compendium: The Verdant Testament of Moon and Claw</title>
+<link rel="stylesheet" href="book.css">
+<style>
+/* Druid (phase 4): the class ink, the ornament and the parts that only this book has. The shared book design is in book.css. */
+:root{--accent:#24573a;--ornament:'❧';--balance:#284f7a;--feral:#6b440f;--resto:#245a3e}
+/* the specialization of a tile, a card or a dossier: --local */
+.balance,.spec-balance{--local:var(--balance)}.feral,.spec-feral{--local:var(--feral)}.restoration,.spec-restoration{--local:var(--resto)}
+.small,.sub,.source-rule{color:var(--ink-2)}
+.small{font-size:14px}
+.source-rule{font-size:14px}
+.sref{font-size:14px;white-space:nowrap}
+/* the reading progress line at the top of the window */
+#progress{position:fixed;top:0;left:0;z-index:30;height:3px;width:0;background:var(--gilt);pointer-events:none}
+/* cover */
+.hero h1 span{display:block}
+.hero .golden{color:var(--accent)}
+.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
+.hero-by{margin-top:18px;color:var(--ink-2);font-size:14px;font-style:italic}
+.hero-cta{display:inline-block;margin-top:20px;padding:8px 20px;color:#2a1a08;font:16px var(--fell);letter-spacing:.06em;text-decoration:none;background:var(--brass);border:1px solid var(--frame);border-radius:3px;box-shadow:inset 0 1px 0 #fff8,0 2px 3px #0004}
+.hero-cta:hover{color:#2a1a08;filter:brightness(1.06)}
+/* chapter head: the sigil, then the chapter number, then the title */
+.chapter-head{display:flex;flex-direction:column}
+.chapter-sigil{order:-1;color:var(--accent);font-size:30px;line-height:1;text-align:center}
+.chapter-n{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:0 8px;color:var(--accent);font:15px var(--fell);letter-spacing:.16em}
+.chapter-n b{font:inherit}
+.section-label{margin:34px 0 12px;color:var(--accent);font:19px var(--fell);letter-spacing:.06em}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:14px}
+.panel h4{margin-top:14px}
+.badge-code{display:inline-block;padding:1px 9px;color:var(--ink-2);font:13px var(--fell);letter-spacing:.1em;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.factbox{margin:20px 0;padding:14px 18px;font-size:16px;background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--accent)}
+.factbox.warn{border-left-color:var(--feral)}
+.factbox.blue{border-left-color:var(--balance)}
+.factbox>strong{display:block;margin-bottom:4px;color:var(--accent);font:17px var(--fell);letter-spacing:.04em}
+.factbox p:last-child{margin-bottom:0}
+/* specialization tiles */
+.spec-tile{position:relative;padding:20px;background:var(--card);border:1px solid #b8955a;border-top:3px solid var(--local);box-shadow:var(--bookplate)}
+.spec-tile .sig{height:56px;color:var(--local);font-size:46px;line-height:1}
+.spec-tile h3{color:var(--local);font-size:28px}
+.spec-tile p{font-size:16px}
+.spec-tile .num{position:absolute;top:16px;right:20px;color:#8f7a58;font:44px var(--fell)}
+.spec-tile .theme{color:var(--ink-2);font:13px var(--fell);letter-spacing:.14em}
+.spec-tile .spec-links{margin-top:12px;font-size:15px}
+/* flows, gauges, the form wheel, decision cards */
+.mini-flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:13px 0 20px}
+.mini-flow .node{display:flex;flex:1 1 110px;flex-direction:column;justify-content:center;min-width:94px;min-height:80px;padding:10px;font-size:14px;text-align:center;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--resto);border-radius:3px}
+.mini-flow.blue .node{border-top-color:var(--balance)}.mini-flow.autumn .node{border-top-color:var(--feral)}
+.mini-flow .node span{margin-top:4px;color:var(--ink-2);font-size:13px;line-height:1.45}
+.mini-flow i{align-self:center;color:var(--ink-2);font-size:22px;font-style:normal}
+.dual-gauge{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+.gauge{padding:14px;background:var(--card);border:1px solid var(--line)}
+.gauge .label{color:var(--ink-2);font:13px var(--fell);letter-spacing:.1em}
+.gauge .big{display:block;color:var(--accent);font:40px/1.3 var(--fell)}
+.gauge p{margin:4px 0;font-size:15px}
+.wheel-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));align-items:center;gap:24px}
+/* the wheel keeps its night-forest colors on a small dark plate */
+.wheel-wrap svg{display:block;max-width:100%;height:auto;margin:auto;padding:8px;background:radial-gradient(ellipse at center,#193a36,#0b1d19 68%);border:3px solid #b8955a;border-radius:12px;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.wheel-key{color:var(--accent);font:14px var(--fell);letter-spacing:.14em}
+.decision{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px}
+.choice{min-height:130px;padding:14px;background:var(--card);border:1px solid var(--line)}
+.choice strong{display:block;color:var(--accent);font:19px var(--fell)}
+.choice p{margin-top:8px;font-size:14px}
+/* figure plates */
+.axis{display:flex;align-items:center;gap:9px}
+.segment{display:flex;flex:1;align-items:center;justify-content:center;min-height:41px;padding:7px;font-size:14px;text-align:center;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--resto);border-radius:3px}
+.segment.blue{border-top-color:var(--balance)}.segment.gold{border-top-color:var(--feral)}
+.diagram .arrow{color:var(--ink-2);font-size:20px}
+.table-wrap{margin:17px 0 27px;overflow-x:auto}
+td small{display:block}
+/* character previews and the nine dossiers */
+.character-map{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:15px;margin:21px 0}
+.char-preview{padding:18px;background:var(--card);border:1px solid #b8955a;border-top:3px solid var(--local);box-shadow:var(--bookplate)}
+.char-preview .num{float:right;color:#8f7a58;font:32px var(--fell)}
+.char-preview h3{margin:3px 0 8px;font-size:22px}
+.char-preview .code{color:var(--accent);font:14px var(--fell);letter-spacing:.06em}
+.char-preview p,.char-preview a{font-size:15px}
+.dossier{border-top:3px solid var(--local)}
+.dossier-header{display:flex;align-items:center;gap:18px;padding-bottom:13px;border-bottom:1px solid var(--line)}
+.dossier-number{color:var(--local);font:48px/1 var(--fell)}
+.dossier-number small{display:block;color:var(--ink-2);font-size:12px;letter-spacing:.13em;text-align:center}
+.dossier-header h3{margin:0 0 3px;font-size:clamp(26px,3vw,34px)}
+.dossier-tagline{margin:0;color:var(--ink-2);font-size:17px;font-style:italic}
+.dossier-icon{margin-left:auto;color:var(--local);font-size:46px}
+.dossier-sub{margin:13px 0 18px;font-size:15px}
+.ribbons{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:13px 0 20px}
+.ribbon{padding:10px;background:var(--paper-2);border:1px solid var(--line)}
+.ribbon span{display:block;color:var(--ink-2);font:13px var(--fell);letter-spacing:.05em}
+.ribbon b{font-size:15px;line-height:1.5}
+.dossier-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0 22px}
+.dossier-bit{margin-bottom:13px;padding-top:13px;border-top:1px solid var(--line)}
+.dossier-bit p,.dossier-bit li{font-size:15px;line-height:1.65}
+.talent-box{margin-top:10px;padding:16px;background:var(--paper-2);border:1px solid var(--line)}
+.talent-super{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.talent-super h4{margin:0}
+.talent-super small{font-size:13px}
+.talent-group{padding:7px 0}
+.talent-title{margin-bottom:7px;color:var(--ink-2);font:13px var(--fell);letter-spacing:.12em}
+.talent-title b{color:var(--local)}
+.talent-row{display:flex;flex-wrap:wrap;gap:5px}
+.talent{padding:2px 8px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.triple-notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:14px;margin:19px 0}
+.triple-notes>div{padding:14px;background:var(--paper-2);border:1px solid var(--line)}
+.triple-notes p{margin:0;font-size:15px}
+.dossier-bottom{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin-top:17px}
+.sacrifice{padding:12px 15px;background:var(--paper-2);border-left:3px solid var(--feral)}
+.sacrifice.no{border-left-color:var(--resto)}
+.sacrifice b{color:var(--ink-2);font:13px var(--fell);letter-spacing:.1em}
+.sacrifice p{margin:5px 0 0;font-size:15px}
+.dossier-foot{margin-top:16px;padding-top:11px;color:var(--ink-2);font-size:14px;border-top:1px solid var(--line)}
+/* one encounter, nine answers */
+.encounter-comparison{margin:22px 0 34px}
+.encounter-comparison .sub{font-size:14px}
+.spectable{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
+.compare-card{padding:16px;background:var(--card);border:1px solid var(--line)}
+.compare-card h4{font-size:20px}
+.compare-card .stamp{display:inline-block;margin-bottom:9px;padding:1px 8px;color:var(--ink-2);font:13px var(--fell);border:1px solid var(--line);border-radius:3px}
+.compare-card ol{margin:6px 0 0;padding:0;list-style:none;counter-reset:step}
+.compare-card li{position:relative;margin:0;padding:7px 0 7px 30px;font-size:14px;border-bottom:1px solid var(--line);counter-increment:step}
+.compare-card li:last-child{border:0}
+.compare-card li::before{content:counter(step);position:absolute;top:7px;left:0;display:grid;place-items:center;width:22px;height:22px;color:#fff;font:13px/1 var(--serif);background:var(--accent);border-radius:50%}
+.combat-lens{margin-top:14px;padding:10px;background:var(--paper-2);border:1px solid var(--line)}
+.combat-lens p{margin:0 0 6px;font-size:14px;line-height:1.45}
+.combat-lens p:last-child{margin:0}
+.combat-lens b{margin-right:5px;color:var(--accent);font:13px var(--fell);letter-spacing:.06em}
+/* plates: the encounter explorer, the Atlas, the quiz */
+.controlbar,.atlas-controls,.quiz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px;margin:12px 0 18px}
+.controlbar label,.atlas-controls label,.quiz-grid label{display:flex;flex-direction:column;gap:2px;min-width:0}
+.controlbar select,.atlas-controls select,.quiz-grid select{width:100%;min-width:0}
+.interactive-output{padding:16px;background:var(--card);border:1px solid var(--line)}
+.interactive-output h3{font-size:26px}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:8px}
+.step-grid>div{min-height:100px;padding:10px;font-size:14px;background:var(--paper-2);border:1px solid var(--line)}
+.step-grid span{display:block;margin-bottom:6px;color:var(--accent);font:26px var(--fell)}
+.scenario-meta{margin:0 0 14px;color:var(--ink-2);font-size:14px}
+.build-mini-summary{margin-bottom:15px;padding-bottom:12px;font-size:15px;border-bottom:1px solid var(--line)}
+.heat-legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.heat-legend span{padding:2px 9px;color:var(--ink-2);font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.atlas-count{margin-bottom:9px;color:var(--ink-2);font-size:14px}
+/* the matrix: the column titles run vertically (read from the bottom up) so all twelve fit beside the names */
+.dashboard{overflow-x:auto}
+.matrix{min-width:640px}
+.matrix thead tr{border-bottom:2px solid var(--ink-2)}
+.matrix th{border:0}
+.matrix th:not(:first-child){height:128px;min-width:36px;max-width:40px;padding:8px 2px;writing-mode:vertical-rl;transform:rotate(180deg);vertical-align:bottom}
+.matrix td{padding:6px 3px;text-align:center;vertical-align:middle}
+.matrix td:first-child,.matrix th:first-child{min-width:170px;text-align:left}
+.matrix td:first-child{position:sticky;left:0;z-index:1;padding-left:6px;background:var(--plate)}
+.matrix td:first-child span{display:block;color:var(--ink-2);font-size:13px}
+.matrix tbody tr:hover td{background-color:#e6d8b6}
+.hidden-row{display:none!important}
+.quizresult{margin-top:14px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent)}
+/* sources and the last page */
+.source-item{display:grid;grid-template-columns:37px 1fr;gap:10px}
+.source-number{color:var(--accent);font:26px var(--fell)}
+.source-item small{display:block;margin:4px 0;font-size:13px}
+.source-item em{display:block;margin-top:6px;color:var(--ink-2);font-size:14px}
+.endcap{text-align:center}
+.endcap .sun{color:var(--accent);font:46px var(--fell)}
+.endcap h3{margin:9px;font-size:32px}
+.endcap p{max-width:680px;margin:0 auto}
+.endcap .fine{margin-top:16px}
+@media (max-width:700px){
+  .mini-flow i,.diagram .arrow{display:none}
+  .axis{flex-wrap:wrap}
+  .segment{flex:1 1 43%}
 }
-.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
-.hero .compendium-series-subtitle {
-  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif;
-  letter-spacing: .008em;
-  color: #f2d9a8;
-  max-width: 900px;
-  margin: 11px 0 15px;
-  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+@media print{
+  #progress,.hero-cta{display:none!important}
+  .dossier{break-before:page}
+  .dashboard{overflow:visible}
+  .matrix{min-width:0}
+  .matrix td:first-child{position:static}
+  .hidden-row{display:table-row!important}
 }
-@media (max-width: 650px) {
-  .hero .series-manuscript { font-size: 11px; letter-spacing: .025em; }
-  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px); margin: 8px 0 10px; }
-}
-
-/* Reader-first note, visually subordinate to the original manuscript design. */
-.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
-.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
-.reader-orientation p{margin:0;line-height:1.64}
-
-/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
-.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
-.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
-.reader-field-exercise p{margin:0;line-height:1.75}
-
-.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
-/* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
-.vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
-.vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
-.vol-switch button:hover{border-color:currentColor}
-.vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
-.vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
-@media print{.vol-switch{display:none}}
+/* on phones the table shrinks to its content and the name column stays narrow, so the scores beside it have room */
+@media (max-width:600px){.matrix{min-width:0}.matrix td:first-child{min-width:110px}}
 </style></head>
 <body>
   <script>
@@ -83,7 +186,7 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
       advanced:['#evidence','#characters','#encounters','#dashboard']
     };
     const MENU='#toc';
-    const SWITCH_BEFORE='#toc .toc-block'; // the switch goes right before this element
+    const SWITCH_BEFORE='#toc .nav-divider'; // the switch goes right before this element
     const LABELS={primer:'Primer',advanced:'Advanced',complete:'Complete'};
     const style=document.createElement('style');
     document.head.append(style);
@@ -157,30 +260,47 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
   })();
   </script>
   <div id="progress" aria-hidden="true"></div>
-  <div id="mobile-top">
-    <button id="menu-toggle" aria-controls="toc" aria-expanded="false" type="button"><span aria-hidden="true">☰</span> Chapters</button>
-    <div class="mark">FOREVER <span>DRUID</span></div>
-    <small>VOL. II</small>
-  </div>
-  <nav id="toc" aria-label="Chapters">
-    <div class="tiny">THE VERDANT TESTAMENT</div>
-    <div class="logo">FOREVER<br><span>DRUID</span><br><small>COMPENDIUM · VOL. II</small></div>
-    <div class="toc-block">The field chapters</div>
-    <a class="toc-link" href="#opening"><b>00</b><span>The opening grove</span></a>
-    <a class="toc-link" href="#foundation"><b>01</b><span>The shapeshifter</span></a>
-    <a class="toc-link" href="#balance"><b>02</b><span>The celestial observatory</span></a>
-    <a class="toc-link" href="#feral"><b>03</b><span>The predator’s den</span></a>
-    <a class="toc-link" href="#restoration"><b>04</b><span>The grove of renewal</span></a>
-    <a class="toc-link" href="#journey"><b>05</b><span>Leveling, gear &amp; PvP</span></a>
-    <a class="toc-link" href="#evidence"><b>06</b><span>Evidence &amp; live changes</span></a>
-    <a class="toc-link" href="#characters"><b>07</b><span>Character dossiers</span></a>
-    <a class="toc-link" href="#encounters"><b>08</b><span>Same encounter / Different answers</span></a>
-    <a class="toc-link" href="#dashboard"><b>09</b><span>Build-selection atlas</span></a>
-    <a class="toc-link" href="#sources"><b>10</b><span>Sources and limits</span></a>
-    <div class="nfooter">Compiled 13 Nov 2026<br>Offline-ready reference<br><button id="print-guide" type="button">⎙ Print the compendium</button></div>
+  <nav id="toc" class="book-nav" aria-label="Chapters">
+    <div class="nav-series">THE VERDANT TESTAMENT</div>
+    <div class="nav-title">FOREVER<br><span>DRUID</span><br><small>COMPENDIUM · VOL. II</small></div>
+    <button class="nav-toggle" type="button" aria-controls="toc" aria-expanded="false" hidden>Contents</button>
+    <div class="nav-divider"></div>
+    <div class="nav-body">
+      <div class="nav-label">The field chapters</div>
+      <ol>
+        <li><a class="toc-link" href="#opening"><span>00</span>The opening grove</a></li>
+        <li><a class="toc-link" href="#foundation"><span>01</span>The shapeshifter</a></li>
+        <li><a class="toc-link" href="#balance"><span>02</span>The celestial observatory</a></li>
+        <li><a class="toc-link" href="#feral"><span>03</span>The predator’s den</a></li>
+        <li><a class="toc-link" href="#restoration"><span>04</span>The grove of renewal</a></li>
+        <li><a class="toc-link" href="#journey"><span>05</span>Leveling, gear &amp; PvP</a></li>
+        <li><a class="toc-link" href="#evidence"><span>06</span>Evidence &amp; live changes</a></li>
+        <li><a class="toc-link" href="#characters"><span>07</span>Character dossiers</a></li>
+        <li><a class="toc-link" href="#encounters"><span>08</span>Same encounter / Different answers</a></li>
+        <li><a class="toc-link" href="#dashboard"><span>09</span>Build-selection atlas</a></li>
+        <li><a class="toc-link" href="#sources"><span>10</span>Sources and limits</a></li>
+      </ol>
+      <div class="nav-note">Compiled 13 Nov 2026</div>
+      <button class="nav-print" id="print-guide" type="button">⎙ Print the compendium</button>
+    </div>
   </nav>
+  <script>
+  /* Contents button (phase 4): on narrow screens the chapter list folds away under this button.
+     Without JavaScript the button stays hidden and the list stays open. */
+  (()=>{
+    const nav=document.querySelector('.book-nav');
+    const button=nav.querySelector('.nav-toggle');
+    const show=open=>{nav.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));};
+    nav.classList.add('js');
+    button.hidden=false;
+    button.addEventListener('click',()=>show(!nav.classList.contains('open')));
+    // Close the list after a chapter is chosen, and on Escape.
+    nav.querySelector('.nav-body').addEventListener('click',e=>{if(e.target.closest('a'))show(false);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){show(false);button.focus();}});
+  })();
+  </script>
   <main>
-    <header class="hero" id="begin" style="background-image:url('images/druid-hero.webp')">
+    <header class="hero" id="begin">
       <div class="hero-content">
         <div class="hero-kicker series-manuscript">The Verdant Testament<span class="series-sep"> / </span>On the Balance of Living Things</div>
         <h1>
@@ -189,6 +309,7 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
           <span>COMPENDIUM</span>
         </h1>
         <div class="compendium-series-subtitle">The Verdant Testament of Moon and Claw</div>
+        <figure class="frontis"><img src="images/druid-hero.webp" alt="" width="1536" height="1024"></figure>
         <div class="deck">In the deep places of Azeroth, duty changes shape. Learn the rhythms of claw, bark, moonlight and living magic, and why a Druid’s greatest strength is knowing when to become something else.</div>
         <div class="hero-badges">
           <span class="pill">☾ BALANCE</span>
@@ -197,7 +318,7 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
           <span class="pill">FORMS, RESOURCES &amp; GROUP ROLES</span>
           <span class="pill">NOVEMBER 2026 LIVE RESEARCH</span>
         </div>
-        <div class="hero-by">ORIGINAL GENERATED COVER ART · EVERGREEN FIELD EDITION · 13 NOV 2026</div><a href="#opening" class="hero-cta">ENTER THE OPENING GROVE ↓</a></div>
+        <div class="hero-by">EVERGREEN FIELD EDITION · 13 NOV 2026</div><a href="#opening" class="hero-cta">ENTER THE OPENING GROVE ↓</a></div>
     </header>
     <section class="chapter " id="opening" aria-labelledby="h-opening">
       <div class="shell">
@@ -256,7 +377,7 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
           <div class="panel">
             <h3>Reading the evidence marks</h3>
             <p><span class="badge-code">OFFICIAL</span> identifies published Blizzard notes; <span class="badge-code">CALCULATOR</span> identifies the Forever talent/tree and tooltip references; <span class="badge-code">EDITORIAL</span> identifies qualitative priorities and novel archetypes; <span class="badge-code">UNVERIFIED</span> identifies inaccessible in-game behavior or unanswered acquisition questions.</p>
-            <p>Source numbers such as <a class="sref" href="#src-02">[02]</a> lead to the evidence archive, which includes dates and limitations. This guide was compiled 13 November 2026; it does not update itself while offline.</p>
+            <p>Source numbers such as <a class="sref" href="#src-02">[02]</a> lead to the evidence archive, which includes dates and limitations. This guide was compiled 13 November 2026.</p>
           </div>
         </div>
         <div class="factbox blue"><strong>The central promise of this volume</strong><p>A Cat and a Bear are not the same combat character with different art. A Balance caster outside Moonkin Form may reach a lifesaving heal sooner than one who must shift. Restoration is no less varied: the same spells serve different assignments depending on whom you expect to save.</p>
@@ -301,19 +422,21 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
           </div>
         </div>
         <div class="section-label">The form compass · illustrated role / resource map</div>
-        <div class="wheel-wrap">
-          <svg viewBox="0 0 570 400" role="img" aria-label="Druid forms: Moonkin uses mana and cast windows, Cat uses energy and combo points, Bear uses rage and threat, caster uses mana and healing. Shifting consumes mana.">
- <defs><radialGradient id="shad"><stop stop-color="#315d4f"/><stop offset="1" stop-color="#10251d"/></radialGradient></defs><circle cx="284" cy="189" r="143" fill="none" stroke="#5b876f" stroke-width="1" stroke-dasharray="4 9"/><circle cx="284" cy="189" r="104" fill="none" stroke="#738c74" opacity=".8"/><circle cx="284" cy="189" r="72" fill="url(#shad)" stroke="#97bb91" stroke-width="1.5"/><g text-anchor="middle" font-family="Georgia" fill="#f3e7c9"><text x="284" y="175" font-size="18">SHAPE</text><text x="284" y="201" font-size="16">SHIFT</text><text x="284" y="222" font-size="12" fill="#c9ddcd">costs Mana</text></g>
- <g stroke-width="1.7" fill="none"><path d="M284 116 L284 75" stroke="#9bbcf4"/><path d="M365 185 L427 185" stroke="#d9b36c"/><path d="M284 261 L284 314" stroke="#9cceaa"/><path d="M208 188 L148 188" stroke="#d7d9c3"/></g>
- <g font-family="Georgia" text-anchor="middle"><rect x="205" y="15" width="158" height="58" rx="10" fill="#1c3850" stroke="#779bc5"/><text x="284" y="41" fill="#c6dfff" font-size="20">☾ Moonkin</text><text x="284" y="59" fill="#bacfe1" font-size="12">Mana · casts</text>
- <rect x="416" y="153" width="151" height="67" rx="10" fill="#3b2e1d" stroke="#a18757"/><text x="492" y="178" fill="#f4d696" font-size="20">♞ Cat</text><text x="492" y="197" fill="#eed3a8" font-size="12">Energy · combos</text>
- <rect x="204" y="311" width="159" height="65" rx="10" fill="#2e3523" stroke="#92b27b"/><text x="283" y="338" fill="#dce8b4" font-size="20">⬡ Bear</text><text x="283" y="357" fill="#cbd9b2" font-size="12">Rage · threat</text>
- <rect x="3" y="153" width="151" height="67" rx="10" fill="#23362e" stroke="#83bba2"/><text x="79" y="178" fill="#d7f2e2" font-size="19">✿ Caster</text><text x="79" y="197" fill="#c7dccd" font-size="12">Mana · healing</text></g></svg>
-          <div>
-            <div class="wheel-key">THE ANATOMY OF A SHAPESHIFTER</div>
-            <h3>Four economies, one character</h3>
-            <p>A form is not a permanent specialization. It establishes which buttons can be used, which resources are active, what position is safe and what the player gives up while in it. Hybrid skill is <strong>resource preservation across transitions</strong> rather than frantic shape cycling.</p>
-            <p>Forever makes shifting less punitive in some ways – potions, racials, weapon effects, interactions – but moving between bodies still costs Mana, incurs action opportunity cost and can leave an ally unhealed or an enemy untanked. <a class="sref" href="#src-01">[01]</a> <a class="sref" href="#src-06">[06]</a></p>
+        <div class="plate">
+          <div class="wheel-wrap">
+            <svg viewBox="0 0 570 400" role="img" aria-label="Druid forms: Moonkin uses mana and cast windows, Cat uses energy and combo points, Bear uses rage and threat, caster uses mana and healing. Shifting consumes mana.">
+   <defs><radialGradient id="shad"><stop stop-color="#315d4f"/><stop offset="1" stop-color="#10251d"/></radialGradient></defs><circle cx="284" cy="189" r="143" fill="none" stroke="#5b876f" stroke-width="1" stroke-dasharray="4 9"/><circle cx="284" cy="189" r="104" fill="none" stroke="#738c74" opacity=".8"/><circle cx="284" cy="189" r="72" fill="url(#shad)" stroke="#97bb91" stroke-width="1.5"/><g text-anchor="middle" font-family="Georgia" fill="#f3e7c9"><text x="284" y="175" font-size="18">SHAPE</text><text x="284" y="201" font-size="16">SHIFT</text><text x="284" y="222" font-size="12" fill="#c9ddcd">costs Mana</text></g>
+   <g stroke-width="1.7" fill="none"><path d="M284 116 L284 75" stroke="#9bbcf4"/><path d="M365 185 L427 185" stroke="#d9b36c"/><path d="M284 261 L284 314" stroke="#9cceaa"/><path d="M208 188 L148 188" stroke="#d7d9c3"/></g>
+   <g font-family="Georgia" text-anchor="middle"><rect x="205" y="15" width="158" height="58" rx="10" fill="#1c3850" stroke="#779bc5"/><text x="284" y="41" fill="#c6dfff" font-size="20">☾ Moonkin</text><text x="284" y="59" fill="#bacfe1" font-size="12">Mana · casts</text>
+   <rect x="416" y="153" width="151" height="67" rx="10" fill="#3b2e1d" stroke="#a18757"/><text x="492" y="178" fill="#f4d696" font-size="20">♞ Cat</text><text x="492" y="197" fill="#eed3a8" font-size="12">Energy · combos</text>
+   <rect x="204" y="311" width="159" height="65" rx="10" fill="#2e3523" stroke="#92b27b"/><text x="283" y="338" fill="#dce8b4" font-size="20">⬡ Bear</text><text x="283" y="357" fill="#cbd9b2" font-size="12">Rage · threat</text>
+   <rect x="3" y="153" width="151" height="67" rx="10" fill="#23362e" stroke="#83bba2"/><text x="79" y="178" fill="#d7f2e2" font-size="19">✿ Caster</text><text x="79" y="197" fill="#c7dccd" font-size="12">Mana · healing</text></g></svg>
+            <div>
+              <div class="wheel-key">THE ANATOMY OF A SHAPESHIFTER</div>
+              <h3>Four economies, one character</h3>
+              <p>A form is not a permanent specialization. It establishes which buttons can be used, which resources are active, what position is safe and what the player gives up while in it. Hybrid skill is <strong>resource preservation across transitions</strong> rather than frantic shape cycling.</p>
+              <p>Forever makes shifting less punitive in some ways – potions, racials, weapon effects, interactions – but moving between bodies still costs Mana, incurs action opportunity cost and can leave an ally unhealed or an enemy untanked. <a class="sref" href="#src-01">[01]</a> <a class="sref" href="#src-06">[06]</a></p>
+            </div>
           </div>
         </div>
         <div class="section-label">Four compact combat engines</div>
@@ -506,8 +629,8 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
             <p>A caster who remains outside Moonkin Form can turn immediately from damage to healing. Moonkin provides offensive and defensive benefits but prevents healing spells until the form is dropped.</p><div class="badge-code">OFF-HEAL SPECIALIST</div></div>
         </div>
         <div class="section-label">The celestial observatory · cast-time changes the sequence</div>
-        <div class="diagram">
-          <div class="diagram-title">Eclipse with 3/3 selected · conceptual charge window</div>
+        <div class="diagram plate">
+          <div class="diagram-title plate-head">Eclipse with 3/3 selected · conceptual charge window</div>
           <div class="axis">
             <div class="segment blue">Wrath<br>fast Starfire charges</div>
             <span class="arrow">→</span>
@@ -655,8 +778,8 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
             <p>Natural Shapeshifter in Restoration reduces shifting Mana cost. A genuine powershift must beat the cost of a GCD, the extra Mana and any delayed combo-point action. Cat can use its dedicated talent without repeating the form animation. <a class="sref" href="#src-02">[02]</a> <a class="sref" href="#src-06">[06]</a></p>
           </div>
         </div>
-        <div class="diagram">
-          <div class="diagram-title">The cat’s miniature decision tree</div>
+        <div class="diagram plate">
+          <div class="diagram-title plate-head">The cat’s miniature decision tree</div>
           <div class="axis">
             <div class="segment gold">Behind target?<br>Shred</div>
             <div class="segment gold">Denied position?<br>Claw</div>
@@ -679,8 +802,8 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
             <p>Natural Reaction supports Rage when dodging; Thick Hide rewards Defense/armor investment. The Guard’s worst mistake is leaving Bear in order to heal while it still has boss threat. <a class="sref" href="#src-01">[01]</a> <a class="sref" href="#src-02">[02]</a></p>
           </div>
         </div>
-        <div class="diagram">
-          <div class="diagram-title">Four enemies · a three-target tank attack and one unsolved target</div>
+        <div class="diagram plate">
+          <div class="diagram-title plate-head">Four enemies · a three-target tank attack and one unsolved target</div>
           <div class="axis">
             <div class="segment">A · Swipe threat</div>
             <div class="segment">B · Swipe threat</div>
@@ -798,8 +921,8 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
             <p>Swiftmend and Nature’s Swiftness can change the outcome of an unexpected hit, provided their conditions are met. Good healing means keeping an answer available, not using every cooldown simply because it glows.</p><div class="badge-code">CONTROL / SURVIVAL</div></div>
         </div>
         <div class="section-label">The renewal clock · HoT lifecycle and instant intervention</div>
-        <div class="diagram">
-          <div class="diagram-title">Two possible endings for one owned Rejuvenation or Regrowth</div>
+        <div class="diagram plate">
+          <div class="diagram-title plate-head">Two possible endings for one owned Rejuvenation or Regrowth</div>
           <div class="axis">
             <div class="segment">Your Rejuvenation / Regrowth</div>
             <span class="arrow">→</span>
@@ -3114,10 +3237,10 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
           </div>
         </article>
         <div class="section-label" id="encounter-explorer">Interactive encounter explorer</div>
-        <div class="explorer notprint">
-          <div class="eyebrow">EXPLORE A CHARACTER'S DECISION LOOP</div>
+        <div class="explorer plate notprint">
+          <div class="eyebrow plate-head">EXPLORE A CHARACTER'S DECISION LOOP</div>
           <h3>Change the encounter. Change the Druid.</h3>
-          <p class="sub">Both selectors rerender an actual five-beat scenario using JavaScript. No network or reload is required.</p>
+          <p class="sub">Both selectors rerender an actual five-beat scenario using JavaScript.</p>
           <div class="controlbar">
             <label for="e-spec">Specialization<select id="e-spec"><option value="All">All paths</option><option value="Balance">Balance</option><option value="Feral Combat">Feral Combat</option><option value="Restoration">Restoration</option></select></label>
             <label for="e-build">Character<select id="e-build"><option value="lunar">The Lunar Artillery · Balance</option><option value="eclipse">The Eclipse Weaver · Balance</option><option value="restokin">The Restokin Sage · Balance</option><option value="claw">The Clawstalker · Feral Combat</option><option value="bear">The Ironhide Guardian · Feral Combat</option><option value="primal">The Primal Shapeshifter · Feral Combat</option><option value="keeper">The Lifebloom Keeper · Restoration</option><option value="warden">The Wild Growth Warden · Restoration</option><option value="renewal">The Guardian of Renewal · Restoration</option></select></label>
@@ -3157,191 +3280,193 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
           </div>
         </div>
         <div class="section-label">The twelve dimensions</div>
-        <div class="heat-legend">
-          <span>1 · Minimal emphasis</span>
-          <span>2 · Secondary</span>
-          <span>3 · Situational</span>
-          <span>4 · Strong thematic focus</span>
-          <span>5 · Defining focus</span>
-        </div>
-        <div class="atlas-controls notprint">
-          <label for="atlas-spec">Specialization<select id="atlas-spec"><option value="All">All specializations</option><option value="Balance">Balance</option><option value="Feral Combat">Feral Combat</option><option value="Restoration">Restoration</option></select></label>
-          <label for="atlas-form">Form preference<select id="atlas-form"><option value="All">Any form</option><option value="Moonkin">Moonkin</option><option value="Cat">Cat / mixed Cat</option><option value="Bear">Bear / mixed Bear</option><option value="Caster">Caster / healer</option><option value="Mixed">Flexible form-switching</option></select></label>
-          <label for="atlas-activity">Preferred activity<select id="atlas-activity"><option value="All">Any activity</option><option value="Solo">Solo questing</option><option value="Dungeon">Dungeons</option><option value="Raid">Raids</option><option value="PvP">PvP</option></select></label>
-          <label for="atlas-sort">Sort by<select id="atlas-sort"><option value="original">Archetype order</option><option value="0">Damage emphasis (high first)</option><option value="1">Burst emphasis (high first)</option><option value="2">Sustained output emphasis (high first)</option><option value="3">Tanking emphasis (high first)</option><option value="4">Healing emphasis (high first)</option><option value="5">Mobility emphasis (high first)</option><option value="6">Survivability emphasis (high first)</option><option value="7">Resource management emphasis (high first)</option><option value="8">Solo efficiency emphasis (high first)</option><option value="9">Group support emphasis (high first)</option><option value="10">Complexity emphasis (high first)</option><option value="11">Flexibility emphasis (high first)</option></select></label>
-        </div>
-        <div class="atlas-count" id="atlas-count">Showing 9 of 9 paths.</div>
-        <div class="dashboard">
-          <table class="matrix" id="build-matrix">
-            <thead>
-              <tr>
-                <th>Build · specialization</th>
-                <th title="Damage">Damage</th>
-                <th title="Burst">Burst</th>
-                <th title="Sustained output">Sustained output</th>
-                <th title="Tanking">Tanking</th>
-                <th title="Healing">Healing</th>
-                <th title="Mobility">Mobility</th>
-                <th title="Survivability">Survivability</th>
-                <th title="Resource management">Resource management</th>
-                <th title="Solo efficiency">Solo efficiency</th>
-                <th title="Group support">Group support</th>
-                <th title="Complexity">Complexity</th>
-                <th title="Flexibility">Flexibility</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-order="0" data-score="4,3,4,1,1,2,3,4,3,4,3,2" data-spec="Balance" data-form="Moonkin" data-activity="Dungeon / raid">
-                <td><a href="#dossier-lunar">The Lunar Artillery</a><span>Balance · 37 / 0 / 14</span>
-                </td>
-                <td title="Damage: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Burst: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Sustained output: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Healing: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Mobility: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Survivability: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Solo efficiency: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Group support: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Complexity: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Flexibility: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-              </tr>
-              <tr data-order="1" data-score="4,4,4,1,1,2,2,3,3,3,5,3" data-spec="Balance" data-form="Moonkin" data-activity="Raid / PvP">
-                <td><a href="#dossier-eclipse">The Eclipse Weaver</a><span>Balance · 41 / 0 / 10</span>
-                </td>
-                <td title="Damage: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Burst: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Sustained output: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Healing: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Mobility: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Survivability: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Resource management: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Solo efficiency: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Group support: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Complexity: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Flexibility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-              </tr>
-              <tr data-order="2" data-score="3,2,3,1,4,3,3,4,4,5,4,5" data-spec="Balance" data-form="Caster / humanoid" data-activity="Solo / dungeon">
-                <td><a href="#dossier-restokin">The Restokin Sage</a><span>Balance · 30 / 0 / 21</span>
-                </td>
-                <td title="Damage: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Burst: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Sustained output: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Healing: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Mobility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Survivability: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Solo efficiency: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Complexity: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Flexibility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-              </tr>
-              <tr data-order="3" data-score="5,4,4,2,1,5,3,4,5,3,5,3" data-spec="Feral Combat" data-form="Cat" data-activity="Solo / raid / PvP">
-                <td><a href="#dossier-claw">The Clawstalker</a><span>Feral Combat · 0 / 41 / 10</span>
-                </td>
-                <td title="Damage: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Burst: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Sustained output: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Tanking: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Healing: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Mobility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Survivability: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Solo efficiency: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Group support: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Complexity: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Flexibility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-              </tr>
-              <tr data-order="4" data-score="2,2,3,5,1,3,5,4,4,5,4,3" data-spec="Feral Combat" data-form="Bear / Dire Bear" data-activity="Dungeon / raid">
-                <td><a href="#dossier-bear">The Ironhide Guardian</a><span>Feral Combat · 0 / 41 / 10</span>
-                </td>
-                <td title="Damage: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Burst: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Sustained output: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Tanking: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Healing: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Mobility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Survivability: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Solo efficiency: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Complexity: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Flexibility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-              </tr>
-              <tr data-order="5" data-score="3,3,3,3,3,5,4,3,5,5,5,5" data-spec="Feral Combat" data-form="Mixed Cat / Bear / caster" data-activity="Solo / PvP / dungeon">
-                <td><a href="#dossier-primal">The Primal Shapeshifter</a><span>Feral Combat · 0 / 31 / 20</span>
-                </td>
-                <td title="Damage: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Burst: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Sustained output: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Tanking: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Healing: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Mobility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Survivability: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Resource management: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Solo efficiency: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Complexity: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Flexibility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-              </tr>
-              <tr data-order="6" data-score="1,1,2,1,5,3,4,4,2,5,4,3" data-spec="Restoration" data-form="Caster / healer" data-activity="Dungeon / raid">
-                <td><a href="#dossier-keeper">The Lifebloom Keeper</a><span>Restoration · 5 / 0 / 46</span>
-                </td>
-                <td title="Damage: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Burst: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Sustained output: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Healing: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Mobility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Survivability: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Solo efficiency: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Complexity: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Flexibility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-              </tr>
-              <tr data-order="7" data-score="1,1,2,1,5,3,3,4,2,5,4,4" data-spec="Restoration" data-form="Caster / healer" data-activity="Dungeon / raid">
-                <td><a href="#dossier-warden">The Wild Growth Warden</a><span>Restoration · 16 / 0 / 35</span>
-                </td>
-                <td title="Damage: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Burst: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Sustained output: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Healing: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Mobility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Survivability: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Solo efficiency: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Complexity: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Flexibility: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-              </tr>
-              <tr data-order="8" data-score="1,1,2,2,4,4,5,3,3,5,5,5" data-spec="Restoration" data-form="Caster ↔ Bear" data-activity="Solo / PvP / dungeon">
-                <td><a href="#dossier-renewal">The Guardian of Renewal</a><span>Restoration · 0 / 11 / 40</span>
-                </td>
-                <td title="Damage: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Burst: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
-                <td title="Sustained output: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Tanking: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
-                <td title="Healing: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Mobility: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
-                <td title="Survivability: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Resource management: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Solo efficiency: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
-                <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Complexity: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-                <td title="Flexibility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="plate">
+          <div class="heat-legend">
+            <span>1 · Minimal emphasis</span>
+            <span>2 · Secondary</span>
+            <span>3 · Situational</span>
+            <span>4 · Strong thematic focus</span>
+            <span>5 · Defining focus</span>
+          </div>
+          <div class="atlas-controls notprint">
+            <label for="atlas-spec">Specialization<select id="atlas-spec"><option value="All">All specializations</option><option value="Balance">Balance</option><option value="Feral Combat">Feral Combat</option><option value="Restoration">Restoration</option></select></label>
+            <label for="atlas-form">Form preference<select id="atlas-form"><option value="All">Any form</option><option value="Moonkin">Moonkin</option><option value="Cat">Cat / mixed Cat</option><option value="Bear">Bear / mixed Bear</option><option value="Caster">Caster / healer</option><option value="Mixed">Flexible form-switching</option></select></label>
+            <label for="atlas-activity">Preferred activity<select id="atlas-activity"><option value="All">Any activity</option><option value="Solo">Solo questing</option><option value="Dungeon">Dungeons</option><option value="Raid">Raids</option><option value="PvP">PvP</option></select></label>
+            <label for="atlas-sort">Sort by<select id="atlas-sort"><option value="original">Archetype order</option><option value="0">Damage emphasis (high first)</option><option value="1">Burst emphasis (high first)</option><option value="2">Sustained output emphasis (high first)</option><option value="3">Tanking emphasis (high first)</option><option value="4">Healing emphasis (high first)</option><option value="5">Mobility emphasis (high first)</option><option value="6">Survivability emphasis (high first)</option><option value="7">Resource management emphasis (high first)</option><option value="8">Solo efficiency emphasis (high first)</option><option value="9">Group support emphasis (high first)</option><option value="10">Complexity emphasis (high first)</option><option value="11">Flexibility emphasis (high first)</option></select></label>
+          </div>
+          <div class="atlas-count" id="atlas-count">Showing 9 of 9 paths.</div>
+          <div class="dashboard">
+            <table class="matrix" id="build-matrix">
+              <thead>
+                <tr>
+                  <th>Build · specialization</th>
+                  <th title="Damage">Damage</th>
+                  <th title="Burst">Burst</th>
+                  <th title="Sustained output">Sustained output</th>
+                  <th title="Tanking">Tanking</th>
+                  <th title="Healing">Healing</th>
+                  <th title="Mobility">Mobility</th>
+                  <th title="Survivability">Survivability</th>
+                  <th title="Resource management">Resource management</th>
+                  <th title="Solo efficiency">Solo efficiency</th>
+                  <th title="Group support">Group support</th>
+                  <th title="Complexity">Complexity</th>
+                  <th title="Flexibility">Flexibility</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-order="0" data-score="4,3,4,1,1,2,3,4,3,4,3,2" data-spec="Balance" data-form="Moonkin" data-activity="Dungeon / raid">
+                  <td><a href="#dossier-lunar">The Lunar Artillery</a><span>Balance · 37 / 0 / 14</span>
+                  </td>
+                  <td title="Damage: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Burst: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Sustained output: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Healing: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Mobility: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Survivability: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Solo efficiency: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Group support: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Complexity: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Flexibility: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                </tr>
+                <tr data-order="1" data-score="4,4,4,1,1,2,2,3,3,3,5,3" data-spec="Balance" data-form="Moonkin" data-activity="Raid / PvP">
+                  <td><a href="#dossier-eclipse">The Eclipse Weaver</a><span>Balance · 41 / 0 / 10</span>
+                  </td>
+                  <td title="Damage: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Burst: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Sustained output: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Healing: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Mobility: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Survivability: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Resource management: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Solo efficiency: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Group support: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Complexity: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Flexibility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                </tr>
+                <tr data-order="2" data-score="3,2,3,1,4,3,3,4,4,5,4,5" data-spec="Balance" data-form="Caster / humanoid" data-activity="Solo / dungeon">
+                  <td><a href="#dossier-restokin">The Restokin Sage</a><span>Balance · 30 / 0 / 21</span>
+                  </td>
+                  <td title="Damage: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Burst: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Sustained output: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Healing: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Mobility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Survivability: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Solo efficiency: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Complexity: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Flexibility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                </tr>
+                <tr data-order="3" data-score="5,4,4,2,1,5,3,4,5,3,5,3" data-spec="Feral Combat" data-form="Cat" data-activity="Solo / raid / PvP">
+                  <td><a href="#dossier-claw">The Clawstalker</a><span>Feral Combat · 0 / 41 / 10</span>
+                  </td>
+                  <td title="Damage: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Burst: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Sustained output: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Tanking: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Healing: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Mobility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Survivability: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Solo efficiency: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Group support: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Complexity: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Flexibility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                </tr>
+                <tr data-order="4" data-score="2,2,3,5,1,3,5,4,4,5,4,3" data-spec="Feral Combat" data-form="Bear / Dire Bear" data-activity="Dungeon / raid">
+                  <td><a href="#dossier-bear">The Ironhide Guardian</a><span>Feral Combat · 0 / 41 / 10</span>
+                  </td>
+                  <td title="Damage: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Burst: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Sustained output: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Tanking: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Healing: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Mobility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Survivability: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Solo efficiency: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Complexity: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Flexibility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                </tr>
+                <tr data-order="5" data-score="3,3,3,3,3,5,4,3,5,5,5,5" data-spec="Feral Combat" data-form="Mixed Cat / Bear / caster" data-activity="Solo / PvP / dungeon">
+                  <td><a href="#dossier-primal">The Primal Shapeshifter</a><span>Feral Combat · 0 / 31 / 20</span>
+                  </td>
+                  <td title="Damage: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Burst: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Sustained output: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Tanking: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Healing: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Mobility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Survivability: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Resource management: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Solo efficiency: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Complexity: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Flexibility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                </tr>
+                <tr data-order="6" data-score="1,1,2,1,5,3,4,4,2,5,4,3" data-spec="Restoration" data-form="Caster / healer" data-activity="Dungeon / raid">
+                  <td><a href="#dossier-keeper">The Lifebloom Keeper</a><span>Restoration · 5 / 0 / 46</span>
+                  </td>
+                  <td title="Damage: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Burst: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Sustained output: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Healing: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Mobility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Survivability: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Solo efficiency: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Complexity: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Flexibility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                </tr>
+                <tr data-order="7" data-score="1,1,2,1,5,3,3,4,2,5,4,4" data-spec="Restoration" data-form="Caster / healer" data-activity="Dungeon / raid">
+                  <td><a href="#dossier-warden">The Wild Growth Warden</a><span>Restoration · 16 / 0 / 35</span>
+                  </td>
+                  <td title="Damage: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Burst: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Sustained output: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Tanking: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Healing: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Mobility: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Survivability: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Resource management: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Solo efficiency: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Complexity: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Flexibility: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                </tr>
+                <tr data-order="8" data-score="1,1,2,2,4,4,5,3,3,5,5,5" data-spec="Restoration" data-form="Caster ↔ Bear" data-activity="Solo / PvP / dungeon">
+                  <td><a href="#dossier-renewal">The Guardian of Renewal</a><span>Restoration · 0 / 11 / 40</span>
+                  </td>
+                  <td title="Damage: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Burst: 1 of 5, editorial emphasis"><span class="heat heat1" aria-label="1 out of 5">1</span></td>
+                  <td title="Sustained output: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Tanking: 2 of 5, editorial emphasis"><span class="heat heat2" aria-label="2 out of 5">2</span></td>
+                  <td title="Healing: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Mobility: 4 of 5, editorial emphasis"><span class="heat heat4" aria-label="4 out of 5">4</span></td>
+                  <td title="Survivability: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Resource management: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Solo efficiency: 3 of 5, editorial emphasis"><span class="heat heat3" aria-label="3 out of 5">3</span></td>
+                  <td title="Group support: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Complexity: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                  <td title="Flexibility: 5 of 5, editorial emphasis"><span class="heat heat5" aria-label="5 out of 5">5</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p class="source-rule">Matrix scores are subjective role-and-kit emphases prepared for this compendium; no fabricated benchmark DPS, HPS, kill-speed or win-rate data are used. The 51-point distributions and talent gating are separately auditable in the dossiers above.</p>
         <div class="section-label">Choose a Druid identity · interactive discovery</div>
-        <div class="quizbox notprint">
-          <div class="eyebrow">WHICH KIND OF DRUID DO YOU WANT TO BECOME?</div>
+        <div class="quizbox plate notprint">
+          <div class="eyebrow plate-head">WHICH KIND OF DRUID DO YOU WANT TO BECOME?</div>
           <h3>Let the combat responsibility choose the archetype.</h3>
           <p>Three preferences narrow the nine documented identities. This is a recommendation heuristic, not a performance predictor.</p>
           <div class="quiz-grid">
@@ -3381,7 +3506,7 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
           <div class="panel">
             <h3>What this volume cannot promise</h3>
             <p>No authenticated level-60 combat parses; no validated optimal talents under actual raid conditions; no tested BiS weights; no server-side proof of Lifebloom learnability; no log-backed PvP power ranking. Those are <strong>verification limits</strong>, not silent facts. A legal build can still be strategically inferior for your party.</p>
-            <p>The original hero artwork is generated specifically for this compendium, stored as a WebP file in the images folder and not presented as official Blizzard imagery. CSS, scripts, tables and SVG diagrams are included inline. Online links are sources, not runtime dependencies.</p>
+            <p>The original hero artwork is generated specifically for this compendium and not presented as official Blizzard imagery.</p>
           </div>
         </div>
         <div class="section-label">The numbered field archive · primary notes and dated cross-checks</div>
@@ -3411,7 +3536,7 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
             <span class="source-number">04</span>
             <div><a href="https://www.wowhead.com/forever/talent-calc" target="_blank" rel="noopener noreferrer">Wowhead · Forever talent calculator ↗</a><small>checked 2026-11-13</small>
               <p>Forever 1–60 talent point budgeting, talent-row gating and live-specific class trees.</p>
-              <em>Interactive site requires live access for full in-client cross-check; the offline guide cannot fetch data.</em>
+              <em>Interactive site requires live access for full in-client cross-check.</em>
             </div>
           </div>
           <div class="source-item" id="src-05">
@@ -3563,7 +3688,7 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
       <div class="sun">☾ ✿ ♞</div>
       <h3>The wild is not one path.</h3>
       <p>Some protect with bark, some pursue with claw, some count the stars, and some keep the wounded alive long enough to see dawn.</p>
-      <p style="font-size:11px; margin-top:16px;color:#afc4b3">THE FOREVER DRUID COMPENDIUM · LOCAL EDITION · ORIGINAL ARTWORK GENERATED FOR THIS FILE · GAME MECHANICS SUBJECT TO FUTURE PATCHES</p>
+      <p class="fine">THE FOREVER DRUID COMPENDIUM · GAME MECHANICS SUBJECT TO FUTURE PATCHES</p>
     </footer>
   </main>
   <script>
@@ -4156,9 +4281,6 @@ h1,h2,h3,.chapter-sigil,.dossier-number{font-family:Georgia,'Times New Roman',se
   }
   [qr,qh,qs].forEach(el=>el?.addEventListener('change',renderQuiz));renderQuiz();
 
-  const menu=$('#menu-toggle');menu?.addEventListener('click',()=>{const active=document.body.classList.toggle('menu-open');menu.setAttribute('aria-expanded',String(active));});
-  all('#toc .toc-link').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('menu-open');menu?.setAttribute('aria-expanded','false');}));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.body.classList.remove('menu-open');menu?.setAttribute('aria-expanded','false');}});
   const links=all('#toc .toc-link'),sections=all('section.chapter');
   function onScroll(){
     const scrollable=document.documentElement.scrollHeight-innerHeight;
