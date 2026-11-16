@@ -237,12 +237,28 @@ Result:
 - Known limits: the contrast test skips the watermark glyphs (Hunter `.spec-card .watermark`, Priest `.spec .glyph`), and the Hunter split-bar labels were checked by hand (8.4:1 and 8.2:1). The Shaman nav has no id, so its Contents button has no `aria-controls`. Paladin, Priest and Warlock keep the chapter number inside the link text, because changing it changes text. Older accessibility points stay as they were, for example the Hunter cover's `role="banner"`.
 - Test pitfalls: the pages scroll smoothly, and this also makes a test's own `scrollIntoView` smooth, so pass `behavior:'instant'` or emulate reduced motion. A grid or flex container with the class `plate` gets the ornament band as a grid cell, so wrap it in a plate `div`. Gilt text is a gradient clipped to the letters, so a contrast check must read the gradient stops. Compare control results as changes from the start state, because the new CSS changes the start styles. Where the picture carries its gilt frame as a border (Priest, Shaman), measure the content box.
 
+## Small fixes (done 16 November 2026)
+
+Decided on 16 November 2026:
+
+- Volume numbers: the shelf wins. Only Druid, Hunter and Mage printed a number, and all three said II.
+- Old book names found during the check go too: Mage "The Aether Archives" and Warlock "THE BLACK GRIMOIRE". The "field guide" labels stay, because a field guide is a kind of book, not a book name.
+- Front page Shaman cover: the middle panel sits at the top of its frame, so the cut falls at the bottom and the wolf's head shows.
+- The front page keeps "nine 51-point builds" and "Research snapshot: 13 November 2026". They match the class pages.
+- Front page print: dropped, the user does not need it.
+- "New beginner text" leaves the Later list. More beginner text would be its own phase, with sources.
+
+Result:
+
+- Commit 3473284 on the branch `claude/small-fixes-da9bf9`, then this roadmap commit.
+- Text changes: Druid "COMPENDIUM · VOL. II" becomes "VOL. I". Mage "The Aether Archives" becomes "The Astral Codex" in 11 chapter labels and the footer, and the footer's "Volume II" becomes "Volume III". Warlock contents panel "THE BLACK GRIMOIRE" becomes "THE GRIMOIRE OF BOUND SOULS". Hunter's "Vol. II" already matched.
+- Front page: one CSS line (`.plate .triptych`) and its comment.
+- Tests in headless Edge: the Shaman picture fills its frame from the top at 320, 375, 768 and 1280px; no sideways scroll; 72 shelf and ribbon clicks at 1280 and 375px open the right view; 5 quiz paths at both widths give the right link, shelf mark and landing, and "Start again" clears the mark; the Druid, Mage and Warlock pages at 6 widths from 320 to 1920px; no console errors. The test scripts are not in the repo.
+- Test pitfall: the front page pictures below the first screen load lazily. Scroll a book into view and wait for `img.decode()` before measuring its picture.
+
 ## Later
 
-- New beginner text: now part of the user's text work (see above). It needs sources, because Claude cannot check game facts.
-- Print style for the front page: today it prints light text on white paper when background graphics are off.
-- Title images cut off at the top (reported 15 November 2026): on the front page, the Shaman cover crops its top.
-- The front page still says "nine 51-point builds" and "Research snapshot: 13 November 2026". Decide whether they need new words; the phase 3 check found nothing wrong with them.
+- Nothing open.
 
 ## Testing notes
 
