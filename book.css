@@ -52,18 +52,23 @@ code{font-size:.9em}
 /* ---------- the contents panel: dark leather with a gilt frame, like the librarian panel on the front page ---------- */
 .book-nav{position:sticky;top:24px;display:flex;flex-direction:column;max-height:calc(100vh - 48px);padding:26px 22px 24px;color:#f0e5cc;border:1px solid #000;border-radius:6px;background:radial-gradient(ellipse at 30% 0%,#ffffff12,transparent 60%),var(--leather);box-shadow:inset 2px 2px 0 #ffffff1f,inset -3px -3px 0 #0000004d,0 20px 40px #000c}
 .book-nav::after{content:'';position:absolute;inset:9px;border:1px solid var(--gold-dim);outline:1px solid var(--gold-dim);outline-offset:3px;pointer-events:none}
+.book-nav>svg{display:block;flex:none;width:56px;height:56px;margin:0 auto 8px}
 .nav-series{margin:0;color:var(--gold);font:14px var(--fell);letter-spacing:.16em;text-align:center}
 /* the gilt is a background seen through the letters */
 .nav-title{margin:4px 0 0;font:400 30px/1.1 var(--fell);letter-spacing:.04em;text-align:center;background:var(--gilt);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.nav-title em{font-style:normal}
+a.nav-title{display:block;text-decoration:none}
+.nav-title :is(em,span){font-style:normal}
+.nav-title small{display:block;margin-top:4px;color:var(--gold);font-size:14px;letter-spacing:.12em;-webkit-text-fill-color:var(--gold)}
 .nav-divider{height:1px;margin:0 0 8px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
 /* the list scrolls inside the panel when the screen is short, so the gilt frame stays still */
 .nav-body{flex:0 1 auto;min-height:0;overflow:auto}
+.nav-label{margin:4px 0 6px;color:var(--gold);font:13px var(--fell);letter-spacing:.14em}
 .nav-body ol{margin:0;padding:0;list-style:none;font-size:15px;line-height:1.35}
 .nav-body li{margin:0}
-.nav-body a{display:grid;grid-template-columns:30px 1fr;padding:7px 4px;color:#e9dcc0;text-decoration:none;border-bottom:1px solid #d9b56b26}
-.nav-body a span{color:var(--gold);font-family:var(--fell)}
+.nav-body a{display:flex;padding:7px 4px;color:#e9dcc0;text-decoration:none;border-bottom:1px solid #d9b56b26}
+.nav-body a span{flex:0 0 30px;color:var(--gold);font-family:var(--fell)}
 .nav-body a:hover,.nav-body a.active{color:#fff;background:linear-gradient(90deg,#d9b56b26,transparent)}
+.nav-note{margin-top:14px;color:#d8c9a6;font-size:13px;line-height:1.5;letter-spacing:.06em;text-align:center}
 .book-nav :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 /* inside the scrolling list the ring goes inward, so the list edge does not cut it */
 .nav-body :focus-visible{outline-offset:-2px}
@@ -95,7 +100,7 @@ main>:is(header,section,footer):not(:first-child){margin-top:46px}
 main>section h2::after{content:var(--ornament) / '';display:block;width:min(320px,80%);margin:18px auto 28px;color:var(--rule);font-size:20px;line-height:1;text-align:center;background:linear-gradient(90deg,transparent,var(--rule) 44%,transparent 44% 56%,var(--rule) 56%,transparent) center/100% 1px no-repeat}
 .lead{font-size:20px;line-height:1.6}
 /* drop cap on the first paragraph after a chapter title */
-main>section h2+.lead::first-letter,.hero .deck::first-letter{float:left;padding:6px 10px 0 0;color:var(--accent);font:4em/.82 var(--fell)}
+main>section h2+:is(.lead,.chapter-lead)::first-letter,.hero :is(.deck,.desc)::first-letter{float:left;padding:6px 10px 0 0;color:var(--accent);font:4em/.82 var(--fell)}
 
 /* ---------- the cover: a title page with the full picture in a gilt frame ---------- */
 .hero{text-align:center}
@@ -104,8 +109,8 @@ main>section h2+.lead::first-letter,.hero .deck::first-letter{float:left;padding
 .hero .compendium-series-subtitle{margin:10px 0 0;color:var(--ink-2);font-size:22px;font-style:italic}
 .frontis{max-width:640px;margin:26px auto 8px;border:6px solid transparent;background:linear-gradient(145deg,#f0d38c,#8d6a2c 55%,#d8b46a) border-box;box-shadow:0 8px 20px #0006}
 .frontis img{display:block;width:100%;height:auto}
-.hero .deck{max-width:600px;margin:22px auto 0;font-size:19px;text-align:left}
-.chip{display:inline-block;padding:2px 10px;color:var(--ink-2);font:15px var(--fell);letter-spacing:.06em;border:1px solid var(--line);border-radius:3px}
+.hero :is(.deck,.desc){max-width:600px;margin:22px auto 0;font-size:19px;text-align:left}
+.chip,.pill{display:inline-block;padding:2px 10px;color:var(--ink-2);font:15px var(--fell);letter-spacing:.06em;border:1px solid var(--line);border-radius:3px}
 .chip::before{content:var(--ornament) ' ' / '';color:var(--accent)}
 
 /* ---------- notes from the editors, shared by all nine books ---------- */
@@ -132,11 +137,12 @@ main>section h2+.lead::first-letter,.hero .deck::first-letter{float:left;padding
 .grid3{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
 
 /* ---------- plates: interactive parts and figures, glued into the book in a framed panel.
-   The header is a band of dark leather tinted with the class color: the plate's first h3, or a band with the ornament ---------- */
+   The header is a band of dark leather tinted with the class color: the plate's first child when it is an h3
+   or has the class plate-head, else a band with the ornament ---------- */
 .plate{clear:both;margin:34px 9px;padding:0 16px 16px;background:var(--plate);border:1px solid var(--frame);outline:1px solid #b8955a;outline-offset:4px;box-shadow:0 0 0 8px var(--plate),0 0 0 9px var(--frame),0 10px 26px #0005}
-.plate>h3:first-child,.plate::before{display:block;margin:0 -16px 16px;padding:10px 16px;color:#f2dca4;background:var(--leather);font-size:20px;letter-spacing:.04em}
+.plate>:is(h3,.plate-head):first-child,.plate::before{display:block;margin:0 -16px 16px;padding:10px 16px;color:#f2dca4;background:var(--leather);font-size:20px;letter-spacing:.04em}
 .plate::before{content:var(--ornament) / '';padding:3px 16px;font-size:14px;line-height:1.2;text-align:center;color:var(--gold)}
-.plate:has(>h3:first-child)::before{content:none}
+.plate:has(>:is(h3,.plate-head):first-child)::before{content:none}
 .plate label{color:var(--ink-2);font:14px var(--fell);letter-spacing:.08em}
 /* dropdowns and text fields on ledger lines */
 select,input:not([type]),input[type=text],input[type=search]{padding:4px 2px;color:var(--ink);font:16px var(--serif);background:transparent;border:0;border-bottom:1px solid var(--ink-2);border-radius:0}
@@ -166,7 +172,7 @@ td{padding:8px;vertical-align:top;border-bottom:1px solid var(--line)}
   html{scroll-padding-top:76px}
   body{display:block;padding:0 0 60px}
   .book-nav{top:0;z-index:20;flex-direction:row;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:0 10px;max-height:none;padding:8px 14px 0;border-width:0 0 1px;border-color:var(--gold-dim);border-radius:0;box-shadow:0 6px 14px #000a}
-  .book-nav::after,.nav-series,.nav-title,.nav-divider{display:none}
+  .book-nav::after,.book-nav>svg,.book-nav :is(.nav-series,.nav-title,.nav-divider){display:none}
   .nav-toggle{display:block}
   .nav-toggle[hidden]{display:none}
   .book-nav .vol-switch{margin:-8px 0 0;gap:4px}
@@ -209,7 +215,7 @@ td{padding:8px;vertical-align:top;border-bottom:1px solid var(--line)}
   main>section{break-before:page}
   .hero .frontis{max-width:150mm;box-shadow:none}
   .plate{margin:18px 0;outline:0;box-shadow:none;break-inside:auto}
-  .plate>h3:first-child,.plate::before{color:var(--ink);background:none;border-bottom:2px solid var(--accent)}
+  .plate>:is(h3,.plate-head):first-child,.plate::before{color:var(--ink);background:none;border-bottom:2px solid var(--accent)}
   .panel,.dossier,.reader-field-exercise{box-shadow:none}
   .reader-fieldnote,.reader-hotfix{background:none;box-shadow:none}
   a{text-decoration:none}

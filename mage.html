@@ -147,6 +147,8 @@
 .page-end strong{display:block;margin:6px 0;font:30px var(--fell)}
 /* the printed encounter archive: all 45 approaches, shown only in print */
 .print-only{display:none}
+/* on phones the table shrinks to its content and the name column stays narrow, so the scores beside it have room */
+@media (max-width:600px){.atlas-table{min-width:0}.atlas-table td:first-child{min-width:110px}}
 @media (max-width:720px){
   .flow .arrow{display:none}
   .spotlight{grid-template-columns:1fr}
@@ -261,7 +263,7 @@
   <nav id="toc" class="book-nav" aria-label="Chapter navigation">
     <div class="nav-series">The Astral Codex</div>
     <div class="nav-title">FOREVER<br><em>MAGE</em></div>
-    <button class="nav-toggle" type="button" aria-expanded="false" hidden>Contents</button>
+    <button class="nav-toggle" type="button" aria-controls="toc" aria-expanded="false" hidden>Contents</button>
     <div class="nav-divider"></div>
     <div class="nav-body">
       <ol>
