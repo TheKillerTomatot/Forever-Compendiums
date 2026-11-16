@@ -1,64 +1,188 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><title>The Forever Warrior Compendium: The Iron Vanguard</title><meta name="description" content="The Forever Warrior Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><style>
-:root{--obsidian:#08090b;--ink:#0d1014;--steel:#11171b;--raised:#182025;--upper:#222729;--line:#3f4545;--line2:#5a4a3b;--gold:#dcc18c;--pale:#e9e0d4;--mute:#b5b6b4;--bronze:#b58a58;--red:#b84843;--crimson:#802c2c;--iron:#82949a;--paper:#e8e3d8;--shadow:0 18px 52px #0007}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--pale);background:radial-gradient(ellipse at 80% 4%,#37252280 0,transparent 28%),radial-gradient(ellipse at 2% 28%,#1b333380 0,transparent 36%),#080a0c;font:15px/1.7 'Segoe UI',Arial,system-ui,sans-serif}body:before{content:"";position:fixed;inset:0;opacity:.045;pointer-events:none;background-image:repeating-linear-gradient(4deg,transparent 0 3px,#ffffff 3px 4px);z-index:10}a{color:#ead19c;text-decoration:none;border-bottom:1px solid #98825c80}a:hover{color:white;border-color:var(--gold)}strong,b{color:#fff}p{margin:0 0 15px}h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;font-weight:500;line-height:1.12}h1{font-size:clamp(50px,6.2vw,95px);letter-spacing:-.038em;margin:0}h2{font-size:clamp(32px,3.6vw,51px);margin:0 0 15px;letter-spacing:-.03em}h3{font-size:25px;margin:0 0 12px}h4{font-family:'Segoe UI',Arial,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin:0 0 11px}ul{padding-left:19px;margin:0 0 15px}li{margin:5px 0}small,.fine{font-size:12px;color:var(--mute)}.overline{font-size:10px;letter-spacing:.23em;font-weight:800;color:var(--gold);text-transform:uppercase;margin-bottom:11px}.muted{color:var(--mute)}.ref{border:0;color:#e5c48b;font-size:11px;white-space:nowrap}.ref:hover{color:white}
-#toc{position:fixed;z-index:80;left:0;top:0;bottom:0;width:246px;overflow:auto;background:linear-gradient(160deg,#0a1015f9,#0a0b0cf5);border-right:1px solid #71604b;box-shadow:10px 0 50px #0006;padding:29px 19px}#toc .crest{width:53px;height:70px;margin:0 auto 15px}#toc .side-name{text-align:center;font:24px/1.07 Georgia,serif;letter-spacing:.13em;color:#e4d8c4;margin-bottom:5px}#toc .side-sub{color:#ad8961;font-size:10px;letter-spacing:.25em;text-align:center;margin-bottom:25px}#toc a{display:flex;gap:9px;align-items:flex-start;padding:10px 2px;border:0;border-bottom:1px solid #323536;font-size:11px;color:#adaeaa;line-height:1.4}#toc a span:first-child{color:#b9925b;font-size:11px;flex:0 0 22px}#toc a:hover,#toc a.active{color:#fff}#toc a.active{border-bottom-color:var(--bronze);background:linear-gradient(90deg,#8f393127,transparent)}.side-bottom{font-size:10px;color:#989a96;margin-top:26px;line-height:1.7}.side-bottom strong{color:#d0b47b}.nav-progress{position:fixed;left:0;top:0;width:3px;background:var(--red);height:0;z-index:90;transition:height .2s}#mobile-nav{display:none}main{margin-left:246px;overflow:hidden}section{scroll-margin-top:20px}.hero{position:relative;min-height:740px;height:min(920px,100vh);display:flex;align-items:flex-end;padding:60px clamp(27px,5vw,90px) 75px;background-position:center 36%;background-size:cover;overflow:hidden}.hero:before{position:absolute;content:"";inset:0;background:linear-gradient(180deg,#090a0e23 0%,transparent 32%,#07080972 62%,#07090bdc 89%,#080a0cff 100%),linear-gradient(95deg,#090c10b0,transparent 65%)}.hero:after{content:"";position:absolute;inset:14px;border:1px solid #e2bf6f26;pointer-events:none}.hero-content{z-index:2;position:relative;max-width:1020px;text-shadow:0 3px 15px #000b}.hero-kicker{color:#f5d4a0;letter-spacing:.28em;font-size:12px;text-transform:uppercase;font-weight:800;margin-bottom:22px}.hero h1 .first{display:block;color:#f2eee8}.hero h1 .last{display:block;color:#d7b375;font-weight:400}.hero-rule{height:2px;width:170px;background:linear-gradient(90deg,#d8aa70,#772e2d,transparent);margin:23px 0}.hero-subtitle{font:27px Georgia,serif;color:#e9dac5;margin-bottom:18px}.hero-deck{font-size:18px;line-height:1.57;color:#e4dddc;max-width:800px}.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:23px}.pill{display:inline-flex;gap:5px;align-items:center;border:1px solid #84705d;border-radius:30px;background:#0b0e10b5;padding:5px 11px;color:#ddd6cd;font-size:11px;letter-spacing:.08em}.hero .edition{margin-top:23px;font-size:10px;letter-spacing:.15em;color:#ddd0c2}.hero-corner{position:absolute;z-index:2;right:45px;bottom:42px;color:#e4c69376;font-size:12px;letter-spacing:.15em}
-.chapter{padding:78px clamp(25px,4.7vw,86px);border-top:1px solid #4d4741;position:relative}.chapter:nth-of-type(even){background:linear-gradient(90deg,#101416 0%,#0b0e11 100%)}.chapter:before{content:"";position:absolute;top:0;right:0;width:42%;height:240px;background:radial-gradient(ellipse at top right,#7031242c,transparent 75%);pointer-events:none}.shell{position:relative;max-width:1410px;margin:auto}.section-index{display:flex;gap:12px;align-items:center;font-size:10px;letter-spacing:.2em;font-weight:800;color:#baa685;margin-bottom:20px}.section-index .section-rule{width:28px;height:2px;background:var(--red)}.section-index strong{margin-left:auto;color:#7e8686;font-weight:700}.chapter-top{display:grid;grid-template-columns:105px minmax(0,1fr);gap:22px;align-items:start;margin-bottom:35px}.chapter-number{font:italic 91px/1 Georgia,serif;color:#a075509c}.chapter-lead{font-size:clamp(17px,1.8vw,21px);color:#c9c5bf;max-width:1020px;line-height:1.57}.chapter h2:after{content:"";display:block;width:138px;height:2px;margin-top:20px;background:linear-gradient(90deg,#d5a85d,#a74642,transparent)}.rule{height:1px;background:linear-gradient(90deg,var(--bronze),#504742,transparent);margin:30px 0}.panel,.spec-tile,.dossier,.compare,.weapon-card{background:linear-gradient(135deg,#1a2124,#101518);border:1px solid #51504a;border-radius:13px;padding:23px;box-shadow:var(--shadow);break-inside:avoid}.panel p,.panel li,.spec-tile p{color:#cbc9c5}.panel p:last-child{margin-bottom:0}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.callout{border-left:3px solid var(--bronze);padding:17px 20px;background:#201c1b;border-radius:0 10px 10px 0;margin:20px 0;color:#e0d6c9}.callout.danger{border-left-color:#c85d50;background:#2b1a1b}.callout.ok{border-left-color:#91a6a3;background:#152225}.callout strong{color:var(--gold)}.callout p:last-child{margin-bottom:0}.accent-arm{--accent:#d6b077;--accent-bg:#292218}.accent-fury{--accent:#e67e64;--accent-bg:#321c19}.accent-prot{--accent:#a6b7ba;--accent-bg:#1b282c}.spec-tile{border-top:3px solid var(--accent);background:radial-gradient(ellipse at top right,var(--accent-bg),transparent 60%),#151a1d;min-height:300px}.spec-tile .spec-icon{font:54px Georgia,serif;color:var(--accent);margin:0 0 10px}.spec-tile h3{color:var(--accent);font-size:30px}.spec-tile .ordinal{font-size:10px;letter-spacing:.2em;color:#cec3b5}.stat{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #4d4b45;padding-top:7px;margin-top:10px;font-size:11px;color:#c0bab1}.stat .fillbar{height:5px;width:42%;background:#323a3e;border-radius:20px;overflow:hidden}.stat i{display:block;background:var(--accent);height:100%}.flow{display:flex;gap:9px;align-items:stretch;margin:19px 0;flex-wrap:wrap}.node{flex:1 1 140px;padding:17px 12px;border:1px solid #725d46;background:#24231f;border-radius:10px;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;min-height:98px}.node b{color:#f1d4a8;font-size:14px}.node span{font-size:11px;color:#bcb8ae;line-height:1.45;margin-top:5px}.node.red{border-color:#a04c45;background:#291c1d}.node.blue{border-color:#62818b;background:#18252a}.node.bronze{border-color:#9c7a4b;background:#28231a}.flow-arr{color:#d9b984;align-self:center;font-size:21px}.branch{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;gap:9px;margin:22px 0}.branch-box{border:1px solid #78654e;padding:17px 19px;background:#221f1a;border-radius:11px;min-height:99px}.branch-box b{display:block;color:#e9c78a}.branch-box small{display:block;margin-top:8px}.branch-join{text-align:center;font-size:23px;color:var(--gold)}.stance-box{border:1px solid #594e41;padding:21px;border-radius:15px;background:#171c1f}.stance-actions{display:flex;gap:7px;flex-wrap:wrap}.stance-actions button,.btn,.filters select{border:1px solid #77664e;background:#22282b;color:#ede2d5;padding:10px 14px;border-radius:8px;font-size:12px;cursor:pointer;font:inherit}.stance-actions button:focus-visible,.btn:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #d1ad74;outline-offset:2px}.stance-actions button.selected{background:#6b3430;color:white;border-color:#daae79}.stance-desc{min-height:74px;padding:18px 0 6px;color:#d3cebe}.resource-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:16px 0}.resource-grid div{border:1px solid #554338;background:#211a18;padding:15px 10px;border-radius:10px;text-align:center}.resource-grid b{font:24px Georgia,serif;color:var(--gold);display:block}.resource-grid small{font-size:10px;display:block}.range-row{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin:15px 0}.range-row label{font-size:12px;color:#e7c999}.range-row input{width:220px;max-width:100%;accent-color:#ac4d43}.readout{font:35px Georgia,serif;color:#e6c58e}.rage-meter{height:16px;border:1px solid #785747;border-radius:16px;background:repeating-linear-gradient(90deg,#2b2220 0px,#2b2220 23px,#322927 24px);overflow:hidden}.rage-meter>i{display:block;height:100%;background:linear-gradient(90deg,#a03d3b,#e4a155);transition:width .2s}.warning{color:#e2a69a;font-size:12px}.weapon-card{position:relative;padding-top:22px}.weapon-mark{font:49px Georgia,serif;color:#bc9964;float:right;opacity:.85}.weapon-card h3{font-size:24px}.weapon-card .chip-row{margin-top:14px}.chip-row{display:flex;flex-wrap:wrap;gap:6px}.chip{border:1px solid #76634e;border-radius:30px;padding:3px 9px;font-size:10px;letter-spacing:.06em;color:#d9c6af;background:#30292366}.decision{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.decision article{border:1px solid #525659;background:#1a2226;border-radius:10px;padding:17px}.decision strong{display:block;color:var(--gold);margin-bottom:8px}.decision small{line-height:1.7}
-.spec-heading{display:grid;grid-template-columns:110px minmax(0,1fr);gap:20px;align-items:center;margin:33px 0 23px}.round-emblem{border:1px solid var(--accent);color:var(--accent);background:radial-gradient(circle,#42322640,#10171a 60%);width:105px;height:105px;border-radius:50%;display:grid;place-items:center;font:52px Georgia,serif;position:relative}.round-emblem:after{content:"";position:absolute;inset:9px;border:1px dashed currentColor;border-radius:50%;opacity:.55}.spec-heading p{color:#c2bdb7;margin:0}.spec-heading h3{font-size:32px;color:var(--accent);margin-bottom:8px}.vs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:20px 0}.compare{border-top:2px solid var(--accent);background:linear-gradient(160deg,var(--accent-bg),#13191b 50%);box-shadow:none}.compare h3{color:#eee0cc;font-size:23px}.compare .smalltitle{font-size:10px;letter-spacing:.19em;color:var(--accent);text-transform:uppercase}.compare ul{padding-left:19px;color:#c6c2ba;font-size:13px}.compare .verdict-mini{font-size:12px;color:#dcc9b3;border-top:1px solid #645646;padding-top:10px}.talent-mini{font:11px monospace;color:#dbbd8c}.dossier{padding:29px;margin:25px 0 38px;background:radial-gradient(ellipse at 96% -15%,var(--accent-bg),transparent 50%),linear-gradient(135deg,#1b2124,#0f1315);border-color:#675b4d;box-shadow:0 25px 80px #0009;break-inside:auto}.dossier-head{display:grid;grid-template-columns:76px 1fr auto;gap:17px;align-items:center;padding-bottom:18px;margin-bottom:20px;border-bottom:1px solid #655542}.dossier-no{font:italic 55px Georgia,serif;color:var(--accent)}.dossier h3{font-size:clamp(28px,2.8vw,41px);margin:0 0 5px}.dossier-head .subtitle{font:italic 17px Georgia,serif;color:#c1b7a5;margin:0}.status{display:inline-block;font-size:10px;letter-spacing:.09em;border:1px solid #9b8465;border-radius:18px;padding:5px 9px;max-width:170px;text-align:center;color:#e6c89d}.dossier-intro{font-size:16px;color:#d7cdc1;max-width:1100px}.ribbons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:21px 0}.ribbon{padding:12px;background:#24272a;border:1px solid #595650;border-radius:9px}.ribbon span{font-size:10px;display:block;color:#adaaa2;letter-spacing:.05em}.ribbon b{font-size:13px}.dossier-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:21px 0}.dossier-grid .panel{box-shadow:none}.dossier-grid .panel h3{font-size:20px;color:#eee3d0}.dossier-grid .panel .detail-line{padding:9px 0;border-bottom:1px solid #4a4741;font-size:13px;color:#d3ccc2}.dossier-grid .panel .detail-line:last-child{border:0}.detail-line b{color:#e2c392}.talent-tree{margin-bottom:13px;padding:11px 13px;background:#12191c;border:1px solid #3d4949;border-radius:9px}.talent-tree .tree-name{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.11em;color:#dfc18d;text-transform:uppercase;margin-bottom:9px}.talent-list{display:flex;flex-wrap:wrap;gap:5px}.t-chip{display:inline-block;color:#d6d2cc;font-size:11px;border:1px solid #474d4d;border-radius:20px;background:#252c2e;padding:3px 8px}.t-chip b{color:#e9b97e}.check-row{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:#b8c9c1;margin:9px 0}.checkmark{color:#add5b7}.priority-stack{counter-reset:prio;list-style:none;padding:0;margin:0}.priority-stack li{counter-increment:prio;padding:9px 10px 9px 40px;position:relative;border-bottom:1px solid #424442;color:#d4d0c9;font-size:13px}.priority-stack li:before{content:counter(prio,decimal-leading-zero);position:absolute;left:0;top:8px;font:18px Georgia,serif;color:#e4b37a}.dossier-foot{border-top:1px solid #625448;padding-top:17px;margin-top:13px;color:#dac5b4;font-size:13px}.meterline{height:6px;border-radius:4px;background:#3b4345;overflow:hidden;margin-top:5px}.meterline i{display:block;height:100%;background:var(--accent)}.suitability{display:flex;gap:6px;flex-wrap:wrap}.suitability span{font-size:10px;border:1px solid #68625a;border-radius:6px;padding:4px 8px;background:#292725}
-.encounter-static{margin:23px 0 40px}.encounter-static h3{font-size:25px;margin-bottom:7px}.encounter-static .subline{color:#acb4b4;font-size:13px;margin-bottom:15px}.encounter-card{padding:18px;border-radius:11px;border:1px solid #55504b;background:#171d20}.encounter-card .minihead{font:20px Georgia,serif;color:#e4c797;margin-bottom:5px}.encounter-card ol{margin:10px 0 0;padding-left:20px}.encounter-card li{font-size:12px;color:#d2cbc1;line-height:1.52;margin:7px 0}.encounter-card li span{display:block;color:#a9b4b4;font-size:11px}.filters{display:flex;flex-wrap:wrap;gap:12px;margin:21px 0}.filters label{display:flex;flex-direction:column;gap:5px;color:#c1b9a9;font-size:11px;letter-spacing:.06em;text-transform:uppercase}.filters select{min-width:170px;max-width:100%;background:#1f2529;min-height:42px;letter-spacing:normal;text-transform:none}.interactive-output{border:1px solid #79634f;background:linear-gradient(160deg,#201d1b,#0f1518);padding:20px;border-radius:14px}.interactive-output .explore-list{display:grid;grid-template-columns:1fr;gap:16px}.explore-build{border-top:1px solid #625549;padding:20px 0}.explore-build:first-child{border-top:0}.explore-build h4{font:25px Georgia,serif;text-transform:none;letter-spacing:0;color:#ebd5b6}.explore-build .context{font-size:12px;color:#bcb5ac;margin-bottom:10px}.step-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.step{padding:12px;background:#242321;border:1px solid #5a4c40;border-radius:8px;min-height:145px}.step{position:relative}.step:not(:last-child):after{content:"→";position:absolute;right:-13px;top:50%;color:#e7b774;z-index:2;font-size:14px}.step .count{display:block;font:italic 26px Georgia,serif;color:var(--gold);margin-bottom:8px}.step b{font-size:12px;display:block;line-height:1.45}.step span{font-size:11px;color:#adb9b6;display:block;margin-top:7px;line-height:1.5}.inline-tag{font-size:10px;letter-spacing:.06em;border:1px solid #7b604b;border-radius:40px;padding:2px 8px;color:#d6b27f}.matrix-scroll{width:100%;overflow-x:auto;border-radius:12px;border:1px solid #56534c;box-shadow:var(--shadow)}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px solid #434845;padding:11px 10px;text-align:left;vertical-align:top}th{color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.08em;background:#22272a}tr:nth-child(even){background:#1a2023}td:first-child{color:#e4d6c1;font-weight:700}.matrix{min-width:1100px}.matrix th:not(:first-child){writing-mode:vertical-rl;transform:rotate(180deg);min-width:55px;height:145px;vertical-align:bottom;text-align:left;font-size:10px}.matrix td{text-align:center;padding:7px 6px}.matrix td:first-child{text-align:left;white-space:nowrap}.heat{display:inline-flex;width:37px;height:26px;align-items:center;justify-content:center;border-radius:6px;color:#fff;font-weight:800;font-size:12px;text-shadow:0 1px 2px #0007}.heat1{background:#353c42}.heat2{background:#59666a}.heat3{background:#786a59}.heat4{background:#aa7052}.heat5{background:#c6473b}.atlas-count{font-size:12px;color:#d2b883;margin:2px 0 14px}.choose-list{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.choose-list a{display:block;border:1px solid #675747;border-radius:9px;background:#1d2224;padding:14px;color:#ded0bf;font-size:13px}.choose-list a b{display:block;font:19px Georgia,serif;color:#e9c78e;margin-bottom:4px}.source-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.source-item{padding:16px;border:1px solid #56514b;border-radius:9px;background:#151b1f}.source-item a{font-size:14px;color:#e9c58c}.source-item small{display:block;margin-top:6px}.foot{padding:25px clamp(25px,4.7vw,86px) 50px;color:#aaa49e;border-top:1px solid #544941;font-size:12px}.foot .shell{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.backtop{position:fixed;right:22px;bottom:22px;z-index:60;background:#302c26dc;border:1px solid #a38657;color:white;padding:10px 14px;border-radius:10px;font-size:12px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}.backtop.visible{opacity:1;pointer-events:auto}
-@media(max-width:1240px){#toc{width:205px;padding:20px 12px}main{margin-left:205px}.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.resource-grid{grid-template-columns:repeat(3,1fr)}.dossier-head{grid-template-columns:65px 1fr;}.status{grid-column:2}}
-@media(max-width:1000px){#toc{display:none}main{margin-left:0}#mobile-nav{display:flex;position:fixed;top:12px;left:12px;z-index:80;border:1px solid #a18660;border-radius:9px;padding:9px 13px;background:#11171ce8;color:#eee4d8;font-size:12px;cursor:pointer}#toc.open{display:block;width:270px;z-index:79;box-shadow:0 0 0 999vmax #0008}.nav-progress{left:0}.hero{min-height:690px;height:86vh}.vs-grid,.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.decision{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){body{font-size:14px}.hero{min-height:680px;height:auto;padding:105px 24px 52px;background-position:57% center}.hero h1{font-size:clamp(48px,11vw,69px)}.hero-subtitle{font-size:21px}.hero-deck{font-size:16px}.hero-corner{display:none}.chapter{padding:53px 20px}.chapter-top{grid-template-columns:1fr;gap:0}.chapter-number{font-size:59px}.grid2,.grid3,.grid4,.vs-grid,.dossier-grid,.source-list,.choose-list{grid-template-columns:1fr}.dossier{padding:18px}.dossier-head{grid-template-columns:50px 1fr;gap:12px}.dossier-no{font-size:42px}.dossier-head h3{font-size:27px}.ribbons{grid-template-columns:repeat(2,1fr)}.spec-heading{grid-template-columns:75px 1fr}.round-emblem{width:75px;height:75px;font-size:37px}.spec-heading h3{font-size:27px}.flow-arr{display:none}.flow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.branch{grid-template-columns:1fr}.branch-join{transform:rotate(90deg)}.resource-grid{grid-template-columns:repeat(2,1fr)}.decision{grid-template-columns:1fr}.step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.step:after{display:none}.filters label{width:100%}.filters select{width:100%}.chapter-lead{font-size:17px}.weapon-mark{font-size:37px}}
-@media(max-width:390px){.step-grid,.flow{grid-template-columns:1fr}.ribbons{grid-template-columns:1fr}.hero h1{font-size:43px}}
-@media print{@page{size:A4;margin:12mm}html,body{background:#11171a!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}#toc,#mobile-nav,.notprint,.backtop,.nav-progress{display:none!important}main{margin:0}.hero{height:255mm;min-height:0;break-after:page;background-position:54% center}.chapter{padding:28px 6px;break-before:auto}.chapter-top{margin-bottom:23px}h2{font-size:31px}h3{font-size:20px}.chapter-number{font-size:67px}.chapter-lead{font-size:15px}.grid3,.vs-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4,.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.dossier{break-before:page;break-inside:auto;padding:17px}.dossier-head h3{font-size:29px}.panel,.weapon-card,.node,.spec-tile,.compare,.encounter-card{break-inside:avoid}.dossier-grid{grid-template-columns:1fr 1fr}.dossier p,.dossier li{font-size:11px}.ribbons{grid-template-columns:repeat(4,minmax(0,1fr))}.matrix-scroll{overflow:visible}.matrix{min-width:0;font-size:10px}.matrix th:not(:first-child){height:150px;min-width:23px;font-size:10px}.matrix td:first-child{max-width:110px;white-space:normal}.heat{height:16px;width:18px;font-size:10px}.source-list{grid-template-columns:repeat(2,1fr)}.interactive-output{display:none}.encounter-static{break-inside:avoid}.step-grid{grid-template-columns:repeat(5,1fr)}.foot{padding:14px}.callout{break-inside:avoid}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-
-/* Collection-wide editorial annotation, kept subordinate to each class theme. */
-.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
-.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
-.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
-@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
-
-/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
-.hero .series-manuscript {
-  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif;
-  letter-spacing: .06em;
-  text-transform: none;
-  max-width: 940px;
-  overflow-wrap: break-word;
-  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>The Forever Warrior Compendium: The Iron Vanguard</title><meta name="description" content="The Forever Warrior Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions.">
+<link rel="stylesheet" href="book.css">
+<style>
+/* Warrior (phase 4): the class ink, the ornament and the parts that only this book has. The shared book design is in book.css. */
+:root{--accent:#5e3f1c;--ornament:'✥';--arms:#6b4a1f;--fury:#8a2f24;--prot:#3b4f55}
+/* the specialization of a tile, a comparison or a dossier sets --accent locally */
+.accent-arm{--accent:var(--arms)}.accent-fury{--accent:var(--fury)}.accent-prot{--accent:var(--prot)}
+.muted{color:var(--ink-2)}
+.overline{margin-bottom:10px;color:var(--accent);font:14px var(--fell);letter-spacing:.14em}
+.ref{font-size:14px;white-space:nowrap}
+.read-more{color:var(--accent);font:13px var(--fell);letter-spacing:.08em}
+/* the reading progress line runs down the left edge; the back-to-top button shows after some scrolling */
+.nav-progress{position:fixed;top:0;left:0;z-index:30;width:3px;height:0;background:var(--gilt);transition:height .2s;pointer-events:none}
+.backtop{position:fixed;right:20px;bottom:20px;z-index:25;padding:8px 14px;color:#2a1a08;font:14px var(--fell);letter-spacing:.06em;background:var(--brass);border:1px solid var(--frame);border-radius:3px;box-shadow:0 2px 6px #0006;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+.backtop.visible{opacity:1;pointer-events:auto}
+/* cover */
+.hero h1 span{display:block}
+.hero h1 .last{color:var(--accent)}
+.hero-rule{width:170px;height:1px;margin:18px auto;background:linear-gradient(90deg,transparent,var(--rule),transparent)}
+.hero .hero-deck{max-width:600px;margin:22px auto 0;font-size:19px;text-align:left}
+.hero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.hero .edition{margin-top:18px;color:var(--ink-2);font:14px var(--fell);letter-spacing:.12em}
+.hero-corner{margin-top:10px;color:var(--ink-2);font:14px var(--fell);letter-spacing:.14em}
+/* chapter head: the section line, then the number above the title */
+.section-index{display:flex;align-items:center;gap:12px;margin-bottom:20px;color:var(--ink-2);font:14px var(--fell);letter-spacing:.14em}
+.section-index .section-rule{width:28px;height:2px;background:var(--accent)}
+.section-index strong{margin-left:auto;font-weight:400}
+.chapter-top{display:flex;flex-direction:column;margin-bottom:30px}
+.chapter-number{color:var(--accent);font:30px/1 var(--fell);text-align:center}
+.chapter-lead{font-size:20px;line-height:1.6}
+.rule{height:1px;margin:30px 0;background:linear-gradient(90deg,var(--rule),transparent)}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:14px}
+.callout{margin:20px 0;padding:16px 20px;font-size:16px;background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--arms)}
+.callout.danger{border-left-color:var(--fury)}.callout.ok{border-left-color:var(--prot)}
+.callout strong{color:var(--accent)}
+.callout p:last-child{margin-bottom:0}
+/* specialization tiles (links), stats, flows and branches */
+.spec-tile{display:block;min-height:280px;padding:20px;color:inherit;background:var(--card);border:1px solid #b8955a;border-top:3px solid var(--accent);box-shadow:var(--bookplate)}
+.spec-tile:hover{color:inherit}
+.spec-tile .spec-icon{margin:0 0 10px;color:var(--accent);font:48px var(--serif)}
+.spec-tile h3{color:var(--accent);font-size:28px;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:.15em}
+.spec-tile .ordinal{color:var(--ink-2);font:13px var(--fell);letter-spacing:.14em}
+.spec-tile p{font-size:16px}
+.stat{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;padding-top:7px;font-size:14px;border-top:1px solid var(--line)}
+.stat .fillbar{width:42%;height:6px;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);border-radius:3px}
+.stat i{display:block;height:100%;background:var(--accent)}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:9px;margin:19px 0}
+.node{display:flex;flex:1 1 140px;flex-direction:column;align-items:center;justify-content:center;min-height:96px;padding:14px 12px;text-align:center;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--arms);border-radius:3px}
+.node b{font-size:15px}
+.node span{margin-top:5px;color:var(--ink-2);font-size:13px;line-height:1.45}
+.node.red{border-top-color:var(--fury)}.node.blue{border-top-color:var(--prot)}.node.bronze{border-top-color:var(--arms)}
+.flow-arr{align-self:center;color:var(--ink-2);font-size:21px}
+.branch{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;gap:9px;margin:22px 0}
+.branch-box{min-height:96px;padding:16px 18px;background:var(--card);border:1px solid var(--line)}
+.branch-box b{display:block;color:var(--accent)}
+.branch-box small{display:block;margin-top:8px}
+.branch-join{color:var(--ink-2);font-size:23px;text-align:center}
+.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,100px),1fr));gap:8px;margin:16px 0}
+.resource-grid div{min-width:0;padding:14px 10px;text-align:center;overflow-wrap:anywhere;background:var(--card);border:1px solid var(--line)}
+.resource-grid b{display:block;color:var(--accent);font:24px var(--fell)}
+.resource-grid small{display:block;font-size:13px}
+/* plates: the stance fieldbook and the Rage calculator */
+.stance-actions{display:flex;flex-wrap:wrap;gap:7px}
+main button.selected{background:linear-gradient(180deg,#bf9142,#d9b062);box-shadow:inset 0 2px 4px #0006}
+.stance-desc{min-height:74px;padding:16px 0 6px}
+.range-row{display:flex;flex-wrap:wrap;align-items:center;gap:15px;margin:15px 0}
+.range-row input{width:220px;max-width:100%}
+.readout{color:var(--accent);font:34px var(--fell)}
+/* the Rage bar: a ruled track and a bar in the class ink */
+.rage-meter{height:16px;overflow:hidden;background:repeating-linear-gradient(90deg,var(--paper-2) 0 23px,var(--line) 23px 24px);border:1px solid var(--frame);border-radius:3px}
+.rage-meter>i{display:block;height:100%;background:var(--fury);transition:width .2s}
+.warning{color:var(--fury);font-size:14px}
+/* weapons, decisions, comparisons */
+.weapon-card{position:relative;padding:22px 20px 20px;background:var(--card);border:1px solid #b8955a;box-shadow:var(--bookplate)}
+.weapon-mark{float:right;color:var(--accent);font:44px var(--serif)}
+.weapon-card h3{font-size:23px}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px}
+.weapon-card .chip-row{margin-top:14px}
+.decision{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:11px}
+.decision article{padding:16px;background:var(--card);border:1px solid var(--line)}
+.decision strong{display:block;margin-bottom:8px;color:var(--accent)}
+.spec-heading{display:grid;grid-template-columns:90px minmax(0,1fr);align-items:center;gap:20px;margin:33px 0 23px}
+.round-emblem{display:grid;place-items:center;width:84px;height:84px;color:var(--accent);font:42px var(--serif);border:1px solid currentColor;border-radius:50%}
+.spec-heading h3{margin-bottom:8px;color:var(--accent);font-size:30px}
+.spec-heading p{margin:0}
+.vs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:13px;margin:20px 0}
+.compare{padding:18px;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent)}
+.compare h3{font-size:22px}
+.compare .smalltitle{color:var(--accent);font:13px var(--fell);letter-spacing:.14em}
+.compare ul{font-size:15px}
+.compare .verdict-mini{padding-top:10px;font-size:14px;border-top:1px solid var(--line)}
+.talent-mini{color:var(--accent);font:14px var(--fell);letter-spacing:.04em}
+/* dossiers */
+.dossier{border-top:3px solid var(--accent)}
+.dossier-head{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:17px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.dossier-no{color:var(--accent);font:50px var(--fell)}
+.dossier h3{margin:0 0 5px;font-size:clamp(28px,2.8vw,36px)}
+.dossier-head .subtitle{margin:0;color:var(--ink-2);font-size:17px;font-style:italic}
+.status{display:inline-block;max-width:170px;padding:3px 9px;color:var(--ink-2);font:13px var(--fell);letter-spacing:.06em;text-align:center;border:1px solid var(--line);border-radius:3px}
+.dossier-intro{font-size:17px}
+.ribbons{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:21px 0}
+.ribbon{padding:12px;background:var(--paper-2);border:1px solid var(--line)}
+.ribbon span{display:block;color:var(--ink-2);font:13px var(--fell);letter-spacing:.05em}
+.ribbon b{font-size:15px}
+.dossier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px;margin:21px 0}
+.dossier-grid .panel h3{font-size:20px}
+.detail-line{padding:9px 0;font-size:15px;border-bottom:1px solid var(--line)}
+.detail-line:last-child{border:0}
+.detail-line b{color:var(--accent)}
+.talent-tree{margin-bottom:13px;padding:11px 13px;background:var(--paper-2);border:1px solid var(--line)}
+.talent-tree .tree-name{display:flex;justify-content:space-between;margin-bottom:8px;color:var(--accent);font:14px var(--fell);letter-spacing:.1em}
+.talent-list{display:flex;flex-wrap:wrap;gap:5px}
+.t-chip{display:inline-block;padding:2px 8px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.check-row{display:flex;align-items:flex-start;gap:10px;margin:9px 0;font-size:14px}
+.checkmark{color:var(--prot)}
+.priority-stack{margin:0;padding:0;list-style:none;counter-reset:prio}
+.priority-stack li{position:relative;padding:8px 10px 8px 40px;font-size:15px;border-bottom:1px solid var(--line);counter-increment:prio}
+.priority-stack li::before{content:counter(prio,decimal-leading-zero);position:absolute;top:8px;left:0;color:var(--accent);font:18px var(--fell)}
+.dossier-foot{margin-top:13px;padding-top:16px;font-size:14px;border-top:1px solid var(--line)}
+.meterline{height:6px;margin-top:5px;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);border-radius:3px}
+.meterline i{display:block;height:100%;background:var(--accent)}
+.suitability{display:flex;flex-wrap:wrap;gap:6px}
+.suitability span{padding:2px 8px;font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:3px}
+/* encounters, the explorer and the atlas */
+.encounter-static{margin:23px 0 40px}
+.encounter-static h3{margin-bottom:7px;font-size:25px}
+.encounter-static .subline{margin-bottom:15px;color:var(--ink-2);font-size:15px}
+.encounter-card{padding:16px;background:var(--card);border:1px solid var(--line)}
+.encounter-card .minihead{margin-bottom:5px;color:var(--accent);font:20px var(--fell)}
+.encounter-card ol{margin:10px 0 0;padding-left:20px}
+.encounter-card li{margin:7px 0;font-size:14px;line-height:1.5}
+.encounter-card li span{display:block;color:var(--ink-2);font-size:13px}
+.filters{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 16px}
+.filters label{display:flex;flex:1 1 170px;flex-direction:column;gap:2px;min-width:0}
+.filters select{width:100%;min-width:0}
+.interactive-output{padding:18px;background:var(--card);border:1px solid var(--line)}
+.explore-list{display:grid;gap:16px}
+.explore-build{padding:18px 0;border-top:1px solid var(--line)}
+.explore-build:first-child{border-top:0}
+.explore-build h4{font-size:23px}
+.explore-build .context{margin-bottom:10px;color:var(--ink-2);font-size:14px}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:9px}
+.step{min-height:130px;padding:10px;background:var(--paper-2);border:1px solid var(--line)}
+.step .count{display:block;margin-bottom:6px;color:var(--accent);font:24px var(--fell)}
+.step b{display:block;font-size:14px;line-height:1.45}
+.step span{display:block;margin-top:6px;color:var(--ink-2);font-size:13px;line-height:1.5}
+.inline-tag{padding:1px 8px;color:var(--accent);font:13px var(--fell);border:1px solid var(--line);border-radius:3px}
+.matrix-scroll{width:100%;overflow-x:auto}
+.matrix-scroll td:first-child{font-weight:700}
+/* the matrix: the column titles run vertically (read from the bottom up) so all twelve fit beside the names */
+.matrix{min-width:640px}
+.matrix thead tr{border-bottom:2px solid var(--ink-2)}
+.matrix th{border:0}
+.matrix th:not(:first-child){height:140px;min-width:34px;max-width:40px;padding:8px 2px;writing-mode:vertical-rl;transform:rotate(180deg);vertical-align:bottom}
+.matrix td{padding:6px 3px;text-align:center;vertical-align:middle}
+.matrix td:first-child{position:sticky;left:0;z-index:1;min-width:170px;padding-left:6px;text-align:left;white-space:nowrap;background:var(--plate)}
+.matrix tbody tr:hover td{background-color:#e6d8b6}
+.atlas-count{margin:0 0 12px;color:var(--ink-2);font-size:14px}
+.choose-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:11px}
+.choose-list a{display:block;padding:14px;color:inherit;font-size:15px;text-decoration:none;background:var(--card);border:1px solid var(--line)}
+.choose-list a b{display:block;margin-bottom:4px;font:20px var(--fell);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:.15em}
+/* sources and the last page */
+.source-item small{display:block;margin-top:6px}
+.foot{color:var(--ink-2);font-size:14px}
+.foot .shell{display:flex;flex-wrap:wrap;justify-content:space-between;gap:25px}
+@media (max-width:700px){
+  .dossier-head{grid-template-columns:50px 1fr;gap:12px}
+  .status{grid-column:2}
+  .spec-heading{grid-template-columns:75px 1fr}
+  .round-emblem{width:70px;height:70px;font-size:34px}
+  .flow-arr{display:none}
+  .branch{grid-template-columns:1fr}
+  .branch-join{transform:rotate(90deg)}
 }
-.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
-.hero .compendium-series-subtitle {
-  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif;
-  letter-spacing: .008em;
-  color: #f2d9a8;
-  max-width: 900px;
-  margin: 11px 0 15px;
-  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+@media (prefers-reduced-motion:reduce){.nav-progress,.backtop,.rage-meter>i{transition:none}}
+@media print{
+  .nav-progress,.backtop{display:none!important}
+  .dossier{break-before:page}
+  .matrix-scroll{overflow:visible}
+  .matrix{min-width:0}
+  .matrix td:first-child{position:static}
+  .rage-meter,.rage-meter>i,.stat i,.meterline i{print-color-adjust:exact;-webkit-print-color-adjust:exact}
 }
-@media (max-width: 650px) {
-  .hero .series-manuscript { font-size: 11px; letter-spacing: .025em; }
-  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px); margin: 8px 0 10px; }
-}
-
-/* Reader-first note, visually subordinate to the original manuscript design. */
-.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
-.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
-.reader-orientation p{margin:0;line-height:1.64}
-
-/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
-.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
-.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
-.reader-field-exercise p{margin:0;line-height:1.75}
-
-.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
-/* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
-.vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
-.vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
-.vol-switch button:hover{border-color:currentColor}
-.vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
-.vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
-@media print{.vol-switch{display:none}}
+/* on phones the table shrinks to its content and the name column stays narrow, so the scores beside it have room */
+@media (max-width:600px){.matrix{min-width:0}.matrix td:first-child{min-width:110px}}
 </style></head>
 <body>
   <script>
@@ -72,7 +196,7 @@
       advanced:['#evidence','#characters','#encounters','#atlas']
     };
     const MENU='#toc';
-    const SWITCH_BEFORE='#toc a'; // the switch goes right before this element
+    const SWITCH_BEFORE='#toc .nav-divider'; // the switch goes right before this element
     const LABELS={primer:'Primer',advanced:'Advanced',complete:'Complete'};
     const style=document.createElement('style');
     document.head.append(style);
@@ -146,26 +270,46 @@
   })();
   </script>
   <div class="nav-progress" id="nav-progress"></div>
-  <button id="mobile-nav" class="notprint" type="button" aria-expanded="false" aria-controls="toc"><span aria-hidden="true">☰</span> &nbsp; CHAPTERS</button>
-  <nav id="toc" aria-label="Compendium chapters"><svg viewBox="0 0 90 100" class="crest" aria-hidden="true"><path d="M45 4 80 17v30Q77 75 45 94 13 75 10 47V17Z" fill="#1d272b" stroke="#c09c65" stroke-width="3"/><path d="M45 17v58M25 34l40 25M65 34 25 59" stroke="#a3493d" stroke-width="7" stroke-linecap="round"/><path d="M45 11 73 22v25Q69 67 45 83 21 67 17 47V22Z" fill="none" stroke="#d0b181" stroke-width="1"/></svg><div class="side-name">THE IRON<br>VANGUARD</div>
-    <div class="side-sub">A WARRIOR FIELD GUIDE</div>
-    <a href="#begin"><span>00</span><span>The Opening War Cry</span></a>
-    <a href="#foundation"><span>01</span><span>Rage, Weapons &amp; Stances</span></a>
-    <a href="#arms"><span>02</span><span>The Weaponmaster’s Hall</span></a>
-    <a href="#fury"><span>03</span><span>The Berserker’s Forge</span></a>
-    <a href="#protection"><span>04</span><span>The Iron Fortress</span></a>
-    <a href="#journey"><span>05</span><span>Leveling &amp; Endgame</span></a>
-    <a href="#evidence"><span>06</span><span>Battlefield Intelligence</span></a>
-    <a href="#characters"><span>07</span><span>Character Dossiers</span></a>
-    <a href="#encounters"><span>08</span><span>Encounter plans</span></a>
-    <a href="#atlas"><span>09</span><span>The Iron Vanguard Atlas</span></a>
-    <a href="#sources"><span>10</span><span>Sources &amp; Limits</span></a>
-    <div class="side-bottom"><strong>THE LIVE EDITION</strong><p>Client talent map 1.60.1.70938 · 13 November 2026</p>
-      <p>character dossiers · 45 encounter plans · 12 comparison dimensions</p>
+  <nav id="toc" class="book-nav" aria-label="Compendium chapters">
+    <svg viewBox="0 0 90 100" class="crest" aria-hidden="true"><path d="M45 4 80 17v30Q77 75 45 94 13 75 10 47V17Z" fill="#1d272b" stroke="#c09c65" stroke-width="3"/><path d="M45 17v58M25 34l40 25M65 34 25 59" stroke="#a3493d" stroke-width="7" stroke-linecap="round"/><path d="M45 11 73 22v25Q69 67 45 83 21 67 17 47V22Z" fill="none" stroke="#d0b181" stroke-width="1"/></svg>
+    <div class="nav-series">A WARRIOR FIELD GUIDE</div>
+    <div class="nav-title">THE IRON<br>VANGUARD</div>
+    <button class="nav-toggle" type="button" aria-controls="toc" aria-expanded="false" hidden>Contents</button>
+    <div class="nav-divider"></div>
+    <div class="nav-body">
+      <ol>
+        <li><a href="#begin"><span>00</span>The Opening War Cry</a></li>
+        <li><a href="#foundation"><span>01</span>Rage, Weapons &amp; Stances</a></li>
+        <li><a href="#arms"><span>02</span>The Weaponmaster’s Hall</a></li>
+        <li><a href="#fury"><span>03</span>The Berserker’s Forge</a></li>
+        <li><a href="#protection"><span>04</span>The Iron Fortress</a></li>
+        <li><a href="#journey"><span>05</span>Leveling &amp; Endgame</a></li>
+        <li><a href="#evidence"><span>06</span>Battlefield Intelligence</a></li>
+        <li><a href="#characters"><span>07</span>Character Dossiers</a></li>
+        <li><a href="#encounters"><span>08</span>Encounter plans</a></li>
+        <li><a href="#atlas"><span>09</span>The Iron Vanguard Atlas</a></li>
+        <li><a href="#sources"><span>10</span>Sources &amp; Limits</a></li>
+      </ol>
+      <div class="nav-note"><strong>THE LIVE EDITION</strong><br>Client talent map 1.60.1.70938 · 13 November 2026<br>character dossiers · 45 encounter plans · 12 comparison dimensions</div>
     </div>
   </nav>
+  <script>
+  /* Contents button (phase 4): on narrow screens the chapter list folds away under this button.
+     Without JavaScript the button stays hidden and the list stays open. */
+  (()=>{
+    const nav=document.querySelector('.book-nav');
+    const button=nav.querySelector('.nav-toggle');
+    const show=open=>{nav.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));};
+    nav.classList.add('js');
+    button.hidden=false;
+    button.addEventListener('click',()=>show(!nav.classList.contains('open')));
+    // Close the list after a chapter is chosen, and on Escape.
+    nav.querySelector('.nav-body').addEventListener('click',e=>{if(e.target.closest('a'))show(false);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){show(false);button.focus();}});
+  })();
+  </script>
   <main>
-    <header id="begin" class="hero" aria-label="Original cinematic illustration of an armored warrior above a burning fortress" style="background-image:url('images/warrior-hero.jpg')">
+    <header id="begin" class="hero">
       <div class="hero-content">
         <div class="hero-kicker series-manuscript">The Iron Vanguard<span class="series-sep"> / </span>A Soldier’s Testament</div>
         <h1>
@@ -175,6 +319,7 @@
         </h1>
         <div class="hero-rule"></div>
         <div class="hero-subtitle compendium-series-subtitle">The Iron Vanguard: Oaths Forged in Battle</div>
+        <figure class="frontis"><img src="images/warrior-hero.jpg" alt="Original cinematic illustration of an armored warrior above a burning fortress" width="1536" height="1024"></figure>
         <p class="hero-deck">Steel is only as useful as the judgment behind it. Learn how Rage is earned, how a stance changes your choices and why the shield that holds may win a battle the sword cannot.</p>
         <div class="hero-meta">
           <span class="pill">⚔ Arms / Fury / Protection</span>
@@ -182,7 +327,7 @@
           <span class="pill">✥ Interactive battle atlas</span>
           <span class="pill">◈ Client 70938</span>
         </div>
-        <div class="edition">INDEPENDENT FOREVER EDITION &nbsp; · &nbsp; COMPILED 13 NOVEMBER 2026 &nbsp; · &nbsp; ORIGINAL COVER ILLUSTRATION</div>
+        <div class="edition">INDEPENDENT FOREVER EDITION &nbsp; · &nbsp; COMPILED 13 NOVEMBER 2026</div>
       </div>
       <div class="hero-corner">FORTITUDE &nbsp; • &nbsp; FURY &nbsp; • &nbsp; STEEL</div>
     </header>
@@ -348,8 +493,8 @@
         </div>
         <div class="callout"><strong>Critical-strike precision.</strong> Blizzard’s October update increased the bonus Rage from <em>critical basic weapon attacks</em> to 100% above non-critical attacks. Do not assume a Mortal Strike critical hit itself refunds Rage the way a critical auto attack does. Weapon speed normalizes Rage generation, so higher white damage alone does not proportionally increase Rage. Incoming-damage Rage ignores Armor and absorbs. <a class="ref" href="#source-01" title="Reference 01">[01]</a> <a class="ref" href="#source-02" title="Reference 02">[02]</a> <a class="ref" href="#source-07" title="Reference 07">[07]</a> <a class="ref" href="#source-08" title="Reference 08">[08]</a></div>
         <div class="grid2">
-          <div class="stance-box">
-            <div class="overline">INTERACTIVE STANCE FIELDBOOK</div>
+          <div class="stance-box plate">
+            <div class="overline plate-head">INTERACTIVE STANCE FIELDBOOK</div>
             <h3>Three modes of the same fighter</h3>
             <div class="stance-actions" id="stance-actions">
               <button type="button" data-stance="Battle" class="selected" aria-pressed="true">⚔ Battle</button>
@@ -357,8 +502,8 @@
               <button type="button" data-stance="Defensive" aria-pressed="false">⛨ Defensive</button>
             </div>
             <div class="stance-desc" id="stance-desc">Battle Stance: balanced weapon pressure. Charge, Overpower, Spearing Strike and Sweeping Strikes live here. Threat is less favorable than Defensive.</div><small>Published stance permissions and bonuses; tooltips may be stance-specific. <a class="ref" href="#source-01" title="Reference 01">[01]</a> <a class="ref" href="#source-07" title="Reference 07">[07]</a> <a class="ref" href="#source-08" title="Reference 08">[08]</a> <a class="ref" href="#source-09" title="Reference 09">[09]</a></small></div>
-          <div class="stance-box">
-            <div class="overline">INTERACTIVE RETENTION CALCULATOR</div>
+          <div class="stance-box plate">
+            <div class="overline plate-head">INTERACTIVE RETENTION CALCULATOR</div>
             <h3>How much Rage survives a switch?</h3>
             <div class="range-row">
               <label for="rage-input">Starting Rage: <strong id="rage-val">70</strong></label>
@@ -3856,15 +4001,17 @@
           </div>
         </div>
         <div class="rule"></div>
-        <div class="overline">LIVE INTERACTION · THE COMMAND TABLE</div>
-        <h3>Battlefield scenario explorer</h3>
-        <p>Select a scenario and either one specialization or all nine builds. This panel updates locally, without a server or network dependency. Side-by-side comparison chapters above remain legible in print.</p>
-        <div class="filters notprint">
-          <label for="scenario-picker">Battlefield<select id="scenario-picker"><option value="elite">Dangerous solo elite</option><option value="pack">Four simultaneous melee enemies</option><option value="boss">Stationary dungeon boss</option><option value="mobile">Movement and target-switching boss</option><option value="pvp">PvP opponent trying to kite</option></select></label>
-          <label for="scenario-spec">War doctrine<select id="scenario-spec"><option value="All">All nine Warriors</option><option value="Arms">Arms only</option><option value="Fury">Fury only</option><option value="Protection">Protection only</option></select></label>
-        </div>
-        <div id="scenario-out" class="interactive-output" aria-live="polite">
-          <div class="fine">Interactive plans appear here when JavaScript is enabled. Every plan is already printed in the section above.</div>
+        <div class="plate">
+          <div class="overline plate-head">LIVE INTERACTION · THE COMMAND TABLE</div>
+          <h3>Battlefield scenario explorer</h3>
+          <p>Select a scenario and either one specialization or all nine builds. Side-by-side comparison chapters above remain legible in print.</p>
+          <div class="filters notprint">
+            <label for="scenario-picker">Battlefield<select id="scenario-picker"><option value="elite">Dangerous solo elite</option><option value="pack">Four simultaneous melee enemies</option><option value="boss">Stationary dungeon boss</option><option value="mobile">Movement and target-switching boss</option><option value="pvp">PvP opponent trying to kite</option></select></label>
+            <label for="scenario-spec">War doctrine<select id="scenario-spec"><option value="All">All nine Warriors</option><option value="Arms">Arms only</option><option value="Fury">Fury only</option><option value="Protection">Protection only</option></select></label>
+          </div>
+          <div id="scenario-out" class="interactive-output" aria-live="polite">
+            <div class="fine">Interactive plans appear here when JavaScript is enabled. Every plan is already printed in the section above.</div>
+          </div>
         </div>
       </div>
     </section>
@@ -3883,183 +4030,185 @@
           </div>
         </div>
         <p><strong>Reading the scale:</strong> 1 = limited in this archetype, 2 = situational, 3 = capable, 4 = strong emphasis, 5 = defining strength. <strong>Difficulty is inverted as a preference:</strong> 1 = straightforward, 5 = demanding. <strong>Equipment dependence</strong> 5 means highly dependent on quality/fit of gear, not “better.” These are editorial judgments supported by mechanical differences, <em>not</em> verified performance samples.</p>
-        <div class="filters notprint">
-          <label for="atlas-spec">Specialization<select id="atlas-spec"><option value="All">All specializations</option><option value="Arms">Arms</option><option value="Fury">Fury</option><option value="Protection">Protection</option></select></label>
-          <label for="atlas-weapon">Weapon configuration<select id="atlas-weapon"><option value="All">All configurations</option><option value="Two-handed">Two-handed</option><option value="Dual-wield">Dual wield</option><option value="Shield">Weapon + shield</option></select></label>
-          <label for="atlas-content">Preferred content<select id="atlas-content"><option value="All">All content</option><option value="Solo">Solo</option><option value="Dungeon">Dungeons</option><option value="Raid">Raids</option><option value="PvP">PvP</option></select></label>
-          <label for="atlas-sort">Sort by<select id="atlas-sort"><option value="default">Original muster order</option><option value="0">Burst · high to low</option><option value="1">Sustained damage · high to low</option><option value="2">Cleave · high to low</option><option value="3">Threat generation · high to low</option><option value="4">Mitigation · high to low</option><option value="5">Mobility · high to low</option><option value="6">Crowd control · high to low</option><option value="7">Rage efficiency · high to low</option><option value="8">Equipment dependence · high to low</option><option value="9">Solo performance · high to low</option><option value="10">Group contribution · high to low</option><option value="11">Difficulty · high to low</option></select></label>
-        </div>
-        <div class="atlas-count notprint" id="atlas-count">Showing all nine characters</div>
-        <div class="matrix-scroll">
-          <table class="matrix" id="atlas-matrix">
-            <thead>
-              <tr>
-                <th>Warrior · 51 points</th>
-                <th scope="col">Burst</th>
-                <th scope="col">Sustained damage</th>
-                <th scope="col">Cleave</th>
-                <th scope="col">Threat generation</th>
-                <th scope="col">Mitigation</th>
-                <th scope="col">Mobility</th>
-                <th scope="col">Crowd control</th>
-                <th scope="col">Rage efficiency</th>
-                <th scope="col">Equipment dependence</th>
-                <th scope="col">Solo performance</th>
-                <th scope="col">Group contribution</th>
-                <th scope="col">Difficulty</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-id="executioner">
-                <td><a href="#dossier-executioner">Executioner</a><br><small>Arms · 35/16/0</small></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-              </tr>
-              <tr data-id="reaver">
-                <td><a href="#dossier-reaver">Rend Reaver</a><br><small>Arms · 41/10/0</small></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-              </tr>
-              <tr data-id="marshal">
-                <td><a href="#dossier-marshal">Marshal</a><br><small>Arms · 31/20/0</small></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-              </tr>
-              <tr data-id="dual">
-                <td><a href="#dossier-dual">Dual-Blade</a><br><small>Fury · 17/34/0</small></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat1" aria-label="1 of 5" title="1 / 5">1</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-              </tr>
-              <tr data-id="bloodrage">
-                <td><a href="#dossier-bloodrage">Bloodrage</a><br><small>Fury · 5/39/7</small></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-              </tr>
-              <tr data-id="warstorm">
-                <td><a href="#dossier-warstorm">Warstorm</a><br><small>Fury · 13/38/0</small></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat1" aria-label="1 of 5" title="1 / 5">1</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-              </tr>
-              <tr data-id="bastion">
-                <td><a href="#dossier-bastion">Bastion</a><br><small>Protection · 5/0/46</small></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-              </tr>
-              <tr data-id="vanguard">
-                <td><a href="#dossier-vanguard">Vanguard</a><br><small>Protection · 8/12/31</small></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-              </tr>
-              <tr data-id="duelist">
-                <td><a href="#dossier-duelist">Shieldbound</a><br><small>Protection · 20/0/31</small></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
-                <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="plate">
+          <div class="filters notprint">
+            <label for="atlas-spec">Specialization<select id="atlas-spec"><option value="All">All specializations</option><option value="Arms">Arms</option><option value="Fury">Fury</option><option value="Protection">Protection</option></select></label>
+            <label for="atlas-weapon">Weapon configuration<select id="atlas-weapon"><option value="All">All configurations</option><option value="Two-handed">Two-handed</option><option value="Dual-wield">Dual wield</option><option value="Shield">Weapon + shield</option></select></label>
+            <label for="atlas-content">Preferred content<select id="atlas-content"><option value="All">All content</option><option value="Solo">Solo</option><option value="Dungeon">Dungeons</option><option value="Raid">Raids</option><option value="PvP">PvP</option></select></label>
+            <label for="atlas-sort">Sort by<select id="atlas-sort"><option value="default">Original muster order</option><option value="0">Burst · high to low</option><option value="1">Sustained damage · high to low</option><option value="2">Cleave · high to low</option><option value="3">Threat generation · high to low</option><option value="4">Mitigation · high to low</option><option value="5">Mobility · high to low</option><option value="6">Crowd control · high to low</option><option value="7">Rage efficiency · high to low</option><option value="8">Equipment dependence · high to low</option><option value="9">Solo performance · high to low</option><option value="10">Group contribution · high to low</option><option value="11">Difficulty · high to low</option></select></label>
+          </div>
+          <div class="atlas-count notprint" id="atlas-count">Showing all nine characters</div>
+          <div class="matrix-scroll">
+            <table class="matrix" id="atlas-matrix">
+              <thead>
+                <tr>
+                  <th>Warrior · 51 points</th>
+                  <th scope="col">Burst</th>
+                  <th scope="col">Sustained damage</th>
+                  <th scope="col">Cleave</th>
+                  <th scope="col">Threat generation</th>
+                  <th scope="col">Mitigation</th>
+                  <th scope="col">Mobility</th>
+                  <th scope="col">Crowd control</th>
+                  <th scope="col">Rage efficiency</th>
+                  <th scope="col">Equipment dependence</th>
+                  <th scope="col">Solo performance</th>
+                  <th scope="col">Group contribution</th>
+                  <th scope="col">Difficulty</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-id="executioner">
+                  <td><a href="#dossier-executioner">Executioner</a><br><small>Arms · 35/16/0</small></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                </tr>
+                <tr data-id="reaver">
+                  <td><a href="#dossier-reaver">Rend Reaver</a><br><small>Arms · 41/10/0</small></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                </tr>
+                <tr data-id="marshal">
+                  <td><a href="#dossier-marshal">Marshal</a><br><small>Arms · 31/20/0</small></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                </tr>
+                <tr data-id="dual">
+                  <td><a href="#dossier-dual">Dual-Blade</a><br><small>Fury · 17/34/0</small></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat1" aria-label="1 of 5" title="1 / 5">1</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                </tr>
+                <tr data-id="bloodrage">
+                  <td><a href="#dossier-bloodrage">Bloodrage</a><br><small>Fury · 5/39/7</small></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                </tr>
+                <tr data-id="warstorm">
+                  <td><a href="#dossier-warstorm">Warstorm</a><br><small>Fury · 13/38/0</small></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat1" aria-label="1 of 5" title="1 / 5">1</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                </tr>
+                <tr data-id="bastion">
+                  <td><a href="#dossier-bastion">Bastion</a><br><small>Protection · 5/0/46</small></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat2" aria-label="2 of 5" title="2 / 5">2</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                </tr>
+                <tr data-id="vanguard">
+                  <td><a href="#dossier-vanguard">Vanguard</a><br><small>Protection · 8/12/31</small></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                </tr>
+                <tr data-id="duelist">
+                  <td><a href="#dossier-duelist">Shieldbound</a><br><small>Protection · 20/0/31</small></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat3" aria-label="3 of 5" title="3 / 5">3</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat4" aria-label="4 of 5" title="4 / 5">4</span></td>
+                  <td><span class="heat heat5" aria-label="5 of 5" title="5 / 5">5</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div class="callout ok"><strong>The honest comparison:</strong> Arms variants diverge in proc investment and control; Fury variants in two-weapon continuity, the Health-to-Rage trade and four-target geometry; Protection variants in defensive depth, Rage smoothing and the risk of stance offense. Neither the displayed heatmap nor an archetype label substitutes for combat logs.</div>
         <h3>Choose your Warrior</h3>
         <div class="choose-list">
-          <a href="#dossier-executioner"><b>Huge two-handed weapon strikes</b>A deliberate Mortal Strike and powerful weapon profile.<br><span style="font-size:11px;color:#c6a375">READ DOSSIER · EXECUTIONER ↗</span></a>
-          <a href="#dossier-dual"><b>Consistent dual-wield damage</b>Flurry, Bloodthirst and long periods of paired weapon contact.<br><span style="font-size:11px;color:#c6a375">READ DOSSIER · DUAL-BLADE ↗</span></a>
-          <a href="#dossier-reaver"><b>Complex Rage management</b>Rend uptime, Overpower activations and Slam timing.<br><span style="font-size:11px;color:#c6a375">READ DOSSIER · REND REAVER ↗</span></a>
-          <a href="#dossier-bastion"><b>Traditional shield tanking</b>A layered shield-and-avoidance Rage fortress.<br><span style="font-size:11px;color:#c6a375">READ DOSSIER · BASTION ↗</span></a>
-          <a href="#dossier-vanguard"><b>Aggressive tanking</b>Fast proactive threat with retained shield identity.<br><span style="font-size:11px;color:#c6a375">READ DOSSIER · VANGUARD ↗</span></a>
-          <a href="#dossier-marshal"><b>PvP control</b>Hamstring, slows, stances and chase budgeting.<br><span style="font-size:11px;color:#c6a375">READ DOSSIER · MARSHAL ↗</span></a>
-          <a href="#dossier-warstorm"><b>Strong cleave damage</b>Two-weapon Whirlwind and pack positioning.<br><span style="font-size:11px;color:#c6a375">READ DOSSIER · WARSTORM ↗</span></a>
-          <a href="#dossier-duelist"><b>Experimental hybrid builds</b>Battle-stance counterattacks with a real Shield Slam tank core.<br><span style="font-size:11px;color:#c6a375">READ DOSSIER · SHIELDBOUND ↗</span></a>
-          <a href="#dossier-bloodrage"><b>Health-economy / self-healing</b>Reckless Swings and Gore Drinker with real risk decisions.<br><span style="font-size:11px;color:#c6a375">READ DOSSIER · BLOODRAGE ↗</span></a>
+          <a href="#dossier-executioner"><b>Huge two-handed weapon strikes</b>A deliberate Mortal Strike and powerful weapon profile.<br><span class="read-more">READ DOSSIER · EXECUTIONER ↗</span></a>
+          <a href="#dossier-dual"><b>Consistent dual-wield damage</b>Flurry, Bloodthirst and long periods of paired weapon contact.<br><span class="read-more">READ DOSSIER · DUAL-BLADE ↗</span></a>
+          <a href="#dossier-reaver"><b>Complex Rage management</b>Rend uptime, Overpower activations and Slam timing.<br><span class="read-more">READ DOSSIER · REND REAVER ↗</span></a>
+          <a href="#dossier-bastion"><b>Traditional shield tanking</b>A layered shield-and-avoidance Rage fortress.<br><span class="read-more">READ DOSSIER · BASTION ↗</span></a>
+          <a href="#dossier-vanguard"><b>Aggressive tanking</b>Fast proactive threat with retained shield identity.<br><span class="read-more">READ DOSSIER · VANGUARD ↗</span></a>
+          <a href="#dossier-marshal"><b>PvP control</b>Hamstring, slows, stances and chase budgeting.<br><span class="read-more">READ DOSSIER · MARSHAL ↗</span></a>
+          <a href="#dossier-warstorm"><b>Strong cleave damage</b>Two-weapon Whirlwind and pack positioning.<br><span class="read-more">READ DOSSIER · WARSTORM ↗</span></a>
+          <a href="#dossier-duelist"><b>Experimental hybrid builds</b>Battle-stance counterattacks with a real Shield Slam tank core.<br><span class="read-more">READ DOSSIER · SHIELDBOUND ↗</span></a>
+          <a href="#dossier-bloodrage"><b>Health-economy / self-healing</b>Reckless Swings and Gore Drinker with real risk decisions.<br><span class="read-more">READ DOSSIER · BLOODRAGE ↗</span></a>
         </div>
       </div>
     </section>
@@ -4093,7 +4242,7 @@
         </div>
         <div class="callout danger"><strong>Research caveat:</strong> some secondary pages still reproduce superseded September or October talent arrangements. This guide privileges the November 13 extracted client data and November official notes. Even those are a timestamp, not a permanent guarantee. Use the official patch tracker and a current game-client talent window before a consequential respec.</div>
         <h3>Primary and secondary reference register</h3>
-        <p>Each entry opens its original source website when online; the compendium itself needs no network connection. Citation links throughout this file jump here, so readers can audit the claim rather than follow a mysterious numbered footnote.</p>
+        <p>Each entry opens its original source website when online. Citation links throughout this file jump here, so readers can audit the claim rather than follow a mysterious numbered footnote.</p>
         <div class="source-list">
           <div class="source-item" id="source-01">
             <div class="overline">REFERENCE 01</div><a href="https://worldofwarcraft.blizzard.com/en-us/news/24301514" target="_blank" rel="noopener noreferrer">Blizzard · Priest and Warrior Class Deep Dive ↗</a><small>2026-09-30 · foundational mechanics; older talent changes superseded</small>
@@ -4162,7 +4311,7 @@
           <article class="panel ">
             <div class="overline">CREDITS</div>
             <h3>Art and intellectual property</h3>
-            <p>The illustrated cover is original AI-assisted fantasy artwork generated specifically for this document. It is not Blizzard’s illustration, a game screenshot, or an in-game model. World of Warcraft and Forever names are trademarks of Blizzard Entertainment; this is an independent, unofficial field guide. No external fonts, scripts or stylesheets are loaded; the artwork comes from the local images folder.</p>
+            <p>The illustrated cover is original AI-assisted fantasy artwork generated specifically for this document. It is not Blizzard’s illustration, a game screenshot, or an in-game model. World of Warcraft and Forever names are trademarks of Blizzard Entertainment; this is an independent, unofficial field guide.</p>
           </article>
         </div>
         <p class="fine">Editorial methodology: primary source for rule origin; later official update for revised numbers; current client-data tree for rank, row and prerequisite; Forever-specific class guides for qualitative combat interpretations; no imported Retail, Classic Era or Season of Discovery talent nodes. All combat flows and build-specific encounter sequences are explicit illustrations.</p>
@@ -4784,7 +4933,7 @@ function drawScenario(){const sc=$('scenario-picker').value;const sp=$('scenario
 $('scenario-picker').addEventListener('change',drawScenario);$('scenario-spec').addEventListener('change',drawScenario);drawScenario();
 function drawAtlas(){const sp=$('atlas-spec').value,wp=$('atlas-weapon').value,content=$('atlas-content').value,sort=$('atlas-sort').value;let matches=BUILDS.filter(b=>(sp==='All'||b.spec===sp)&&(wp==='All'||b.weapon===wp)&&(content==='All'||b.content.includes(content)));if(sort!=='default')matches.sort((a,b)=>b.scores[+sort]-a.scores[+sort]||a.order-b.order);const tbody=document.querySelector('#atlas-matrix tbody');for(const b of matches){const r=tbody.querySelector('tr[data-id="'+b.id+'"]');tbody.appendChild(r);r.hidden=false;}for(const r of tbody.querySelectorAll('tr'))if(!matches.some(b=>b.id===r.dataset.id))r.hidden=true;$('atlas-count').textContent='Showing '+matches.length+' of 9 characters'+(sort==='default'?' · muster order':' · sorted by '+CATS[+sort]+' (high to low)');}
 ['atlas-spec','atlas-weapon','atlas-content','atlas-sort'].forEach(id=>$(id).addEventListener('change',drawAtlas));drawAtlas();
-const mob=$('mobile-nav'),toc=$('toc');mob.addEventListener('click',()=>{const on=toc.classList.toggle('open');mob.setAttribute('aria-expanded',String(on));});toc.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{toc.classList.remove('open');mob.setAttribute('aria-expanded','false');}));
+const toc=$('toc');
 const navLinks=[...toc.querySelectorAll('a[href^="#"]')];let ticking=false;const topbtn=$('backtop');function scrollState(){const y=window.scrollY,max=Math.max(document.documentElement.scrollHeight-innerHeight,1);$('nav-progress').style.height=(100*y/max)+'%';topbtn.classList.toggle('visible',y>750);let current='begin';for(const s of document.querySelectorAll('header[id],section[id]'))if(s.getClientRects().length/* skip chapters the volume view hides */&&s.getBoundingClientRect().top<Math.min(180,innerHeight/3))current=s.id;navLinks.forEach(a=>{let active=a.getAttribute('href')==='#'+current;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});ticking=false;}window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(scrollState);ticking=true;}},{passive:true});window.addEventListener('resize',scrollState);topbtn.addEventListener('click',()=>window.scrollTo({top:0}/* no behavior: the CSS scroll-behavior decides, so reduced motion applies */));scrollState();
 </script>
   </main>
