@@ -203,7 +203,7 @@ Result:
 - Tests: all 285 answer paths with real mouse clicks, checked against a separate model; all 81 result links open the right view at their target; keyboard at 375 and 1280px; the screen reader tree; without JavaScript the page is pixel-identical to the page before phase 3 at 320, 375, 768 and 1280px (apart from the colophon word); no sideways scroll; print; the console. The test scripts are not in the repo.
 - Test pitfalls: the class pages scroll smoothly to a hash (about 1.5 s), and two links into the same page that differ only in the hash fire no load event.
 
-## Phase 4: Book redesign of the class pages
+## Phase 4: Book redesign of the class pages (done 16 November 2026)
 
 - A full book redesign of each of the 9 class pages. This replaces the original rule to keep their visual design.
 - Keep all content and all interactive functions.
@@ -223,14 +223,25 @@ Decided on 16 November 2026:
 - Meta text goes: every line about how the file is built (offline, embedded, standalone HTML, file formats, the images folder). Art credits shrink to one line per page in the sources chapter. Research dates, no-JavaScript notes, the Blizzard notice and method notes stay. Every removed or shortened line is listed for review. No other text changes.
 - Pilot: Mage, because it has the most kinds of parts. Test it, run the `reviewer`, then the user reviews it before the commit. Then the other 8 pages in one run without the user's input. A page with a problem waits, uncommitted, with a note. One commit per page after the user's review.
 - Proof for each page: the same text (apart from the listed meta lines) and the same ids; every control, link and calculator gives the same results; the phase 2 views and the quiz links land on their targets; no sideways scroll from 320 to 1920px; print and no JavaScript work; text contrast meets WCAG AA; no console errors.
-- Branch: `phase4-book` from `dev`.
+- Branch: `claude/phase4-book-e80a54` from `dev`.
 - The approved mockup (Mage cover, chapter 00, the Atlas plate and two dossier cards) is not in the repo.
+
+Result:
+
+- Commits on the branch `claude/phase4-book-e80a54`: 02d6fef (`book.css` and the Mage pilot), 40860bc (`book.css` extended for the other pages, two small Mage fixes), then one commit per page: 7afda93 Druid, d07e585 Hunter, 00d4c7d Paladin, 0334d4e Priest, ca06f13 Rogue, 7ed4168 Shaman, 0d0e3eb Warlock, 14be923 Warrior. Fast-forwarded onto `dev`. `dev` and `main` are pushed at 14be923, and GitHub Pages serves the book pages.
+- `book.css` holds the shared design. Each page dropped all its old CSS and keeps one block after the `book.css` link: its class color (`--accent`), its ornament and its own parts.
+- Navigation: each nav keeps its id and links, gets the class `book-nav` and the same Contents script. The old phone menus and their script lines went, with their ids: Druid `mobile-top` and `menu-toggle`, Hunter `hamburger` and `overlay`, Paladin, Priest and Warlock `navToggle`, Rogue and Warrior `mobile-nav`. No other id changed, and the ids keep their order. Progress bars, back-to-top buttons and chapter highlights stay. Shaman: the top bar became the contents panel, and the chapters now sit in a `<main>` (not re-indented). This ends the Shaman chapter bar overflow from phase 2.
+- Inline styles moved into the page blocks where they blocked the design, mostly gilt colors on paper. On Druid, Mage, Paladin, Warlock and Warrior the inline cover background went too, because the cover is now an `img`. Counts before and after: Druid 6 to 4, Mage 14 to 11, Paladin 29 to 27, Priest 41 to 39, Warlock 46 to 26, Warrior 232 to 222. Hunter, Rogue and Shaman keep theirs. The rest (margins, widths, data) does not block the design.
+- Meta text removed or shortened, listed in each page's commit message: Mage 6 passages, Druid 7, Hunter 5, Paladin 4, Priest 2, Rogue 5, Shaman 7, Warlock 1, Warrior 4. The Priest cover credit moved to its sources chapter. Other text changes: the old menu labels ("Chapters") on 7 pages and the Druid phone-bar title went; the Warrior cover description moved from the header's `aria-label` to the picture's `alt`.
+- Tests on all 9 pages in headless Edge, old page against new: the same text apart from the listed lines; every control gives the same results; no control or link is covered (1280 and 375px); every in-page link, clicked with the mouse, lands at the top of the reading area, plus a smooth-scroll sample; the quiz and shelf links, a link into a hidden chapter and the ribbons; the phone Contents list (opens, closes after a link and on Escape); no sideways scroll at 25 widths from 320 to 1920px in all three views; print; no JavaScript; text contrast AA; no console errors. The cover pictures show in full from 320 to 1920px. The test scripts are not in the repo.
+- Known limits: the contrast test skips the watermark glyphs (Hunter `.spec-card .watermark`, Priest `.spec .glyph`), and the Hunter split-bar labels were checked by hand (8.4:1 and 8.2:1). The Shaman nav has no id, so its Contents button has no `aria-controls`. Paladin, Priest and Warlock keep the chapter number inside the link text, because changing it changes text. Older accessibility points stay as they were, for example the Hunter cover's `role="banner"`.
+- Test pitfalls: the pages scroll smoothly, and this also makes a test's own `scrollIntoView` smooth, so pass `behavior:'instant'` or emulate reduced motion. A grid or flex container with the class `plate` gets the ornament band as a grid cell, so wrap it in a plate `div`. Gilt text is a gradient clipped to the letters, so a contrast check must read the gradient stops. Compare control results as changes from the start state, because the new CSS changes the start styles. Where the picture carries its gilt frame as a border (Priest, Shaman), measure the content box.
 
 ## Later
 
 - New beginner text: now part of the user's text work (see above). It needs sources, because Claude cannot check game facts.
 - Print style for the front page: today it prints light text on white paper when background graphics are off.
-- Title images cut off at the top (reported 15 November 2026): on the front page, the Shaman cover crops its top. The class page covers are part of phase 4.
+- Title images cut off at the top (reported 15 November 2026): on the front page, the Shaman cover crops its top.
 - The front page still says "nine 51-point builds" and "Research snapshot: 13 November 2026". Decide whether they need new words; the phase 3 check found nothing wrong with them.
 
 ## Testing notes
