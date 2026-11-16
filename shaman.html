@@ -1,73 +1,115 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The Forever Shaman Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Shaman Compendium: The Covenant of Storm and Stone</title><style>
-:root{--bg:#090e16;--panel:#131d2b;--panel2:#192437;--ink:#eef4ef;--muted:#a9bbbf;--line:#324359;--gold:#e5c88b;--cyan:#70c7ff;--fire:#ff9e6b;--water:#7de5c2;--shadow:0 22px 60px #0006}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 20% 0%,#152a41 0,transparent 38%),radial-gradient(ellipse at 100% 30%,#132b32 0,transparent 35%),var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.64;font-size:15.5px}
-a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;line-height:1.15}h1{font-size:clamp(2.4rem,7vw,6rem);margin:0;letter-spacing:-.05em;color:#f7ebcf;text-shadow:0 6px 40px #0019}h2{font-size:clamp(2rem,4.2vw,3.6rem);margin:0 0 20px;color:#f4e9d3;letter-spacing:-.025em}h3{font-size:clamp(1.22rem,2vw,1.75rem);margin:0 0 12px;color:#f5deac}h4{font-size:1.08rem;color:#d5eee3;margin:14px 0 8px}p{margin:10px 0 15px}small,.subtle{color:var(--muted)}.kicker{color:#f7dba3;text-transform:uppercase;font-size:.73rem;letter-spacing:.23em;font-weight:800}.eyebrow{color:#a6cce4;text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:700;margin-bottom:9px}.muted{color:var(--muted)}.shell{max-width:1480px;margin:auto;padding-left:min(5vw,68px);padding-right:min(5vw,68px)}.topbar{position:sticky;top:0;z-index:20;background:#080e18e8;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff22}.topbar .inner{display:flex;align-items:center;gap:24px;justify-content:space-between;min-height:65px}.brand{font-family:Georgia,serif;font-size:1.15rem;letter-spacing:.08em;color:var(--gold);white-space:nowrap}.mainnav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}.mainnav a{text-decoration:none;color:#bed1d7;font-size:.83rem;white-space:nowrap}.mainnav a:hover{color:white}
-.hero{background:#090e17;position:relative;min-height:620px;overflow:hidden;display:flex;align-items:end}.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.87)}.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#06101bfa 0%,#06101bbb 28%,#06101b33 67%),linear-gradient(0deg,#091018 0%,transparent 46%)}.hero .content{position:relative;z-index:1;padding-top:140px;padding-bottom:88px;max-width:960px}.hero .deck{max-width:700px;color:#d8e3e6;font-size:clamp(1rem,2vw,1.35rem)}.meta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.pill{display:inline-flex;padding:5px 11px;border:1px solid #d7ded545;background:#152735b8;border-radius:99px;color:#d6e0e1;font-size:.8rem;letter-spacing:.01em}.artcredit{color:#b7c6c9;font-style:italic;font-size:.74rem}
-.chapter{padding-top:110px;padding-bottom:65px;position:relative;scroll-margin-top:65px}.chapter:before{content:'';display:block;border-top:1px solid #ffffff1f;left:min(5vw,68px);right:0;position:absolute;top:50px}.chapter-number{color:#cfae72;font-size:1rem;font-weight:900;letter-spacing:.2em}.lead{font-size:1.17rem;color:#cbd8df;max-width:950px;line-height:1.75}.intro-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start}.paper{background:linear-gradient(135deg,#152230,#0e1725);border:1px solid #52627766;box-shadow:var(--shadow);border-radius:20px;padding:24px}.paper h3{margin-top:0}.paper.alt{background:linear-gradient(135deg,#1d2a2d,#141923)}.paper.gold{background:linear-gradient(135deg,#30291d,#161a22)}.paper.orange{background:linear-gradient(135deg,#302017,#161923)}.paper.cyan{background:linear-gradient(135deg,#172639,#131d27)}.paper.green{background:linear-gradient(135deg,#172d2c,#161d27)}.callout{border-left:3px solid var(--gold);padding:12px 20px;background:#27303455;color:#d8e2e1;border-radius:0 10px 10px 0;margin:20px 0}.warn{border-left-color:#f9a46c;background:#59301b33}.good{border-left-color:#7bdcc1}.evidence{display:inline-flex;align-items:center;gap:6px;color:#dfcfac;font-size:.72rem;border:1px solid #a58d6566;border-radius:6px;padding:3px 8px;letter-spacing:.08em;text-transform:uppercase}.evidence.uncertain{color:#ffb393;border-color:#af725577}.tagrow{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 16px}.columns2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.columns3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.tablewrap{width:100%;overflow-x:auto;margin:20px 0 24px;border:1px solid #54647a78;border-radius:15px}table{border-collapse:collapse;width:100%;min-width:660px}th,td{padding:13px 14px;vertical-align:top;text-align:left;border-bottom:1px solid #37495b}th{color:#fae6ba;background:#222d3c;font-size:.8rem;white-space:nowrap;letter-spacing:.025em}tr:nth-child(2n) td{background:#17223372}tr:hover td{background:#233144}td{color:#cbd7da}td strong{color:#f5eddf}.mini{font-size:.83rem}.mini td,.mini th{padding:8px 10px}.spec-hero{display:grid;grid-template-columns:minmax(240px,400px) 1fr;gap:30px;align-items:center;border:1px solid #6b96ab65;border-radius:25px;overflow:hidden;background:radial-gradient(ellipse at left,#253e59,#101b27 70%);margin:25px 0 32px}.spec-hero.fire{background:radial-gradient(ellipse at left,#503123,#151b27 70%)}.spec-hero.water{background:radial-gradient(ellipse at left,#1c534d,#131e2a 70%)}.spec-hero img{width:100%;height:420px;object-fit:cover}.spec-hero .copy{padding:28px 35px 28px 0}.spec-hero h2{font-size:clamp(2.2rem,4.4vw,4.2rem);margin:8px 0}.spec-hero .number{color:#f4d18f;font-size:.85rem;letter-spacing:.15em;font-weight:800}
-.totem-board{padding:22px;border:1px solid #507084;border-radius:18px;background:linear-gradient(150deg,#202d3d,#0f1723);display:grid;grid-template-columns:1fr 1fr;gap:20px}.totem-diagram{width:100%;min-height:330px}.totem-icon{width:42px;height:42px;display:inline-grid;place-items:center;font-size:1.6rem;border-radius:12px;background:#fff1;border:1px solid #fff3}.diagram-flow{display:flex;align-items:stretch;gap:9px;overflow-x:auto;margin:22px 0}.flow-node{flex:1;min-width:150px;background:linear-gradient(135deg,#1d3145,#111b2a);border:1px solid #5580a666;border-radius:12px;padding:13px 13px;font-size:.86rem;line-height:1.5;color:#dae9e7}.flow-node strong{display:block;color:#fff2db;margin-bottom:6px}.flow-arrow{display:flex;align-items:center;color:#e0b879;font-size:1.8rem;font-weight:bold}
-.actionbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:15px 0 20px}button,select{font:inherit;color:#ecf4ec;background:#1c2d3c;border:1px solid #58778c;border-radius:10px;padding:11px 14px;cursor:pointer}button:hover,select:hover{border-color:#e6c88e;background:#253a4b}button.active{background:#b9955b;color:#11191f;border-color:#e4d3aa;font-weight:800}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid #dcd094;outline-offset:3px}.choose-group{display:flex;gap:7px;flex-wrap:wrap}.result{background:#162b37;border:1px solid #568498;border-radius:16px;padding:20px;margin:16px 0}.result strong{color:#f9dfaa}
-.build-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.buildcard{background:linear-gradient(155deg,#1c2c40,#111a25);border:1px solid #4866858c;border-radius:19px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 24px #0003}.buildcard:hover{border-color:#b9d4d4;transform:translateY(-1px)}.buildcard .card-top{padding:23px 23px 16px}.buildcard .build-n{font-family:Georgia,serif;font-size:2rem;color:#f4ddab;line-height:1.2;margin:8px 0}.buildcard .ratio{font-size:1rem;letter-spacing:.07em;color:#b3d9ea;font-weight:700}.buildcard .card-bottom{padding:0 23px 23px;margin-top:auto}.buttonlike{display:inline-block;padding:9px 13px;background:#c19b62;color:#12202e!important;border-radius:8px;text-decoration:none;font-size:.83rem;font-weight:800}
-.build-section{scroll-margin-top:90px;border:1px solid #57748a66;border-radius:22px;overflow:hidden;margin:32px 0;background:#111b29}.build-section .head{display:grid;grid-template-columns:215px 1fr;gap:22px;align-items:stretch;background:linear-gradient(100deg,#1b324a,#141d29);border-bottom:1px solid #53718a66}.build-section .head.fire{background:linear-gradient(100deg,#4b2e23,#171e2a)}.build-section .head.water{background:linear-gradient(100deg,#22534b,#171e2a)}.build-section .head img{height:210px;width:215px;object-fit:cover}.build-section .head .hd-copy{padding:27px 25px 20px 0}.build-section .head h3{font-size:2rem;margin:7px 0}.build-section .inside{padding:22px}.build-section p{font-size:.92rem}.talentlines{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.talentlines .talent-col{border:1px solid #445d72;background:#192737;border-radius:12px;padding:13px}.talentlines dt{font-size:.75rem;color:#e0bd85;letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px;font-weight:800}.talentlines dd{margin:0;font-size:.8rem;color:#d2dfe0;line-height:1.9}.rank{display:inline-block;color:#f6e2b6;background:#6d5b393f;border:1px solid #aa926153;border-radius:5px;padding:0 5px;margin:0 0 2px 2px;font-weight:700;font-size:.74rem}.boxgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.fact{border:1px solid #42576b;border-radius:13px;padding:14px;background:#172636;color:#d2dce0}.fact h4{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.77rem;text-transform:uppercase;letter-spacing:.11em;color:#f3c991;margin:0 0 7px}.fact p{margin:0}.figure-caption{font-style:italic;color:#aabfc6;font-size:.78rem;margin-top:7px}
-.timeline-wrap{overflow-x:auto;margin:19px 0 30px;border:1px solid #455b72;border-radius:15px}.timeline-table{min-width:1120px}.timeline-table th:first-child,.timeline-table td:first-child{position:sticky;left:0;background:#1b2a39;z-index:1;width:220px;color:#f2e0b8}.timeline-table th{font-size:.8rem}.timeline-table td{min-width:175px;font-size:.84rem;line-height:1.55}.timeline-table td:nth-child(2n){background:#1b2b3999}.timeline-table .row-name{font-weight:700;color:#fff}.legend{font-size:.77rem;color:#abbcbd;margin:2px 0 20px}
-.metrics-wrap{display:grid;grid-template-columns:320px 1fr;gap:18px}.metric-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric{border:1px solid #476073;padding:10px 12px;background:#182b3b;border-radius:9px}.metric .lab{color:#bad1d6;font-size:.76rem;margin-bottom:7px}.meter{height:7px;border-radius:99px;background:#0b131d;overflow:hidden}.meter b{display:block;height:100%;background:linear-gradient(90deg,#4b93b4,#addbcc,#f4cf8b);border-radius:99px}.tiny-tag{font-size:.69rem;color:#f5db9d;margin-top:4px}.dash-filter{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.statcomps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.statcomps .paper{padding:17px}.statcomps .leadstat{font-family:Georgia,serif;font-size:1.5rem;color:#f5deb0}.gearcompare{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gearcompare .paper{padding:18px}.wep{font-family:Georgia,serif;font-size:1.7rem;color:#f9d8a5}.gearcompare .paper p{font-size:.87rem}
-.src{padding:10px 0;border-bottom:1px solid #385067}.src a{font-weight:750;text-decoration:none}.src small{display:block}.source-list{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}.foot{border-top:1px solid #59708b55;padding:32px 0 60px;color:#b3c5c6}.foot strong{color:#f4d7a7}
-@media(max-width:1080px){.intro-grid,.metrics-wrap{grid-template-columns:minmax(0,1fr)}.build-grid,.statcomps,.gearcompare{grid-template-columns:repeat(2,minmax(0,1fr))}.spec-hero{grid-template-columns:300px 1fr}.hero{min-height:580px}}
-@media(max-width:760px){.topbar .inner{gap:12px;flex-wrap:wrap}.brand{font-size:.86rem;white-space:normal}.hero{min-height:520px}.hero .content{padding-top:80px;padding-bottom:46px}.hero:after{background:linear-gradient(90deg,#091018e8,#09101844),linear-gradient(0deg,#091018,transparent 90%)}.columns2,.columns3,.build-grid,.boxgrid,.talentlines,.gearcompare,.statcomps,.source-list,.dash-filter{grid-template-columns:1fr}.spec-hero{display:block}.spec-hero img{height:360px}.spec-hero .copy{padding:18px 24px}.totem-board{grid-template-columns:1fr}.build-section .head{grid-template-columns:100px 1fr}.build-section .head img{width:100px;height:190px}.build-section .head h3{font-size:1.5rem}.build-section .head .hd-copy{padding:12px 10px 10px 0}.metrics-wrap .paper{padding:16px}.chapter{padding-top:80px}.chapter:before{top:36px}h2{font-size:2.2rem}.metric-list{grid-template-columns:1fr 1fr}.flow-node{min-width:170px}}
-@media print{.topbar,.actionbar button,.buttonlike{display:none}.hero{min-height:300px}.hero-img{filter:brightness(.65)}.chapter{page-break-before:always}.build-section{break-inside:avoid}.paper{box-shadow:none}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-/* Collection-wide editorial annotation, kept subordinate to each class theme. */
-.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
-.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
-.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
-.compendium-cover-subtitle{font:normal clamp(20px,2.4vw,31px)/1.3 Georgia,serif;color:var(--gold,#dec28c);margin:12px 0 15px;}
-@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
-
-/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
-.hero .series-manuscript {
-  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif;
-  letter-spacing: .06em;
-  text-transform: none;
-  max-width: 940px;
-  overflow-wrap: break-word;
-  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The Forever Shaman Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Shaman Compendium: The Covenant of Storm and Stone</title>
+<link rel="stylesheet" href="book.css">
+<style>
+/* Shaman (phase 4): the class ink, the ornament and the parts that only this book has. The shared book design is in book.css. */
+:root{--accent:#1f4f7a;--ornament:'❖';--cyan:#1f4f7a;--fire:#8a3a1e;--water:#1c5543;--gold:#6b4a0f}
+/* the panel title is the long brand line, so it is a little smaller */
+.nav-title{font-size:24px}
+small,.subtle,.muted{color:var(--ink-2)}
+.chapter-number{margin:0 0 6px;color:var(--accent);font:15px var(--fell);letter-spacing:.16em;text-align:center}
+/* cover: the picture comes first in the markup; it goes under the subtitle, in a gilt frame */
+.hero{display:flex;flex-direction:column}
+.hero .content{display:contents}
+.hero-img{order:1;display:block;width:100%;height:auto;margin:26px auto 8px;border:6px solid transparent;background:linear-gradient(145deg,#f0d38c,#8d6a2c 55%,#d8b46a) border-box;box-shadow:0 8px 20px #0006}
+.hero :is(.deck,.meta-row,.artcredit){order:2}
+.meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.artcredit{margin-top:14px;color:var(--ink-2);font-size:14px;font-style:italic}
+/* specialization chapters open with their picture above the title */
+.spec-hero{margin:0 0 26px;text-align:center}
+.spec-hero img{display:block;width:100%;max-width:420px;height:auto;margin:0 auto 18px;border:5px solid transparent;background:linear-gradient(145deg,#f0d38c,#8d6a2c 55%,#d8b46a) border-box;box-shadow:0 6px 16px #0005}
+.spec-hero .copy p:not(.lead){text-align:left}
+.spec-hero .number{color:var(--accent);font:15px var(--fell);letter-spacing:.16em}
+/* papers, notes, tags */
+.paper{padding:20px;background:var(--card);border:1px solid #b8955a;box-shadow:var(--bookplate)}
+.paper h3{margin-top:0}
+.paper.alt{background:var(--paper-2)}
+.paper.gold{border-top:3px solid var(--gold)}.paper.orange{border-top:3px solid var(--fire)}.paper.cyan{border-top:3px solid var(--cyan)}.paper.green{border-top:3px solid var(--water)}
+.callout{margin:20px 0;padding:12px 18px;font-size:16px;background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--gold)}
+.warn{border-left-color:var(--fire)}.good{border-left-color:var(--water)}
+.evidence{display:inline-flex;align-items:center;gap:6px;padding:1px 8px;color:var(--gold);font:13px var(--fell);letter-spacing:.06em;border:1px solid currentColor;border-radius:3px}
+.evidence.uncertain{color:var(--fire)}
+.tagrow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.intro-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));align-items:start;gap:24px}
+.columns2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px}
+.columns3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:20px}
+.tablewrap{width:100%;margin:20px 0 24px;overflow-x:auto}
+.tablewrap table{min-width:640px}
+.mini{font-size:14px}
+.mini :is(td,th){padding:6px 8px}
+.figure-caption{margin-top:7px;color:var(--ink-2);font-size:14px;font-style:italic}
+/* plate: the totem board; the diagram keeps its night colors on a small dark plate */
+.totem-board{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
+.totem-diagram{width:100%;min-height:300px;padding:6px;background:radial-gradient(ellipse at center,#202d3d,#0f1723 70%);border:3px solid #b8955a;border-radius:12px;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.totem-icon{display:inline-grid;place-items:center;width:42px;height:42px;font-size:1.6rem;background:var(--paper-2);border:1px solid var(--line);border-radius:6px}
+.result{margin:16px 0;padding:18px;background:var(--card);border:1px solid var(--line)}
+.result strong{color:var(--accent)}
+.diagram-flow{display:flex;align-items:stretch;gap:9px;margin:22px 0;overflow-x:auto}
+.flow-node{flex:1;min-width:150px;padding:12px;font-size:14px;line-height:1.5;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--cyan);border-radius:3px}
+.flow-node strong{display:block;margin-bottom:6px}
+.flow-arrow{display:flex;align-items:center;color:var(--ink-2);font-size:1.6rem}
+.actionbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:15px 0 20px}
+.choose-group{display:flex;flex-wrap:wrap;gap:7px}
+main button.active{background:linear-gradient(180deg,#bf9142,#d9b062);box-shadow:inset 0 2px 4px #0006}
+.buttonlike{display:inline-block;padding:7px 13px;color:#2a1a08;font:15px var(--fell);letter-spacing:.04em;text-decoration:none;background:var(--brass);border:1px solid var(--frame);border-radius:3px;box-shadow:inset 0 1px 0 #fff8,0 2px 3px #0004}
+.buttonlike:hover{color:#2a1a08;filter:brightness(1.06)}
+/* the nine build cards and dossiers */
+.build-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:18px}
+.buildcard{display:flex;flex-direction:column;overflow:hidden;background:var(--card);border:1px solid #b8955a;box-shadow:var(--bookplate)}
+.buildcard .card-top{padding:20px 20px 14px}
+.buildcard .build-n{margin:8px 0;color:var(--accent);font:26px/1.2 var(--fell)}
+.buildcard .ratio{color:var(--ink-2);font:15px var(--fell);letter-spacing:.06em}
+.buildcard .card-bottom{margin-top:auto;padding:0 20px 20px}
+.build-section{margin:32px 0;overflow:hidden;background:var(--card);border:1px solid #b8955a;box-shadow:var(--bookplate)}
+.build-section .head{display:grid;grid-template-columns:180px 1fr;align-items:stretch;gap:20px;border-top:3px solid var(--cyan);border-bottom:1px solid var(--line)}
+.build-section .head.fire{border-top-color:var(--fire)}.build-section .head.water{border-top-color:var(--water)}
+.build-section .head img{display:block;width:180px;height:100%;min-height:180px;object-fit:cover}
+.build-section .head .hd-copy{padding:20px 20px 16px 0}
+.build-section .head h3{margin:6px 0;font-size:28px}
+.build-section .inside{padding:20px}
+.build-section p{font-size:15px}
+.talentlines{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}
+.talentlines .talent-col{padding:12px;background:var(--paper-2);border:1px solid var(--line)}
+.talentlines dt{margin-bottom:8px;color:var(--accent);font:14px var(--fell);letter-spacing:.08em}
+.talentlines dd{margin:0;font-size:14px;line-height:1.9}
+.rank{display:inline-block;margin:0 0 2px 2px;padding:0 5px;font-size:13px;font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.boxgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.fact{padding:14px;background:var(--paper-2);border:1px solid var(--line)}
+.fact h4{margin:0 0 6px;color:var(--accent);font-size:15px;letter-spacing:.06em}
+.fact p{margin:0}
+/* plate: the battle replay */
+.timeline-wrap{margin:19px 0 30px;overflow-x:auto}
+.timeline-table{min-width:900px}
+.timeline-table :is(th,td):first-child{position:sticky;left:0;z-index:1;width:200px;background:var(--plate)}
+.timeline-table td{min-width:160px;font-size:14px;line-height:1.55}
+.timeline-table .row-name{font-weight:700}
+.legend{margin:2px 0 20px;color:var(--ink-2);font-size:14px}
+/* plate: the build atlas; its build buttons are cards */
+.dash-filter{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+main button.dash-card{padding:12px;color:var(--ink);font:15px var(--serif);letter-spacing:0;background:var(--card);border:1px solid var(--line);border-radius:0;box-shadow:none}
+main button.dash-card.active{background:var(--card);outline:2px solid var(--accent);outline-offset:-2px;box-shadow:none}
+.metrics-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}
+.metric-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.metric{padding:10px 12px;background:var(--card);border:1px solid var(--line)}
+.metric .lab{margin-bottom:6px;font-size:14px}
+.meter{height:7px;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);border-radius:3px}
+.meter b{display:block;height:100%;background:var(--accent)}
+.tiny-tag{margin-top:4px;color:var(--ink-2);font-size:13px}
+.statcomps,.gearcompare{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}
+.statcomps .leadstat{color:var(--accent);font:24px var(--fell)}
+.wep{color:var(--accent);font:26px var(--fell)}
+/* sources and the last page */
+.src{padding:10px 0;border-bottom:1px solid var(--line)}
+.src small{display:block}
+.foot{color:var(--ink-2);font-size:15px}
+@media (max-width:760px){
+  .build-section .head{grid-template-columns:100px 1fr}
+  .build-section .head img{width:100px}
 }
-.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
-.hero .compendium-series-subtitle {
-  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif;
-  letter-spacing: .008em;
-  color: #f2d9a8;
-  max-width: 900px;
-  margin: 11px 0 15px;
-  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+@media print{
+  .actionbar button,.buttonlike{display:none}
+  .hero-img{max-width:150mm;box-shadow:none}
+  .meter b{print-color-adjust:exact;-webkit-print-color-adjust:exact}
 }
-@media (max-width: 650px) {
-  .hero .series-manuscript { font-size: 11px; letter-spacing: .025em; }
-  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px); margin: 8px 0 10px; }
-}
-
-/* Reader-first note, visually subordinate to the original manuscript design. */
-.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
-.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
-.reader-orientation p{margin:0;line-height:1.64}
-
-/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
-.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
-.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
-.reader-field-exercise p{margin:0;line-height:1.75}
-.reader-build-comparisons{margin:24px 0;padding:18px 24px;background:rgba(255,255,255,.02);border-left:2px solid var(--gold,#d7bc84)}
-.reader-build-comparisons h4{margin-top:22px}
-
-.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
-/* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
-.vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
-.vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
-.vol-switch button:hover{border-color:currentColor}
-.vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
-.vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
-@media print{.vol-switch{display:none}}
-.mainnav .vol-switch{flex:none;margin:0}.mainnav .vol-switch button{flex:none;padding:6px 9px}
 </style></head>
 <body>
   <script>
@@ -81,7 +123,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
       advanced:['#quickstart','#archetypes','#encounters','#dashboard']
     };
     const MENU='.mainnav';
-    const SWITCH_BEFORE='.mainnav a'; // the switch goes right before this element
+    const SWITCH_BEFORE='.mainnav .nav-divider'; // the switch goes right before this element
     const LABELS={primer:'Primer',advanced:'Advanced',complete:'Complete'};
     const style=document.createElement('style');
     document.head.append(style);
@@ -154,24 +196,42 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
     });
   })();
   </script>
-  <div class="topbar">
-    <div class="inner shell">
-      <div class="brand">✧ THE FOREVER SHAMAN COMPENDIUM</div>
-      <nav class="mainnav" aria-label="Guide chapters">
-        <a href="#start">Introduction</a>
-        <a href="#foundation">Class systems</a>
-        <a href="#totems">Totems</a>
-        <a href="#elemental">Elemental</a>
-        <a href="#enhancement">Enhancement</a>
-        <a href="#restoration">Restoration</a>
-        <a href="#optimization">Gearing / leveling</a>
-        <a href="#archetypes">Build dossiers</a>
-        <a href="#encounters">Encounter timelines</a>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#sources">Sources</a>
-      </nav>
+  <nav class="mainnav book-nav" aria-label="Guide chapters">
+    <div class="nav-title">✧ THE FOREVER SHAMAN COMPENDIUM</div>
+    <button class="nav-toggle" type="button" aria-expanded="false" hidden>Contents</button>
+    <div class="nav-divider"></div>
+    <div class="nav-body">
+      <ol>
+        <li><a href="#start">Introduction</a></li>
+        <li><a href="#foundation">Class systems</a></li>
+        <li><a href="#totems">Totems</a></li>
+        <li><a href="#elemental">Elemental</a></li>
+        <li><a href="#enhancement">Enhancement</a></li>
+        <li><a href="#restoration">Restoration</a></li>
+        <li><a href="#optimization">Gearing / leveling</a></li>
+        <li><a href="#archetypes">Build dossiers</a></li>
+        <li><a href="#encounters">Encounter timelines</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
     </div>
-  </div>
+  </nav>
+  <script>
+  /* Contents button (phase 4): on narrow screens the chapter list folds away under this button.
+     Without JavaScript the button stays hidden and the list stays open. */
+  (()=>{
+    const nav=document.querySelector('.book-nav');
+    const button=nav.querySelector('.nav-toggle');
+    const show=open=>{nav.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));};
+    nav.classList.add('js');
+    button.hidden=false;
+    button.addEventListener('click',()=>show(!nav.classList.contains('open')));
+    // Close the list after a chapter is chosen, and on Escape.
+    nav.querySelector('.nav-body').addEventListener('click',e=>{if(e.target.closest('a'))show(false);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){show(false);button.focus();}});
+  })();
+  </script>
+  <main>
   <header class="hero" id="start">
     <img class="hero-img" src="images/shaman-hero.webp" alt="Original illustration of three shamans: storm caster, two-handed warrior and water healer">
     <div class="content shell">
@@ -184,7 +244,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
         <span class="pill">Official hotfix review through 15 Nov; original client 70938 snapshot</span>
         <span class="pill">Interactive encounter and build atlas</span>
       </div>
-      <p class="artcredit">Cover and specialization artwork: original illustrative fantasy art, not in-game screenshots. No combat numbers are simulated.</p>
+      <p class="artcredit">No combat numbers are simulated.</p>
     </div>
   </header>
   <section class="chapter shell" id="foundation">
@@ -275,60 +335,62 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
     <p class="lead">Forever streamlines placing and moving totems, but does not remove their tactical opportunity cost. One Earth, Fire, Water and Air totem slot per Shaman still determines which competing effects you can keep active.</p>
     <aside aria-label="A first-reader field note" class="reader-fieldnote"><strong>A small map of the battle</strong><p>Think in four kinds of totem duty: strengthen allies, hinder enemies, deal damage, and restore resources. Placement matters: a well-chosen effect outside the group’s reach may provide nothing. If your party moves, consider repositioning or recalling totems instead of forgetting them behind the group. A buff improves an ally; a debuff hinders an opponent; neither should be confused with direct damage. Windfury Totem supports eligible melee attack events, and the November 13 rules clarify that an off-hand strike from certain abilities does not itself trigger Windfury even when the corresponding main-hand strike can.</p>
     </aside>
-    <div class="totem-board">
-      <div>
-        <h3>The four-slot totem network</h3><svg class="totem-diagram" viewBox="0 0 520 350" role="img" aria-label="Shaman center with Earth totem north, Fire totem east, Water totem south and Air totem west; rings represent illustrative coverage, not to scale"><defs><radialGradient id="tg"><stop stop-color="#619eac" stop-opacity=".24"/><stop offset="1" stop-color="#50a2ac" stop-opacity=".01"/></radialGradient></defs><circle cx="260" cy="178" r="144" fill="url(#tg)" stroke="#7ca7a8" stroke-dasharray="5 7" opacity=".85"/><circle cx="260" cy="178" r="94" fill="none" stroke="#cfe9ba" stroke-opacity=".3" stroke-dasharray="2 8"/><g fill="none" stroke="#92bec9" stroke-width="2"><path d="M260 178 L260 62 M260 178 L420 178 M260 178 L260 290 M260 178 L100 178"/></g><g font-size="15" text-anchor="middle" fill="#f7e5ce"><circle cx="260" cy="178" r="34" fill="#263b4d" stroke="#bed5c9"/><text x="260" y="173">SHAMAN</text><text x="260" y="193" font-size="11">position</text><circle cx="260" cy="62" r="29" fill="#725d3a" stroke="#ffdf9c"/><text x="260" y="68">EARTH</text><circle cx="420" cy="178" r="29" fill="#813f30" stroke="#ff9e6b"/><text x="420" y="183">FIRE</text><circle cx="260" cy="290" r="29" fill="#275f69" stroke="#7bdadf"/><text x="260" y="295">WATER</text><circle cx="100" cy="178" r="29" fill="#486a73" stroke="#bce1e9"/><text x="100" y="183">AIR</text></g></svg><p class="figure-caption">Illustrative positioning diagram; dashed circles are not actual measured totem radii. Check each totem's own 20- or 30-yard tooltip rather than assuming one universal radius.</p>
-      </div>
-      <div>
-        <h3>Choose one effect per element</h3>
-        <p><span class="totem-icon">🪨</span> <strong>Earth:</strong> Strength of Earth (melee support), Stoneskin (physical mitigation), Earthbind (slow or 5-sec root with Earthbound), Stoneclaw (distraction), Tremor (crowd-control response).</p>
-        <p><span class="totem-icon">🔥</span> <strong>Fire:</strong> Searing for single targets, Magma for clustered packs. Both can become the <strong>location of Fire Nova</strong>.</p>
-        <p><span class="totem-icon">💧</span> <strong>Water:</strong> Mana Spring for sustained mana, Healing Stream for gradual healing, Mana Tide for a short, valuable party regen window.</p>
-        <p><span class="totem-icon">🌪️</span> <strong>Air:</strong> Windfury and Grace of Air buffs versus Grounding / Windwall utility. <strong>Raid nuance:</strong> Windfury, Flametongue, Strength of Earth and Grace of Air buff the raid within their proper ranges; Grace of Air can coexist with Windfury or Flametongue from multiple Shamans, but Windfury and Flametongue remain exclusive with each other. Resistance Totems also cover the raid. Defensive totems keep their own ranges and effects.</p>
-        <p class="subtle">Forever persistent buff totems received a 5-minute duration and individual totems a 1.0-second global cooldown. Duplicate versions of a buff do not stack from multiple Shamans; a different, complementary buff may. This prevents assuming a five-player-only classic-era buff model. {cite('S6','S7','S16')}</p>
-      </div>
-    </div>
-    <div class="columns3" style="margin-top:18px">
-      <div class="paper">
-        <h3>01 · Prepare</h3>
-        <p><strong>Call of the Elements</strong> at level 20 summons up to one totem of each element from a saved bar configuration, with a <strong>3-second cast</strong>. <strong>Call of the Ancestors</strong> at 30 and <strong>Call of the Spirits</strong> at 40 supply two more saved groups. Presets are ideal before pulls, risky under interrupts.</p>
-      </div>
-      <div class="paper">
-        <h3>02 · Move</h3>
-        <p><strong>Totemic Call</strong> (level 22, 30-second cooldown) brings current totems to your <strong>own present location</strong>. It is not the old place-at-cursor Totemic Projection. Walk to the destination first, then Call; avoid dragging an active Magma totem away from enemies.</p>
-      </div>
-      <div class="paper">
-        <h3>03 · Recall</h3>
-        <p><strong>Totemic Recall</strong> (level 20) dismisses totems and refunds <strong>25%</strong> of each destroyed totem's mana cost. Recall when the pack dies, when a totem risks pulling, or before a new preset. It is not a full refund or free repositioning.</p>
-      </div>
-    </div>
-    <div class="paper" style="margin-top:22px">
-      <h3>Interactive totem decision tree</h3>
-      <p class="muted">Select an encounter; the recommendation updates per element. You can pre-program several of these as different calls.</p>
-      <div class="actionbar choose-group">
-        <button type="button" data-totem="melee" aria-pressed="false">⚔️ Melee</button>
-        <button type="button" data-totem="caster" aria-pressed="false">🔮 Spellcaster</button>
-        <button type="button" data-totem="boss" aria-pressed="false">👹 Boss</button>
-        <button type="button" data-totem="pack" aria-pressed="false">🔥 Large pack</button>
-        <button type="button" data-totem="pvp" aria-pressed="false">🛡️ PvP</button>
-      </div>
-      <div class="result">
-        <h3 id="totem-title">Boss</h3>
-        <div class="columns2">
-          <div>
-            <h4>🪨 Earth</h4>
-            <p id="earth-result"></p>
-            <h4>🔥 Fire</h4>
-            <p id="fire-result"></p>
-          </div>
-          <div>
-            <h4>💧 Water</h4>
-            <p id="water-result"></p>
-            <h4>🌪️ Air</h4>
-            <p id="air-result"></p>
-          </div>
+    <div class="plate">
+      <div class="totem-board">
+        <div>
+          <h3>The four-slot totem network</h3><svg class="totem-diagram" viewBox="0 0 520 350" role="img" aria-label="Shaman center with Earth totem north, Fire totem east, Water totem south and Air totem west; rings represent illustrative coverage, not to scale"><defs><radialGradient id="tg"><stop stop-color="#619eac" stop-opacity=".24"/><stop offset="1" stop-color="#50a2ac" stop-opacity=".01"/></radialGradient></defs><circle cx="260" cy="178" r="144" fill="url(#tg)" stroke="#7ca7a8" stroke-dasharray="5 7" opacity=".85"/><circle cx="260" cy="178" r="94" fill="none" stroke="#cfe9ba" stroke-opacity=".3" stroke-dasharray="2 8"/><g fill="none" stroke="#92bec9" stroke-width="2"><path d="M260 178 L260 62 M260 178 L420 178 M260 178 L260 290 M260 178 L100 178"/></g><g font-size="15" text-anchor="middle" fill="#f7e5ce"><circle cx="260" cy="178" r="34" fill="#263b4d" stroke="#bed5c9"/><text x="260" y="173">SHAMAN</text><text x="260" y="193" font-size="11">position</text><circle cx="260" cy="62" r="29" fill="#725d3a" stroke="#ffdf9c"/><text x="260" y="68">EARTH</text><circle cx="420" cy="178" r="29" fill="#813f30" stroke="#ff9e6b"/><text x="420" y="183">FIRE</text><circle cx="260" cy="290" r="29" fill="#275f69" stroke="#7bdadf"/><text x="260" y="295">WATER</text><circle cx="100" cy="178" r="29" fill="#486a73" stroke="#bce1e9"/><text x="100" y="183">AIR</text></g></svg><p class="figure-caption">Illustrative positioning diagram; dashed circles are not actual measured totem radii. Check each totem's own 20- or 30-yard tooltip rather than assuming one universal radius.</p>
         </div>
-        <div class="callout good" id="totem-note"></div>
+        <div>
+          <h3>Choose one effect per element</h3>
+          <p><span class="totem-icon">🪨</span> <strong>Earth:</strong> Strength of Earth (melee support), Stoneskin (physical mitigation), Earthbind (slow or 5-sec root with Earthbound), Stoneclaw (distraction), Tremor (crowd-control response).</p>
+          <p><span class="totem-icon">🔥</span> <strong>Fire:</strong> Searing for single targets, Magma for clustered packs. Both can become the <strong>location of Fire Nova</strong>.</p>
+          <p><span class="totem-icon">💧</span> <strong>Water:</strong> Mana Spring for sustained mana, Healing Stream for gradual healing, Mana Tide for a short, valuable party regen window.</p>
+          <p><span class="totem-icon">🌪️</span> <strong>Air:</strong> Windfury and Grace of Air buffs versus Grounding / Windwall utility. <strong>Raid nuance:</strong> Windfury, Flametongue, Strength of Earth and Grace of Air buff the raid within their proper ranges; Grace of Air can coexist with Windfury or Flametongue from multiple Shamans, but Windfury and Flametongue remain exclusive with each other. Resistance Totems also cover the raid. Defensive totems keep their own ranges and effects.</p>
+          <p class="subtle">Forever persistent buff totems received a 5-minute duration and individual totems a 1.0-second global cooldown. Duplicate versions of a buff do not stack from multiple Shamans; a different, complementary buff may. This prevents assuming a five-player-only classic-era buff model. {cite('S6','S7','S16')}</p>
+        </div>
+      </div>
+      <div class="columns3" style="margin-top:18px">
+        <div class="paper">
+          <h3>01 · Prepare</h3>
+          <p><strong>Call of the Elements</strong> at level 20 summons up to one totem of each element from a saved bar configuration, with a <strong>3-second cast</strong>. <strong>Call of the Ancestors</strong> at 30 and <strong>Call of the Spirits</strong> at 40 supply two more saved groups. Presets are ideal before pulls, risky under interrupts.</p>
+        </div>
+        <div class="paper">
+          <h3>02 · Move</h3>
+          <p><strong>Totemic Call</strong> (level 22, 30-second cooldown) brings current totems to your <strong>own present location</strong>. It is not the old place-at-cursor Totemic Projection. Walk to the destination first, then Call; avoid dragging an active Magma totem away from enemies.</p>
+        </div>
+        <div class="paper">
+          <h3>03 · Recall</h3>
+          <p><strong>Totemic Recall</strong> (level 20) dismisses totems and refunds <strong>25%</strong> of each destroyed totem's mana cost. Recall when the pack dies, when a totem risks pulling, or before a new preset. It is not a full refund or free repositioning.</p>
+        </div>
+      </div>
+      <div class="paper" style="margin-top:22px">
+        <h3>Interactive totem decision tree</h3>
+        <p class="muted">Select an encounter; the recommendation updates per element. You can pre-program several of these as different calls.</p>
+        <div class="actionbar choose-group">
+          <button type="button" data-totem="melee" aria-pressed="false">⚔️ Melee</button>
+          <button type="button" data-totem="caster" aria-pressed="false">🔮 Spellcaster</button>
+          <button type="button" data-totem="boss" aria-pressed="false">👹 Boss</button>
+          <button type="button" data-totem="pack" aria-pressed="false">🔥 Large pack</button>
+          <button type="button" data-totem="pvp" aria-pressed="false">🛡️ PvP</button>
+        </div>
+        <div class="result">
+          <h3 id="totem-title">Boss</h3>
+          <div class="columns2">
+            <div>
+              <h4>🪨 Earth</h4>
+              <p id="earth-result"></p>
+              <h4>🔥 Fire</h4>
+              <p id="fire-result"></p>
+            </div>
+            <div>
+              <h4>💧 Water</h4>
+              <p id="water-result"></p>
+              <h4>🌪️ Air</h4>
+              <p id="air-result"></p>
+            </div>
+          </div>
+          <div class="callout good" id="totem-note"></div>
+        </div>
       </div>
     </div>
     <div class="paper green" style="margin-top:18px">
@@ -367,7 +429,6 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
         <h2>Elemental</h2>
         <p class="lead">Spell rhythm, thunder and deliberate exposure</p>
         <p>A caster decides when standing still to generate lightning damage is worth the risk. Forever rewards correct casts with Overload, gives a timed capstone, and makes Earthbind and Fire Nova meaningful tactical choices.</p>
-        <p class="artcredit">Illustrative artwork only – no live-game ability depiction is implied.</p>
       </div>
     </div>
     <div class="columns3">
@@ -461,7 +522,6 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
         <h2>Enhancement</h2>
         <p class="lead">An axe strike is also a mana and spell decision</p>
         <p>Melee weapons create the attack cadence. Stormstrike modifies a future spell. Maelstrom turns weapon contact into an instant free Lightning Bolt. The rest of your tree determines how aggressively you press into melee, cast fire or heal yourself.</p>
-        <p class="artcredit">Illustrative artwork only – no live-game ability depiction is implied.</p>
       </div>
     </div>
     <div class="columns3">
@@ -579,7 +639,6 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
         <h2>Restoration</h2>
         <p class="lead">The same spells, three completely different jobs</p>
         <p>An all-in group healer spreads efficient coverage; a roaming medic spends points on positioning and escape; a tank guardian anticipates lethal single-target events. None should treat Riptide as an instant burst heal.</p>
-        <p class="artcredit">Illustrative artwork only – no live-game ability depiction is implied.</p>
       </div>
     </div>
     <div class="columns3">
@@ -2178,7 +2237,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
     <div class="chapter-number">CHAPTER 09</div>
     <h2>Same enemy. Different Shaman.</h2>
     <p class="lead">These timelines describe decisions rather than simulated global cooldown timestamps. Every character faces the same invented training encounter so the differences in buttons, tempo, mana and positioning are easy to compare.</p>
-    <div class="paper">
+    <div class="plate">
       <h3>Interactive side-by-side battle replay</h3>
       <div class="actionbar choose-group">
         <button type="button" data-timeline="elemental" aria-pressed="false">⚡ Elemental boss + adds</button>
@@ -2326,7 +2385,7 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
     <div class="chapter-number">CHAPTER 10</div>
     <h2>Interactive Build Atlas</h2>
     <p class="lead">Pick a specialization or preferred content, then inspect the comparison bars and jump to the exact 51-point talent dossier. The indicators are editorial expressions of playstyle, not DPS, HPS or probability calculations.</p>
-    <div class="paper">
+    <div class="plate">
       <div class="actionbar">
         <label for="spec-filter">Specialization</label>
         <select id="spec-filter"><option value="all">All three</option><option>Elemental</option><option>Enhancement</option><option>Restoration</option></select>
@@ -2503,9 +2562,9 @@ a{color:#bde4f9;text-decoration-color:#7897ac}a:hover{color:#fff}h1,h2,h3,h4{fon
     <p class="figure-caption">Illustrations generated specially for this guide; none is labeled as a live Forever gameplay screenshot. In-game archival talent screenshots and a Forever gameplay screenshot can be examined via <a href="https://classicwowforever.com/talents/shaman/" target="_blank" rel="noopener">archival beta talent screen evidence</a> or <a href="https://www.gamestar.de/galerien/world_of_warcraft_forever%2C137281.html" target="_blank" rel="noopener">GameStar's Forever screenshot gallery</a>; historical images must not be used as authoritative proof of current post-launch tooltips.</p>
   </section>
   <footer class="foot shell">
-    <p><strong>THE FOREVER SHAMAN COMPENDIUM · FOREVER</strong> &nbsp;– &nbsp; An illustrated, standalone, interactive field guide for World of Warcraft: Forever. Game names and mechanics remain the intellectual property of Blizzard Entertainment. Illustrations are original editorial concept art. <span class="muted">Research cutoff: November 13, 2026.</span></p>
-    <p>To use this offline: save this HTML file together with its images folder and open it in a browser. Totem recommendations, timeline tabs, filters and all nine build dossiers work without external libraries. Source links require internet access.</p>
+    <p><strong>THE FOREVER SHAMAN COMPENDIUM · FOREVER</strong> &nbsp;– &nbsp; An illustrated, interactive field guide for World of Warcraft: Forever. Game names and mechanics remain the intellectual property of Blizzard Entertainment. <span class="muted">Research cutoff: November 13, 2026.</span></p>
   </footer>
+  </main>
   <script>
 const BDATA={
   "EA":{
