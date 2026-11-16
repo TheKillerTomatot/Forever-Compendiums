@@ -1,67 +1,153 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0b130e"><meta name="description" content="The Forever Hunter Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Hunter Compendium: The Chronicle of Fang and Far Horizon</title><style>
-:root{--bg:#080c0a;--base:#0b130e;--surface:#111b15;--pan:#172219;--line:#35483c;--line2:#4c5543;--text:#e9e8db;--soft:#c3c9bb;--mute:#9ea99a;--forest:#76a67a;--forest2:#345b40;--copper:#ce8b60;--amber:#ecc889;--leather:#9b785e;--steel:#97a9aa;--shade:0 15px 55px #0008;--radius:17px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:16px}body{background:radial-gradient(ellipse at 96% 0%,#2546316b,transparent 28%),radial-gradient(ellipse at 10% 40%,#4e322351,transparent 34%),var(--bg);font:15.4px/1.67 'Segoe UI',Arial,sans-serif;color:var(--text);margin:0}::selection{background:#91733d;color:white}a{color:#efd29e;text-decoration:none;border-bottom:1px solid #886f50}a:hover{color:#fff;border-color:currentColor}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--amber);outline-offset:3px}h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.17;font-weight:normal}h1{font-size:clamp(52px,7vw,106px);letter-spacing:-.048em;margin:0 0 18px}h2{font-size:clamp(32px,3.4vw,48px);letter-spacing:-.025em;margin:0 0 16px}h3{font-size:clamp(23px,2.25vw,30px);margin:0 0 12px}h4{font-size:18px;margin:0 0 9px}p{margin:0 0 13px}li{margin:0 0 7px}b,strong{color:#fff}small{font-size:12px}.lead{font-size:clamp(18px,1.85vw,23px);line-height:1.57;color:#dfdfd0;max-width:930px}.eyebrow{color:var(--amber);font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;margin:0 0 12px}.fine{font-size:12px;color:#aab6a6}.ref{display:inline-flex;border:1px solid #6c654e;border-radius:20px;color:#e6c892;font-size:10px;letter-spacing:.08em;line-height:1.3;padding:2px 5px;margin:0 2px;white-space:nowrap}.ref:hover{background:#6c4d2f}.rise{color:#90ba97}.center{text-align:center}
-#leftnav{position:fixed;inset:0 auto 0 0;width:234px;z-index:50;background:linear-gradient(165deg,#0d1812fa,#0a0d0bfa);border-right:1px solid #526147;box-shadow:10px 0 40px #0004;overflow:auto;padding:24px 17px}#leftnav .side-logo{display:block;font:27px/.97 Georgia,serif;letter-spacing:.016em;color:#eadbb9;margin:24px 0 23px;border:0}#leftnav .side-logo span{color:#76a67a}#leftnav .micro{font-size:10px;color:var(--amber);letter-spacing:.26em;text-transform:uppercase;font-weight:bold}#leftnav a.chapter-link{display:block;border:0;padding:11px 7px;font-size:12px;line-height:1.3;color:#bdc7b9;border-top:1px solid #24342a;transition:.2s}#leftnav a.chapter-link:hover,#leftnav a.chapter-link.active{background:#283629;color:#fff;border-radius:5px}#leftnav a.chapter-link i{font:normal 11px Georgia;color:#b68c65;display:inline-block;width:27px}#leftnav .edition{font-size:10px;letter-spacing:.12em;color:#839a83;line-height:1.7;border-top:1px solid #3a4d3a;margin-top:26px;padding:13px 7px}#hamburger{display:none;position:fixed;right:15px;top:14px;z-index:75;border:1px solid #997454;background:#16251c;color:#f5e8ce;border-radius:8px;padding:9px 13px;font-weight:bold}#overlay{display:none}#readingbar{position:fixed;top:0;left:234px;z-index:70;height:3px;background:linear-gradient(90deg,#709f75,#edc57d,#bd7753);width:0;pointer-events:none}main{margin-left:234px;min-width:0}section{padding:76px clamp(25px,5.25vw,92px);border-top:1px solid #334538;position:relative}section:nth-of-type(even){background:linear-gradient(100deg,#0b150f,#11150f 55%,#0b1010)}section[id]:before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 60%,#14372610);pointer-events:none}.shell{max-width:1370px;margin:0 auto;position:relative}.shell>h2:after{content:'';display:block;height:2px;width:115px;margin:18px 0 20px;background:linear-gradient(90deg,#ddb87e,transparent)}.hero{height:790px;min-height:700px;display:flex;align-items:end;position:relative;background-image:url('images/hunter-hero.webp');background-position:center 31%;background-size:cover;background-repeat:no-repeat;overflow:hidden;padding:60px clamp(30px,5.25vw,92px) 76px}.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#03080500 0%,#03080517 27%,#0208059e 59%,#080c0af5 94%,var(--bg)),linear-gradient(90deg,#061009c4 0%,transparent 67%)}.hero:after{content:'';position:absolute;left:5%;right:5%;bottom:25px;height:1px;background:linear-gradient(90deg,var(--amber),transparent)}.hero-inner{position:relative;z-index:2;max-width:1050px;text-shadow:0 3px 22px #020806c8}.hero h1 .light{display:block;color:#fff}.hero h1 .gold{display:block;color:#efd09a;font-weight:normal}.hero .desc{max-width:850px;color:#e6e8dc;font-size:20px;line-height:1.55}.hero .folio{font:12px Georgia;letter-spacing:.32em;color:#f3d5a1;margin:22px 0 0}.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0}.chip,.tag{border:1px solid #806d4d;border-radius:25px;background:#07140cbb;color:#e5d2b1;padding:5px 11px;font-size:11px;line-height:1.4;letter-spacing:.07em;display:inline-block}.art-credit{position:absolute;bottom:22px;right:28px;color:#a9aea0;font-size:10px;z-index:2;text-shadow:0 1px 3px black;max-width:320px;text-align:right}
-.grid2,.grid3{display:grid;gap:18px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.panel,.spec-card,.note{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(140deg,#1c2a1f,#121b15);padding:24px;box-shadow:var(--shade)}.panel p,.panel li,.spec-card p{color:#c9d1c4}.panel h3{font-size:26px}.panel h4{color:var(--amber)}.spec-card{position:relative;min-height:300px;overflow:hidden;border-top:3px solid var(--accent);background:radial-gradient(ellipse at 110% 0,var(--accentDark) 0%,transparent 60%),#101913}.spec-card .watermark{position:absolute;font:160px Georgia;color:var(--accent);opacity:.07;right:0;bottom:-57px;pointer-events:none}.spec-card h3{font-size:31px;color:var(--accent);position:relative}.spec-card ul{padding-left:18px}.spec-card .spec-num{color:#d9d4b9;font-size:11px;letter-spacing:.22em}.spec-card.green{--accent:var(--forest);--accentDark:#386240}.spec-card.amber{--accent:var(--amber);--accentDark:#4a3523}.spec-card.copper{--accent:var(--copper);--accentDark:#603823}.note{box-shadow:none;background:#142119;padding:20px}.verdict{background:linear-gradient(95deg,#382a1d,#171e17);border-left:3px solid var(--amber);padding:19px 22px;border-radius:0 11px 11px 0;margin:23px 0;color:#e4ded0}.verdict strong{color:var(--amber)}.alert{border-left:3px solid var(--copper);background:#2b1d16;padding:18px 21px;margin:18px 0;border-radius:0 11px 11px 0;color:#d9cbbf}.flow{display:flex;gap:9px;align-items:stretch;margin:22px 0;flex-wrap:wrap}.node{flex:1 1 160px;min-height:102px;border:1px solid #53725a;background:#172b1e;border-radius:12px;padding:17px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#e9e9d7;font-size:13px}.node b{font:19px Georgia;color:var(--amber);margin-bottom:4px}.node em{font-style:normal;color:#bac5b6;font-size:11px}.flow-arrow{flex:0 0 20px;display:grid;place-items:center;color:var(--copper);font-size:24px}.node.n2{background:#2b211a;border-color:#84603d}.node.n3{background:#1a2328;border-color:#677b7c}.node.n4{background:#292219;border-color:#a5895c}.decision{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.choice{border:1px solid #4c624b;border-radius:12px;background:#15231a;padding:18px}.choice b{font:19px Georgia;display:block;color:var(--amber);margin-bottom:7px}.choice p{font-size:12px;color:#bfc9b9}.split-vis{display:grid;grid-template-columns:155px 1fr;gap:10px;margin:19px 0}.split-vis span{font-size:12px;color:#cbd5bf}.split-vis .track{position:relative;background:#27372c;border:1px solid #385042;border-radius:7px;min-height:27px;overflow:hidden}.split-vis .part{position:absolute;left:0;top:3px;bottom:3px;border-radius:5px;background:linear-gradient(90deg,#477958,#95b791)}.split-vis .part.pet{background:linear-gradient(90deg,#ad6e4b,#e1ae6b)}.split-vis .mark{position:relative;display:block;z-index:2;color:white;padding:1px 0 0 10px;font-size:11px;line-height:23px;text-shadow:0 1px 3px black}.split-vis+.fine{margin-top:-10px}.tabular{overflow:auto;border:1px solid var(--line);border-radius:13px;margin:17px 0 26px}table{width:100%;border-collapse:collapse;font-size:13px}td,th{vertical-align:top;text-align:left;padding:11px 12px;border-bottom:1px solid #344338}th{background:#243225;color:#efcc95;text-transform:uppercase;letter-spacing:.11em;font-size:10px;white-space:nowrap}tr:nth-child(even){background:#18231b}td:first-child{color:#f2e8d3;font-weight:600}.illustration-frame{background:radial-gradient(ellipse at top,#283f2b,#0d1611);border:1px solid #4f674f;padding:22px;border-radius:18px}.vector-icon{width:80px;height:80px;display:block;margin:0 auto 10px;stroke:var(--copper);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.diagram-title{font-family:Georgia;font-size:25px;color:#eacc8e}.legend{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0}.legend span{border:1px solid #56654f;padding:4px 10px;color:#aeb8a5;border-radius:30px;font-size:11px}
-.chapter-banner{display:grid;grid-template-columns:170px minmax(0,1fr);gap:29px;align-items:center;margin-bottom:24px}.medallion{width:159px;height:159px;border:1px solid currentColor;border-radius:50%;color:var(--forest);display:grid;place-items:center;position:relative;box-shadow:0 0 70px #66846320 inset}.medallion:before{content:'';position:absolute;inset:12px;border:1px dashed currentColor;border-radius:50%;opacity:.45}.medallion span{font:92px Georgia}.medallion.amber{color:var(--amber)}.medallion.copper{color:var(--copper)}.archetypes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px 0}.archetype{background:linear-gradient(145deg,#1f3022,#131913);border:1px solid #4e654d;border-top:2px solid var(--accent);border-radius:16px;padding:20px 21px;position:relative}.archetype h3{font-size:23px;position:relative}.archetype .ordinal{position:absolute;right:17px;top:6px;font:italic 40px Georgia;color:#51624b;opacity:.5}.archetype .build-code{font:12px ui-monospace,monospace;color:var(--amber);margin-bottom:15px}.archetype p{font-size:13px;color:#bfc9be}.archetype .mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}.archetype .mini div{border-top:1px solid #5a6953;padding-top:5px}.archetype .mini span{display:block;font-size:10px;color:#b8c7b8;letter-spacing:.09em;text-transform:uppercase}.archetype .mini b{font-size:12px;color:#efe8d7}
-.dossier{position:relative;border:1px solid #57634d;border-radius:20px;margin:27px 0;padding:clamp(18px,2.4vw,32px);background:radial-gradient(ellipse at 100% 0%,var(--dossierGlow) 0%,transparent 55%),linear-gradient(125deg,#132218,#0e1611);box-shadow:var(--shade);break-inside:avoid}.dossier.green{--dossierGlow:#2d583c}.dossier.amber{--dossierGlow:#4b371e}.dossier.copper{--dossierGlow:#5d3423}.dossier-head{display:flex;justify-content:space-between;gap:17px;align-items:center;border-bottom:1px solid #56634d;padding-bottom:19px;margin-bottom:22px}.dossier h3{font-size:clamp(30px,3vw,39px);margin:2px 0 4px}.dossier .portrait{border:1px solid #8d795b;border-radius:50%;width:85px;height:85px;display:grid;place-items:center;flex:none;font:52px Georgia;color:#e8c28d;background:#151f17}.dossier .dtag{color:#d8ad7f;font-size:12px;letter-spacing:.13em;text-transform:uppercase}.dossier .deck{font:italic 19px Georgia;color:#ded5ba;margin:10px 0 15px}.dossier .ribbons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.dossier .ribbon{border:1px solid #53664b;border-radius:10px;padding:10px 12px;background:#2331266e;min-width:0}.dossier .ribbon span{display:block;font-size:10px;color:#a7bba8;letter-spacing:.08em;text-transform:uppercase}.dossier .ribbon b{font-size:13px;color:#f0e5c9;overflow-wrap:anywhere}.dossier .talent-list{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 19px}.dossier .talent-pill{font-size:11px;color:#d7ded0;background:#1b2b1f;border:1px solid #52644d;border-radius:20px;padding:4px 9px}.dossier .talent-pill b{color:#efc388}.dossier h4{font:800 11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin:18px 0 9px}.dossier .d-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px}.dossier p{color:#d1d6c8;font-size:13.5px}.dossier .micro-table{display:grid;grid-template-columns:1fr 1fr;gap:7px}.dossier .micro-table div{border-bottom:1px solid #485b47;padding:7px 0;font-size:12px;color:#d8e0d1}.dossier .micro-table b{display:block;font-size:11px;color:#edcf9d}.dossier .d-footer{margin-top:20px;padding:14px 0 0;border-top:1px solid #51634e;font-size:13px;color:#d6dfd4}.dossier .d-footer strong{color:#e9c998}.dossier .spec-count{font:12px ui-monospace,monospace;color:#eed09a}
-.scenario-mini{background:#172319;border:1px solid #455a47;padding:19px;border-radius:14px}.scenario-mini h3{font-size:21px}.scenario-mini h4{font:600 11px Arial;letter-spacing:.13em;color:var(--amber);text-transform:uppercase;margin-top:16px}.scenario-mini p{font-size:12px;color:#c7d0c1}.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:12px 0 24px}.tick{background:#243427;border:1px solid #516c52;border-radius:11px;padding:11px 12px;min-height:136px;position:relative}.tick b{font:26px Georgia;color:#eed09b;display:block;margin-bottom:7px}.tick span{font-size:12px;color:#e3e7d9}.tick:after{content:'›';position:absolute;right:-10px;top:42%;z-index:3;color:#efc791;font-size:26px;text-shadow:0 1px 4px black}.tick:last-child:after{display:none}.timeline.copper .tick{background:#30251e;border-color:#7a533c}.timeline.amber .tick{background:#2e291f;border-color:#86663f}
-.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:23px 0}.controls label{display:flex;flex-direction:column;gap:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#ddc598}.controls select,.controls button,#find-style select{background:#1b2a21;color:#f1e8d5;border:1px solid #63735c;border-radius:8px;padding:11px 14px;font-size:13px;cursor:pointer;min-width:180px;max-width:100%}.controls button{min-width:0}.controls button:hover,.controls select:hover{background:#324133}.interactive-output{padding:23px;border:1px solid #817352;border-radius:16px;background:radial-gradient(ellipse at top right,#263d2d,#111b14);margin:13px 0 25px}.interactive-output>h3{color:#f0cd96}.encounter-grid{display:grid;grid-template-columns:1fr;gap:17px}.encounter-build{border-top:1px solid #475847;padding:19px 0 0}.encounter-build:first-child{border:0;padding-top:0}.encounter-build .enc-heading{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:7px}.enc-heading h4{font:24px Georgia;margin:0}.step-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin-top:12px}.step{padding:12px;background:#233326;border:1px solid #4b694c;border-radius:10px;min-height:111px;color:#e0e4d6;font-size:12px}.step b{display:block;font:26px Georgia;color:#efca8f;margin-bottom:4px}.battle-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}.battle-notes>div{font-size:11px;color:#c4d0c3;background:#142219;border:1px solid #375142;border-radius:9px;padding:9px 11px}.battle-notes b{font:700 10px 'Segoe UI',Arial,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--amber);display:block;margin-bottom:5px}.print-cue{font-size:10px;color:#a8b9a9;line-height:1.4}
-.dashboard{overflow:auto;border:1px solid #465947;border-radius:14px}.matrix{min-width:1035px;width:100%;font-size:12px}.matrix th{writing-mode:vertical-rl;transform:none;vertical-align:bottom;height:141px;min-width:62px;padding:9px;white-space:normal}.matrix th:first-child,.matrix th:nth-child(2){writing-mode:initial;height:auto;min-width:180px;vertical-align:middle}.matrix td{text-align:center;padding:7px 9px}.matrix td:first-child{text-align:left}.matrix td:nth-child(2){text-align:left}.heat{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;line-height:1;color:#fff;height:22px;width:34px;margin:auto;border-radius:6px;box-shadow:inset 0 1px 2px #0002}.heat.heat3,.heat.heat4,.heat.heat5{color:#14110f}.heat1{background:#2f4537}.heat2{background:#4b6c4f}.heat3{background:#8b975e}.heat4{background:#c8a16b}.heat5{background:#e9c98f}.heat:focus-visible{outline:2px solid white}.matrix .hidden{display:none}.matrix tr:hover td{background:#374635;transition:.1s}.sort-button{white-space:nowrap}.finder{background:linear-gradient(100deg,#1d3325,#352719);border:1px solid #726449;border-radius:17px;padding:23px;margin-top:20px}.finder h3{color:#e9c98d}.finder .question{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.finder .question label{display:flex;flex-direction:column;gap:7px;color:#d3cbbb;font-size:12px}.finder select{width:100%;min-width:0}#finder-result{margin:16px 0 0;border-top:1px solid #716044;padding-top:17px}.source-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.source-item{border-bottom:1px solid #42513e;padding:12px;break-inside:avoid}.source-item a{font-size:13px}.source-item span{display:block;color:#9fac9a;font-size:11px;margin-top:4px}.source-item strong{color:#e1ba7b}.footline{border-top:1px solid #45533f;padding:22px 0;font-size:12px;color:#aeb8a9;margin-top:30px}.print-only{display:none}.to-top{border-radius:15px;background:#203629;color:#f2e2c3;padding:13px 20px}
-@media(max-width:1180px){#leftnav{width:203px}main{margin-left:203px}#readingbar{left:203px}.grid3,.archetypes{grid-template-columns:repeat(2,minmax(0,1fr))}.decision{grid-template-columns:repeat(2,1fr)}.timeline,.step-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.tick:after{display:none}}
-@media(max-width:900px){#leftnav{transform:translateX(-100%);transition:transform .23s ease;width:260px}body.menu-open #leftnav{transform:translateX(0)}#hamburger{display:block}body.menu-open #overlay{display:block;position:fixed;inset:0;background:#050905ab;z-index:45}main{margin-left:0}#readingbar{left:0}.hero{height:auto;min-height:720px}.hero h1{font-size:clamp(52px,10vw,95px)}.dossier .ribbons{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){body{font-size:14px}section{padding:55px 21px}.hero{height:auto;min-height:730px;padding:70px 23px 68px;background-position:58% center}.hero h1{font-size:clamp(47px,11vw,75px)}.hero .desc{font-size:16px}.hero .folio{font-size:10px}.art-credit{right:18px;font-size:10px}.grid2,.grid3,.archetypes,.dossier .d-cols,.source-list,.finder .question{grid-template-columns:1fr}.chapter-banner{grid-template-columns:1fr}.medallion{width:112px;height:112px}.medallion span{font-size:67px}.decision{grid-template-columns:1fr}.timeline,.step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tick,.step{min-height:110px}.flow-arrow{flex:0 0 12px}.node{flex-basis:120px}.dossier .portrait{width:62px;height:62px;font-size:33px}.dossier-head{align-items:flex-start}.dossier .ribbons{grid-template-columns:repeat(2,minmax(0,1fr))}.dossier .talent-list{gap:4px}.dossier .talent-pill{font-size:10px;padding:3px 6px}.split-vis{grid-template-columns:100px 1fr}.interactive-output{padding:16px}.battle-notes{grid-template-columns:1fr}.controls select{min-width:130px}}
-@media print{@page{size:A4;margin:14mm 12mm}html,body{background:#0b100d!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}#leftnav,#hamburger,#overlay,#readingbar,.notprint{display:none!important}main{margin:0}section{padding:24px 8px;break-before:auto}h1,h2,h3,h4{break-after:avoid}h2{font-size:28px}.hero{min-height:0;height:265mm;break-after:page;background-position:58% center}.hero h1{font-size:62px}.hero .desc{font-size:16px}.dossier{break-before:page;break-inside:auto}.panel,.spec-card,.archetype,.node,.choice,.scenario-mini{break-inside:avoid}.grid3,.archetypes{grid-template-columns:repeat(3,minmax(0,1fr))}.dossier .d-cols{grid-template-columns:1fr 1fr}.dossier p{font-size:11.5px}.dossier .ribbons{grid-template-columns:repeat(4,1fr)}.print-only{display:block}.interactive-output{display:none}.tick{min-height:113px}.tick span{font-size:10px}.source-list{grid-template-columns:1fr 1fr}.source-item{font-size:10px}.matrix{min-width:0}.matrix th{height:150px;min-width:38px;font-size:10px}.matrix th:first-child,.matrix th:nth-child(2){min-width:95px}.matrix td{padding:4px}.heat{height:16px;width:24px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-/* very small phones: the title word COMPENDIUM must fit inside the side padding */@media(max-width:340px){.hero h1{font-size:40px}}
-
-/* Collection-wide editorial annotation, kept subordinate to each class theme. */
-.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
-.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
-.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
-@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
-
-/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
-.hero .series-manuscript {
-  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif;
-  letter-spacing: .06em;
-  text-transform: none;
-  max-width: 940px;
-  overflow-wrap: break-word;
-  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="theme-color" content="#170f0a"><meta name="description" content="The Forever Hunter Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Hunter Compendium: The Chronicle of Fang and Far Horizon</title>
+<link rel="stylesheet" href="book.css">
+<style>
+/* Hunter (phase 4): the class ink, the ornament and the parts that only this book has. The shared book design is in book.css. */
+:root{--accent:#7a3f1d;--ornament:'➶';--forest:#2a5735;--amber:#6b4a0f;--copper:#7a3f1d;--steel:#4f6667}
+.center{text-align:center}
+.ref{display:inline-block;margin:0 2px;padding:0 5px;color:var(--ink-2);font-size:13px;white-space:nowrap;text-decoration:none;border:1px solid var(--line);border-radius:3px}
+.ref:hover{color:var(--accent);border-color:currentColor}
+/* the reading progress line at the top of the window */
+#readingbar{position:fixed;top:0;left:0;z-index:30;height:3px;width:0;background:var(--gilt);pointer-events:none}
+/* cover */
+.hero h1 :is(.light,.gold){display:block}
+.hero h1 .gold{color:var(--accent)}
+.hero .folio{margin:18px 0 0;color:var(--ink-2);font:14px var(--fell);letter-spacing:.14em}
+.chip-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:20px 0}
+.tag{display:inline-block;padding:1px 9px;color:var(--ink-2);font:14px var(--fell);letter-spacing:.06em;border:1px solid var(--line);border-radius:3px}
+/* chapter head: the medallion above the title */
+.chapter-banner{display:flex;flex-direction:column;margin-bottom:24px}
+.medallion{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 10px;color:var(--forest);border:1px solid currentColor;border-radius:50%}
+.medallion span{font:34px/1 var(--serif)}
+.medallion.amber{color:var(--amber)}.medallion.copper{color:var(--copper)}
+/* specialization cards and notes */
+.spec-card{position:relative;overflow:hidden;padding:20px;background:var(--card);border:1px solid #b8955a;border-top:3px solid var(--accent);box-shadow:var(--bookplate)}
+.spec-card.green{--accent:var(--forest)}.spec-card.amber{--accent:var(--amber)}.spec-card.copper{--accent:var(--copper)}
+.spec-card .watermark{position:absolute;right:0;bottom:-50px;color:var(--accent);font:150px var(--serif);opacity:.07;pointer-events:none}
+.spec-card h3{position:relative;color:var(--accent);font-size:28px}
+.spec-card .spec-num{color:var(--ink-2);font:13px var(--fell);letter-spacing:.14em}
+.spec-card p{font-size:16px}
+.verdict,.alert{margin:22px 0;padding:16px 20px;font-size:16px;background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--amber)}
+.alert{border-left-color:var(--copper)}
+.verdict strong{color:var(--accent)}
+/* flows, decisions, split bars, timelines */
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:9px;margin:22px 0}
+.node{display:flex;flex:1 1 150px;flex-direction:column;align-items:center;justify-content:center;min-height:96px;padding:14px 12px;font-size:14px;text-align:center;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--forest);border-radius:3px}
+.node b{margin-bottom:4px;color:var(--accent);font:19px var(--fell)}
+.node em{color:var(--ink-2);font-size:13px;font-style:normal}
+.node.n2{border-top-color:var(--copper)}.node.n3{border-top-color:var(--steel)}.node.n4{border-top-color:var(--amber)}
+.flow-arrow{display:grid;flex:0 0 20px;place-items:center;color:var(--ink-2);font-size:22px}
+.decision{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px;margin:20px 0}
+.choice{padding:16px;background:var(--card);border:1px solid var(--line)}
+.choice b{display:block;margin-bottom:6px;color:var(--accent);font:19px var(--fell)}
+.choice p{font-size:14px}
+.split-vis{display:grid;grid-template-columns:155px 1fr;gap:10px;margin:19px 0}
+.split-vis span{font-size:14px}
+.split-vis .track{position:relative;min-height:27px;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);border-radius:4px}
+.split-vis .part{position:absolute;top:3px;bottom:3px;left:0;background:var(--forest);border-radius:3px}
+.split-vis .part.pet{background:var(--copper)}
+.split-vis .mark{position:relative;z-index:2;display:block;padding:0 0 0 10px;color:#fff;font-size:13px;line-height:25px}
+.split-vis+.fine{margin-top:-10px}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:9px;margin:12px 0 24px}
+.tick{min-height:110px;padding:10px 12px;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--forest)}
+.timeline.copper .tick{border-top-color:var(--copper)}.timeline.amber .tick{border-top-color:var(--amber)}
+.tick b{display:block;margin-bottom:6px;color:var(--accent);font:24px var(--fell)}
+.tick span{font-size:14px}
+.tabular{margin:17px 0 26px;overflow-x:auto}
+.tabular td:first-child{font-weight:700}
+.vector-icon{display:block;width:80px;height:80px;margin:0 auto 10px;fill:none;stroke:var(--copper);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.legend{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px}
+.legend span{padding:2px 9px;color:var(--ink-2);font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:3px}
+/* the nine archetype cards (each sets --accent to its school) and dossiers */
+.archetypes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;margin:22px 0}
+.archetype{position:relative;padding:18px 20px;background:var(--card);border:1px solid #b8955a;border-top:3px solid var(--accent);box-shadow:var(--bookplate)}
+.archetype h3{position:relative;font-size:22px}
+.archetype .ordinal{position:absolute;top:6px;right:16px;color:#8f7a58;font:36px var(--fell)}
+.archetype .build-code{margin-bottom:12px;color:var(--accent);font:14px var(--fell);letter-spacing:.06em}
+.archetype p{font-size:15px}
+.archetype .mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.archetype .mini div{padding-top:5px;border-top:1px solid var(--line)}
+.archetype .mini span{display:block;color:var(--ink-2);font:13px var(--fell);letter-spacing:.06em}
+.archetype .mini b{font-size:14px}
+.dossier.green{--local:var(--forest)}.dossier.amber{--local:var(--amber)}.dossier.copper{--local:var(--copper)}
+.dossier{border-top:3px solid var(--local)}
+.dossier-head{display:flex;align-items:center;justify-content:space-between;gap:17px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.dossier h3{margin:2px 0 4px;font-size:clamp(28px,3vw,34px)}
+.dossier .portrait{display:grid;flex:none;place-items:center;width:72px;height:72px;color:var(--local);font:44px var(--serif);border:1px solid var(--line);border-radius:50%}
+.dossier .dtag{color:var(--local);font:14px var(--fell);letter-spacing:.12em}
+.dossier .deck{margin:10px 0 15px;color:var(--ink-2);font-size:18px;font-style:italic}
+.dossier .ribbons{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px}
+.dossier .ribbon{min-width:0;padding:10px 12px;background:var(--paper-2);border:1px solid var(--line)}
+.dossier .ribbon span{display:block;color:var(--ink-2);font:13px var(--fell);letter-spacing:.06em}
+.dossier .ribbon b{font-size:15px;overflow-wrap:anywhere}
+.dossier .talent-list{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 19px}
+.dossier .talent-pill{padding:2px 8px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.dossier h4{margin:18px 0 8px;color:var(--local);font-size:16px;letter-spacing:.06em}
+.dossier .d-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0 28px}
+.dossier p{font-size:15px}
+.dossier .micro-table{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.dossier .micro-table div{padding:7px 0;font-size:14px;border-bottom:1px solid var(--line)}
+.dossier .micro-table b{display:block;color:var(--ink-2);font:13px var(--fell)}
+.dossier .d-footer{margin-top:20px;padding-top:14px;font-size:14px;border-top:1px solid var(--line)}
+.dossier .spec-count{color:var(--accent);font:14px var(--fell)}
+/* plates: the encounter studies, the atlas and the style finder */
+.controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px 14px;margin:0 0 16px}
+.controls label{display:flex;flex-direction:column;gap:2px;min-width:0;max-width:100%}
+.controls select{min-width:min(180px,100%);max-width:100%}
+.sort-button{white-space:nowrap}
+.interactive-output{padding:18px;background:var(--card);border:1px solid var(--line)}
+.scenario-mini{padding:16px;background:var(--card);border:1px solid var(--line)}
+.scenario-mini h3{font-size:20px}
+.scenario-mini h4{margin-top:14px;color:var(--accent);font-size:15px;letter-spacing:.06em}
+.scenario-mini p{font-size:14px}
+.encounter-grid{display:grid;gap:17px}
+.encounter-build{padding-top:17px;border-top:1px solid var(--line)}
+.encounter-build:first-child{padding-top:0;border:0}
+.enc-heading{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:7px}
+.enc-heading h4{margin:0;font-size:22px}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:9px;margin-top:12px}
+.step{min-height:100px;padding:10px;font-size:14px;background:var(--paper-2);border:1px solid var(--line)}
+.step b{display:block;margin-bottom:4px;color:var(--accent);font:24px var(--fell)}
+.battle-notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:8px;margin-top:10px}
+.battle-notes>div{padding:9px 11px;font-size:14px;background:var(--paper-2);border:1px solid var(--line)}
+.battle-notes b{display:block;margin-bottom:4px;color:var(--accent);font:13px var(--fell);letter-spacing:.08em}
+.print-cue{color:var(--ink-2);font-size:13px;line-height:1.4}
+/* the matrix: names and specialization lie flat, the trait titles run vertically (read from the bottom up) */
+.dashboard{overflow-x:auto}
+.matrix{min-width:640px}
+.matrix thead tr{border-bottom:2px solid var(--ink-2)}
+.matrix th{border:0}
+.matrix th:nth-child(n+3){height:132px;min-width:32px;max-width:38px;padding:8px 2px;writing-mode:vertical-rl;transform:rotate(180deg);vertical-align:bottom}
+.matrix td{padding:6px 2px;text-align:center;vertical-align:middle}
+.matrix td:nth-child(-n+2){text-align:left}
+.matrix td:first-child{position:sticky;left:0;z-index:1;min-width:140px;padding-left:6px;background:var(--plate)}
+.matrix tbody tr:hover td{background-color:#e6d8b6}
+.matrix .hidden{display:none}
+.finder .question{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:11px}
+.finder .question label{display:flex;flex-direction:column;gap:2px}
+.finder select{width:100%;min-width:0}
+#finder-result{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+/* sources */
+.source-item a{font-size:15px}
+.source-item span{display:block;margin-top:4px;color:var(--ink-2);font-size:14px}
+.source-item strong{color:var(--accent)}
+.footline{margin-top:30px;padding:20px 0;color:var(--ink-2);font-size:14px;border-top:1px solid var(--line)}
+.to-top{white-space:nowrap}
+.print-only{display:none}
+@media (max-width:620px){
+  .split-vis{grid-template-columns:100px 1fr}
+  .flow-arrow{flex-basis:12px}
 }
-.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
-.hero .compendium-series-subtitle {
-  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif;
-  letter-spacing: .008em;
-  color: #f2d9a8;
-  max-width: 900px;
-  margin: 11px 0 15px;
-  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+@media print{
+  #readingbar{display:none!important}
+  .print-only{display:block}
+  .interactive-output{display:none}
+  .dossier{break-before:page}
+  .dashboard{overflow:visible}
+  .matrix{min-width:0}
+  .matrix td:first-child{position:static}
 }
-@media (max-width: 650px) {
-  .hero .series-manuscript { font-size: 11px; letter-spacing: .025em; }
-  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px); margin: 8px 0 10px; }
-}
-
-/* Reader-first note, visually subordinate to the original manuscript design. */
-.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
-.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
-.reader-orientation p{margin:0;line-height:1.64}
-
-/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
-.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
-.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
-.reader-field-exercise p{margin:0;line-height:1.75}
-
-.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
-/* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
-.vol-switch{--vol-on:var(--amber);display:flex;gap:4px;margin:14px 0 8px}
-.vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
-.vol-switch button:hover{border-color:currentColor}
-.vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
-.vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
-@media print{.vol-switch{display:none}}
+/* on phones the table shrinks to its content and the name column stays narrow, so the scores beside it have room */
+@media (max-width:600px){.matrix{min-width:0}.matrix td:first-child{min-width:110px}}
 </style></head>
 <body>
   <script>
@@ -75,7 +161,7 @@
       advanced:['#evidence','#dossiers','#laboratory','#atlas']
     };
     const MENU='#leftnav';
-    const SWITCH_BEFORE='#leftnav .chapter-link'; // the switch goes right before this element
+    const SWITCH_BEFORE='#leftnav .nav-divider'; // the switch goes right before this element
     const LABELS={primer:'Primer',advanced:'Advanced',complete:'Complete'};
     const style=document.createElement('style');
     document.head.append(style);
@@ -154,31 +240,51 @@
 <symbol id="ico-paw" viewBox="0 0 100 100"><path d="M38 48c-15 9-25 23-19 34 8 12 21-1 31-1s21 11 30 1c8-11-5-26-21-35-8-5-13-5-21 1Z"/><ellipse cx="20" cy="37" rx="8" ry="12" transform="rotate(-23 20 37)"/><ellipse cx="42" cy="24" rx="8" ry="12"/><ellipse cx="64" cy="26" rx="8" ry="12" transform="rotate(12 64 26)"/><ellipse cx="84" cy="43" rx="7" ry="12" transform="rotate(22 84 43)"/></symbol>
 <symbol id="ico-compass" viewBox="0 0 100 100"><circle cx="50" cy="50" r="39"/><circle cx="50" cy="50" r="28"/><path d="M50 10v20m0 40v20M10 50h20m40 0h20M62 38 43 43 38 62 57 57Z"/></symbol>
 </defs></svg>
-  <button id="hamburger" type="button" aria-expanded="false" aria-controls="leftnav"><span aria-hidden="true">☰</span> CHAPTERS</button>
-  <div id="overlay"></div>
   <div id="readingbar" aria-hidden="true"></div>
-  <nav id="leftnav" aria-label="Chapter navigation">
-    <div class="micro">The Far Horizon Chronicle · Vol. II</div>
-    <a class="side-logo" href="#begin">FOREVER<br><span>HUNTER</span></a>
-    <a class="chapter-link" href="#begin"><i>00</i> The opening hunt</a>
-    <a class="chapter-link" href="#anatomy"><i>01</i> Anatomy of the Hunter</a>
-    <a class="chapter-link" href="#beastmastery"><i>02</i> The Beastwarden’s Lodge</a>
-    <a class="chapter-link" href="#marksmanship"><i>03</i> The Sharpshooter’s Gallery</a>
-    <a class="chapter-link" href="#survival"><i>04</i> The Trapper’s Wilderness</a>
-    <a class="chapter-link" href="#progression"><i>05</i> Leveling, pets, raids &amp; PvP</a>
-    <a class="chapter-link" href="#evidence"><i>06</i> Live changes &amp; evidence</a>
-    <a class="chapter-link" href="#dossiers"><i>07</i> Character dossiers</a>
-    <a class="chapter-link" href="#laboratory"><i>08</i> Encounter studies</a>
-    <a class="chapter-link" href="#atlas"><i>09</i> Interactive Hunter atlas</a>
-    <a class="chapter-link" href="#sources"><i>10</i> Sources &amp; limits</a>
-    <div class="edition">LIVE-ERA FIELD NOTES<br>13 NOVEMBER 2026<br>51 POINTS · HUNTER FIELD NOTES<br>OFFLINE EDITION</div>
+  <nav id="leftnav" class="book-nav" aria-label="Chapter navigation">
+    <div class="nav-series">The Far Horizon Chronicle · Vol. II</div>
+    <a class="nav-title" href="#begin">FOREVER<br><span>HUNTER</span></a>
+    <button class="nav-toggle" type="button" aria-controls="leftnav" aria-expanded="false" hidden>Contents</button>
+    <div class="nav-divider"></div>
+    <div class="nav-body">
+      <ol>
+        <li><a class="chapter-link" href="#begin"><span>00</span>The opening hunt</a></li>
+        <li><a class="chapter-link" href="#anatomy"><span>01</span>Anatomy of the Hunter</a></li>
+        <li><a class="chapter-link" href="#beastmastery"><span>02</span>The Beastwarden’s Lodge</a></li>
+        <li><a class="chapter-link" href="#marksmanship"><span>03</span>The Sharpshooter’s Gallery</a></li>
+        <li><a class="chapter-link" href="#survival"><span>04</span>The Trapper’s Wilderness</a></li>
+        <li><a class="chapter-link" href="#progression"><span>05</span>Leveling, pets, raids &amp; PvP</a></li>
+        <li><a class="chapter-link" href="#evidence"><span>06</span>Live changes &amp; evidence</a></li>
+        <li><a class="chapter-link" href="#dossiers"><span>07</span>Character dossiers</a></li>
+        <li><a class="chapter-link" href="#laboratory"><span>08</span>Encounter studies</a></li>
+        <li><a class="chapter-link" href="#atlas"><span>09</span>Interactive Hunter atlas</a></li>
+        <li><a class="chapter-link" href="#sources"><span>10</span>Sources &amp; limits</a></li>
+      </ol>
+      <div class="nav-note">LIVE-ERA FIELD NOTES<br>13 NOVEMBER 2026<br>51 POINTS · HUNTER FIELD NOTES</div>
+    </div>
   </nav>
+  <script>
+  /* Contents button (phase 4): on narrow screens the chapter list folds away under this button.
+     Without JavaScript the button stays hidden and the list stays open. */
+  (()=>{
+    const nav=document.querySelector('.book-nav');
+    const button=nav.querySelector('.nav-toggle');
+    const show=open=>{nav.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));};
+    nav.classList.add('js');
+    button.hidden=false;
+    button.addEventListener('click',()=>show(!nav.classList.contains('open')));
+    // Close the list after a chapter is chosen, and on Escape.
+    nav.querySelector('.nav-body').addEventListener('click',e=>{if(e.target.closest('a'))show(false);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){show(false);button.focus();}});
+  })();
+  </script>
   <main>
     <header id="begin" class="hero" role="banner">
       <div class="hero-inner">
         <div class="eyebrow series-manuscript">The Far Horizon Chronicle<span class="series-sep"> / </span>From Field, Forest and Sky</div>
         <h1>THE FOREVER<br><span class="light">HUNTER</span><span class="gold">COMPENDIUM</span></h1>
         <div class="compendium-series-subtitle">The Chronicle of Fang and Far Horizon</div>
+        <figure class="frontis"><img src="images/hunter-hero.webp" alt="" width="1672" height="941"></figure>
         <p class="desc">The wilderness rewards patience before force. A Hunter learns to read distance, command a companion, choose a firing lane and turn dangerous ground into an advantage.</p>
         <p class="folio">THE FAR HORIZON CHRONICLE · VOLUME II · NOVEMBER 2026</p>
         <div class="chip-row">
@@ -186,9 +292,7 @@
           <span class="chip">Companions, shots &amp; survival</span>
           <span class="chip">Encounter field studies</span>
           <span class="chip">live-era source trail</span>
-          <span class="chip">fully offline interactions</span>
         </div><a href="#begin-text" class="chip">BEGIN THE HUNT ↓</a></div>
-      <div class="art-credit">Original Hunter, wolf and hawk artwork generated for this volume · © original generated illustration</div>
     </header>
     <section id="begin-text">
       <div class="shell">
@@ -641,8 +745,8 @@
             <p>Lone Wolf gives <b>+20% damage to the Hunter’s attacks</b> only without an active pet. No separate pet damage, no pet Growl, no signature ability, no pet Focused Fire. You own every moment of threat, survival and range recovery. <a class="ref" href="#src-04" title="Go to source 04">[04]</a> <a class="ref" href="#src-05" title="Go to source 05">[05]</a> <a class="ref" href="#src-14" title="Go to source 14">[14]</a></p>
           </div>
         </div>
-        <div class="illustration-frame">
-          <p class="diagram-title">The long-range firing sequence</p>
+        <div class="illustration-frame plate">
+          <p class="diagram-title plate-head">The long-range firing sequence</p>
           <div class="timeline amber">
             <div class="tick">
               <b>01</b><span>Start ≥8 yards from target; Hunter’s Mark / Sting selection.</span></div>
@@ -1895,120 +1999,122 @@
             <p>Pet threat and pathing versus self-control; temporary hawk target commitment versus shot cost; stationary Auto Shot plant windows; shared trap choices; when a melee Hunter should disengage instead of chasing a bleed.</p>
           </div>
         </div>
-        <div class="controls notprint">
-          <label>Encounter<select id="scenario" aria-label="Choose an encounter"><option value="elite">Dangerous solo elite</option><option value="adds">Four enemies at once</option><option value="boss">Stationary dungeon boss</option><option value="mobile">Constantly relocating boss</option><option value="pvp">PvP opponent reaching melee</option></select></label>
-          <label>Specialization<select id="sc-spec" aria-label="Choose a specialization"><option value="BM">Beast Mastery · 3</option><option value="MM">Marksmanship · 3</option><option value="SV">Survival · 3</option><option value="All">All nine builds</option></select></label>
-          <button id="next-enc" type="button">Next encounter →</button>
-          <button type="button" id="show-all" class="sort-button">View all nine</button>
-        </div>
-        <div id="encounter-output" class="interactive-output notprint" aria-live="polite">
-          <h3>Dangerous solo elite</h3>
-          <p>For full scenario tracks, enable JavaScript.</p>
-        </div>
-        <h3>Side-by-side strategies and rules</h3>
-        <div class="grid2">
-          <div class="scenario-mini">
+        <div class="plate">
+          <div class="controls notprint">
+            <label>Encounter<select id="scenario" aria-label="Choose an encounter"><option value="elite">Dangerous solo elite</option><option value="adds">Four enemies at once</option><option value="boss">Stationary dungeon boss</option><option value="mobile">Constantly relocating boss</option><option value="pvp">PvP opponent reaching melee</option></select></label>
+            <label>Specialization<select id="sc-spec" aria-label="Choose a specialization"><option value="BM">Beast Mastery · 3</option><option value="MM">Marksmanship · 3</option><option value="SV">Survival · 3</option><option value="All">All nine builds</option></select></label>
+            <button id="next-enc" type="button">Next encounter →</button>
+            <button type="button" id="show-all" class="sort-button">View all nine</button>
+          </div>
+          <div id="encounter-output" class="interactive-output notprint" aria-live="polite">
             <h3>Dangerous solo elite</h3>
-            <p>When the enemy cannot simply be burned, which character protects whom?</p>
-            <div class="grid3">
-              <div>
-                <h4>Beast Mastery</h4>
-                <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-              <div>
-                <h4>Marksmanship</h4>
-                <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-              <div>
-                <h4>Survival</h4>
-                <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+            <p>For full scenario tracks, enable JavaScript.</p>
+          </div>
+          <h3>Side-by-side strategies and rules</h3>
+          <div class="grid2">
+            <div class="scenario-mini">
+              <h3>Dangerous solo elite</h3>
+              <p>When the enemy cannot simply be burned, which character protects whom?</p>
+              <div class="grid3">
+                <div>
+                  <h4>Beast Mastery</h4>
+                  <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Marksmanship</h4>
+                  <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Survival</h4>
+                  <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="scenario-mini">
-            <h3>Four enemies at once</h3>
-            <p>How do you allocate threat, placement, one shared trap cooldown and area damage?</p>
-            <div class="grid3">
-              <div>
-                <h4>Beast Mastery</h4>
-                <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-              <div>
-                <h4>Marksmanship</h4>
-                <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-              <div>
-                <h4>Survival</h4>
-                <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-            </div>
-          </div>
-          <div class="scenario-mini">
-            <h3>Stationary dungeon boss</h3>
-            <p>When cast windows and pet contact are stable, how do priorities change?</p>
-            <div class="grid3">
-              <div>
-                <h4>Beast Mastery</h4>
-                <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-              <div>
-                <h4>Marksmanship</h4>
-                <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-              <div>
-                <h4>Survival</h4>
-                <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+            <div class="scenario-mini">
+              <h3>Four enemies at once</h3>
+              <p>How do you allocate threat, placement, one shared trap cooldown and area damage?</p>
+              <div class="grid3">
+                <div>
+                  <h4>Beast Mastery</h4>
+                  <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Marksmanship</h4>
+                  <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Survival</h4>
+                  <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="scenario-mini">
-            <h3>Constantly relocating boss</h3>
-            <p>What remains useful when Auto Shot demands planted firing windows?</p>
-            <div class="grid3">
-              <div>
-                <h4>Beast Mastery</h4>
-                <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-              <div>
-                <h4>Marksmanship</h4>
-                <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-              <div>
-                <h4>Survival</h4>
-                <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+            <div class="scenario-mini">
+              <h3>Stationary dungeon boss</h3>
+              <p>When cast windows and pet contact are stable, how do priorities change?</p>
+              <div class="grid3">
+                <div>
+                  <h4>Beast Mastery</h4>
+                  <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Marksmanship</h4>
+                  <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Survival</h4>
+                  <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="scenario-mini">
-            <h3>PvP opponent reaching melee</h3>
-            <p>How does each Hunter reclaim the ≥8-yard shot lane under threat?</p>
-            <div class="grid3">
-              <div>
-                <h4>Beast Mastery</h4>
-                <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+            <div class="scenario-mini">
+              <h3>Constantly relocating boss</h3>
+              <p>What remains useful when Auto Shot demands planted firing windows?</p>
+              <div class="grid3">
+                <div>
+                  <h4>Beast Mastery</h4>
+                  <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Marksmanship</h4>
+                  <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Survival</h4>
+                  <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
               </div>
-              <div>
-                <h4>Marksmanship</h4>
-                <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
-              </div>
-              <div>
-                <h4>Survival</h4>
-                <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
-                <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+            </div>
+            <div class="scenario-mini">
+              <h3>PvP opponent reaching melee</h3>
+              <p>How does each Hunter reclaim the ≥8-yard shot lane under threat?</p>
+              <div class="grid3">
+                <div>
+                  <h4>Beast Mastery</h4>
+                  <p><a href="#d-commander">Beast Commander</a> / <a href="#d-falconer">Falconer</a> / <a href="#d-guardian">Wilderness Guardian</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Marksmanship</h4>
+                  <p><a href="#d-lonesniper">Lone Sniper</a> / <a href="#d-archer">Precision Archer</a> / <a href="#d-tactical">Tactical Marksman</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
+                <div>
+                  <h4>Survival</h4>
+                  <p><a href="#d-spear">Spear Stalker</a> / <a href="#d-trapmaster">Trapmaster</a> / <a href="#d-hybrid">Hybrid Skirmisher</a></p>
+                  <p class="fine">Open the live explorer to compare the five-step choices side by side.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -2544,407 +2650,409 @@
         <p class="eyebrow">Qualitative dashboard · filter, compare, choose</p>
         <h2>09 / Interactive atlas of nine Hunters</h2>
         <p class="lead">These are archetype scores from 1 (limited) to 5 (strong or, for complexity/dependence, high). They explain role emphasis, not measured DPS, rankings or numerical boss performance.</p>
-        <div class="legend">
-          <span>1 / limited or low</span>
-          <span>2 / situational</span>
-          <span>3 / capable</span>
-          <span>4 / emphasized</span>
-          <span>5 / defining trait or highest complexity/dependence</span>
+        <div class="plate">
+          <div class="legend">
+            <span>1 / limited or low</span>
+            <span>2 / situational</span>
+            <span>3 / capable</span>
+            <span>4 / emphasized</span>
+            <span>5 / defining trait or highest complexity/dependence</span>
+          </div>
+          <div class="controls notprint">
+            <label>Specialization<select id="dash-spec"><option value="All">All specializations</option><option value="BM">Beast Mastery</option><option value="MM">Marksmanship</option><option value="SV">Survival</option></select></label>
+            <label>Pet dependence<select id="dash-pet"><option value="All">All companion states</option><option value="None">Petless</option><option value="Medium">Medium</option><option value="High">High</option></select></label>
+            <label>Preferred range<select id="dash-range"><option value="All">Any range</option><option value="Ranged">Ranged</option><option value="Melee">Melee</option><option value="Hybrid">Hybrid / mixed</option></select></label>
+            <label>Sort by<select id="dash-sort"><option value="original">Dossier order</option><option value="0">Ranged damage · high first</option><option value="1">Melee damage · high first</option><option value="2">Companion dependence · high first</option><option value="3">Sustained pressure · high first</option><option value="4">Burst windows · high first</option><option value="5">Area pressure · high first</option><option value="6">Mobility · high first</option><option value="7">Survivability · high first</option><option value="8">Control · high first</option><option value="9">Solo efficiency · high first</option><option value="10">Group utility · high first</option><option value="11">Complexity · high first</option></select></label>
+            <button id="dash-reset" type="button">Reset filters</button>
+          </div>
+          <div class="dashboard">
+            <table class="matrix" id="heatmap">
+              <thead>
+                <tr>
+                  <th scope="col">Hunter / Dossier</th>
+                  <th scope="col">Tree & split</th>
+                  <th scope="col">Ranged damage</th>
+                  <th scope="col">Melee damage</th>
+                  <th scope="col">Companion dependence</th>
+                  <th scope="col">Sustained pressure</th>
+                  <th scope="col">Burst windows</th>
+                  <th scope="col">Area pressure</th>
+                  <th scope="col">Mobility</th>
+                  <th scope="col">Survivability</th>
+                  <th scope="col">Control</th>
+                  <th scope="col">Solo efficiency</th>
+                  <th scope="col">Group utility</th>
+                  <th scope="col">Complexity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-id="commander" data-spec="BM" data-pet="High" data-range="Ranged" data-scores="4,2,5,5,4,2,3,4,3,5,4,4">
+                  <td><a href="#d-commander">The Beast Commander</a></td>
+                  <td>Beast Mastery<br><span class="fine">31/20/0</span></td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Ranged damage: qualitative 4/5" aria-label="Ranged damage, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Melee damage: qualitative 2/5" aria-label="Melee damage, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Companion dependence: qualitative 5/5" aria-label="Companion dependence, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Sustained pressure: qualitative 5/5" aria-label="Sustained pressure, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Mobility: qualitative 3/5" aria-label="Mobility, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Survivability: qualitative 4/5" aria-label="Survivability, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Control: qualitative 3/5" aria-label="Control, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Solo efficiency: qualitative 5/5" aria-label="Solo efficiency, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Group utility: qualitative 4/5" aria-label="Group utility, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Complexity: qualitative 4/5" aria-label="Complexity, 4 of 5">4</span>
+                  </td>
+                </tr>
+                <tr data-id="falconer" data-spec="BM" data-pet="Medium" data-range="Ranged" data-scores="5,1,3,4,4,3,3,3,2,4,5,5">
+                  <td><a href="#d-falconer">The Falconer</a></td>
+                  <td>Beast Mastery<br><span class="fine">26/25/0</span></td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Ranged damage: qualitative 5/5" aria-label="Ranged damage, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat1" role="img" title="Melee damage: qualitative 1/5" aria-label="Melee damage, 1 of 5">1</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Sustained pressure: qualitative 4/5" aria-label="Sustained pressure, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Area pressure: qualitative 3/5" aria-label="Area pressure, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Mobility: qualitative 3/5" aria-label="Mobility, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Survivability: qualitative 3/5" aria-label="Survivability, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Control: qualitative 2/5" aria-label="Control, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Solo efficiency: qualitative 4/5" aria-label="Solo efficiency, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Group utility: qualitative 5/5" aria-label="Group utility, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-id="guardian" data-spec="BM" data-pet="High" data-range="Hybrid" data-scores="3,2,5,3,3,2,3,5,4,5,3,3">
+                  <td><a href="#d-guardian">The Wilderness Guardian</a></td>
+                  <td>Beast Mastery<br><span class="fine">31/0/20</span></td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Ranged damage: qualitative 3/5" aria-label="Ranged damage, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Melee damage: qualitative 2/5" aria-label="Melee damage, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Companion dependence: qualitative 5/5" aria-label="Companion dependence, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Sustained pressure: qualitative 3/5" aria-label="Sustained pressure, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Burst windows: qualitative 3/5" aria-label="Burst windows, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Mobility: qualitative 3/5" aria-label="Mobility, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Survivability: qualitative 5/5" aria-label="Survivability, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Control: qualitative 4/5" aria-label="Control, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Solo efficiency: qualitative 5/5" aria-label="Solo efficiency, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Group utility: qualitative 3/5" aria-label="Group utility, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Complexity: qualitative 3/5" aria-label="Complexity, 3 of 5">3</span>
+                  </td>
+                </tr>
+                <tr data-id="lonesniper" data-spec="MM" data-pet="None" data-range="Ranged" data-scores="5,1,1,4,5,2,2,2,3,2,4,5">
+                  <td><a href="#d-lonesniper">The Lone Sniper</a></td>
+                  <td>Marksmanship<br><span class="fine">0/41/10</span></td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Ranged damage: qualitative 5/5" aria-label="Ranged damage, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat1" role="img" title="Melee damage: qualitative 1/5" aria-label="Melee damage, 1 of 5">1</span>
+                  </td>
+                  <td>
+                    <span class="heat heat1" role="img" title="Companion dependence: qualitative 1/5" aria-label="Companion dependence, 1 of 5">1</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Sustained pressure: qualitative 4/5" aria-label="Sustained pressure, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Burst windows: qualitative 5/5" aria-label="Burst windows, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Mobility: qualitative 2/5" aria-label="Mobility, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Survivability: qualitative 2/5" aria-label="Survivability, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Control: qualitative 3/5" aria-label="Control, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Solo efficiency: qualitative 2/5" aria-label="Solo efficiency, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Group utility: qualitative 4/5" aria-label="Group utility, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-id="archer" data-spec="MM" data-pet="Medium" data-range="Ranged" data-scores="5,1,3,5,4,3,3,3,2,4,5,4">
+                  <td><a href="#d-archer">The Precision Archer</a></td>
+                  <td>Marksmanship<br><span class="fine">20/31/0</span></td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Ranged damage: qualitative 5/5" aria-label="Ranged damage, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat1" role="img" title="Melee damage: qualitative 1/5" aria-label="Melee damage, 1 of 5">1</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Sustained pressure: qualitative 5/5" aria-label="Sustained pressure, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Area pressure: qualitative 3/5" aria-label="Area pressure, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Mobility: qualitative 3/5" aria-label="Mobility, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Survivability: qualitative 3/5" aria-label="Survivability, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Control: qualitative 2/5" aria-label="Control, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Solo efficiency: qualitative 4/5" aria-label="Solo efficiency, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Group utility: qualitative 5/5" aria-label="Group utility, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Complexity: qualitative 4/5" aria-label="Complexity, 4 of 5">4</span>
+                  </td>
+                </tr>
+                <tr data-id="tactical" data-spec="MM" data-pet="Medium" data-range="Hybrid" data-scores="3,2,3,3,3,2,4,4,5,4,5,5">
+                  <td><a href="#d-tactical">The Tactical Marksman</a></td>
+                  <td>Marksmanship<br><span class="fine">0/31/20</span></td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Ranged damage: qualitative 3/5" aria-label="Ranged damage, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Melee damage: qualitative 2/5" aria-label="Melee damage, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Sustained pressure: qualitative 3/5" aria-label="Sustained pressure, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Burst windows: qualitative 3/5" aria-label="Burst windows, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Mobility: qualitative 4/5" aria-label="Mobility, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Survivability: qualitative 4/5" aria-label="Survivability, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Control: qualitative 5/5" aria-label="Control, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Solo efficiency: qualitative 4/5" aria-label="Solo efficiency, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Group utility: qualitative 5/5" aria-label="Group utility, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-id="spear" data-spec="SV" data-pet="Medium" data-range="Melee" data-scores="2,5,3,4,4,2,4,3,4,3,2,5">
+                  <td><a href="#d-spear">The Spear Stalker</a></td>
+                  <td>Survival<br><span class="fine">0/10/41</span></td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Ranged damage: qualitative 2/5" aria-label="Ranged damage, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Melee damage: qualitative 5/5" aria-label="Melee damage, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Sustained pressure: qualitative 4/5" aria-label="Sustained pressure, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Mobility: qualitative 4/5" aria-label="Mobility, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Survivability: qualitative 3/5" aria-label="Survivability, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Control: qualitative 4/5" aria-label="Control, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Solo efficiency: qualitative 3/5" aria-label="Solo efficiency, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Group utility: qualitative 2/5" aria-label="Group utility, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-id="trapmaster" data-spec="SV" data-pet="High" data-range="Hybrid" data-scores="3,2,4,3,2,5,4,5,5,5,5,5">
+                  <td><a href="#d-trapmaster">The Trapmaster</a></td>
+                  <td>Survival<br><span class="fine">20/0/31</span></td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Ranged damage: qualitative 3/5" aria-label="Ranged damage, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Melee damage: qualitative 2/5" aria-label="Melee damage, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Companion dependence: qualitative 4/5" aria-label="Companion dependence, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Sustained pressure: qualitative 3/5" aria-label="Sustained pressure, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Burst windows: qualitative 2/5" aria-label="Burst windows, 2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Area pressure: qualitative 5/5" aria-label="Area pressure, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Mobility: qualitative 4/5" aria-label="Mobility, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Survivability: qualitative 5/5" aria-label="Survivability, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Control: qualitative 5/5" aria-label="Control, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Solo efficiency: qualitative 5/5" aria-label="Solo efficiency, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Group utility: qualitative 5/5" aria-label="Group utility, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-id="hybrid" data-spec="SV" data-pet="Medium" data-range="Hybrid" data-scores="4,4,3,3,4,3,5,4,5,4,4,5">
+                  <td><a href="#d-hybrid">The Hybrid Skirmisher</a></td>
+                  <td>Survival<br><span class="fine">0/20/31</span></td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Ranged damage: qualitative 4/5" aria-label="Ranged damage, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Melee damage: qualitative 4/5" aria-label="Melee damage, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Sustained pressure: qualitative 3/5" aria-label="Sustained pressure, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Area pressure: qualitative 3/5" aria-label="Area pressure, 3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Mobility: qualitative 5/5" aria-label="Mobility, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Survivability: qualitative 4/5" aria-label="Survivability, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Control: qualitative 5/5" aria-label="Control, 5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Solo efficiency: qualitative 4/5" aria-label="Solo efficiency, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Group utility: qualitative 4/5" aria-label="Group utility, 4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p id="heat-count" class="fine" aria-live="polite">9 of 9 archetypes shown. Select filters or rank a chosen trait.</p>
         </div>
-        <div class="controls notprint">
-          <label>Specialization<select id="dash-spec"><option value="All">All specializations</option><option value="BM">Beast Mastery</option><option value="MM">Marksmanship</option><option value="SV">Survival</option></select></label>
-          <label>Pet dependence<select id="dash-pet"><option value="All">All companion states</option><option value="None">Petless</option><option value="Medium">Medium</option><option value="High">High</option></select></label>
-          <label>Preferred range<select id="dash-range"><option value="All">Any range</option><option value="Ranged">Ranged</option><option value="Melee">Melee</option><option value="Hybrid">Hybrid / mixed</option></select></label>
-          <label>Sort by<select id="dash-sort"><option value="original">Dossier order</option><option value="0">Ranged damage · high first</option><option value="1">Melee damage · high first</option><option value="2">Companion dependence · high first</option><option value="3">Sustained pressure · high first</option><option value="4">Burst windows · high first</option><option value="5">Area pressure · high first</option><option value="6">Mobility · high first</option><option value="7">Survivability · high first</option><option value="8">Control · high first</option><option value="9">Solo efficiency · high first</option><option value="10">Group utility · high first</option><option value="11">Complexity · high first</option></select></label>
-          <button id="dash-reset" type="button">Reset filters</button>
-        </div>
-        <div class="dashboard">
-          <table class="matrix" id="heatmap">
-            <thead>
-              <tr>
-                <th scope="col">Hunter / Dossier</th>
-                <th scope="col">Tree & split</th>
-                <th scope="col">Ranged damage</th>
-                <th scope="col">Melee damage</th>
-                <th scope="col">Companion dependence</th>
-                <th scope="col">Sustained pressure</th>
-                <th scope="col">Burst windows</th>
-                <th scope="col">Area pressure</th>
-                <th scope="col">Mobility</th>
-                <th scope="col">Survivability</th>
-                <th scope="col">Control</th>
-                <th scope="col">Solo efficiency</th>
-                <th scope="col">Group utility</th>
-                <th scope="col">Complexity</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-id="commander" data-spec="BM" data-pet="High" data-range="Ranged" data-scores="4,2,5,5,4,2,3,4,3,5,4,4">
-                <td><a href="#d-commander">The Beast Commander</a></td>
-                <td>Beast Mastery<br><span class="fine">31/20/0</span></td>
-                <td>
-                  <span class="heat heat4" role="img" title="Ranged damage: qualitative 4/5" aria-label="Ranged damage, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Melee damage: qualitative 2/5" aria-label="Melee damage, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Companion dependence: qualitative 5/5" aria-label="Companion dependence, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Sustained pressure: qualitative 5/5" aria-label="Sustained pressure, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Mobility: qualitative 3/5" aria-label="Mobility, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Survivability: qualitative 4/5" aria-label="Survivability, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Control: qualitative 3/5" aria-label="Control, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Solo efficiency: qualitative 5/5" aria-label="Solo efficiency, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Group utility: qualitative 4/5" aria-label="Group utility, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Complexity: qualitative 4/5" aria-label="Complexity, 4 of 5">4</span>
-                </td>
-              </tr>
-              <tr data-id="falconer" data-spec="BM" data-pet="Medium" data-range="Ranged" data-scores="5,1,3,4,4,3,3,3,2,4,5,5">
-                <td><a href="#d-falconer">The Falconer</a></td>
-                <td>Beast Mastery<br><span class="fine">26/25/0</span></td>
-                <td>
-                  <span class="heat heat5" role="img" title="Ranged damage: qualitative 5/5" aria-label="Ranged damage, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat1" role="img" title="Melee damage: qualitative 1/5" aria-label="Melee damage, 1 of 5">1</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Sustained pressure: qualitative 4/5" aria-label="Sustained pressure, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Area pressure: qualitative 3/5" aria-label="Area pressure, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Mobility: qualitative 3/5" aria-label="Mobility, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Survivability: qualitative 3/5" aria-label="Survivability, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Control: qualitative 2/5" aria-label="Control, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Solo efficiency: qualitative 4/5" aria-label="Solo efficiency, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Group utility: qualitative 5/5" aria-label="Group utility, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-id="guardian" data-spec="BM" data-pet="High" data-range="Hybrid" data-scores="3,2,5,3,3,2,3,5,4,5,3,3">
-                <td><a href="#d-guardian">The Wilderness Guardian</a></td>
-                <td>Beast Mastery<br><span class="fine">31/0/20</span></td>
-                <td>
-                  <span class="heat heat3" role="img" title="Ranged damage: qualitative 3/5" aria-label="Ranged damage, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Melee damage: qualitative 2/5" aria-label="Melee damage, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Companion dependence: qualitative 5/5" aria-label="Companion dependence, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Sustained pressure: qualitative 3/5" aria-label="Sustained pressure, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Burst windows: qualitative 3/5" aria-label="Burst windows, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Mobility: qualitative 3/5" aria-label="Mobility, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Survivability: qualitative 5/5" aria-label="Survivability, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Control: qualitative 4/5" aria-label="Control, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Solo efficiency: qualitative 5/5" aria-label="Solo efficiency, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Group utility: qualitative 3/5" aria-label="Group utility, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Complexity: qualitative 3/5" aria-label="Complexity, 3 of 5">3</span>
-                </td>
-              </tr>
-              <tr data-id="lonesniper" data-spec="MM" data-pet="None" data-range="Ranged" data-scores="5,1,1,4,5,2,2,2,3,2,4,5">
-                <td><a href="#d-lonesniper">The Lone Sniper</a></td>
-                <td>Marksmanship<br><span class="fine">0/41/10</span></td>
-                <td>
-                  <span class="heat heat5" role="img" title="Ranged damage: qualitative 5/5" aria-label="Ranged damage, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat1" role="img" title="Melee damage: qualitative 1/5" aria-label="Melee damage, 1 of 5">1</span>
-                </td>
-                <td>
-                  <span class="heat heat1" role="img" title="Companion dependence: qualitative 1/5" aria-label="Companion dependence, 1 of 5">1</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Sustained pressure: qualitative 4/5" aria-label="Sustained pressure, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Burst windows: qualitative 5/5" aria-label="Burst windows, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Mobility: qualitative 2/5" aria-label="Mobility, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Survivability: qualitative 2/5" aria-label="Survivability, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Control: qualitative 3/5" aria-label="Control, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Solo efficiency: qualitative 2/5" aria-label="Solo efficiency, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Group utility: qualitative 4/5" aria-label="Group utility, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-id="archer" data-spec="MM" data-pet="Medium" data-range="Ranged" data-scores="5,1,3,5,4,3,3,3,2,4,5,4">
-                <td><a href="#d-archer">The Precision Archer</a></td>
-                <td>Marksmanship<br><span class="fine">20/31/0</span></td>
-                <td>
-                  <span class="heat heat5" role="img" title="Ranged damage: qualitative 5/5" aria-label="Ranged damage, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat1" role="img" title="Melee damage: qualitative 1/5" aria-label="Melee damage, 1 of 5">1</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Sustained pressure: qualitative 5/5" aria-label="Sustained pressure, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Area pressure: qualitative 3/5" aria-label="Area pressure, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Mobility: qualitative 3/5" aria-label="Mobility, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Survivability: qualitative 3/5" aria-label="Survivability, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Control: qualitative 2/5" aria-label="Control, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Solo efficiency: qualitative 4/5" aria-label="Solo efficiency, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Group utility: qualitative 5/5" aria-label="Group utility, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Complexity: qualitative 4/5" aria-label="Complexity, 4 of 5">4</span>
-                </td>
-              </tr>
-              <tr data-id="tactical" data-spec="MM" data-pet="Medium" data-range="Hybrid" data-scores="3,2,3,3,3,2,4,4,5,4,5,5">
-                <td><a href="#d-tactical">The Tactical Marksman</a></td>
-                <td>Marksmanship<br><span class="fine">0/31/20</span></td>
-                <td>
-                  <span class="heat heat3" role="img" title="Ranged damage: qualitative 3/5" aria-label="Ranged damage, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Melee damage: qualitative 2/5" aria-label="Melee damage, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Sustained pressure: qualitative 3/5" aria-label="Sustained pressure, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Burst windows: qualitative 3/5" aria-label="Burst windows, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Mobility: qualitative 4/5" aria-label="Mobility, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Survivability: qualitative 4/5" aria-label="Survivability, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Control: qualitative 5/5" aria-label="Control, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Solo efficiency: qualitative 4/5" aria-label="Solo efficiency, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Group utility: qualitative 5/5" aria-label="Group utility, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-id="spear" data-spec="SV" data-pet="Medium" data-range="Melee" data-scores="2,5,3,4,4,2,4,3,4,3,2,5">
-                <td><a href="#d-spear">The Spear Stalker</a></td>
-                <td>Survival<br><span class="fine">0/10/41</span></td>
-                <td>
-                  <span class="heat heat2" role="img" title="Ranged damage: qualitative 2/5" aria-label="Ranged damage, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Melee damage: qualitative 5/5" aria-label="Melee damage, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Sustained pressure: qualitative 4/5" aria-label="Sustained pressure, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Area pressure: qualitative 2/5" aria-label="Area pressure, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Mobility: qualitative 4/5" aria-label="Mobility, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Survivability: qualitative 3/5" aria-label="Survivability, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Control: qualitative 4/5" aria-label="Control, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Solo efficiency: qualitative 3/5" aria-label="Solo efficiency, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Group utility: qualitative 2/5" aria-label="Group utility, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-id="trapmaster" data-spec="SV" data-pet="High" data-range="Hybrid" data-scores="3,2,4,3,2,5,4,5,5,5,5,5">
-                <td><a href="#d-trapmaster">The Trapmaster</a></td>
-                <td>Survival<br><span class="fine">20/0/31</span></td>
-                <td>
-                  <span class="heat heat3" role="img" title="Ranged damage: qualitative 3/5" aria-label="Ranged damage, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Melee damage: qualitative 2/5" aria-label="Melee damage, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Companion dependence: qualitative 4/5" aria-label="Companion dependence, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Sustained pressure: qualitative 3/5" aria-label="Sustained pressure, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Burst windows: qualitative 2/5" aria-label="Burst windows, 2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Area pressure: qualitative 5/5" aria-label="Area pressure, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Mobility: qualitative 4/5" aria-label="Mobility, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Survivability: qualitative 5/5" aria-label="Survivability, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Control: qualitative 5/5" aria-label="Control, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Solo efficiency: qualitative 5/5" aria-label="Solo efficiency, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Group utility: qualitative 5/5" aria-label="Group utility, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-id="hybrid" data-spec="SV" data-pet="Medium" data-range="Hybrid" data-scores="4,4,3,3,4,3,5,4,5,4,4,5">
-                <td><a href="#d-hybrid">The Hybrid Skirmisher</a></td>
-                <td>Survival<br><span class="fine">0/20/31</span></td>
-                <td>
-                  <span class="heat heat4" role="img" title="Ranged damage: qualitative 4/5" aria-label="Ranged damage, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Melee damage: qualitative 4/5" aria-label="Melee damage, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Companion dependence: qualitative 3/5" aria-label="Companion dependence, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Sustained pressure: qualitative 3/5" aria-label="Sustained pressure, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Burst windows: qualitative 4/5" aria-label="Burst windows, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Area pressure: qualitative 3/5" aria-label="Area pressure, 3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Mobility: qualitative 5/5" aria-label="Mobility, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Survivability: qualitative 4/5" aria-label="Survivability, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Control: qualitative 5/5" aria-label="Control, 5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Solo efficiency: qualitative 4/5" aria-label="Solo efficiency, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Group utility: qualitative 4/5" aria-label="Group utility, 4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Complexity: qualitative 5/5" aria-label="Complexity, 5 of 5">5</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p id="heat-count" class="fine" aria-live="polite">9 of 9 archetypes shown. Select filters or rank a chosen trait.</p>
-        <div id="find-style" class="finder">
-          <p class="eyebrow">The ranger’s fitting room</p>
+        <div id="find-style" class="finder plate">
+          <p class="eyebrow plate-head">The ranger’s fitting room</p>
           <h3>Find your Hunter playstyle</h3>
           <div class="question notprint">
             <label>What should you do most?<select id="find-purpose"><option value="solo">Solo and dangerous exploration</option><option value="raid">Stationary boss / raid damage</option><option value="control">Control and PvP</option><option value="mobile">Movement-heavy fights</option></select></label>
@@ -3072,9 +3180,9 @@
           <div class="source-item" id="src-20"><strong>S20</strong> · <a href="https://tierhall.app/wow/patch-notes" target="_blank" rel="noopener noreferrer">Tierhall · Forever client and hotfix history ↗</a><span>2026-11-13 · Build 1.60.1.70938, later client changes and hotfix distinction</span></div>
         </div>
         <div class="footline">
-          <p><b>Artwork provenance:</b> Original Hunter, wolf and hawk illustration generated specifically for this compendium using OpenAI image generation, 13 November 2026. Stored as a compressed WebP file in the images folder. Decorative symbols, charts and page styling authored for this volume. No external stock images, icons, fonts, scripts or stylesheets are fetched.</p>
+          <p><b>Artwork provenance:</b> Original Hunter, wolf and hawk illustration generated specifically for this compendium using OpenAI image generation, 13 November 2026.</p>
           <p><b>Trademark & independence:</b> This unofficial editorial guide is not affiliated with, approved by, or endorsed by Blizzard Entertainment. World of Warcraft, Forever, associated ability names and other marks belong to their respective owners. Game facts are provided with source links for independent verification.</p>
-          <p><b>Edition:</b> Field Guide 01 · 13 November 2026 · Works offline after download, except citation links which need internet access. <a href="#begin" class="to-top">Return to the beginning ↑</a></p>
+          <p><b>Edition:</b> Field Guide 01 · 13 November 2026. <a href="#begin" class="to-top">Return to the beginning ↑</a></p>
         </div>
       </div>
     </section>
@@ -3672,11 +3780,6 @@ const CASES=[{"id": "elite", "name": "Dangerous solo elite", "desc": "When the e
 const NAMES={BM:'Beast Mastery',MM:'Marksmanship',SV:'Survival'};
 const $=id=>document.getElementById(id);
 const escapeHTML=str=>String(str).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-const hamb=$('hamburger'),overlay=$('overlay');
-if(hamb){hamb.addEventListener('click',()=>{const open=document.body.classList.toggle('menu-open');hamb.setAttribute('aria-expanded',String(open));});}
-function closeNav(){document.body.classList.remove('menu-open');if(hamb){hamb.setAttribute('aria-expanded','false');}}
-if(overlay)overlay.addEventListener('click',closeNav);
-document.querySelectorAll('#leftnav a').forEach(a=>a.addEventListener('click',closeNav));
 function readingProgress(){const max=document.documentElement.scrollHeight-innerHeight;const p=max>0?scrollY/max:0;$('readingbar').style.width=(100*Math.min(1,Math.max(0,p)))+'%';}
 window.addEventListener('scroll',readingProgress,{passive:true});window.addEventListener('resize',readingProgress,{passive:true});readingProgress();
 if('IntersectionObserver' in window){const anchors=[...document.querySelectorAll('.chapter-link')];const observer=new IntersectionObserver(entries=>{const active=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!active)return;anchors.forEach(a=>a.classList.toggle('active',a.hash==='#'+active.target.id));},{rootMargin:'-10% 0px -75% 0px',threshold:[0,.05,.5]});document.querySelectorAll('header[id], section[id]').forEach(s=>observer.observe(s));}
