@@ -1,75 +1,134 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The Forever Warlock Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Warlock Compendium: The Grimoire of Ash and Bound Souls</title><style>
-:root{--bg:#07070e;--paper:#0e0c17;--pan:#14121f;--line:#373044;--txt:#eee8e4;--mute:#b7aebd;--vio:#bb83fb;--vio2:#6b3e91;--fel:#91e9a7;--orange:#ffa36f;--gold:#e6c58a;--shadow:0 14px 55px rgba(0,0,0,.35)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{background:radial-gradient(ellipse at 80% 0%,#2d1740 0%,transparent 32%),radial-gradient(ellipse at 2% 38%,#10231b 0%,transparent 35%),var(--bg);color:var(--txt);margin:0;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;line-height:1.64}
-h1,h2,h3,h4,.display{font-family:Georgia,'Times New Roman',serif;line-height:1.17;letter-spacing:.005em}h1{font-size:clamp(42px,6.5vw,86px);margin:0 0 14px}h2{font-size:clamp(29px,3.3vw,43px);margin:0 0 14px}h3{font-size:23px;margin:0 0 10px}h4{font-size:16px;margin:0 0 8px}p{margin:0 0 13px}b,strong{color:#fff}a{color:#e6c49a;text-decoration:none;border-bottom:1px solid #6d5b65}a:hover{color:#fff;border-color:#fff}small,.small{font-size:12px}sup{color:var(--gold)}
-#toc{position:fixed;width:215px;left:0;top:0;bottom:0;background:#090710ed;border-right:1px solid #49374a;padding:25px 18px;z-index:50;overflow-y:auto}#toc .mini{color:var(--gold);font-size:11px;letter-spacing:.22em;font-weight:bold;margin-bottom:18px}#toc a{display:block;color:#c8bdc8;padding:8px 4px;border:0;font-size:12px;border-bottom:1px solid #201b2b}#toc a:hover{color:#fff}#toc .sig{font-family:Georgia,serif;color:#ddd;font-size:19px;margin-bottom:18px}main{margin-left:215px;max-width:1700px}section{padding:58px clamp(23px,5vw,85px);border-top:1px solid #33293d;position:relative}section:nth-child(even){background:linear-gradient(90deg,#100c1a 0%,#090a11 100%)}.shell{max-width:1390px;margin:auto}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.25em;text-transform:uppercase;font-weight:900}.lead{font-size:clamp(17px,2vw,22px);color:#ded5e7;max-width:1000px;line-height:1.54}.sub{color:var(--mute);margin-bottom:20px}h2:after{content:'';display:block;width:120px;height:2px;margin-top:15px;background:linear-gradient(90deg,var(--gold),transparent)}.hero{height:750px;min-height:700px;position:relative;display:flex;align-items:flex-end;padding:55px clamp(30px,5vw,85px) 70px;background-position:center 32%;background-size:cover;background-repeat:no-repeat;overflow:hidden}.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,2,10,.15) 0%,rgba(4,3,10,.05) 25%,rgba(5,3,11,.7) 71%,#07070e 100%)}.hero .hero-inner{position:relative;z-index:1;max-width:1050px;text-shadow:0 3px 23px #000}.hero h1 .white{display:block;color:#fff}.hero h1 .gild{color:#ead29e;font-weight:normal}.hero .deck{max-width:820px;color:#f2e9f3;font-size:19px}.byline{margin-top:25px;font-size:11px;letter-spacing:.15em;color:#eee0dc}.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.hero-badges span,.chip{display:inline-block;border:1px solid #7e6977;border-radius:50px;padding:4px 10px;font-size:11px;letter-spacing:.07em;background:#080711b8;color:#ead7da}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.panel,.spec-tile{border:1px solid var(--line);border-radius:17px;background:linear-gradient(140deg,#171421,#0f0e17);padding:23px;box-shadow:var(--shadow);break-inside:avoid}.panel p,.panel li,.spec-tile p{color:#d3ccd6}.panel .eyebrow{margin-bottom:8px}.panel ul{padding-left:19px}.violet{--local:var(--vio);--local-dark:#22122d}.green{--local:var(--fel);--local-dark:#14261c}.fire{--local:var(--orange);--local-dark:#302018}.spec-tile{border-top:3px solid var(--local);background:linear-gradient(140deg,var(--local-dark),#15111b);position:relative;min-height:260px}.spec-tile h3{color:var(--local);font-size:28px}.spec-tile .roman{font-size:11px;letter-spacing:.2em;color:#f0d9d2}.big-number{font:normal 52px Georgia;color:var(--local);line-height:1}.mini-label{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:#d5c4d0}
-.verdict{border-left:3px solid var(--gold);padding:16px 20px;background:#211827;border-radius:0 12px 12px 0;margin:25px 0}.verdict strong{color:var(--gold)}.alert{border-left:3px solid #f2a379;background:#261a19;padding:17px;border-radius:0 12px 12px 0;color:#e8d9cf}.greenbox{border-left-color:var(--fel);background:#17231d}.legend{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.legend span{font-size:11px;color:var(--mute);border:1px solid #4c4151;border-radius:20px;padding:3px 10px}.source{border:0;color:#be9ae8;font-size:11px;white-space:nowrap}.source:hover{color:#fff}.cite{font-size:11px;color:#ada4b3}
-table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,th{padding:12px 10px;border-bottom:1px solid #45394a;text-align:left;vertical-align:top}th{font-size:11px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;background:#1b1524}tr:nth-child(even){background:#151120}td:first-child{font-weight:700;color:#eee1ea}td small{color:#a8a1ad}.table-wrap{overflow-x:auto;border:1px solid #443547;border-radius:15px}.table-wrap table{margin:0}
-.flow{display:flex;align-items:stretch;gap:7px;flex-wrap:wrap}.flow .node{flex:1 1 125px;text-align:center;background:#1d1424;border:1px solid #62486e;border-radius:12px;padding:13px 10px;font-size:13px;min-width:100px;display:flex;justify-content:center;align-items:center;flex-direction:column}.flow .node b{display:block}.flow .arrow{display:flex;align-items:center;justify-content:center;color:var(--gold);min-width:17px;font-weight:900}.node.fel{background:#11291c;border-color:#4b8869}.node.ember{background:#302017;border-color:#8d553b}.node.safe{background:#202135;border-color:#7779b3}.node strong{color:#f9e2f0}.node em{font-size:11px;color:#b9afb9;font-style:normal}
-.decision{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}.decision .choice{padding:17px;background:#18131f;border:1px solid #4b3c50;border-radius:12px}.decision .choice b{display:block;color:var(--gold);margin-bottom:6px}.decision .choice div{color:var(--mute);font-size:12px}
-.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:12px 0 18px}.timeline .tick{min-height:118px;padding:11px;border-radius:10px;background:#21192b;border:1px solid #533b63;position:relative}.timeline .tick b{font-family:Georgia,serif;color:var(--gold);font-size:20px;display:block;margin-bottom:5px}.timeline .tick span{font-size:12px;display:block}.timeline .tick:after{content:'➜';position:absolute;right:-10px;top:44%;color:#e0b87c;z-index:2}.timeline .tick:last-child:after{content:''}.timeline.demon .tick{background:#14261d;border-color:#456c53}.timeline.fireline .tick{background:#2a1a19;border-color:#94593b}
-.dot-lanes{display:grid;grid-template-columns:145px 1fr;row-gap:9px;margin:20px 0}.lane-label{font-size:12px;color:#cfc0d1;padding:3px 0}.lane-track{display:flex;align-items:center;position:relative;min-height:27px;background:repeating-linear-gradient(90deg,#1d1927 0,#1d1927 calc(10% - 1px),#49374d calc(10% - 1px),#49374d 10%);border-radius:5px;overflow:hidden}.lane-fill{position:absolute;height:15px;left:0;border-radius:4px;background:#74438e;opacity:.95}.lane-fill.agony{background:#a759bc}.lane-fill.siphon{background:#448c5d}.lane-fill.channel{left:29%;width:31%;background:#e9b873}.lane-track .small-txt{position:relative;z-index:5;padding-left:7px;color:#fff;font-size:10px;text-shadow:0 1px 3px #000}
-.chapter-banner{display:grid;grid-template-columns:180px 1fr;gap:30px;align-items:center;margin:0 0 25px}.sigil{width:170px;height:170px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;box-shadow:0 0 70px #6b3a5b40 inset;position:relative;font:normal 74px Georgia;color:var(--vio)}.sigil:after{content:'';position:absolute;inset:12px;border:1px dashed currentColor;border-radius:50%;opacity:.45}.sigil.demon{color:var(--fel)}.sigil.destroy{color:var(--orange)}
-.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.archetype{position:relative;border:1px solid #53415b;background:#130e1b;border-radius:16px;padding:23px;break-inside:avoid}.archetype h3{font-size:22px}.archetype .num{position:absolute;top:14px;right:18px;font:italic 32px Georgia;color:#493653}.archetype p{font-size:13px}.archetype .details{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:20px 0}.archetype .details div{border-top:1px solid #4c3a54;padding-top:6px}.archetype .details span{display:block;color:#a398ac;font-size:10px;text-transform:uppercase;letter-spacing:.09em}.archetype .details b{font-size:13px}.archetype a{font-size:12px}
-.dossier{border:1px solid #4a3b50;background:radial-gradient(ellipse at 100% 0,#241431 0,transparent 50%),#120e18;border-radius:18px;padding:25px;margin:24px 0;break-inside:avoid}.dossier.fire{background:radial-gradient(ellipse at 100% 0,#422218 0,transparent 48%),#120e18}.dossier.green{background:radial-gradient(ellipse at 100% 0,#1d3c25 0,transparent 48%),#120e18}.dossier-head{display:flex;gap:14px;align-items:center;justify-content:space-between;border-bottom:1px solid #6c5468;padding-bottom:17px;margin-bottom:18px}.dossier-head h3{font-size:28px}.dossier .tag{font-size:11px;color:#dcc291}.talent-row{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0 14px}.talent{font-size:11px;padding:4px 8px;border:1px solid #4b3d50;border-radius:20px;color:#dbcdda;background:#1b1522;white-space:nowrap}.talent b{color:#f8c687}.dossier h4{color:var(--gold);font-family:sans-serif;text-transform:uppercase;font-size:11px;letter-spacing:.12em}.dossier ul{margin:5px 0 12px;padding-left:20px}.dossier li{margin-bottom:5px}.dossier .ribbons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.ribbon{border:1px solid #514459;background:#211829;padding:10px;border-radius:10px;font-size:12px}.ribbon span{font-size:10px;color:#b8abba;display:block}.ribbon b{display:block;font-size:12px}.dossier .cols{display:grid;grid-template-columns:1.1fr 1fr;gap:25px;margin-top:18px}
-.spectable{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}.spectable .compare{border:1px solid #4b3d55;border-radius:15px;background:#191220;padding:16px}.compare .seq{counter-reset:step;list-style:none;padding:0}.compare .seq li{counter-increment:step;position:relative;padding:8px 6px 8px 32px;margin-bottom:4px;border-bottom:1px solid #433649;font-size:13px}.compare .seq li:before{content:counter(step);position:absolute;left:0;top:7px;width:22px;height:22px;border-radius:50%;background:#65416a;color:white;font-size:11px;display:grid;place-items:center}.compare .seq li:nth-child(even):before{background:#425f4c}.compare .seq li:nth-child(3n):before{background:#7f533b}.compare h4{font-family:Georgia,serif;font-size:20px}.compare .label{font-size:10px;color:#c3a5c6;text-transform:uppercase;letter-spacing:.1em}.compare .stamp{padding:3px 9px;border:1px solid #776070;color:#dbb6e3;border-radius:15px;font-size:11px}
-.dashboard{overflow-x:auto}.matrix{min-width:970px}.matrix th:not(:first-child){writing-mode:vertical-rl;transform:rotate(180deg);min-width:52px;height:130px;letter-spacing:.07em;font-size:10px;vertical-align:bottom}.matrix td:first-child{min-width:195px}.matrix td{padding:5px 8px;text-align:center}.matrix .heat{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;line-height:1;color:#fff;width:29px;height:18px;max-width:100%;margin:auto;border-radius:4px}.matrix .heat.heat4,.matrix .heat.heat5{color:#14110f}.heat1{background:#383041}.heat2{background:#674068}.heat3{background:#9f628c}.heat4{background:#cf8b80}.heat5{background:#f0b578}.matrix .filter-hide{display:none}
-.interactive-controls{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.interactive-controls button,.interactive-controls select{cursor:pointer;color:#f3e8ed;background:#22162b;border:1px solid #725d78;border-radius:8px;padding:11px 15px;font-size:12px}.interactive-controls button:hover{background:#35233f}.interactive-controls select{min-width:170px}.interactive-output{border:1px solid #70576e;border-radius:16px;padding:20px;background:#161020}.interactive-output .step-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.step-grid>div{background:#23162a;border:1px solid #533b5b;border-radius:9px;padding:10px;font-size:13px}.step-grid span{color:#ebbb85;font-family:Georgia,serif;font-size:22px;display:block}.interactive-output h3{color:var(--gold)}.source-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:20px}.source-item{border-bottom:1px solid #332a3a;padding:9px}.source-item a{font-size:13px}.source-item span{font-size:11px;color:#aca0ac;display:block}
-.muted{color:var(--mute)}.fine{font-size:12px;color:#b2a8b4}.right{text-align:right}.spacer-lg{height:28px}.notprint{display:block}.key{color:var(--gold)}
-#navToggle{display:none;position:fixed;z-index:60;right:16px;top:16px;padding:9px 13px;border:1px solid var(--gold);border-radius:9px;background:var(--pan);color:var(--gold);font:inherit;font-size:13px;box-shadow:0 7px 24px #0006;cursor:pointer}
-@media(max-width:1100px){#toc{display:none}#toc.open{display:block}#navToggle{display:block}main{margin-left:0}.grid3,.card-grid,.spectable{grid-template-columns:1fr 1fr}.hero{height:650px}.decision{grid-template-columns:1fr 1fr}}
-@media(max-width:680px){.grid2,.grid3,.card-grid,.spectable,.dossier .cols,.dossier .ribbons,.source-list{grid-template-columns:1fr}.chapter-banner{grid-template-columns:1fr}.sigil{height:120px;width:120px;font-size:54px}.hero{height:auto;min-height:720px;padding:70px 25px 70px;background-position:49% center}.timeline{grid-template-columns:repeat(2,1fr)}.timeline .tick:after{display:none}.decision{grid-template-columns:1fr}.dossier-head{display:block}.interactive-output .step-grid{grid-template-columns:1fr 1fr}.dot-lanes{grid-template-columns:95px 1fr}}
-@media print{@page{size:A4;margin:14mm 12mm;}html,body{background:#0b0912!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}#toc,.notprint{display:none!important}main{margin:0}section{padding:24px 8px;break-before:auto}h2,h3,h4{break-after:avoid}h2{font-size:27px}.hero{height:260mm;padding:70mm 28px 25px;page-break-after:always}.hero h1{font-size:52px}.hero .deck{font-size:17px}.dossier,.panel,.spec-tile,.archetype,.compare,.flow,.dot-lanes,.table-wrap{break-inside:avoid}.grid3,.card-grid,.spectable{grid-template-columns:repeat(3,minmax(0,1fr))}.dossier{break-before:page;break-inside:auto}.dossier .cols{grid-template-columns:1fr 1fr}.dossier p,.dossier li{font-size:12px}table{font-size:11px}th,td{padding:7px 6px}.source-list{grid-template-columns:repeat(2,1fr)}.interactive-output{display:none}.timeline .tick{min-height:102px}.small{font-size:10px} .flow .node{min-width:85px} .dashboard{overflow:visible}.matrix{min-width:0}.matrix th:not(:first-child){height:130px;font-size:10px;min-width:30px}.matrix td:first-child{min-width:140px}.matrix .heat{width:21px;height:15px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-/* Collection-wide editorial annotation, kept subordinate to each class theme. */
-.reader-fieldnote,.reader-hotfix{border-left:3px solid var(--gold,#dec28c);background:rgba(175,146,94,.075);border-radius:0 9px 9px 0;padding:15px 19px;margin:21px 0 24px;max-width:1070px;break-inside:avoid;}
-.reader-fieldnote p,.reader-hotfix p{margin:6px 0 0;line-height:1.68;}
-.reader-fieldnote strong,.reader-hotfix strong{font:800 11px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#dec28c)}
-@media print{.reader-fieldnote,.reader-hotfix{background:transparent;border-left:2px solid #666;color:#111;}}
-
-/* Collection cover harmonization: the same manuscript-line hierarchy in all nine volumes. */
-.hero .series-manuscript {
-  font: 600 clamp(11px, 1.12vw, 14px)/1.5 Georgia, 'Times New Roman', serif;
-  letter-spacing: .06em;
-  text-transform: none;
-  max-width: 940px;
-  overflow-wrap: break-word;
-  text-shadow: 0 2px 10px rgba(0,0,0,.92);
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The Forever Warlock Compendium: a richly illustrated, interactive class manuscript for World of Warcraft: Forever, exploring class identity, practical mechanics, specializations, character dossiers and encounter decisions."><title>The Forever Warlock Compendium: The Grimoire of Ash and Bound Souls</title>
+<link rel="stylesheet" href="book.css">
+<style>
+/* Warlock (phase 4): the class ink, the ornament and the parts that only this book has. The shared book design is in book.css. */
+:root{--accent:#1c5543;--ornament:'❂';--violet:#5b3a8c;--fel:#1c5543;--fire:#8a3a1e}
+/* the specialization of a tile, a sigil or a dossier: --local */
+.violet{--local:var(--violet)}.green{--local:var(--fel)}.fire{--local:var(--fire)}
+.small,.muted,.sub,.cite{color:var(--ink-2)}
+.small,.cite{font-size:14px}
+.right{text-align:right}
+.spacer-lg{height:28px}
+sup{color:var(--accent)}
+.source{font-size:14px;white-space:nowrap}
+/* cover */
+.hero h1 .white{display:block}
+.hero h1 .gild{display:block;color:var(--accent)}
+.byline{margin-top:18px;color:var(--ink-2);font:14px var(--fell);letter-spacing:.12em}
+.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.hero-badges span{display:inline-block;padding:2px 10px;color:var(--ink-2);font:15px var(--fell);letter-spacing:.06em;border:1px solid var(--line);border-radius:3px}
+/* chapter head: the sigil above the title */
+.chapter-banner{display:flex;flex-direction:column;margin:0 0 25px}
+.sigil{position:relative;display:grid;place-items:center;width:72px;height:72px;margin:0 auto 10px;color:var(--violet);font:38px/1 var(--serif);border:1px solid currentColor;border-radius:50%}
+.sigil.demon{color:var(--fel)}.sigil.destroy{color:var(--fire)}
+/* specialization tiles */
+.spec-tile{position:relative;padding:20px;background:var(--card);border:1px solid #b8955a;border-top:3px solid var(--local);box-shadow:var(--bookplate)}
+.spec-tile h3{color:var(--local);font-size:26px}
+.spec-tile .roman{color:var(--ink-2);font:13px var(--fell);letter-spacing:.14em}
+.spec-tile p{font-size:15px}
+.big-number{color:var(--local);font:48px/1 var(--fell)}
+.big-number.split{color:var(--accent);font-size:34px}
+.mini-label{display:flex;justify-content:space-between;gap:10px;color:var(--ink-2);font-size:14px}
+/* notes, flows, lanes, timelines, tables */
+.verdict,.alert{margin:24px 0;padding:16px 20px;font-size:16px;background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--accent)}
+.alert{border-left-color:var(--fire)}
+.alert.greenbox{border-left-color:var(--fel)}
+.verdict strong{color:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.legend span{padding:2px 9px;color:var(--ink-2);font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:7px}
+.flow .node{display:flex;flex:1 1 125px;flex-direction:column;align-items:center;justify-content:center;min-width:100px;padding:12px 10px;font-size:14px;text-align:center;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--violet);border-radius:3px}
+.node.fel{border-top-color:var(--fel)}.node.ember{border-top-color:var(--fire)}.node.safe{border-top-color:#3f4a7a}
+.flow .node b{display:block}
+.node em{color:var(--ink-2);font-size:13px;font-style:normal}
+.flow .arrow{display:flex;align-items:center;justify-content:center;min-width:17px;color:var(--ink-2)}
+.dot-lanes{display:grid;grid-template-columns:145px 1fr;row-gap:9px;margin:20px 0}
+.lane-label{padding:3px 0;font-size:14px}
+/* the lanes: a ruled track and a tinted bar, so the ink label reads on both */
+.lane-track{position:relative;display:flex;align-items:center;min-height:27px;overflow:hidden;background:repeating-linear-gradient(90deg,var(--paper-2) 0 calc(10% - 1px),var(--line) calc(10% - 1px) 10%);border:1px solid var(--line);border-radius:3px}
+.lane-fill{position:absolute;left:0;height:100%;background:color-mix(in srgb,var(--violet) 30%,var(--card))}
+.lane-fill.agony{background:color-mix(in srgb,var(--violet) 45%,var(--card))}
+.lane-fill.siphon{background:color-mix(in srgb,var(--fel) 30%,var(--card))}
+.lane-fill.channel{left:29%;width:31%;background:color-mix(in srgb,var(--fire) 30%,var(--card))}
+.lane-track .small-txt{position:relative;z-index:1;padding-left:7px;font-size:13px}
+.decision{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px;margin-top:10px}
+.decision .choice{padding:16px;background:var(--card);border:1px solid var(--line)}
+.decision .choice b{display:block;margin-bottom:6px;color:var(--accent)}
+.decision .choice div{color:var(--ink-2);font-size:14px}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:8px;margin:12px 0 18px}
+.timeline .tick{min-height:110px;padding:10px;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--violet)}
+.timeline.demon .tick{border-top-color:var(--fel)}.timeline.fireline .tick{border-top-color:var(--fire)}
+.timeline .tick b{display:block;margin-bottom:5px;color:var(--accent);font:20px var(--fell)}
+.timeline .tick span{display:block;font-size:14px}
+.table-wrap{margin:12px 0 25px;overflow-x:auto}
+.table-wrap td:first-child{font-weight:700}
+td small{color:var(--ink-2)}
+/* the nine archetype cards and dossiers */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px}
+.archetype{position:relative;padding:20px;background:var(--card);border:1px solid #b8955a;box-shadow:var(--bookplate)}
+.archetype h3{font-size:21px}
+.archetype .eyebrow{padding-right:40px}
+.archetype .num{position:absolute;top:12px;right:16px;color:#8f7a58;font:30px var(--fell)}
+.archetype .epithet{color:var(--accent);font-style:italic}
+.archetype p,.archetype a{font-size:15px}
+.archetype .details{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:18px 0}
+.archetype .details div{padding-top:6px;border-top:1px solid var(--line)}
+.archetype .details span{display:block;color:var(--ink-2);font:13px var(--fell);letter-spacing:.06em}
+.archetype .details b{font-size:14px}
+.dossier{border-top:3px solid var(--local,var(--violet))}
+.dossier-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.dossier-head h3{font-size:28px}
+.dossier .tag{color:var(--accent);font:14px var(--fell);letter-spacing:.08em}
+.talent-row{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0 14px}
+.talent{padding:2px 8px;font-size:14px;white-space:nowrap;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.dossier h4{margin-top:12px;color:var(--local,var(--violet));font-size:16px;letter-spacing:.06em}
+.dossier ul{margin:5px 0 12px;padding-left:20px}
+.dossier .ribbons{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.ribbon{padding:10px;font-size:15px;background:var(--paper-2);border:1px solid var(--line)}
+.ribbon span{display:block;color:var(--ink-2);font:13px var(--fell);letter-spacing:.05em}
+.ribbon b{display:block;font-size:15px}
+.dossier .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0 25px;margin-top:18px}
+/* three Warlocks side by side */
+.spectable{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px;margin:20px 0}
+.spectable .compare{padding:16px;background:var(--card);border:1px solid var(--line)}
+.compare h4{font-size:20px}
+.compare .label{color:var(--ink-2);font:13px var(--fell);letter-spacing:.08em}
+.compare .stamp{padding:1px 8px;color:var(--ink-2);font:13px var(--fell);border:1px solid var(--line);border-radius:3px}
+.compare .seq{padding:0;list-style:none;counter-reset:step}
+.compare .seq li{position:relative;margin-bottom:4px;padding:7px 4px 7px 32px;font-size:14px;border-bottom:1px solid var(--line);counter-increment:step}
+.compare .seq li::before{content:counter(step);position:absolute;top:7px;left:0;display:grid;place-items:center;width:22px;height:22px;color:#fff;font:13px/1 var(--serif);background:var(--accent);border-radius:50%}
+/* plates: the encounter and the atlas */
+.interactive-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 16px}
+.interactive-controls select{min-width:min(170px,100%)}
+.interactive-output{padding:18px;background:var(--card);border:1px solid var(--line)}
+.interactive-output:empty{display:none}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:8px}
+.step-grid>div{padding:10px;font-size:14px;background:var(--paper-2);border:1px solid var(--line)}
+.step-grid span{display:block;color:var(--accent);font:22px var(--fell)}
+/* the matrix: the column titles run vertically (read from the bottom up) so all of them fit beside the names */
+.dashboard{overflow-x:auto}
+.matrix{min-width:640px}
+.matrix thead tr{border-bottom:2px solid var(--ink-2)}
+.matrix th{border:0}
+.matrix th:not(:first-child){height:128px;min-width:34px;max-width:40px;padding:8px 2px;writing-mode:vertical-rl;transform:rotate(180deg);vertical-align:bottom}
+.matrix td{padding:6px 3px;text-align:center;vertical-align:middle}
+.matrix td:first-child{position:sticky;left:0;z-index:1;min-width:170px;padding-left:6px;text-align:left;background:var(--plate)}
+.matrix tbody tr:hover td{background-color:#e6d8b6}
+.matrix .filter-hide{display:none}
+/* sources */
+.source-item a{font-size:15px}
+.source-item span{display:block;color:var(--ink-2);font-size:14px}
+.art-note{margin-top:35px;color:var(--ink-2)}
+@media (max-width:680px){.dot-lanes{grid-template-columns:95px 1fr}}
+@media print{
+  .dossier{break-before:page}
+  .dashboard{overflow:visible}
+  .matrix{min-width:0}
+  .matrix td:first-child{position:static}
+  .lane-track,.lane-fill{print-color-adjust:exact;-webkit-print-color-adjust:exact}
 }
-.hero .series-manuscript .series-sep { opacity: .62; padding: 0 .25em; }
-.hero .compendium-series-subtitle {
-  font: normal clamp(20px, 2.15vw, 29px)/1.28 Georgia, 'Times New Roman', serif;
-  letter-spacing: .008em;
-  color: #f2d9a8;
-  max-width: 900px;
-  margin: 11px 0 15px;
-  text-shadow: 0 3px 20px rgba(0,0,0,.65);
-}
-@media (max-width: 650px) {
-  .hero .series-manuscript { font-size: 11px; letter-spacing: .025em; }
-  .hero .compendium-series-subtitle { font-size: clamp(18px,5.2vw,24px); margin: 8px 0 10px; }
-}
-
-/* Reader-first note, visually subordinate to the original manuscript design. */
-.reader-orientation{margin:16px 0 24px;padding:18px 22px;border-left:2px solid var(--gold,#d7bc84);background:rgba(255,255,255,.035);border-radius:0 12px 12px 0;max-width:960px}
-.reader-orientation h3{font-size:clamp(17px,1.8vw,22px);margin:0 0 7px}
-.reader-orientation p{margin:0;line-height:1.64}
-
-/* Short practical vignettes: preserve the inherited visual palette and all offline features. */
-.reader-field-exercise{max-width:1000px;margin:32px 0 8px;padding:21px 24px;border-top:1px solid var(--gold,#d7bc84);border-bottom:1px solid rgba(210,194,155,.2);background:rgba(255,255,255,.025);border-radius:10px}
-.reader-field-exercise h3{margin:0 0 9px;font-size:clamp(20px,2vw,25px)}
-.reader-field-exercise p{margin:0;line-height:1.75}
-
-.reader-dossier-threshold{max-width:1000px;font:normal clamp(17px,1.7vw,21px)/1.65 Georgia,'Times New Roman',serif;color:var(--text,var(--ink,#eee));padding:0 0 8px;margin:15px 0 26px;border-bottom:1px solid rgba(210,194,155,.25)}
-/* volume switch (phase 2): Primer, Advanced and Complete buttons at the top of the chapter menu; --vol-on marks the current view */
-.vol-switch{--vol-on:var(--gold);display:flex;gap:4px;margin:14px 0 8px}
-.vol-switch button{flex:1;min-width:0;padding:7px 2px;font:inherit;font-size:10.5px;color:inherit;background:none;border:1px solid color-mix(in srgb,currentColor 50%,transparent);border-radius:6px;cursor:pointer}
-.vol-switch button:hover{border-color:currentColor}
-.vol-switch button[aria-pressed="true"]{color:var(--vol-on);border-color:var(--vol-on);background:#ffffff14}
-.vol-switch button:focus-visible{outline:2px solid var(--vol-on);outline-offset:2px}
-@media print{.vol-switch{display:none}}
+/* on phones the table shrinks to its content and the name column stays narrow, so the scores beside it have room */
+@media (max-width:600px){.matrix{min-width:0}.matrix td:first-child{min-width:110px}}
 </style></head>
 <body>
   <script>
@@ -83,7 +142,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
       advanced:['#evidence','#characters','#encounters','#dashboard']
     };
     const MENU='#toc';
-    const SWITCH_BEFORE='#toc a'; // the switch goes right before this element
+    const SWITCH_BEFORE='#toc .nav-divider'; // the switch goes right before this element
     const LABELS={primer:'Primer',advanced:'Advanced',complete:'Complete'};
     const style=document.createElement('style');
     document.head.append(style);
@@ -156,30 +215,51 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
     });
   })();
   </script>
-  <button id="navToggle" class="notprint" type="button" aria-controls="toc" aria-expanded="false"><span aria-hidden="true">☰</span> Chapters</button>
-  <nav id="toc" aria-label="Chapters">
-    <div class="mini">THE BLACK GRIMOIRE</div>
-    <div class="sig">FOREVER<br>WARLOCK</div>
-    <a href="#begin">00 / The opening seal</a>
-    <a href="#foundation">01 / Warlock foundation</a>
-    <a href="#affliction">02 / Affliction laboratory</a>
-    <a href="#demonology">03 / Demonology covenant</a>
-    <a href="#destruction">04 / Destruction forge</a>
-    <a href="#journey">05 / Leveling, gear & PvP</a>
-    <a href="#evidence">06 / Evidence & live changes</a>
-    <a href="#characters">07 / Character dossiers</a>
-    <a href="#encounters">08 / Same encounter: Different answers</a>
-    <a href="#dashboard">09 / Build-selection atlas</a>
-    <a href="#sources">10 / Sources & limitations</a>
+  <nav id="toc" class="book-nav" aria-label="Chapters">
+    <div class="nav-series">THE BLACK GRIMOIRE</div>
+    <div class="nav-title">FOREVER<br>WARLOCK</div>
+    <button class="nav-toggle" type="button" aria-controls="toc" aria-expanded="false" hidden>Contents</button>
+    <div class="nav-divider"></div>
+    <div class="nav-body">
+      <ol>
+        <li><a href="#begin">00 / The opening seal</a></li>
+        <li><a href="#foundation">01 / Warlock foundation</a></li>
+        <li><a href="#affliction">02 / Affliction laboratory</a></li>
+        <li><a href="#demonology">03 / Demonology covenant</a></li>
+        <li><a href="#destruction">04 / Destruction forge</a></li>
+        <li><a href="#journey">05 / Leveling, gear & PvP</a></li>
+        <li><a href="#evidence">06 / Evidence & live changes</a></li>
+        <li><a href="#characters">07 / Character dossiers</a></li>
+        <li><a href="#encounters">08 / Same encounter: Different answers</a></li>
+        <li><a href="#dashboard">09 / Build-selection atlas</a></li>
+        <li><a href="#sources">10 / Sources & limitations</a></li>
+      </ol>
+    </div>
   </nav>
+  <script>
+  /* Contents button (phase 4): on narrow screens the chapter list folds away under this button.
+     Without JavaScript the button stays hidden and the list stays open. */
+  (()=>{
+    const nav=document.querySelector('.book-nav');
+    const button=nav.querySelector('.nav-toggle');
+    const show=open=>{nav.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));};
+    nav.classList.add('js');
+    button.hidden=false;
+    button.addEventListener('click',()=>show(!nav.classList.contains('open')));
+    // Close the list after a chapter is chosen, and on Escape.
+    nav.querySelector('.nav-body').addEventListener('click',e=>{if(e.target.closest('a'))show(false);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){show(false);button.focus();}});
+  })();
+  </script>
   <main>
-    <header id="begin" class="hero" style="background-image:url('images/warlock-hero.jpg')">
+    <header id="begin" class="hero">
       <div class="hero-inner">
         <div class="eyebrow series-manuscript">The Grimoire of Bound Souls<span class="series-sep"> / </span>On Pact and Sacrifice</div>
         <h1>
           <span class="white">THE FOREVER</span><span class="gild">WARLOCK</span><span class="white" style="font-size:.58em;letter-spacing:.08em">COMPENDIUM</span>
         </h1>
         <div class="compendium-series-subtitle">The Grimoire of Ash and Bound Souls</div>
+        <figure class="frontis"><img src="images/warlock-hero.jpg" alt="" width="1599" height="900"></figure>
         <p class="deck">Every bargain has a cost. Master curses, creeping damage, demon contracts and the dangerous exchange between Health and Mana before deciding which price you are willing to pay.</p>
         <div class="hero-badges">
           <span>Forever only</span>
@@ -187,7 +267,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
           <span>November 13, 2026</span>
           <span>Research + experimental atlas</span>
         </div>
-        <div class="byline">A VISUAL FIELD GUIDE · ORIGINAL CONCEPT ART · NO RETAIL/ERA MECHANICS IMPORTED</div>
+        <div class="byline">A VISUAL FIELD GUIDE · NO RETAIL/ERA MECHANICS IMPORTED</div>
       </div>
     </header>
     <section id="foundation">
@@ -1149,7 +1229,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="num">01</div>
             <div class="eyebrow">AFFLICTION / A1</div>
             <h3>The Plaguebringer</h3>
-            <p style="color:var(--gold)">The Violet Epidemic</p>
+            <p class="epithet">The Violet Epidemic</p>
             <p>A demonless DoT engine that concentrates on three interacting Affliction effects and converts Wrack channel time into faster periodic damage.</p>
             <div class="details">
               <div>
@@ -1165,7 +1245,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="num">02</div>
             <div class="eyebrow">AFFLICTION / A2</div>
             <h3>The Soul Drainer</h3>
-            <p style="color:var(--gold)">The Unyielding Leech</p>
+            <p class="epithet">The Unyielding Leech</p>
             <p>A living battery that converts enemy life to its own while Soul Link and a controlled demon absorb pressure; trades Wrack for pet-based durability.</p>
             <div class="details">
               <div>
@@ -1181,7 +1261,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="num">03</div>
             <div class="eyebrow">AFFLICTION / A3</div>
             <h3>The Shadow Hybrid</h3>
-            <p style="color:var(--gold)">The Midnight Scholar</p>
+            <p class="epithet">The Midnight Scholar</p>
             <p>Preserves Shadow Mastery, Corruption and Pandemic but abandons Wrack for Destruction’s Shadow Bolt engine.</p>
             <div class="details">
               <div>
@@ -1197,7 +1277,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="num">04</div>
             <div class="eyebrow">DEMONOLOGY / M1</div>
             <h3>The Shadow Demon Commander</h3>
-            <p style="color:var(--gold)">Sovereign of Dusk</p>
+            <p class="epithet">Sovereign of Dusk</p>
             <p>Two simultaneous Shadow amplifiers: sacrifice Imp for Shadow damage and keep a Sayaad active for Master Demonologist’s additional Shadow synergy.</p>
             <div class="details">
               <div>
@@ -1213,7 +1293,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="num">05</div>
             <div class="eyebrow">DEMONOLOGY / M2</div>
             <h3>The Felfire Conjurer</h3>
-            <p style="color:var(--gold)">The Emberbound</p>
+            <p class="epithet">The Emberbound</p>
             <p>Sacrifice a Sayaad for Fire, then deploy an Imp that improves Fire with Master Demonologist and stays far from melee-area hazards.</p>
             <div class="details">
               <div>
@@ -1229,7 +1309,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="num">06</div>
             <div class="eyebrow">DEMONOLOGY / M3</div>
             <h3>The Soulbound Guardian</h3>
-            <p style="color:var(--gold)">The Iron Covenant</p>
+            <p class="epithet">The Iron Covenant</p>
             <p>Treats the demon as a movable defensive asset; sacrifice and active pet produce sustain rather than the highest offensive school multiplier.</p>
             <div class="details">
               <div>
@@ -1245,7 +1325,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="num">07</div>
             <div class="eyebrow">DESTRUCTION / D1</div>
             <h3>The Fel-Flame Artillery Mage</h3>
-            <p style="color:var(--gold)">The Blazing Siege</p>
+            <p class="epithet">The Blazing Siege</p>
             <p>The classic-looking fire artillery identity updated for Forever: Incinerate, Conflagrate and Shadowburn operate as an interlocking fire/shadow engine.</p>
             <div class="details">
               <div>
@@ -1261,7 +1341,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="num">08</div>
             <div class="eyebrow">DESTRUCTION / D2</div>
             <h3>The Shadowfire Hybrid</h3>
-            <p style="color:var(--gold)">The Eclipse Weaver</p>
+            <p class="epithet">The Eclipse Weaver</p>
             <p>Spends six extra points on Affliction to seek Nightfall procs; plays around the timing of the 20-second Shadow and Fire bonuses.</p>
             <div class="details">
               <div>
@@ -1277,7 +1357,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             <div class="num">09</div>
             <div class="eyebrow">DESTRUCTION / D3</div>
             <h3>The Sacrificial Infernalist</h3>
-            <p style="color:var(--gold)">The Demonless Pyre</p>
+            <p class="epithet">The Demonless Pyre</p>
             <p>Sacrifices a Sayaad for Fire damage, not an Imp, and intentionally fights without an active demon because this 11-point sacrifice package lacks Demonic Pact.</p>
             <div class="details">
               <div>
@@ -1298,7 +1378,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
               <p class="muted">The Violet Epidemic – Sustained boss pressure • stable multi-DoT</p>
             </div>
             <div class="right">
-              <div class="big-number" style="font-size:34px;color:var(--gold)">35 / 11 / 5</div>
+              <div class="big-number split">35 / 11 / 5</div>
               <div class="tag">A / M / D · Guide-derived · post-hotfix</div>
             </div>
           </div>
@@ -1435,7 +1515,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
               <p class="muted">The Unyielding Leech – Solo elite • PvP attrition • resource stability</p>
             </div>
             <div class="right">
-              <div class="big-number" style="font-size:34px;color:var(--gold)">30 / 21 / 0</div>
+              <div class="big-number split">30 / 21 / 0</div>
               <div class="tag">A / M / D · Designed · legal tree, not DPS tested</div>
             </div>
           </div>
@@ -1575,7 +1655,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
               <p class="muted">The Midnight Scholar – Hardcast hybrid • moving encounter • spell synergies</p>
             </div>
             <div class="right">
-              <div class="big-number" style="font-size:34px;color:var(--gold)">30 / 0 / 21</div>
+              <div class="big-number split">30 / 0 / 21</div>
               <div class="tag">A / M / D · Designed · legal tree, experimental</div>
             </div>
           </div>
@@ -1708,7 +1788,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
               <p class="muted">Sovereign of Dusk – Shadow boss DPS • melee-pet command</p>
             </div>
             <div class="right">
-              <div class="big-number" style="font-size:34px;color:var(--gold)">2 / 31 / 18</div>
+              <div class="big-number split">2 / 31 / 18</div>
               <div class="tag">A / M / D · Guide-derived split · 2/31/18</div>
             </div>
           </div>
@@ -1846,7 +1926,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
               <p class="muted">The Emberbound – Fire DPS • ranged-pet uptime • AoE</p>
             </div>
             <div class="right">
-              <div class="big-number" style="font-size:34px;color:var(--gold)">2 / 31 / 18</div>
+              <div class="big-number split">2 / 31 / 18</div>
               <div class="tag">A / M / D · Guide-derived split · 2/31/18</div>
             </div>
           </div>
@@ -1984,7 +2064,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
               <p class="muted">The Iron Covenant – Elite solo • anti-caster PvP • pet rescue</p>
             </div>
             <div class="right">
-              <div class="big-number" style="font-size:34px;color:var(--gold)">10 / 41 / 0</div>
+              <div class="big-number split">10 / 41 / 0</div>
               <div class="tag">A / M / D · Designed · legal tree, defensive</div>
             </div>
           </div>
@@ -2123,7 +2203,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
               <p class="muted">The Blazing Siege – Boss fire damage • burst • cleave</p>
             </div>
             <div class="right">
-              <div class="big-number" style="font-size:34px;color:var(--gold)">14 / 4 / 33</div>
+              <div class="big-number split">14 / 4 / 33</div>
               <div class="tag">A / M / D · Guide-derived split · 14/4/33</div>
             </div>
           </div>
@@ -2260,7 +2340,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
               <p class="muted">The Eclipse Weaver – Two-school sequencing • reactive proc casting</p>
             </div>
             <div class="right">
-              <div class="big-number" style="font-size:34px;color:var(--gold)">16 / 4 / 31</div>
+              <div class="big-number split">16 / 4 / 31</div>
               <div class="tag">A / M / D · Designed · legal tree, experimental</div>
             </div>
           </div>
@@ -2397,7 +2477,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
               <p class="muted">The Demonless Pyre – Demon-free fire damage • consistent positioning</p>
             </div>
             <div class="right">
-              <div class="big-number" style="font-size:34px;color:var(--gold)">9 / 11 / 31</div>
+              <div class="big-number split">9 / 11 / 31</div>
               <div class="tag">A / M / D · Designed · legal tree, lower evidence</div>
             </div>
           </div>
@@ -2535,8 +2615,10 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
         <h2>One encounter. Three completely different Warlocks.</h2>
         <p class="lead">Imagine the same level-appropriate solo elite with a dangerous melee hit, interruptible cast and potential add. All nine builds receive the same starting conditions. Their combat answers are profoundly different.</p>
         <p class="sub">The timelines below are <em>qualitative action sequences</em>. They do not invent measured combat-log seconds, GCD outcomes or DPS percentages. Read left to right as decisions, with simultaneous pet damage occurring between actions.</p>
-        <div class="notprint interactive-controls"><label for="scenario">Change the encounter:</label><select id="scenario"><option value="elite">Dangerous solo elite</option><option value="boss">Stationary dungeon boss</option><option value="adds">Four simultaneous enemies</option><option value="pvp">PvP opponent focusing your pet</option></select><label for="specfilter">Focus one specialization:</label><select id="specfilter"><option value="All">All nine characters</option><option value="Affliction">Affliction</option><option value="Demonology">Demonology</option><option value="Destruction">Destruction</option></select></div>
-        <div id="interactive-encounter" class="interactive-output notprint" aria-live="polite"></div>
+        <div class="plate">
+          <div class="notprint interactive-controls"><label for="scenario">Change the encounter:</label><select id="scenario"><option value="elite">Dangerous solo elite</option><option value="boss">Stationary dungeon boss</option><option value="adds">Four simultaneous enemies</option><option value="pvp">PvP opponent focusing your pet</option></select><label for="specfilter">Focus one specialization:</label><select id="specfilter"><option value="All">All nine characters</option><option value="Affliction">Affliction</option><option value="Demonology">Demonology</option><option value="Destruction">Destruction</option></select></div>
+          <div id="interactive-encounter" class="interactive-output notprint" aria-live="polite"></div>
+        </div>
         <h3 style="margin-top:34px">Affliction · Same elite, three strategies</h3>
         <div class="spectable">
           <article class="compare">
@@ -2771,368 +2853,370 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
         <h2>Which Warlock should you become?</h2>
         <p class="lead">A qualitative build dashboard that prioritizes <em>how the character feels to play</em>. No DPS parses, simulation outputs or fabricated numerical rankings are presented.</p>
         <p class="fine">Cell intensity uses an editorial 1–5 scale: 1 = low emphasis/dependence, 5 = high emphasis/dependence. For "Demon dependence," a high value means more management; for "Complexity," higher means more attention, not necessarily better. Ratings describe the <em>specific build variant</em>, not overall spec power.</p>
-        <div class="notprint interactive-controls"><label for="dash-filter">Filter the atlas:</label><select id="dash-filter"><option value="All">All nine characters</option><option>Affliction</option><option>Demonology</option><option>Destruction</option></select><label for="dash-sort">Sort by:</label><select id="dash-sort"><option value="original">Original archetype order</option><option value="1">Burst</option><option value="2">Sustained</option><option value="3">Multi-target</option><option value="4">Survivability</option><option value="5">Demon dependence</option><option value="6">Complexity</option><option value="7">Resource management</option><option value="8">Mobility/control</option><option value="9">Solo suitability</option><option value="10">Group utility</option><option value="11">Flexibility</option></select></div>
-        <div class="dashboard">
-          <table id="build-matrix" class="matrix">
-            <thead>
-              <tr>
-                <th>Character</th>
-                <th title="Direct burst">Direct burst</th>
-                <th title="Sustained damage">Sustained damage</th>
-                <th title="Multitarget potential">Multitarget potential</th>
-                <th title="Survivability">Survivability</th>
-                <th title="Demon dependence">Demon dependence</th>
-                <th title="Spellcasting complexity">Spellcasting complexity</th>
-                <th title="Resource management">Resource management</th>
-                <th title="Mobility &amp; control">Mobility &amp; control</th>
-                <th title="Solo suitability">Solo suitability</th>
-                <th title="Group utility">Group utility</th>
-                <th title="Build flexibility">Build flexibility</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-spec="Affliction" data-score="2,5,5,2,1,5,4,3,4,4,4">
-                <td><a href="#card-plague">The Plaguebringer</a><div class="fine">Affliction · 35/11/5</div>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-              </tr>
-              <tr data-spec="Affliction" data-score="1,4,4,5,5,4,5,4,5,4,5">
-                <td><a href="#card-drainer">The Soul Drainer</a><div class="fine">Affliction · 30/21/0</div>
-                </td>
-                <td>
-                  <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-spec="Affliction" data-score="4,4,4,2,4,4,3,3,3,4,5">
-                <td><a href="#card-shadowhy">The Shadow Hybrid</a><div class="fine">Affliction · 30/0/21</div>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-spec="Demonology" data-score="4,4,3,4,5,5,4,3,3,4,5">
-                <td><a href="#card-shadowcmd">The Shadow Demon Commander</a><div class="fine">Demonology · 2/31/18</div>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-spec="Demonology" data-score="4,4,5,4,5,5,5,3,3,5,5">
-                <td><a href="#card-fireimp">The Felfire Conjurer</a><div class="fine">Demonology · 2/31/18</div>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-spec="Demonology" data-score="1,3,3,5,5,5,5,4,5,5,5">
-                <td><a href="#card-guardian">The Soulbound Guardian</a><div class="fine">Demonology · 10/41/0</div>
-                </td>
-                <td>
-                  <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-spec="Destruction" data-score="5,4,4,2,4,4,4,3,3,5,4">
-                <td><a href="#card-artillery">The Fel-Flame Artillery Mage</a><div class="fine">Destruction · 14/4/33</div>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-              </tr>
-              <tr data-spec="Destruction" data-score="4,4,4,2,4,5,5,4,3,5,5">
-                <td><a href="#card-shadowfire">The Shadowfire Hybrid</a><div class="fine">Destruction · 16/4/31</div>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-              </tr>
-              <tr data-spec="Destruction" data-score="5,4,4,1,1,3,4,2,2,3,3">
-                <td><a href="#card-infernal">The Sacrificial Infernalist</a><div class="fine">Destruction · 9/11/31</div>
-                </td>
-                <td>
-                  <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
-                </td>
-                <td>
-                  <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-                <td>
-                  <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="legend">
-          <span>1 · lower emphasis</span>
-          <span>2 · limited</span>
-          <span>3 · moderate</span>
-          <span>4 · strong</span>
-          <span>5 · defining</span>
+        <div class="plate">
+          <div class="notprint interactive-controls"><label for="dash-filter">Filter the atlas:</label><select id="dash-filter"><option value="All">All nine characters</option><option>Affliction</option><option>Demonology</option><option>Destruction</option></select><label for="dash-sort">Sort by:</label><select id="dash-sort"><option value="original">Original archetype order</option><option value="1">Burst</option><option value="2">Sustained</option><option value="3">Multi-target</option><option value="4">Survivability</option><option value="5">Demon dependence</option><option value="6">Complexity</option><option value="7">Resource management</option><option value="8">Mobility/control</option><option value="9">Solo suitability</option><option value="10">Group utility</option><option value="11">Flexibility</option></select></div>
+          <div class="dashboard">
+            <table id="build-matrix" class="matrix">
+              <thead>
+                <tr>
+                  <th>Character</th>
+                  <th title="Direct burst">Direct burst</th>
+                  <th title="Sustained damage">Sustained damage</th>
+                  <th title="Multitarget potential">Multitarget potential</th>
+                  <th title="Survivability">Survivability</th>
+                  <th title="Demon dependence">Demon dependence</th>
+                  <th title="Spellcasting complexity">Spellcasting complexity</th>
+                  <th title="Resource management">Resource management</th>
+                  <th title="Mobility &amp; control">Mobility &amp; control</th>
+                  <th title="Solo suitability">Solo suitability</th>
+                  <th title="Group utility">Group utility</th>
+                  <th title="Build flexibility">Build flexibility</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-spec="Affliction" data-score="2,5,5,2,1,5,4,3,4,4,4">
+                  <td><a href="#card-plague">The Plaguebringer</a><div class="fine">Affliction · 35/11/5</div>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                </tr>
+                <tr data-spec="Affliction" data-score="1,4,4,5,5,4,5,4,5,4,5">
+                  <td><a href="#card-drainer">The Soul Drainer</a><div class="fine">Affliction · 30/21/0</div>
+                  </td>
+                  <td>
+                    <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-spec="Affliction" data-score="4,4,4,2,4,4,3,3,3,4,5">
+                  <td><a href="#card-shadowhy">The Shadow Hybrid</a><div class="fine">Affliction · 30/0/21</div>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-spec="Demonology" data-score="4,4,3,4,5,5,4,3,3,4,5">
+                  <td><a href="#card-shadowcmd">The Shadow Demon Commander</a><div class="fine">Demonology · 2/31/18</div>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-spec="Demonology" data-score="4,4,5,4,5,5,5,3,3,5,5">
+                  <td><a href="#card-fireimp">The Felfire Conjurer</a><div class="fine">Demonology · 2/31/18</div>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-spec="Demonology" data-score="1,3,3,5,5,5,5,4,5,5,5">
+                  <td><a href="#card-guardian">The Soulbound Guardian</a><div class="fine">Demonology · 10/41/0</div>
+                  </td>
+                  <td>
+                    <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-spec="Destruction" data-score="5,4,4,2,4,4,4,3,3,5,4">
+                  <td><a href="#card-artillery">The Fel-Flame Artillery Mage</a><div class="fine">Destruction · 14/4/33</div>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                </tr>
+                <tr data-spec="Destruction" data-score="4,4,4,2,4,5,5,4,3,5,5">
+                  <td><a href="#card-shadowfire">The Shadowfire Hybrid</a><div class="fine">Destruction · 16/4/31</div>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                </tr>
+                <tr data-spec="Destruction" data-score="5,4,4,1,1,3,4,2,2,3,3">
+                  <td><a href="#card-infernal">The Sacrificial Infernalist</a><div class="fine">Destruction · 9/11/31</div>
+                  </td>
+                  <td>
+                    <span class="heat heat5" role="img" title="Qualitative 5 / 5" aria-label="5 of 5">5</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
+                  </td>
+                  <td>
+                    <span class="heat heat1" role="img" title="Qualitative 1 / 5" aria-label="1 of 5">1</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat4" role="img" title="Qualitative 4 / 5" aria-label="4 of 5">4</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat2" role="img" title="Qualitative 2 / 5" aria-label="2 of 5">2</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                  <td>
+                    <span class="heat heat3" role="img" title="Qualitative 3 / 5" aria-label="3 of 5">3</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="legend">
+            <span>1 · lower emphasis</span>
+            <span>2 · limited</span>
+            <span>3 · moderate</span>
+            <span>4 · strong</span>
+            <span>5 · defining</span>
+          </div>
         </div>
         <h3 style="margin-top:35px">Choose by the decisions you enjoy, not by a speculative leaderboard</h3>
         <div class="grid2">
@@ -3235,7 +3319,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 25px}td,t
             </ul>
           </article>
         </div>
-        <p style="margin-top:35px;color:#d4c2b8">Illustration: original fantasy artwork created for this guide. It is not presented as a screenshot, official Forever artwork, or a depiction of exact in-game models. © Blizzard Entertainment for World of Warcraft trademarks; this independent guide is not affiliated with Blizzard.</p>
+        <p class="art-note">Illustration: original fantasy artwork created for this guide. It is not presented as a screenshot, official Forever artwork, or a depiction of exact in-game models. © Blizzard Entertainment for World of Warcraft trademarks; this independent guide is not affiliated with Blizzard.</p>
         <p class="fine">Edition compiled 13 November 2026. Forever's tuning is live and subject to further hotfixes. Refresh sources before major respec or raid-gear decisions.</p>
       </div>
     </section>
@@ -3574,14 +3658,6 @@ if(scen&&filt){scen.addEventListener('change',renderEncounter);filt.addEventList
 const filter=document.getElementById('dash-filter'),sort=document.getElementById('dash-sort'),tab=document.querySelector('#build-matrix tbody');
 function renderMatrix(){if(!filter||!sort||!tab)return;const rows=[...tab.querySelectorAll('tr')];const v=sort.value;rows.sort((a,b)=>v==='original'?DATA.findIndex(d=>d.spec===a.dataset.spec && d.name===a.querySelector('a').textContent)-DATA.findIndex(d=>d.spec===b.dataset.spec&&d.name===b.querySelector('a').textContent):(+b.dataset.score.split(',')[+v-1])-(+a.dataset.score.split(',')[+v-1]));rows.forEach(r=>{tab.appendChild(r);r.classList.toggle('filter-hide',filter.value!=='All'&&r.dataset.spec!==filter.value)})}
 if(filter&&sort){filter.addEventListener('change',renderMatrix);sort.addEventListener('change',renderMatrix)}
-// Mobile chapter menu. The button shows below 1100px. display:none keeps closed links out of the Tab order.
-{
-  const navToggle=document.getElementById('navToggle'),toc=document.getElementById('toc');
-  const setNav=open=>{toc.classList.toggle('open',open);navToggle.setAttribute('aria-expanded',String(open));};
-  navToggle.addEventListener('click',()=>setNav(!toc.classList.contains('open')));
-  toc.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setNav(false)));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toc.classList.contains('open')){const inMenu=toc.contains(document.activeElement);setNav(false);if(inMenu)navToggle.focus();}});
-}
 </script>
 </body>
 </html>
