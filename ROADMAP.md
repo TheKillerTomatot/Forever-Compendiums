@@ -6,7 +6,8 @@ Decided on 14 November 2026. Each phase runs in its own fresh session. Read this
 
 - Make a plan and run the grilling rounds, then wait for "go".
 - Test, review your own work, then run the `reviewer` subagent. Fix what it finds and test again.
-- Commit only after approval. Work on a branch and merge into `main` only after approval.
+- Commit only after approval. Work on a branch from `dev`, and merge into `dev` only after approval.
+- The repo is public at https://github.com/TheKillerTomatot/Forever-Compendiums. GitHub Pages serves `main`, so `main` is the live site: it gets `dev` only when the user says so. Push only after the user's approval.
 - Each phase starts with its own grilling for the points marked "Open" below.
 
 ## Phase 1: Sort the content (done 15 November 2026)
@@ -207,14 +208,29 @@ Result:
 - A full book redesign of each of the 9 class pages. This replaces the original rule to keep their visual design.
 - Keep all content and all interactive functions.
 - One page first, then the rest.
-- Open: one shared design or a different book style for each class, and how the dashboards and labs look as book pages.
+
+Decided on 16 November 2026:
+
+- Look: an open book on the library desk. Each chapter is a sheet of cream paper with dark ink on the front page's dark wood. Gilt rules, IM Fell English SC headings and Georgia body text. No other fonts. No dark mode.
+- One shared design in `book.css`, linked from all 9 pages. Each page keeps a small block for its class color, its ornament and its own special parts. The old page CSS goes.
+- The class color marks the kicker, the chapter numbers, the drop caps, the note rules, the plate headers and the rating dots. Gilt and ink do the rest.
+- Cover: a title page with the full picture in a gilt frame, not cropped.
+- Interactive parts (dashboards, labs, calculators, filters) sit on framed plates, like tables glued into a book: a dark plate header in the class color, dropdowns on ledger lines and brass buttons. On phones, wide tables scroll sideways inside their plate.
+- Navigation, the same on all 9 pages: a leather contents panel beside the page on wide screens, and a top bar with a "Contents" button on phones. The Primer, Advanced and Complete switch becomes the three ribbons from the front page. This also ends the Shaman chapter bar overflow.
+- One long scrolling page. All links, the phase 2 views and the quiz links keep working.
+- Print: only the paper, with every plate in full. No wood, panel or ribbons.
+- Inline `style` attributes move into classes where they block the shared design (Warrior has 232, Warlock 46, Priest 41).
+- Meta text goes: every line about how the file is built (offline, embedded, standalone HTML, file formats, the images folder). Art credits shrink to one line per page in the sources chapter. Research dates, no-JavaScript notes, the Blizzard notice and method notes stay. Every removed or shortened line is listed for review. No other text changes.
+- Pilot: Mage, because it has the most kinds of parts. Test it, run the `reviewer`, then the user reviews it before the commit. Then the other 8 pages in one run without the user's input. A page with a problem waits, uncommitted, with a note. One commit per page after the user's review.
+- Proof for each page: the same text (apart from the listed meta lines) and the same ids; every control, link and calculator gives the same results; the phase 2 views and the quiz links land on their targets; no sideways scroll from 320 to 1920px; print and no JavaScript work; text contrast meets WCAG AA; no console errors.
+- Branch: `phase4-book` from `dev`.
+- The approved mockup (Mage cover, chapter 00, the Atlas plate and two dossier cards) is not in the repo.
 
 ## Later
 
 - New beginner text: now part of the user's text work (see above). It needs sources, because Claude cannot check game facts.
 - Print style for the front page: today it prints light text on white paper when background graphics are off.
-- Title images cut off at the top (reported 15 November 2026). Find out where: on the front page only the Shaman cover crops its top; the class page heroes crop by screen width.
-- Delete the merged branches `audit-fixes`, `claude/magical-swanson-f5774b` and `fantasy-landing` (needs approval).
+- Title images cut off at the top (reported 15 November 2026): on the front page, the Shaman cover crops its top. The class page covers are part of phase 4.
 - The front page still says "nine 51-point builds" and "Research snapshot: 13 November 2026". Decide whether they need new words; the phase 3 check found nothing wrong with them.
 
 ## Testing notes
