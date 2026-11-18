@@ -256,6 +256,25 @@ Result:
 - Tests in headless Edge: the Shaman picture fills its frame from the top at 320, 375, 768 and 1280px; no sideways scroll; 72 shelf and ribbon clicks at 1280 and 375px open the right view; 5 quiz paths at both widths give the right link, shelf mark and landing, and "Start again" clears the mark; the Druid, Mage and Warlock pages at 6 widths from 320 to 1920px; no console errors. The test scripts are not in the repo.
 - Test pitfall: the front page pictures below the first screen load lazily. Scroll a book into view and wait for `img.decode()` before measuring its picture.
 
+## Scroll lag on phones (done 18 November 2026)
+
+Reported on 18 November 2026: on the user's phone (Nothing Phone 2a Plus, Chrome) all pages lag when scrolling, the front page too. Other websites scroll smoothly.
+
+Decided on 18 November 2026:
+
+- The fix applies only on touch screens. Mouse screens keep the fixed background, because in tests on Windows the new layer turned the sharper desktop text into grayscale text. Chrome on Android draws grayscale text anyway.
+- Warrior's progress bar loses its 0.2 s easing and follows the scroll directly, like the Druid, Hunter and Rogue bars.
+
+Result:
+
+- Commit 6877d93 on the branch `claude/scroll-lag-657360`, then this roadmap commit.
+- Cause: the wood background on `body` had `background-attachment:fixed`. With it, Chrome scrolls on the main thread and repaints the whole screen on every frame. The shadows, the filters and the scroll scripts were not the cause.
+- book.css and index.html: on touch screens (`(hover:none),(pointer:coarse)`) the wood is a `position:fixed` `body::before` layer, as high as the screen. book.css hides it in print. warrior.html: `.nav-progress` has no `transition:height .2s`, because the easing restarted on every scroll frame.
+- Lab in headless Edge with the GPU (phone at 412x915, DPR 2.625, touch, CPU 4x slower, scripted finger swipes under a trace): the delay from finger to screen went from 26 to 35 ms to about 20 to 22 ms on all 10 pages. GPU load went from 13 to 18% to 2 to 3% on the class pages, and from 54% to 5% on the front page.
+- Look: desktop screenshots are identical at 375, 768 and 1280px. Phone screenshots differ by at most 4 of 255 in the dark wood. Print is identical. The phase 4 tests and the front page tests pass with mouse and with touch. No console errors. The test scripts are not in the repo.
+- Not tested: the real phone (the user tests after publishing) and iPhones. Safari ignored the old fixed background, so iPhones now get a fixed wood for the first time.
+- Test pitfalls: in headless Edge, `Input.synthesizeScrollGesture` with touch does not scroll; use `Input.dispatchTouchEvent` with touch emulation on. Headless frame timing is noisy, so compare the scroll delay and the GPU load, not stall counts. Phone screenshots need `--disable-lcd-text` to draw text as Android does.
+
 ## Later
 
 - Nothing open.
