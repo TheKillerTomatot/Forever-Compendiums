@@ -11,7 +11,15 @@
 :root{color-scheme:dark;--ink:#f0e5cc;--muted:#d2c09c;--gold:#d9b56b;--gold-dim:#d9b56b70;--fell:'IM Fell English SC',Georgia,'Times New Roman',serif;--gilt:linear-gradient(180deg,#fbeec4 15%,#d7aa58 65%,#a8792e)}
 *{box-sizing:border-box}
 html{background:#170f0a}
-body{margin:0;min-height:100vh;color:var(--ink);font:17px/1.6 Georgia,'Times New Roman',serif;background:radial-gradient(ellipse 70% 45% at 50% 0%,#6b44205c,transparent 70%),radial-gradient(ellipse at center,transparent 50%,#000000b3 100%),repeating-linear-gradient(90deg,#1b120c 0 3px,#1f150e 3px 7px,#1a110b 7px 12px);background-attachment:fixed}
+body{margin:0;min-height:100vh;color:var(--ink);font:17px/1.6 Georgia,'Times New Roman',serif;--wood:radial-gradient(ellipse 70% 45% at 50% 0%,#6b44205c,transparent 70%),radial-gradient(ellipse at center,transparent 50%,#000000b3 100%),repeating-linear-gradient(90deg,#1b120c 0 3px,#1f150e 3px 7px,#1a110b 7px 12px);background:var(--wood);background-attachment:fixed}
+/* touch screens: the wood moves to a fixed layer behind the page, as high as the screen, so the page scrolls over it and the
+   browser does not repaint it on scroll. With the fixed background, the browser repaints the whole screen on every scroll
+   frame, and phones lag. Mouse screens keep the fixed background: in tests on Windows, the layer turned the sharper
+   (subpixel) text into grayscale text */
+@media (hover:none),(pointer:coarse){
+  body{background:none}
+  body::before{content:'';position:fixed;top:0;left:0;right:0;height:100vh;z-index:-1;background:var(--wood)}
+}
 .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
 /* title page */
 header{padding:70px 0 46px;text-align:center}
